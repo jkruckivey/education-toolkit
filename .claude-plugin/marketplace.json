@@ -1,0 +1,21 @@
+{
+  "$schema": "https://raw.githubusercontent.com/anthropics/claude-code/main/.claude-plugin/marketplace.schema.json",
+  "name": "education-toolkit",
+  "version": "1.0.0",
+  "description": "Comprehensive toolkit for course developers with 7 specialized agents and 6 slash commands for accessibility auditing, widget testing, branding validation, assessment design, student journey simulation, consistency checking, and UDL content generation. Includes 464 KB of bundled frameworks and AI assessment research.",
+  "owner": {
+    "name": "James Kruck",
+    "email": "jkruck@ivey.ca",
+    "github": "jameskruck"
+  },
+  "plugins": [
+    {
+      "name": "education-toolkit",
+      "description": "7 agents + 6 commands for accessibility, assessment design, widget testing, and course QA with bundled knowledge base",
+      "source": "./",
+      "category": "education",
+      "version": "1.0.0",
+      "author": "James Kruck"
+    }
+  ]
+}
