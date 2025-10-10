@@ -15,7 +15,10 @@
       "source": "./",
       "category": "education",
       "version": "1.0.0",
-      "author": "James Kruck"
+      "author": {
+        "name": "James Kruck",
+        "email": "jkruck@ivey.ca"
+      }
     }
   ]
 }
