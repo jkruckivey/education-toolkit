@@ -1,0 +1,25 @@
+{
+  "name": "education-toolkit",
+  "version": "1.0.0",
+  "description": "Comprehensive toolkit for course developers with 7 specialized agents for accessibility auditing, widget testing, branding validation, assessment design, student journey simulation, consistency checking, and UDL content generation. Includes 464 KB of bundled frameworks and AI assessment research.",
+  "author": {
+    "name": "James Kruck",
+    "email": "jkruck@ivey.ca"
+  },
+  "keywords": [
+    "education",
+    "accessibility",
+    "wcag",
+    "udl",
+    "quality-matters",
+    "assessment-design",
+    "course-development",
+    "pedagogical-qa",
+    "ai-assessment"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jameskruck/education-toolkit"
+  },
+  "license": "MIT"
+}
