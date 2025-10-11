@@ -1,8 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/anthropics/claude-code/main/.claude-plugin/marketplace.schema.json",
   "name": "education-toolkit",
-  "version": "2.0.0",
-  "description": "Comprehensive toolkit for course developers with 9 specialized agents and 6 slash commands. Includes PAIRR (Peer and AI Review + Reflection), AI Roleplay exercises, diagnostic rubrics, accessibility auditing, widget testing, and course QA. Bundled with 464 KB of frameworks and AI assessment research.",
+  "version": "2.1.0",
+  "description": "Comprehensive toolkit for course developers with 9 specialized agents and 9 slash commands. Includes PAIRR (Peer and AI Review + Reflection), AI Roleplay exercises, diagnostic rubrics, accessibility auditing, widget testing, and course QA. Bundled with 464 KB of frameworks and AI assessment research.",
   "owner": {
     "name": "James Kruck",
     "email": "jkruck@ivey.ca",
@@ -11,10 +11,10 @@
   "plugins": [
     {
       "name": "education-toolkit",
-      "description": "9 agents + 6 commands: PAIRR methodology, AI Roleplay design, diagnostic rubrics, accessibility auditing, assessment design with bundled knowledge base",
+      "description": "9 agents + 9 commands: PAIRR methodology, AI Roleplay design, diagnostic rubrics, accessibility auditing, assessment design with bundled knowledge base",
       "source": "./",
       "category": "education",
-      "version": "2.0.0",
+      "version": "2.1.0",
       "author": {
         "name": "James Kruck",
         "email": "jkruck@ivey.ca"
