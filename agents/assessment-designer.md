@@ -159,6 +159,129 @@ Read: assessment-knowledge/research/acceptable-ai-use.md
 - AI-generated outline, human-written expansion
 - AI for accessibility (translation, text-to-speech), not content generation
 
+### Evidence-Based Assessment Methodologies
+
+#### PAIRR: Peer and AI Review + Reflection
+
+**Research Foundation:** Frontiers in Communication (2025) - PAIRR model promotes educational equity, AI literacy, and student writerly agency through scaffolded dual-feedback comparison.
+
+**What It Is:**
+A structured feedback methodology where students receive feedback from TWO sources (peer + AI), then critically compare both sources through reflection before revising their work.
+
+**Implementation Process:**
+1. **Draft Submission**: Student submits 80% complete draft
+2. **Dual Feedback Phase**:
+   - Peer review using structured protocol (rubric-aligned)
+   - AI feedback using guided prompt (same rubric criteria)
+3. **Comparative Reflection** (150-200 words):
+   - What did peer notice that AI missed?
+   - What did AI notice that peer missed?
+   - Which feedback will you prioritize and why?
+4. **Revision**: Apply insights from both sources
+5. **Post-Revision Reflection** (100 words): Which feedback influenced revisions most?
+
+**Learning Outcomes:**
+- Critical evaluation of AI output (AI literacy)
+- Integration of multiple perspectives (synthesis)
+- Metacognitive awareness (reflection on feedback quality)
+- Workplace preparation (AI collaboration skills)
+
+**Best For:**
+- Written assignments (essays, memos, reports)
+- Graduate/professional programs
+- Courses emphasizing AI integration
+- Formative assessment with bonus points incentive
+
+**Key Design Elements:**
+- Structured rubric ensures peer and AI evaluate same criteria
+- Comparative reflection develops critical AI literacy
+- Students maintain writerly agency (choose which feedback to apply)
+- Bonus points (5-7% of assignment grade) incentivize participation
+
+**When to Use:**
+- Replace traditional peer review with PAIRR for richer feedback
+- AI-integrated workplaces (business, marketing, communications)
+- Courses teaching professional writing
+- Students need practice critically evaluating AI output
+
+#### AI Roleplay Exercises
+
+**What They Are:**
+Conversational simulations where students engage with AI character roleplaying as stakeholder, expert, or decision-maker. Student practices applying knowledge through dialogue.
+
+**Types of AI Roleplay:**
+
+1. **Diagnostic/Formative** (Pre-Learning):
+   - Reveals knowledge gaps BEFORE content delivery
+   - Creates cognitive dissonance and motivation
+   - Low-stakes, students expected to struggle
+   - Example: "Explain why this contract makes business sense" (before learning revenue ecosystems)
+
+2. **Application/Practice** (During Learning):
+   - Rehearses concepts in realistic scenarios
+   - Formative feedback before summative assessment
+   - Safe space to test arguments and receive pushback
+   - Example: "Pitch your investment recommendation to PE partner" (before writing final memo)
+
+3. **Summative/High-Stakes** (After Learning):
+   - Demonstrates mastery through conversation
+   - AI evaluates using rubric criteria
+   - Can replace or supplement written assessments
+   - Example: "Defend your strategic recommendation to board of directors" (graded on argument quality)
+
+**Key Design Elements:**
+
+**Student Instructions Must Include:**
+- Role clarity (Who are you? Who is the AI character?)
+- Scenario context (What's the situation?)
+- What to prepare (knowledge, data, arguments)
+- Goal (What are you trying to accomplish?)
+- Time limit (5-7 min diagnostic, 10-15 min practice, 15-20 min summative)
+
+**AI Character Configuration:**
+- Personality traits (patient but probing, skeptical, enthusiastic)
+- Background (industry role, expertise level, constraints)
+- Conversation flow (opening → probes → closing)
+- How to respond to strong vs. weak answers
+
+**System Prompt Structure:**
+- Conversation objectives (What are you assessing?)
+- Evidence of strong performance (reward these behaviors)
+- Constructive feedback approach (Socratic questioning, not lecturing)
+- Exit conditions (time limit, conversation complete)
+
+**Rubric/Feedback:**
+- Diagnostic: Descriptive levels (Beginning/Developing/Proficient), no grades
+- Formative: Feedback aligned with summative rubric criteria
+- Summative: Full rubric with points, evaluation criteria, feedback templates
+
+**Benefits:**
+- Tests application and synthesis (higher Bloom's levels)
+- Authentic communication practice
+- Immediate, conversational feedback
+- Lower faculty grading time (AI provides initial evaluation)
+- Accessibility: Oral assessment alternative
+
+**When to Use:**
+- Courses with professional communication outcomes
+- Practice before high-stakes presentations
+- Alternative to written exams for diverse learners
+- Diagnostic pre-assessments to reveal gaps
+- Formative rehearsal before summative work
+
+**Implementation Tips:**
+- Provide AI character prompt template (students can't game system if they understand evaluation criteria)
+- Test AI character with multiple student responses before deployment
+- Use structured rubrics (AI evaluates consistently)
+- Combine with written reflection for metacognition
+- Offer multiple attempts for formative versions
+
+**Example Use Cases:**
+- **Business**: Pitch to investors, board defense, stakeholder negotiation
+- **Healthcare**: Patient counseling, case presentation, ethical dilemma discussion
+- **Education**: Teach-back method, parent conference, curriculum defense
+- **Law**: Client intake, opposing counsel argument, judicial questioning
+
 ## ASSESSMENT DESIGN PROCESS
 
 ### Step 1: Understand Requirements

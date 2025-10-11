@@ -1,6 +1,8 @@
 # Education Toolkit - Claude Code Plugin
 
-Comprehensive toolkit for course developers with 7 specialized agents and 6 slash commands for accessibility auditing, widget testing, branding validation, assessment design, student journey simulation, consistency checking, and UDL content generation.
+**Comprehensive toolkit for educational developers** with 9 specialized agents and 6 slash commands. Includes cutting-edge assessment methodologies: PAIRR (Peer and AI Review + Reflection), AI Roleplay exercises, and diagnostic rubrics for pre-learning assessment.
+
+> **✨ NEW in v2.0**: PAIRR assessment methodology, AI Roleplay exercise design, and diagnostic rubric generation for formative assessment.
 
 ## Installation
 
@@ -9,17 +11,21 @@ Comprehensive toolkit for course developers with 7 specialized agents and 6 slas
 /plugin install education-toolkit
 ```
 
+**Migrating from claude-subagents NPM package?** This plugin replaces `@jameskruck/claude-subagents` with enhanced functionality (slash commands + same agents).
+
 ## What's Included
 
-### 🤖 7 Specialized Agents
+### 🤖 9 Specialized Agents
 
 1. **accessibility-auditor** - WCAG 2.2 AA compliance checking with WebFetch capability
-2. **widget-tester** - 3-persona widget testing (Sarah, James, Maria) for UX validation
+2. **assessment-designer** - Comprehensive assessment design with 464 KB bundled knowledge base. **NEW**: PAIRR methodology, AI Roleplay exercise design, Three-Tier AI permission model
 3. **branding-checker** - Canvas LMS and Uplimit platform branding validation
-4. **rubric-generator** - Quick rubric generation from learning outcomes (QM-aligned)
-5. **student-journey-simulator** - 4-persona course experience testing (Sarah, Marcus, Priya, Alex)
-6. **consistency-checker** - Cross-module terminology, concept threading, outcome alignment
-7. **assessment-designer** - Comprehensive assessment design with 464 KB bundled knowledge base (AI integration, UDL/QM compliance, research-backed guidance)
+4. **consistency-checker** - Cross-module terminology, concept threading, outcome alignment
+5. **rubric-generator** - QM-aligned rubric generation. **NEW**: Diagnostic rubrics (3-level), PAIRR bonus rubrics, AI feedback prompts
+6. **student-journey-simulator** - 4-persona course experience testing (Sarah, Marcus, Priya, Alex)
+7. **udl-content-generator** - Transform content into multimodal formats (audio, visual, interactive)
+8. **uplimit-storyboard-builder** - Complete copy-paste-ready implementation guides for Uplimit courses
+9. **widget-tester** - 3-persona widget testing (Sarah, James, Maria) for UX validation
 
 ### ⚡ 6 Quick Slash Commands
 
@@ -36,6 +42,53 @@ The **assessment-designer** agent includes:
 - **4 Framework Guides**: UDL, Quality Matters, Inclusive Teaching, Assessment Templates
 - **5 Research Papers**: AI Assessment Framework, Acceptable AI Use, Alternative Assessments, Academic Integrity, GenAI in Higher Ed
 - **AI Assessment Principles**: Three-Tier Permission Model, Social Boundary Theory, AI-Resistant Design
+
+### ✨ NEW: Evidence-Based Assessment Methodologies
+
+#### PAIRR (Peer and AI Review + Reflection)
+**Research-backed dual-feedback methodology** where students receive feedback from both a peer and AI, then critically compare both sources through structured reflection.
+
+**Benefits:**
+- Develops critical AI literacy (students evaluate AI output quality)
+- Multiple perspectives improve writing quality
+- Students maintain writerly agency (choose which feedback to apply)
+- Prepares for AI-integrated workplaces
+
+**Implementation:**
+1. Student submits 80% draft
+2. Gets peer review (rubric-aligned) + AI feedback (same rubric)
+3. Completes comparative reflection (150-200 words)
+4. Revises based on critical evaluation
+5. Post-revision reflection on which feedback influenced most
+
+**Ask agents:** "Design a PAIRR workflow for my reflection memo" or "Generate a PAIRR rubric with bonus points"
+
+#### AI Roleplay Exercises
+**Conversational assessments** where students engage with AI character roleplaying as stakeholder, expert, or decision-maker.
+
+**Three Types:**
+1. **Diagnostic** (pre-learning): Reveals gaps before content delivery
+2. **Formative** (during learning): Practice before summative assessment
+3. **Summative** (after learning): Demonstrates mastery through conversation
+
+**Benefits:**
+- Tests application & synthesis (higher Bloom's levels)
+- Authentic communication practice
+- Immediate conversational feedback
+- Accessibility: Oral assessment alternative
+
+**Ask agents:** "Design an AI Roleplay for practicing [skill]" or "Create a diagnostic roleplay exercise"
+
+#### Diagnostic Rubrics (3-Level)
+**Formative pre-learning rubrics** with Beginning → Developing → Proficient levels (no "Exemplary" since mastery not expected).
+
+**Key Features:**
+- Typical student responses at each level
+- Support flags (when to provide scaffolding)
+- Non-evaluative tone ("This helps you identify what to focus on")
+- 2-3 minute grading time per student
+
+**Ask agents:** "Generate a diagnostic rubric for pre-assessment" or "Create a 3-level formative rubric"
 
 ## Usage Examples
 
@@ -168,4 +221,10 @@ GitHub: [@jameskruck](https://github.com/jameskruck)
 
 ## Version History
 
+- **2.0.0** (2025-10-11): Major update with evidence-based assessment methodologies
+  - Added PAIRR (Peer and AI Review + Reflection) methodology to assessment-designer
+  - Added AI Roleplay exercise design guidance (diagnostic, formative, summative)
+  - Added diagnostic rubrics (3-level) to rubric-generator
+  - Added uplimit-storyboard-builder agent (9 agents total, up from 7)
+  - Consolidated from claude-subagents NPM package (deprecated)
 - **1.0.0** (2025-10-10): Initial release with 7 agents, 6 commands, 464 KB knowledge base
