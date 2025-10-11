@@ -12,7 +12,7 @@
     {
       "name": "education-toolkit",
       "description": "9 agents + 6 commands: PAIRR methodology, AI Roleplay design, diagnostic rubrics, accessibility auditing, assessment design with bundled knowledge base",
-      "source": "./",
+      "source": "../",
       "category": "education",
       "version": "2.0.0",
       "author": {
