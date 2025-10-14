@@ -514,15 +514,108 @@ AI Roleplay exercises work best for:
 - Professional communication skills
 - Thinking on your feet with real-time challenges
 
-#### Text Response Questions (Assessments)
-- **Complete question text**
-- **Additional instructions** (checklist of requirements)
-- **Full rubric** with criteria, point values, descriptions
-- **Feedback templates** for all performance levels
-- **AI grading configuration** settings
+#### Text Response Questions (File Response / Text Response)
 
-**Example:**
+Text Response elements allow students to submit written work (typed or uploaded as a file). Uplimit uses a **2-tab configuration system** with flexible formatting based on toggle settings.
+
+**CRITICAL FORMAT REQUIREMENTS:**
+
+**Tab 1: Instructions**
+
+**Question Field:**
+- Brief prompt (1-2 sentences)
+- Clear submission expectations
+- Example: "Submit your 1-page Revenue Ecosystem Reflection Memo here."
+
+**Additional Instructions (optional):**
+- Checklist format works well
+- Submission requirements and reminders
+- Formatting guidance
+
+**Template Upload (optional):**
+- Can upload file template for learners to use
+- Common for forms, worksheets, structured assignments
+
+**Tab 2: Criteria (Feedback Rubric)**
+
+**Configuration Toggles:**
+- ✅ **Enable automated AI grading** - Allows AI-assisted feedback
+- ✅ **Include evaluation levels** - Enables 3-level format (Does not meet / Partially meets / Fully meets)
+- ✅ **Apply points** - Enables point values for criteria
+
+**Format Options Based on Toggles:**
+
+**Option 1 - Simple Format (evaluation levels OFF, points OFF):**
 ```
+CRITERION 1: Revenue Analysis
+
+Analyzes at least 3 revenue streams.
+```
+
+**Option 2 - With Points Only (evaluation levels OFF, points ON):**
+```
+CRITERION 1: Revenue Analysis
+
+Points: 10
+
+Analyzes at least 3 revenue streams.
+```
+
+**Option 3 - With Evaluation Levels (evaluation levels ON, points OFF):**
+```
+CRITERION 1: Revenue Analysis
+
+Description:
+Analyzes at least 3 revenue streams.
+
+Does not meet expectations:
+Analyzes fewer than 3 streams or provides minimal analysis.
+
+Partially meets expectations:
+Analyzes 3 streams but may lack depth or miss interdependencies.
+
+Fully meets expectations:
+Analyzes 3+ streams with depth, showing interdependencies and unique characteristics.
+```
+
+**Option 4 - Full Format (evaluation levels ON, points ON):**
+```
+CRITERION 1: Revenue Analysis
+
+Points: 10
+
+Description:
+Analyzes at least 3 revenue streams.
+
+Does not meet expectations:
+The learner analyzes fewer than 3 streams or provides minimal analysis.
+
+Partially meets expectations:
+The learner analyzes 3 streams but may lack depth or miss interdependencies.
+
+Fully meets expectations:
+The learner analyzes 3+ streams with depth, showing interdependencies and unique characteristics.
+```
+
+**Key Differences from AI Roleplay Criteria:**
+
+| Element | Text Response | AI Roleplay |
+|---------|---------------|-------------|
+| **Complexity** | MUCH simpler - can be just title + 1 sentence | Always requires full 3-level format |
+| **Evaluation Levels** | Optional (toggle-based) | Required (always 3 levels) |
+| **Points** | Optional (toggle-based) | Always included |
+| **Language** | No required format (can be simple description) | Must use "The learner..." language in levels |
+| **Flexibility** | High - 4 format options based on toggles | Low - fixed 4-tab structure with specific requirements |
+
+**IMPORTANT:** Text Response criteria can be very minimal when toggles are off. Don't over-specify unless evaluation levels are explicitly requested.
+
+**Complete Example - Full Configuration:**
+
+```markdown
+### Element X: Text Response Question
+
+**Tab 1: Instructions**
+
 **Question Text:**
 Submit your 1-page Revenue Ecosystem Reflection Memo here.
 
@@ -541,30 +634,108 @@ Before submitting, check that you have:
 ✓ Used professional business writing (memo format)
 ✓ Stayed within 500-word limit
 
+**Template Upload:** None
+
+---
+
+**Tab 2: Criteria**
+
+**Configuration:**
+- ✅ Enable automated AI grading
+- ✅ Include evaluation levels
+- ✅ Apply points
+
+**CRITERION 1: Revenue Stream Analysis**
+
+**Points:** 10
+
+**Description:**
+Analyzes at least 3 revenue streams with depth and understanding of interdependencies.
+
+**Does not meet expectations:**
+The learner analyzes fewer than 3 streams or provides minimal analysis without demonstrating understanding of how streams interconnect.
+
+**Partially meets expectations:**
+The learner analyzes 3 streams but may lack depth in some areas or miss key interdependencies between revenue sources.
+
+**Fully meets expectations:**
+The learner analyzes 3+ revenue streams with depth, clearly demonstrating understanding of interdependencies and unique characteristics of sport's revenue model.
+
+---
+
+**CRITERION 2: Investment Decision Factors**
+
+**Points:** 10
+
+**Description:**
+Identifies 2-3 specific, well-justified factors that would influence investment decisions.
+
+**Does not meet expectations:**
+The learner identifies fewer than 2 factors or provides generic factors without clear justification or connection to sport-specific context.
+
+**Partially meets expectations:**
+The learner identifies 2-3 factors but provides limited justification or misses connections between factors and revenue sustainability.
+
+**Fully meets expectations:**
+The learner identifies 2-3 well-chosen factors with clear, evidence-based justification that demonstrates understanding of how factors impact investment risk and return.
+
+---
+
+**CRITERION 3: Professional Communication**
+
+**Points:** 5
+
+**Description:**
+Professional memo format with clear, concise writing within word limit.
+
+**Does not meet expectations:**
+The learner's submission does not follow memo format, exceeds word limit significantly, or lacks professional tone appropriate for executive audience.
+
+**Partially meets expectations:**
+The learner follows memo format but may have minor formatting issues, slightly exceeds word limit, or has some lapses in professional tone.
+
+**Fully meets expectations:**
+The learner's submission follows professional memo format precisely, stays within 500-word limit, and maintains appropriate tone for executive audience throughout.
+
+---
+
+**Total Points:** 25
+
+**AI Grading:** Enabled
+```
+
+**Storyboard Specification Format - Simple Table:**
+
+When evaluation levels are NOT needed, use simple table format:
+
+```markdown
+### Element X: Text Response Question
+
+**Question Text:**
+Submit your 1-page Revenue Ecosystem Reflection Memo here.
+
+**Additional Instructions:**
+Before submitting, check that you have:
+✓ Explained sport's unique revenue characteristics
+✓ Analyzed at least 3 revenue streams
+✓ Identified 2-3 investment decision factors
+
+**Evaluation Method:** ✅ Rubric (AI-assisted grading enabled)
+
 **Rubric Criteria:**
 
 | **Criterion** | **Points** | **Description** |
 |--------------|-----------|----------------|
-| **Revenue Stream Analysis** | 10 pts | Accurately describes and analyzes at least 3 revenue streams. Demonstrates understanding of interdependencies and unique characteristics. |
-| **Investment Factors** | 10 pts | Identifies 2-3 specific, well-justified factors that would influence investment decision. Factors are supported with evidence from course content. |
-| **Application of Concepts** | 5 pts | Effectively applies concepts from executive session, readings, and case. Makes relevant connections. |
-| **Business Communication** | 5 pts | Professional memo format. Clear, concise writing. Appropriate tone for executive audience. Within word limit. |
+| **Revenue Stream Analysis** | 10 pts | Accurately describes and analyzes at least 3 revenue streams. |
+| **Investment Factors** | 10 pts | Identifies 2-3 specific, well-justified factors. |
+| **Professional Communication** | 5 pts | Professional memo format within word limit. |
 
-**Total:** 30 points
+**Total:** 25 points
 
-**Feedback for Excellent Work (27-30 points):**
-Excellent analysis! Your memo demonstrates strong understanding of sport's revenue
-ecosystem and applies course concepts effectively. Your investment factors are
-well-reasoned and supported with evidence.
-
-Strengths: [AI-generated specific feedback]
-
-Consider: [AI-generated growth opportunity]
-
-This level of analysis will serve you well in the executive case discussion and
-your Group Marketing Project.
-
-[... continue with all feedback templates ...]
+**AI Grading Settings:**
+- ✅ Enable automated AI grading
+- ❌ Include evaluation levels (simple format - criterion + description only)
+- ✅ Apply points
 ```
 
 ### Step 4: Create Supporting Documentation
