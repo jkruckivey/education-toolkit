@@ -129,17 +129,23 @@ For leagues, broadcast deals provide **predictable, long-term revenue** (often 9
 ```
 
 #### Infoboxes
-- **Complete copy** ready to paste (remember: paragraph format only, no bullets)
-- Title included
-- Proper length (under 150 words)
+- **Use sparingly** - Reserve for high-value callouts, key insights, or critical warnings
+- **Simple paragraph format only** - Uplimit infoboxes are small and can't handle complex formatting
+- **No headings, bullets, or numbered lists** - Keep it to plain paragraph text
+- **Concise** - Target 50-100 words maximum
 - Variant specified (Callout, Note, Insight, Warning)
 
 **Example:**
 ```
 Title: 📺 Key Insight: "Appointment Viewing"
 
-Sports are the last true appointment viewing—you can't watch "later" without risking spoilers from social media. This creates predictable, simultaneous audiences (rare in 2024), premium advertising rates, subscription retention power, and cultural currency. This unique characteristic explains why sports rights command prices that seem economically irrational—until you understand their strategic defensive value for traditional broadcasters and offensive value for streaming disruptors.
+Sports are the last true appointment viewing—you can't watch "later" without risking spoilers from social media. This creates predictable, simultaneous audiences (rare in 2024), premium advertising rates, and subscription retention power. This unique characteristic explains why sports rights command prices that seem economically irrational.
 ```
+
+**When NOT to use infobox:**
+- Complex content with headings and lists → Use **Text** element instead
+- Long explanations → Use **Text** or **Details Accordion**
+- Multiple points → Use **Vertical List** or **Tiles**
 
 #### Tables
 - **Complete markdown table** with all rows and columns

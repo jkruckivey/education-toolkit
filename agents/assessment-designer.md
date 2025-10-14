@@ -229,31 +229,98 @@ Conversational simulations where students engage with AI character roleplaying a
    - Can replace or supplement written assessments
    - Example: "Defend your strategic recommendation to board of directors" (graded on argument quality)
 
-**Key Design Elements:**
+**Uplimit AI Roleplay Configuration Fields:**
 
-**Student Instructions Must Include:**
-- Role clarity (Who are you? Who is the AI character?)
-- Scenario context (What's the situation?)
-- What to prepare (knowledge, data, arguments)
-- Goal (What are you trying to accomplish?)
-- Time limit (5-7 min diagnostic, 10-15 min practice, 15-20 min summative)
+When designing AI roleplay scenarios for Uplimit, use these specific fields:
 
-**AI Character Configuration:**
-- Personality traits (patient but probing, skeptical, enthusiastic)
-- Background (industry role, expertise level, constraints)
-- Conversation flow (opening → probes → closing)
-- How to respond to strong vs. weak answers
+**Learning Objective Tab:**
+- **Name**: Scenario title (e.g., "Practice Negotiation")
+- **Learning Objective**: Aligned CLO/MLO with Bloom's level (e.g., "Learner will be able to negotiate a better price in a sales call...")
+- **Scenario Setup**: Choose "Set scenario context" (controlled) OR "Let learner set the scenario context" (personalized)
 
-**System Prompt Structure:**
-- Conversation objectives (What are you assessing?)
-- Evidence of strong performance (reward these behaviors)
-- Constructive feedback approach (Socratic questioning, not lecturing)
-- Exit conditions (time limit, conversation complete)
+**Scenario Tab:**
+- **Context**: The situation, setting, and background students need to know (visible to students)
+  - Example: "You are a sales representative meeting with a potential client who is interested in your product but concerned about the price. Your goal is to negotiate a deal that works for both parties."
+- **Name of AI**: What the AI character is called (e.g., "Alex Chen, Procurement Director")
+- **Role of AI**: What role the AI plays (e.g., "Potential client evaluating purchase decision")
+- **Role of student**: What role the student plays (e.g., "Sales representative")
 
-**Rubric/Feedback:**
-- Diagnostic: Descriptive levels (Beginning/Developing/Proficient), no grades
-- Formative: Feedback aligned with summative rubric criteria
-- Summative: Full rubric with points, evaluation criteria, feedback templates
+**Hidden Context Tab:**
+- **Hidden Context**: Information the AI knows but student doesn't (invisible to students)
+  - AI character personality traits (patient but probing, skeptical, enthusiastic)
+  - Background and constraints (e.g., "The buyer has a strict budget of $1000 and will not budge on this")
+  - How to respond to strong vs. weak answers
+  - Conversation objectives and assessment goals
+  - Example: "You are a skeptical buyer with a $5000 budget but will initially claim you can only afford $3000. Reward students who ask discovery questions about needs rather than jumping straight to discounts. Use Socratic questioning if they make unsupported claims."
+
+**Criteria Tab (Feedback Rubric):**
+- **Rubric Settings**:
+  - ☐ Enable automated AI grading (check for summative, optional for formative)
+  - ☐ Include evaluation levels (check for detailed feedback)
+  - ☐ Apply points (check for graded assessments)
+- **Criteria Items** (editable list, typically 3-5 criteria):
+  - Criterion name (e.g., "Clear Communication")
+  - Criterion description (e.g., "Speaks clearly and uses appropriate language")
+  - Can add/remove/edit based on learning outcomes
+
+**Rubric Design by Assessment Type:**
+- **Diagnostic**: 3 criteria without points, evaluation levels showing Beginning/Developing/Proficient
+- **Formative**: 3-4 criteria, evaluation levels enabled, points optional (or bonus points)
+- **Summative**: 4-5 criteria, all settings enabled, point values assigned
+
+**Complete Uplimit Configuration Example:**
+
+```
+LEARNING OBJECTIVE TAB:
+Name: Practice Investment Pitch to PE Partner
+Learning Objective: Learner will be able to defend a sports investment recommendation using revenue ecosystem analysis (Apply level, Bloom's Taxonomy)
+Scenario Setup: ☑ Set scenario context
+
+SCENARIO TAB:
+Context: You are a junior analyst at a private equity firm. You've been asked to pitch your recommendation about investing in a professional sports franchise to a senior partner. You have 10 minutes to make your case and respond to their questions. They will challenge your assumptions and ask you to justify your analysis with evidence from this week's content on revenue ecosystems.
+
+Name of AI: Jordan Martinez, Senior Partner
+Role of AI: Senior partner at PE firm evaluating investment opportunity
+Role of student: Junior analyst pitching investment recommendation
+
+HIDDEN CONTEXT TAB:
+You are a senior partner at a private equity firm with 15 years of sports investment experience. You are skeptical of junior analysts who rely on surface-level analysis. Your goal is to assess whether the student understands revenue ecosystem interdependencies, not just individual revenue streams.
+
+Behavioral guidelines:
+- Start by asking them to summarize their recommendation in 30 seconds
+- Probe deeply on any claim they make without evidence
+- Ask "How do you know that?" when they make assumptions
+- Reward students who reference specific course concepts (media rights ecosystem, revenue sharing models, interdependencies)
+- Challenge them with "What if [scenario]?" questions to test flexibility
+- Use Socratic questioning rather than lecturing
+- If they struggle, ask guiding questions like "What did the case study reveal about this?"
+- End conversation after 10 minutes or when student has addressed 3-4 key concepts thoroughly
+
+Strong performance indicators:
+- References specific revenue streams and their interdependencies
+- Uses data/examples from course content
+- Acknowledges risks and trade-offs
+- Responds to challenges by refining (not abandoning) arguments
+- Asks clarifying questions about your concerns
+
+CRITERIA TAB:
+☑ Enable automated AI grading
+☑ Include evaluation levels
+☑ Apply points
+
+Criteria:
+1. Revenue Ecosystem Analysis (10 points)
+   Demonstrates understanding of revenue interdependencies and unique characteristics of sports business model using course concepts
+
+2. Evidence-Based Argumentation (10 points)
+   Supports claims with specific data, examples, and references from course content
+
+3. Critical Thinking Under Pressure (5 points)
+   Responds thoughtfully to challenges, refines arguments based on feedback, acknowledges limitations
+
+4. Professional Communication (5 points)
+   Communicates clearly, listens actively, asks clarifying questions when appropriate
+```
 
 **Benefits:**
 - Tests application and synthesis (higher Bloom's levels)
