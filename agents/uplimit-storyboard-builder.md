@@ -316,6 +316,204 @@ locked in. Make sure you're negotiating from strength (winning teams get better 
 **Show System Prompt to User:** No
 ```
 
+#### AI Roleplay Exercises
+
+AI Roleplay exercises are conversational assessments where students interact with an AI character roleplaying a stakeholder or expert. Uplimit uses a **4-tab configuration system** with specific format requirements.
+
+**CRITICAL FORMAT REQUIREMENTS:**
+
+**Tab 1: Learning Objective**
+- Widget name
+- Learning objective statement
+- Scenario setup choice (Diagnostic, Formative, or Summative)
+
+**Tab 2: Scenario** (THIRD-PERSON FORMAT)
+- ✅ **Context**: Third-person objective description ("The learner will...", NOT "You are...")
+- ✅ **Role of AI**: Brief one-sentence description of AI character
+- ✅ **Role of Student**: Brief one-sentence description of learner's role
+- ❌ **NO "Your Task" section**
+- ❌ **NO "What to Have Ready" section**
+- ❌ **NO "Key Questions to Prepare For" section**
+- ❌ **NO second-person student-facing instructions**
+
+**Tab 3: Hidden Context**
+- Information AI knows but student doesn't see
+- AI character personality traits and constraints
+- Conversation strategy and behavior guidelines
+- Background details that inform AI responses
+
+**Tab 4: Criteria** (3-LEVEL FORMAT)
+- ✅ **ONLY 3 levels**: "Does not meet expectations" / "Partially meets expectations" / "Fully meets expectations"
+- ✅ **Points**: Single number (e.g., "10"), NOT ranges like "(9-10 pts)"
+- ✅ **Description**: SHORT one-sentence summary of what criterion measures
+- ✅ **Language**: Use "The learner..." consistently
+- ❌ **NO 4-level rubrics** (Excellent/Proficient/Developing/Needs Improvement)
+- ❌ **NO point ranges** in level descriptions
+
+**Example - CORRECT FORMAT:**
+
+```markdown
+### AI Roleplay: Investment Pitch to Sarah Chen
+
+**Tab 1: Learning Objective**
+- **Widget Name:** Investment Pitch - Revenue Ecosystems
+- **Learning Objective:** Students will analyze sports revenue ecosystems and articulate investment recommendations to a private equity partner, demonstrating understanding of revenue stream interdependencies and growth potential.
+- **Scenario Setup:** Formative (practice conversation with feedback)
+
+**Tab 2: Scenario**
+
+**Context:**
+Brookfield Capital, a private equity firm, is considering investing $500M-$1B in acquiring a mid-market professional sports team. The firm's Managing Partner, Sarah Chen, has hired a sports business consultant to advise on the investment opportunity. The learner will present findings on sports revenue ecosystems, explaining why sports teams represent unique investment opportunities (or risks), identifying which revenue streams offer growth potential versus saturation, and recommending 2-3 factors that would most influence the investment decision.
+
+**Role of AI (Sarah Chen):**
+Sarah Chen is the Managing Partner at Brookfield Capital with 15 years of private equity experience in traditional industries who understands business fundamentals but not sports-specific nuances.
+
+**Role of Student:**
+The learner plays the role of a sports business consultant advising Brookfield Capital on revenue ecosystem analysis and investment recommendations.
+
+**Tab 3: Hidden Context**
+
+Sarah Chen is sophisticated, data-driven, and skeptical of "sports is different" claims without evidence. She will push for quantitative justification and comparative analysis to traditional investments. Her personality traits include:
+
+- **Questioning tone**: Challenges assumptions with "Why is that?" and "How does that compare to..."
+- **Data-focused**: Appreciates specific numbers, percentages, and financial metrics
+- **Risk-aware**: Probes downside scenarios and asks "What could go wrong?"
+- **Time-sensitive**: Values concise, structured responses over long explanations
+
+Conversation strategy:
+- Start with open question: "Walk me through why sports teams are worth this valuation"
+- Follow with 2-3 probing questions based on student's initial response
+- Challenge weak points or unsupported claims
+- Acknowledge strong analysis when student provides evidence
+- End with: "What's the one factor that would make or break this investment?"
+
+Do NOT provide answers. Guide student to apply concepts from course content.
+
+**Tab 4: Criteria**
+
+**CRITERION 1: Revenue Sharing Mechanics**
+
+**Points:** 10
+
+**Description:**
+Accurately explains how NHL revenue sharing works and applies case data to discuss the Canucks' position.
+
+**Does not meet expectations:**
+The learner's explanation of revenue sharing mechanics is minimal or incorrect, with no clear understanding of which streams are shared or the Canucks' net position.
+
+**Partially meets expectations:**
+The learner demonstrates basic understanding of revenue sharing but may confuse which streams are shared or provide limited analysis of the Canucks' specific situation.
+
+**Fully meets expectations:**
+The learner accurately explains NHL revenue sharing mechanics, clearly identifies shared streams (50% national media, licensing) versus local streams (tickets, sponsorship, local broadcast), and uses case data from Exhibits A and B to articulate the Canucks' net position.
+
+---
+
+**CRITERION 2: Growth Potential Analysis**
+
+**Points:** 10
+
+**Description:**
+Identifies which revenue streams have growth potential versus saturation, with supporting evidence.
+
+**Does not meet expectations:**
+The learner provides vague statements about growth without specific stream analysis or evidence from course materials.
+
+**Partially meets expectations:**
+The learner identifies some growth opportunities but lacks depth in comparing saturated versus high-growth streams or misses key evidence from course content.
+
+**Fully meets expectations:**
+The learner systematically evaluates each major revenue stream for growth potential, distinguishes between saturated markets (e.g., traditional ticketing) and high-growth opportunities (e.g., digital betting, streaming rights), and supports analysis with specific data or trends from course materials.
+
+---
+
+**CRITERION 3: Investment Decision Factors**
+
+**Points:** 10
+
+**Description:**
+Recommends 2-3 specific factors that would most influence the investment decision with clear rationale.
+
+**Does not meet expectations:**
+The learner provides generic factors without connection to sports revenue ecosystems or fails to justify why these factors are critical.
+
+**Partially meets expectations:**
+The learner identifies relevant factors but provides limited justification or misses connections between factors and revenue sustainability.
+
+**Fully meets expectations:**
+The learner recommends 2-3 well-chosen factors (e.g., media rights contract timing, revenue sharing structure, market size demographics), explains how each directly impacts investment risk and return, and demonstrates understanding of factor interdependencies.
+```
+
+**WRONG FORMAT - DO NOT USE:**
+
+```markdown
+❌ INCORRECT Tab 2 (Student-facing second-person):
+
+**Context (Visible to Students):**
+You are a sports business consultant advising Brookfield Capital. Before you submit your written memo, you'll present your investment recommendation to Sarah Chen.
+
+**Your Task:**
+Present your findings on sports revenue ecosystems to Sarah. She's evaluating whether to invest and needs you to explain:
+- Why sports teams are unique investment opportunities
+- Which revenue streams offer growth potential
+- What factors would most influence the investment decision
+
+**What to Have Ready:**
+Before starting this conversation, organize your thoughts on:
+- The unique characteristics of sport's revenue model
+- Comparative data on revenue stream growth rates
+- Risk factors specific to sports investments
+
+**Key Questions to Prepare For:**
+- "Why should we pay a premium multiple for a sports team?"
+- "Which revenue streams are saturated versus high-growth?"
+- "What could go wrong with this investment?"
+```
+
+```markdown
+❌ INCORRECT Tab 4 (4-level with point ranges):
+
+**Criterion 1: Revenue Sharing Mechanics (10 points)**
+
+**Description:**
+Student accurately explains how NHL revenue sharing works, identifies which revenue streams are shared (50% of national media and licensing) versus local streams (tickets, sponsorship, local broadcast), and calculates or discusses the Canucks' net position.
+
+**Excellent (9-10 pts):**
+Accurately explains NHL revenue sharing mechanics with precision. Clearly identifies shared streams (50% national media, licensing) vs. local streams (tickets, sponsorship, local broadcast). Calculates or articulates Canucks' net position using case data from Exhibits A and B.
+
+**Proficient (7-8 pts):**
+Explains revenue sharing with minor gaps. Identifies most shared vs. local streams correctly. References case data but may lack depth in calculating net position.
+
+**Developing (5-6 pts):**
+Basic understanding of revenue sharing but may confuse which streams are shared. Limited or incorrect application of case data to Canucks situation.
+
+**Needs Improvement (0-4 pts):**
+Minimal or incorrect explanation of revenue sharing mechanics. Does not demonstrate understanding of shared vs. local streams or Canucks' specific position.
+```
+
+**Key Differences Summary:**
+
+| Element | WRONG ❌ | CORRECT ✅ |
+|---------|---------|-----------|
+| **Tab 2 Context** | "You are a consultant..." (2nd person) | "The learner will present..." (3rd person) |
+| **Tab 2 Structure** | "Your Task", "What to Have Ready", "Key Questions" sections | Single "Context" paragraph, brief role descriptions only |
+| **Tab 4 Levels** | 4 levels: Excellent/Proficient/Developing/Needs Improvement | 3 levels: Fully meets/Partially meets/Does not meet expectations |
+| **Tab 4 Points** | Ranges like "(9-10 pts)", "(7-8 pts)" | Single number: "Points: 10" |
+| **Tab 4 Description** | Long detailed description in criterion header | Short one-sentence summary, details in level descriptions |
+| **Tab 4 Language** | "Student accurately explains..." | "The learner accurately explains..." |
+
+**When to Use AI Roleplay:**
+- **Diagnostic (pre-learning)**: Test prior knowledge before module content
+- **Formative (practice)**: Practice application with feedback, not graded
+- **Summative (graded)**: Assessed conversation demonstrating mastery
+
+**Learning Objectives Alignment:**
+AI Roleplay exercises work best for:
+- Application-level learning (Bloom's: Apply, Analyze)
+- Synthesis across multiple concepts (Bloom's: Evaluate, Create)
+- Professional communication skills
+- Thinking on your feet with real-time challenges
+
 #### Text Response Questions (Assessments)
 - **Complete question text**
 - **Additional instructions** (checklist of requirements)
@@ -685,16 +883,69 @@ For each infobox, verify:
 - ✅ No excessive length that should be broken into multiple elements
 
 #### AI Roleplay Configuration
-Verify complete Uplimit field specifications present:
-- ✅ **Learning Objective Tab**: Name, Learning Objective statement, Scenario Setup choice
-- ✅ **Scenario Tab**: Context (visible to students), Name of AI, Role of AI, Role of student
-- ✅ **Hidden Context Tab**: Information AI knows but student doesn't (personality, constraints, behavior guidelines)
-- ✅ **Criteria Tab**: Rubric with criteria names, descriptions, optional points/levels/grading settings
+Verify complete Uplimit field specifications present with CORRECT FORMATS:
 
-**Common gaps:**
+**Tab 1: Learning Objective**
+- ✅ Widget name present
+- ✅ Learning objective statement present
+- ✅ Scenario setup choice specified (Diagnostic/Formative/Summative)
+
+**Tab 2: Scenario - CRITICAL FORMAT CHECK**
+- ✅ **Context in THIRD-PERSON** ("The learner will...", NOT "You are...")
+- ✅ **Role of AI**: Brief one-sentence description only
+- ✅ **Role of Student**: Brief one-sentence description only
+- ❌ **VIOLATION CHECK**: Second-person student-facing language ("You are...", "Your task...")
+- ❌ **VIOLATION CHECK**: Extra sections like "Your Task", "What to Have Ready", "Key Questions to Prepare For"
+- ❌ **VIOLATION CHECK**: Bullet lists of tasks or preparation items in Context
+
+**Common Tab 2 violations:**
+- Using "You are a consultant..." instead of "The learner will act as a consultant..."
+- Including "Your Task:" section with bulleted instructions
+- Including "What to Have Ready:" preparation checklist
+- Including "Key Questions to Prepare For:" section
+- Multi-section structure with headings beyond Context/Role of AI/Role of Student
+
+**Fix approach for Tab 2:**
+- Convert all second-person ("you") to third-person ("the learner")
+- Remove "Your Task", "What to Have Ready", and "Key Questions" sections entirely
+- Integrate task description into single Context paragraph (third-person objective)
+- Keep Role of AI and Role of Student as single-sentence descriptions
+
+**Tab 3: Hidden Context**
+- ✅ AI character personality traits and constraints
+- ✅ Conversation strategy and behavior guidelines
+- ✅ Information AI knows but student doesn't see
+- ✅ Guidance on how AI should respond
+
+**Tab 4: Criteria - CRITICAL FORMAT CHECK**
+- ✅ **3 LEVELS ONLY**: "Does not meet expectations" / "Partially meets expectations" / "Fully meets expectations"
+- ✅ **Points**: Single number (e.g., "10"), NOT ranges
+- ✅ **Description**: Short one-sentence summary
+- ✅ **Language**: Use "The learner..." consistently
+- ❌ **VIOLATION CHECK**: 4-level rubrics (Excellent/Proficient/Developing/Needs Improvement)
+- ❌ **VIOLATION CHECK**: Point ranges in level descriptions like "(9-10 pts)", "(7-8 pts)"
+- ❌ **VIOLATION CHECK**: Long detailed descriptions in criterion header
+- ❌ **VIOLATION CHECK**: Using "Student" instead of "The learner"
+
+**Common Tab 4 violations:**
+- Using 4 performance levels instead of 3
+- Including point ranges like "Excellent (9-10 pts):" instead of single "Points: 10"
+- Long detailed descriptions in criterion name/header instead of short one-sentence Description field
+- Inconsistent language (mixing "student" and "learner")
+
+**Fix approach for Tab 4:**
+- Collapse 4 levels down to 3 (merge Excellent+Proficient → "Fully meets", keep middle level as "Partially meets", merge Developing+Needs Improvement → "Does not meet")
+- Remove all point ranges from level descriptions
+- Move detailed criterion description into Description field (one sentence)
+- Move detailed performance indicators into level descriptions
+- Replace all "Student" with "The learner"
+- Format: "**Points:** 10" as separate field, NOT "(10 points)" in criterion name
+
+**Common gaps across all tabs:**
 - Missing Hidden Context Tab specification
 - Vague rubric criteria without specific observable behaviors
 - No guidance on AI character personality or conversation strategy
+- Incomplete conversion from student-facing to third-person format
 
 #### Widget Specifications
 - ✅ Complete iFrame embed code with all attributes
@@ -801,6 +1052,89 @@ Professional sports operate on three core principles that distinguish them from 
 ✅ RECOMMENDED ADDITION:
 **Hidden Context Tab:**
 [AI character personality, constraints, conversation strategy, what AI knows that student doesn't]
+```
+
+**Scenario 4: AI Roleplay Tab 2 in student-facing second-person format**
+```
+❌ VIOLATION (Student-facing second-person):
+**Context (Visible to Students):**
+You are a sports business consultant advising Brookfield Capital. Before you submit your written memo, you'll present your investment recommendation to Sarah Chen.
+
+**Your Task:**
+Present your findings on sports revenue ecosystems to Sarah. She's evaluating whether to invest and needs you to explain:
+- Why sports teams are unique investment opportunities
+- Which revenue streams offer growth potential
+- What factors would most influence the investment decision
+
+**What to Have Ready:**
+Before starting this conversation, organize your thoughts on:
+- The unique characteristics of sport's revenue model
+- Comparative data on revenue stream growth rates
+
+✅ CORRECTED (Third-person objective):
+**Context:**
+Brookfield Capital, a private equity firm, is considering investing $500M-$1B in acquiring a mid-market professional sports team. The firm's Managing Partner, Sarah Chen, has hired a sports business consultant to advise on the investment opportunity. The learner will present findings on sports revenue ecosystems, explaining why sports teams represent unique investment opportunities (or risks), identifying which revenue streams offer growth potential versus saturation, and recommending 2-3 factors that would most influence the investment decision.
+
+**Role of AI (Sarah Chen):**
+Sarah Chen is the Managing Partner at Brookfield Capital with 15 years of private equity experience in traditional industries who understands business fundamentals but not sports-specific nuances.
+
+**Role of Student:**
+The learner plays the role of a sports business consultant advising Brookfield Capital on revenue ecosystem analysis and investment recommendations.
+
+**Changes made:**
+- Converted all "You are..." to "The learner will..."
+- Removed "Your Task" section entirely - integrated task into Context paragraph
+- Removed "What to Have Ready" section entirely
+- Removed bullet lists - integrated content into flowing Context narrative
+- Added brief Role of AI and Role of Student one-sentence descriptions
+- Context is now objective third-person description, not student-facing instructions
+```
+
+**Scenario 5: AI Roleplay Tab 4 using 4-level rubric with point ranges**
+```
+❌ VIOLATION (4-level with point ranges):
+**Criterion 1: Revenue Sharing Mechanics (10 points)**
+
+**Description:**
+Student accurately explains how NHL revenue sharing works, identifies which revenue streams are shared (50% of national media and licensing) versus local streams (tickets, sponsorship, local broadcast), and calculates or discusses the Canucks' net position.
+
+**Excellent (9-10 pts):**
+Accurately explains NHL revenue sharing mechanics with precision. Clearly identifies shared streams (50% national media, licensing) vs. local streams (tickets, sponsorship, local broadcast). Calculates or articulates Canucks' net position using case data from Exhibits A and B.
+
+**Proficient (7-8 pts):**
+Explains revenue sharing with minor gaps. Identifies most shared vs. local streams correctly. References case data but may lack depth in calculating net position.
+
+**Developing (5-6 pts):**
+Basic understanding of revenue sharing but may confuse which streams are shared. Limited or incorrect application of case data to Canucks situation.
+
+**Needs Improvement (0-4 pts):**
+Minimal or incorrect explanation of revenue sharing mechanics. Does not demonstrate understanding of shared vs. local streams or Canucks' specific position.
+
+✅ CORRECTED (3-level without point ranges):
+**CRITERION 1: Revenue Sharing Mechanics**
+
+**Points:** 10
+
+**Description:**
+Accurately explains how NHL revenue sharing works and applies case data to discuss the Canucks' position.
+
+**Does not meet expectations:**
+The learner's explanation of revenue sharing mechanics is minimal or incorrect, with no clear understanding of which streams are shared or the Canucks' net position.
+
+**Partially meets expectations:**
+The learner demonstrates basic understanding of revenue sharing but may confuse which streams are shared or provide limited analysis of the Canucks' specific situation.
+
+**Fully meets expectations:**
+The learner accurately explains NHL revenue sharing mechanics, clearly identifies shared streams (50% national media, licensing) versus local streams (tickets, sponsorship, local broadcast), and uses case data from Exhibits A and B to articulate the Canucks' net position.
+
+**Changes made:**
+- Collapsed 4 levels down to 3 ("Excellent"+"Proficient" → "Fully meets", "Developing"+"Needs Improvement" → "Does not meet", middle retained as "Partially meets")
+- Removed all point ranges from level names (no more "(9-10 pts)")
+- Created separate "Points: 10" field instead of embedding in criterion name
+- Moved detailed description to "Description" field (short one-sentence summary)
+- Moved detailed performance indicators into level descriptions
+- Changed "Student" to "The learner" throughout
+- Used proper level names: "Does not meet expectations" / "Partially meets expectations" / "Fully meets expectations"
 ```
 
 ---
