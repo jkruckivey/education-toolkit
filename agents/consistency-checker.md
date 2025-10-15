@@ -89,7 +89,7 @@ If course has multi-week projects:
 - Are transitions between weeks smooth?
 - Does course build toward clear climax/conclusion?
 
-### 6. STORYBOARD STRUCTURE PATTERNS (NEW)
+### 6. STORYBOARD STRUCTURE PATTERNS
 
 **Module Intro Text Blocks**:
 - Modules 2-6 should have Element 1 as connecting intro text
@@ -142,6 +142,40 @@ If course has multi-week projects:
 - Major content sections not listed in element table
 - "Transition" or "Week Complete" sections outside element structure
 - Content that should be consolidated into existing elements
+
+### 7. PAIRR METHODOLOGY CONSISTENCY (NEW)
+
+**PAIRR (Peer and AI Review + Reflection)** is a research-backed assessment methodology (Frontiers in Communication, 2025) that integrates dual feedback sources to develop AI literacy and critical evaluation skills.
+
+**Expected Pattern in Assessment Modules (Module 6)**:
+- **Dual Feedback Phase**: Students receive BOTH peer feedback AND AI feedback on the same draft
+- **Comparative Reflection**: Students compare/contrast peer vs AI feedback quality
+- **Feedback Integration**: Students decide which feedback to apply (critical evaluation)
+- **Post-Revision Reflection**: Students reflect on which feedback source influenced revisions most
+- **Bonus Structure**: Optional participation with 5 bonus points (2 pts peer review, 1 pt AI feedback, 1 pt comparative reflection, 1 pt post-revision reflection)
+
+**Check For PAIRR Consistency Across Weeks**:
+- Week 1 uses PAIRR → Week 2 should use PAIRR (unless intentionally varied)
+- All weeks should use same PAIRR structure if adopted as course methodology
+- If PAIRR is missing from later weeks, flag as inconsistency
+
+**PAIRR vs. Basic Peer Review - Key Differences**:
+- **Basic Peer Review**: Students review each other's work, provide feedback (traditional)
+- **PAIRR Methodology**: Students receive peer + AI feedback, then compare the two sources critically (AI literacy development)
+
+**Flag These Issues**:
+- Week 1 has PAIRR (dual feedback + comparative reflection) but Week 3 only has basic peer review
+- Missing AI feedback component in Module 6 assessment if PAIRR was used in Week 1
+- Missing comparative reflection ("Which feedback was more useful? Why?")
+- Missing post-revision reflection on feedback integration decisions
+- Inconsistent bonus structures (Week 1: 5 pts PAIRR bonus, Week 3: 3 pts basic peer review)
+
+**Evidence of PAIRR Implementation**:
+- Search for keywords: "PAIRR", "Peer and AI Review", "comparative reflection", "AI feedback"
+- Look for element titled "PAIRR Feedback Phase" or similar
+- Check for AI feedback prompts/instructions (e.g., "Paste your draft into ChatGPT with this prompt...")
+- Verify comparative reflection questions exist (e.g., "Compare peer vs AI feedback quality")
+- Check for post-revision reflection component
 
 ## OUTPUT FORMAT
 
@@ -241,7 +275,7 @@ Act 3 (Week 5): [Theme]
 - Week Y: Too light (momentum loss)
 - Transition X→Y: Abrupt (missing bridge)
 
-## 6. Storyboard Structure Compliance (NEW)
+## 6. Storyboard Structure Compliance
 
 ### Module Intro Text Blocks
 | Module | Has Element 1 Intro? | Pattern Correct? | Issue |
@@ -270,6 +304,35 @@ Act 3 (Week 5): [Theme]
 ### Standalone Sections Check
 - **Module 7**: Has "Week 1 Complete - Transition" section outside element table? ✅ / ❌
 - Other modules with standalone content? [List]
+
+## 7. PAIRR Methodology Consistency (NEW)
+
+### PAIRR Implementation Across Weeks
+| Week | Has PAIRR in Module 6? | Components Present | Missing Components | Consistency Issue? |
+|------|----------------------|-------------------|-------------------|-------------------|
+| Week 1 | ✅ / ❌ | [Dual feedback, Comparative reflection, etc.] | [None] | - |
+| Week 2 | ✅ / ❌ | [List] | [List] | ✅ / ❌ |
+| Week 3 | ✅ / ❌ | [List] | [List] | ✅ / ❌ |
+
+### PAIRR Component Checklist
+**For each week with assessments:**
+- ✅ / ❌ Peer feedback instructions present
+- ✅ / ❌ AI feedback instructions present (with prompts)
+- ✅ / ❌ Comparative reflection questions ("Which feedback was better? Why?")
+- ✅ / ❌ Post-revision reflection component
+- ✅ / ❌ Bonus points structure (5 pts for full PAIRR participation)
+
+### PAIRR Consistency Issues Found
+**Issue 1: Week 1 uses PAIRR, Week 3 uses basic peer review only**
+- Week 1 Module 6: Full PAIRR implementation (peer + AI + comparative reflection)
+- Week 3 Module 6: Basic peer review only (no AI feedback, no comparative reflection)
+- Impact: Inconsistent learning experience, students miss AI literacy development in Week 3
+- Recommendation: Either (a) add PAIRR to Week 3, or (b) document why Week 3 intentionally uses simpler feedback
+
+**Issue 2: [Other PAIRR inconsistencies]**
+- [Details]
+- Impact: [Learning experience impact]
+- Recommendation: [Fix]
 
 ## Recommendations
 
