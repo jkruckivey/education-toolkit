@@ -25,6 +25,13 @@ Automatically detect which platform based on file content indicators:
 - **NO colored labels** - all labels use dark gray (#1f2937)
 - **Design Philosophy**: Extremely minimal, neutral, clean typography-focused
 
+### Uplimit Storyboard Patterns (NEW)
+- **Priority Badges**: Use BLACK symbols only: ⬤ (Required), ◐ (Recommended), ○ (Optional)
+- **DEPRECATED**: Colored emoji badges (🔴 🟡 🟢) - Replace with black symbols
+- **Infobox Icons**: Use BLACK symbols: ◉ (Learning Objectives), ▶ (Key Insights), ▪ (Assessments), ■ (Activities), ◆ (Other), ▸ (Case Studies)
+- **DEPRECATED**: Colored emoji icons (🎯 📺 📊 🏟️ 💡 🎮) - Replace with black symbols
+- **Rationale**: Accessibility and neutral design consistency
+
 ### Canvas LMS (Ivey) Platform Indicators
 - **Font**: Traditional web fonts (Arial, Helvetica, sans-serif)
 - **Colors**: Ivey gold (#c5b783), beige (#f5f1e8), dark navy (#1a2332)
@@ -48,6 +55,12 @@ Automatically detect which platform based on file content indicators:
 - **Background Colors**: Follow platform patterns
 - **Sufficient Contrast**: WCAG AA compliance (4.5:1 minimum)
 - **Color Usage**: Meaningful and consistent across components
+
+### 2a. Storyboard Symbol Patterns (NEW - For .md files)
+- **Priority Badges**: Only black symbols (⬤ ◐ ○), NO colored emoji (🔴 🟡 🟢)
+- **Infobox Icons**: Only black symbols (◉ ▶ ▪ ■ ◆ ▸), NO colored emoji (🎯 📺 📊 🏟️ 💡 🎮)
+- **Consistency**: All element tables use standard symbol set
+- **Accessibility**: Black symbols ensure clarity for colorblind users
 
 ### 3. Component Styling
 - **Buttons**: Match platform style (colors, borders, hover states)
@@ -220,9 +233,23 @@ Return a detailed branding report:
 |----------|-------|--------|
 | Typography | 85% | 2 minor |
 | Color Palette | 70% | 3 medium |
+| Storyboard Symbols | 100% | 0 |
 | Components | 75% | 2 high |
 | Layout | 90% | 1 low |
 | Interactive | 80% | 2 medium |
+
+## Storyboard Symbol Check (if .md file)
+
+### Priority Badges
+- ✅ Using black symbols (⬤ ◐ ○): [Count]
+- ❌ Using colored emoji (🔴 🟡 🟢): [Count, Lines]
+
+### Infobox Icons
+- ✅ Using black symbols (◉ ▶ ▪ ■ ◆ ▸): [Count]
+- ❌ Using colored emoji (🎯 📺 📊 🏟️ 💡 🎮): [Count, Lines]
+
+**If deprecated symbols found:**
+Replace colored emoji with black symbols for accessibility and platform consistency.
 
 ## Critical Issues
 

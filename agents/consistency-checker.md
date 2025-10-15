@@ -89,6 +89,60 @@ If course has multi-week projects:
 - Are transitions between weeks smooth?
 - Does course build toward clear climax/conclusion?
 
+### 6. STORYBOARD STRUCTURE PATTERNS (NEW)
+
+**Module Intro Text Blocks**:
+- Modules 2-6 should have Element 1 as connecting intro text
+- Pattern: "You've just [previous module] → Now [current module purpose]"
+- Should NOT repeat learning objectives (those are in Module 1 only)
+- Should be regular narrative text connecting modules
+
+**Check For**:
+- Missing intro blocks in Modules 2-6
+- Intro blocks that repeat learning objectives instead of connecting narrative
+- Intro text not labeled as Element 1 in element table
+
+**Case Attachment Flags**:
+- Case study modules should use `🔗 ATTACH CASE HERE:` pattern
+- Makes attachment points unmistakable
+- Format: `🔗 ATTACH [TYPE]: [Instructions]`
+
+**Check For**:
+- Case modules missing clear attachment flags
+- Vague attachment instructions ("to be created" vs explicit flag)
+
+**AI Roleplay Timing References**:
+- AI Roleplay Hidden Context should have NO timing references
+- Pattern: "5 Questions" not "5 Questions over 10-15 minutes"
+- Question labels: "Opening:" not "Opening (2 min):"
+- Completion: "After completing 5 questions" not "After 10-15 minutes"
+
+**Check For**:
+- Timing references in Hidden Context (2 min, 4-6 min, etc.)
+- Time limits in conversation strategy
+- Any prescribed time constraints (roleplays should be student-paced)
+
+**Element Numbering Integrity**:
+- Element table must match element content sections below
+- When Element 1 (intro) is added, all elements must renumber
+- No skipped numbers (1, 2, 4 = ERROR, should be 1, 2, 3)
+- Content section headings must match table ("Element 3:" not "Element 2:")
+
+**Check For**:
+- Element table shows Elements 1-7 but content shows Elements 1-6
+- Section heading "Element 2" but table shows it as Element 3
+- Mismatch between table row Order and content section number
+
+**No Standalone Sections**:
+- All content must be tracked as elements in the element table
+- No "## Week X Complete - Transition" sections outside element structure
+- If content exists, it should be an element with proper numbering
+
+**Check For**:
+- Major content sections not listed in element table
+- "Transition" or "Week Complete" sections outside element structure
+- Content that should be consolidated into existing elements
+
 ## OUTPUT FORMAT
 
 Provide a comprehensive consistency report:
@@ -186,6 +240,36 @@ Act 3 (Week 5): [Theme]
 - Week X: Too dense (cognitive overload)
 - Week Y: Too light (momentum loss)
 - Transition X→Y: Abrupt (missing bridge)
+
+## 6. Storyboard Structure Compliance (NEW)
+
+### Module Intro Text Blocks
+| Module | Has Element 1 Intro? | Pattern Correct? | Issue |
+|--------|---------------------|------------------|-------|
+| Module 2 | ✅ / ❌ | ✅ / ❌ | [Details] |
+| Module 5 | ✅ / ❌ | ✅ / ❌ | [Details] |
+| Module 6 | ✅ / ❌ | ✅ / ❌ | [Details] |
+
+### Case Attachment Flags
+| Module | Has 🔗 Flags? | Clear Instructions? | Issue |
+|--------|--------------|---------------------|-------|
+| Module 5 | ✅ / ❌ | ✅ / ❌ | [Details] |
+
+### AI Roleplay Timing
+| Module | Roleplay Type | Has Timing? | Issue |
+|--------|--------------|-------------|-------|
+| Module 5 | Board of Governors | ✅ / ❌ | [Lines with timing] |
+| Module 6 | Private Equity | ✅ / ❌ | [Lines with timing] |
+
+### Element Numbering Integrity
+| Module | Table Elements | Content Elements | Match? | Issue |
+|--------|---------------|-----------------|--------|-------|
+| Module 2 | 1-7 | 1-7 | ✅ / ❌ | [Details] |
+| Module 5 | 1-9 | 1-9 | ✅ / ❌ | [Details] |
+
+### Standalone Sections Check
+- **Module 7**: Has "Week 1 Complete - Transition" section outside element table? ✅ / ❌
+- Other modules with standalone content? [List]
 
 ## Recommendations
 
