@@ -14,7 +14,7 @@
       "description": "9 agents + 9 commands: PAIRR methodology, AI Roleplay design, diagnostic rubrics, accessibility auditing, assessment design with bundled knowledge base",
       "source": "./",
       "category": "education",
-      "version": "2.1.2",
+      "version": "2.2.0",
       "author": {
         "name": "James Kruck",
         "email": "jkruck@ivey.ca"
