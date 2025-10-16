@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **Education Toolkit** - Claude Code plugin providing 9 specialized agents and 6 slash commands for educational developers, instructional designers, and course creators. Focus areas: accessibility (WCAG 2.2 AA), assessment design, UDL implementation, Quality Matters standards, and AI-integrated pedagogy.
 
-**Version**: 2.0.0 (October 2025)
+**Version**: 2.3.1 (October 2025)
 **Tech stack**: Markdown-based agent definitions, bundled knowledge base (464 KB)
 **Distribution**: Claude Code plugin marketplace (`/plugin marketplace add jameskruck/education-toolkit`)
 
@@ -215,3 +215,53 @@ Before version releases:
 - **Model selection** - Use `sonnet` for speed (2-5 min), `opus` for depth (5-8 min)
 - **WebFetch capability** - Only accessibility-auditor and assessment-designer have WebFetch access
 - **Version history** - Track methodology additions in README.md (v2.0 added PAIRR, AI Roleplay, Diagnostic Rubrics)
+
+## Version History & Changelog
+
+### v2.3.1 (2025-10-16) - Enhanced Storyboard Validation
+
+**Agent Enhancements**:
+
+**consistency-checker.md**:
+- **Section 6: Storyboard Structure Patterns** - Comprehensive validation of storyboard formatting
+  - Module intro text blocks (Modules 2-6): Validates connecting narrative between modules
+  - Case attachment flags: Checks for `🔗 ATTACH CASE HERE:` pattern to make attachment points unmistakable
+  - AI roleplay timing references: Detects and flags timing references (should be removed - roleplays are student-paced)
+  - Element numbering integrity: Ensures element table matches content sections (no skipped numbers)
+  - Standalone sections: Flags content outside element structure (should be consolidated)
+- **Section 7: PAIRR Methodology Consistency** - Cross-week PAIRR validation
+  - Checks if PAIRR methodology is consistently applied across all weeks
+  - Flags inconsistencies (Week 1 has PAIRR, Week 3 has basic peer review only)
+  - Validates all PAIRR components: dual feedback, comparative reflection, post-revision reflection, bonus structure
+
+**branding-checker.md**:
+- **Uplimit Storyboard Symbol Validation** - Accessibility-first symbol checking
+  - Priority badges: Validates black symbols (⬤ ◐ ○) vs colored emoji (🔴 🟡 🟢)
+  - Infobox icons: Validates black symbols (◉ ▶ ▪ ■ ◆ ▸) vs colored emoji (🎯 📺 📊 🏟️ 💡 🎮)
+  - Rationale: Ensures accessibility and neutral design consistency
+  - Reporting: Provides line numbers of deprecated emoji usage with replacement guidance
+
+**Use Cases**:
+- After implementing PAIRR in Week 1, run consistency-checker to ensure all weeks use same methodology
+- After converting colored emoji to black symbols, run branding-checker to verify complete conversion
+- During storyboard creation, run both agents to catch structural and branding issues early
+
+**Impact**:
+- Catches PAIRR consistency issues that affect learning experience (students expect consistent feedback structure)
+- Prevents accessibility regressions (colored emoji → black symbols conversion)
+- Validates storyboard integrity (element numbering, attachment flags, timing references)
+
+### v2.3.0 (2025-10-15) - PAIRR Methodology Validation
+
+**Agent Additions**:
+- Added PAIRR (Peer and AI Review + Reflection) methodology validation to consistency-checker
+- Research-backed dual feedback approach (Frontiers in Communication, 2025)
+- Develops AI literacy through critical comparison of peer vs AI feedback
+
+### v2.0.0 (2025-10-10) - Initial Plugin Release
+
+**Major Launch**:
+- Converted from NPM package (@jameskruck/claude-subagents) to Claude Code plugin format
+- 9 specialized agents + 6 slash commands
+- 464 KB bundled knowledge base (frameworks + research)
+- Marketplace installation: `/plugin marketplace add jameskruck/education-toolkit`
