@@ -4,9 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Overview
 
-**Education Toolkit** - Claude Code plugin providing 9 specialized agents and 6 slash commands for educational developers, instructional designers, and course creators. Focus areas: accessibility (WCAG 2.2 AA), assessment design, UDL implementation, Quality Matters standards, and AI-integrated pedagogy.
+**Education Toolkit** - Claude Code plugin providing 10 specialized agents and 10 slash commands for educational developers, instructional designers, and course creators. Focus areas: accessibility (WCAG 2.2 AA), assessment design, UDL implementation, Quality Matters standards, AI-integrated pedagogy, and multi-perspective peer design review.
 
-**Version**: 2.3.1 (October 2025)
+**Version**: 2.3.2 (October 2025)
 **Tech stack**: Markdown-based agent definitions, bundled knowledge base (464 KB)
 **Distribution**: Claude Code plugin marketplace (`/plugin marketplace add jameskruck/education-toolkit`)
 
@@ -19,26 +19,31 @@ education-toolkit/
 ├── plugin.json              # Main plugin manifest
 ├── .claude-plugin/
 │   └── marketplace.json     # Marketplace configuration
-├── agents/                  # 9 specialized agents
+├── agents/                  # 10 specialized agents
 │   ├── assessment-designer.md (27 KB, sonnet, 464 KB bundled knowledge)
 │   ├── rubric-generator.md (11 KB, sonnet)
 │   ├── accessibility-auditor.md (6 KB, sonnet, WebFetch)
 │   ├── widget-tester.md (8 KB, sonnet, 3 personas)
 │   ├── student-journey-simulator.md (6 KB, opus, 4 personas)
 │   ├── consistency-checker.md (8 KB, opus)
+│   ├── peer-review-simulator.md (15 KB, opus, 6 reviewer personas)
 │   ├── branding-checker.md (10 KB, sonnet, Canvas/Uplimit)
 │   ├── udl-content-generator.md (10 KB, sonnet)
 │   ├── uplimit-storyboard-builder.md (26 KB, sonnet)
 │   └── assessment-knowledge/  # Bundled knowledge base
 │       ├── frameworks/        # UDL, QM, Inclusive Teaching, Templates
 │       └── research/          # AI assessment research (5 papers)
-└── commands/                  # 6 slash commands
+└── commands/                  # 10 slash commands
     ├── audit-module.md
-    ├── test-widget.md
-    ├── review-content.md
+    ├── build-storyboard.md
+    ├── check-branding.md
     ├── check-consistency.md
+    ├── design-assessment.md
     ├── generate-rubric.md
-    └── simulate-journey.md
+    ├── peer-review.md
+    ├── review-content.md
+    ├── simulate-journey.md
+    └── test-widget.md
 ```
 
 ### Agent vs Command Design Pattern
@@ -101,6 +106,23 @@ Read: assessment-knowledge/research/acceptable-ai-use.md
 - Marcus (Analytical Thinker) - wants data/sources
 - Priya (Collaborative Leader) - thrives in groups
 - Alex (Time-Constrained Professional) - needs efficiency
+
+### Multi-Perspective Peer Design Review (v2.3)
+
+**Peer Review Simulator (6 ID specialist reviewers)**:
+- Emma (Content & Writing) - Grammar, clarity, inclusive language, readability
+- Marcus (Accessibility & Inclusion) - WCAG 2.2 AA, UDL, assistive tech, cultural sensitivity
+- Priya (Visual Design & UI) - Typography, layout, visual hierarchy, consistency
+- James (Technical & Functionality) - Browser compatibility, performance, security, broken links
+- Sarah (Pedagogical Design) - Learning alignment, Bloom's accuracy, scaffolding, assessment design
+- Alex (UX & Navigation) - Information architecture, wayfinding, usability, mobile UX
+
+**Key Features**:
+- Comprehensive review: Every element analyzed by all 6 specialists
+- Cross-reviewer themes: Issues flagged by 3+ reviewers = top priority
+- Scoring system: Each reviewer scores 0-100, overall readiness calculated
+- Prioritized action plan: Critical (block launch) → High → Medium → Low
+- Fix time estimates: Helps prioritize based on effort
 
 ### AI Assessment Framework (Three-Tier Model)
 
@@ -212,11 +234,38 @@ Before version releases:
 
 - **No build process** - Pure markdown configuration, no compilation
 - **Agent autonomy** - Agents read their own knowledge base files, don't require user file paths
-- **Model selection** - Use `sonnet` for speed (2-5 min), `opus` for depth (5-8 min)
+- **Model selection** - Use `sonnet` for speed (2-5 min), `opus` for depth (5-12 min for peer-review-simulator)
 - **WebFetch capability** - Only accessibility-auditor and assessment-designer have WebFetch access
-- **Version history** - Track methodology additions in README.md (v2.0 added PAIRR, AI Roleplay, Diagnostic Rubrics)
+- **Version history** - Track methodology additions in README.md (v2.3.2 added Peer Design Review Simulator, v2.3.1 added storyboard validation enhancements, v2.0 added PAIRR, AI Roleplay, Diagnostic Rubrics)
 
 ## Version History & Changelog
+
+### v2.3.2 (2025-10-17) - Peer Design Review Simulator
+
+**New Agent**:
+- **peer-review-simulator.md** (15 KB, Opus) - Multi-perspective design review with 6 ID specialists
+  - Emma (Content & Writing): Grammar, clarity, inclusive language
+  - Marcus (Accessibility & Inclusion): WCAG 2.2 AA, UDL, assistive tech
+  - Priya (Visual Design & UI): Typography, layout, visual hierarchy
+  - James (Technical & Functionality): Browser compatibility, performance, security
+  - Sarah (Pedagogical Design): Learning alignment, Bloom's accuracy, scaffolding
+  - Alex (UX & Navigation): Information architecture, wayfinding, usability
+
+**New Command**:
+- **/peer-review** - Quick access to comprehensive design review panel
+
+**Key Features**:
+- Comprehensive review: Every element analyzed by all 6 specialists
+- Cross-reviewer themes: Issues flagged by 3+ reviewers = top priority
+- Scoring system: Each reviewer scores 0-100, overall readiness calculated
+- Prioritized action plan: Critical (block launch) → High → Medium → Low
+- Fix time estimates for each issue
+
+**Use Cases**:
+- Pre-launch quality assurance for entire week/unit
+- Identify systemic issues (flagged by multiple reviewers)
+- Get specialist feedback without assembling actual review team
+- Simulate real design review meeting with diverse expertise
 
 ### v2.3.1 (2025-10-16) - Enhanced Storyboard Validation
 

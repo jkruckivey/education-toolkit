@@ -1,8 +1,8 @@
 # Education Toolkit - Claude Code Plugin
 
-**Comprehensive toolkit for educational developers** with 9 specialized agents and 6 slash commands. Includes cutting-edge assessment methodologies: PAIRR (Peer and AI Review + Reflection), AI Roleplay exercises, and diagnostic rubrics for pre-learning assessment.
+**Comprehensive toolkit for educational developers** with 10 specialized agents and 10 slash commands. Includes cutting-edge assessment methodologies: PAIRR (Peer and AI Review + Reflection), AI Roleplay exercises, diagnostic rubrics, and multi-perspective peer design review simulation.
 
-> **✨ NEW in v2.0**: PAIRR assessment methodology, AI Roleplay exercise design, and diagnostic rubric generation for formative assessment.
+> **✨ NEW in v2.3**: Peer design review simulator with 6 ID specialists (Content, Accessibility, Visual Design, Technical, Pedagogy, UX)
 
 ## Installation
 
@@ -15,26 +15,31 @@
 
 ## What's Included
 
-### 🤖 9 Specialized Agents
+### 🤖 10 Specialized Agents
 
 1. **accessibility-auditor** - WCAG 2.2 AA compliance checking with WebFetch capability
 2. **assessment-designer** - Comprehensive assessment design with 464 KB bundled knowledge base. **NEW**: PAIRR methodology, AI Roleplay exercise design, Three-Tier AI permission model
 3. **branding-checker** - Canvas LMS and Uplimit platform branding validation
 4. **consistency-checker** - Cross-module terminology, concept threading, outcome alignment
-5. **rubric-generator** - QM-aligned rubric generation. **NEW**: Diagnostic rubrics (3-level), PAIRR bonus rubrics, AI feedback prompts
-6. **student-journey-simulator** - 4-persona course experience testing (Sarah, Marcus, Priya, Alex)
-7. **udl-content-generator** - Transform content into multimodal formats (audio, visual, interactive)
-8. **uplimit-storyboard-builder** - Complete copy-paste-ready implementation guides for Uplimit courses
-9. **widget-tester** - 3-persona widget testing (Sarah, James, Maria) for UX validation
+5. **peer-review-simulator** - **NEW**: Multi-perspective design review with 6 ID specialists (Emma-Content, Marcus-Accessibility, Priya-Visual, James-Technical, Sarah-Pedagogy, Alex-UX)
+6. **rubric-generator** - QM-aligned rubric generation. **NEW**: Diagnostic rubrics (3-level), PAIRR bonus rubrics, AI feedback prompts
+7. **student-journey-simulator** - 4-persona course experience testing (Sarah, Marcus, Priya, Alex)
+8. **udl-content-generator** - Transform content into multimodal formats (audio, visual, interactive)
+9. **uplimit-storyboard-builder** - Complete copy-paste-ready implementation guides for Uplimit courses
+10. **widget-tester** - 3-persona widget testing (Sarah, James, Maria) for UX validation
 
-### ⚡ 6 Quick Slash Commands
+### ⚡ 10 Quick Slash Commands
 
 1. **/audit-module** - Audit module for WCAG 2.2 AA accessibility compliance
-2. **/test-widget** - Test interactive widget with 3 student personas
-3. **/review-content** - Quick content review for educational quality
-4. **/check-consistency** - Check consistency across modules
-5. **/generate-rubric** - Generate QM-aligned assessment rubric
-6. **/simulate-journey** - Simulate student journey through modules
+2. **/build-storyboard** - Build comprehensive Uplimit storyboard with copy-paste-ready content
+3. **/check-branding** - Validate Canvas LMS or Uplimit platform branding consistency
+4. **/check-consistency** - Check consistency across modules (terminology, threading, narrative)
+5. **/design-assessment** - Design comprehensive assessment with AI integration and UDL/QM compliance
+6. **/generate-rubric** - Generate QM-aligned assessment rubric (quick rubric-only tasks)
+7. **/peer-review** - **NEW**: Simulate design review panel with 6 ID specialists
+8. **/review-content** - Quick content review for educational quality
+9. **/simulate-journey** - Simulate student journey through modules with 4 personas
+10. **/test-widget** - Test interactive widget with 3 student personas
 
 ### 📚 Bundled Knowledge Base (464 KB)
 
@@ -122,6 +127,11 @@ The **assessment-designer** agent includes:
 /check-consistency week1-5
 ```
 
+### Peer Design Review
+```bash
+/peer-review Week 1
+```
+
 ## Natural Language Invocation
 
 After installation, you can also invoke agents with natural language:
@@ -198,6 +208,19 @@ After installation, you can also invoke agents with natural language:
 **Speed**: 5-8 minutes (Opus)
 **Best for**: Cross-module narrative flow, concept threading, terminology audits
 
+### peer-review-simulator
+**Tools**: Read, Glob, Grep
+**Speed**: 8-12 minutes (Opus)
+**Best for**: Comprehensive multi-perspective design review before launch
+**Review Panel**:
+- Emma (Content & Writing) - Grammar, clarity, inclusive language
+- Marcus (Accessibility & Inclusion) - WCAG 2.2 AA, UDL, cultural sensitivity
+- Priya (Visual Design & UI) - Typography, layout, visual consistency
+- James (Technical & Functionality) - Browser compatibility, performance, security
+- Sarah (Pedagogical Design) - Learning alignment, Bloom's accuracy, scaffolding
+- Alex (UX & Navigation) - Information architecture, wayfinding, usability
+**Output**: Cross-reviewer themes prioritized, individual specialist feedback, fix time estimates
+
 ### assessment-designer
 **Tools**: Read, Glob, Grep, WebFetch
 **Speed**: 3-6 minutes (Sonnet)
@@ -221,6 +244,11 @@ GitHub: [@jameskruck](https://github.com/jameskruck)
 
 ## Version History
 
+- **2.3.0** (2025-10-17): Added peer design review simulation
+  - Added peer-review-simulator agent with 6 ID specialists (Emma, Marcus, Priya, James, Sarah, Alex)
+  - Added /peer-review slash command
+  - Multi-perspective comprehensive review with cross-reviewer theme prioritization
+  - 10 agents total, 10 slash commands
 - **2.0.0** (2025-10-11): Major update with evidence-based assessment methodologies
   - Added PAIRR (Peer and AI Review + Reflection) methodology to assessment-designer
   - Added AI Roleplay exercise design guidance (diagnostic, formative, summative)
