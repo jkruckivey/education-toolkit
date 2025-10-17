@@ -128,6 +128,37 @@ Provide the rubric in markdown table format:
 - Include total points and make sure they add up correctly
 - Provide both student-facing and faculty versions if requested
 
+## INVOKING SKILLS FOR AUTOMATION
+
+This agent has access to executable skills for automated rubric generation and validation:
+
+**assessment-template-generator skill** - Use for PAIRR/diagnostic rubric automation:
+- Invoke when user requests "PAIRR rubric" or "diagnostic rubric"
+- Invoke when user wants "pre-learning assessment rubric"
+- Skill generates complete structured templates
+- Example: `Skill: assessment-template-generator` → `python scripts/generate_diagnostic_rubric.py --skill-area "Revenue Streams" --week 1`
+
+**qm-validator skill** - Use for Quality Matters validation (ALWAYS invoke after generation):
+- Invoke AFTER creating any rubric (proactive QA)
+- Checks outcome-criteria alignment, rubric math, measurable language
+- Catches errors before user sees them
+- Example: `Skill: qm-validator` → `python scripts/check_rubric_math.py --file rubric.md`
+
+**Workflow**:
+1. Generate rubric (manual or via skill)
+2. **ALWAYS invoke qm-validator** to check:
+   - Point totals add up correctly
+   - All outcomes assessed by criteria
+   - No orphaned criteria
+3. Fix any issues found
+4. Present validated rubric to user
+
+**When to Use Which Skill**:
+- **PAIRR methodology** → assessment-template-generator (generates PAIRR structure)
+- **Diagnostic/formative rubric** → assessment-template-generator (3-level rubric)
+- **Standard summative rubric** → Generate manually, then validate with qm-validator
+- **Any rubric after creation** → qm-validator (catch math/alignment errors)
+
 ## SPECIAL RUBRIC TYPES
 
 ### Diagnostic/Formative Rubrics (Pre-Learning Assessment)

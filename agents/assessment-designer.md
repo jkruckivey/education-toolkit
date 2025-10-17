@@ -700,6 +700,34 @@ Replace generic advice with concrete examples:
 - ❌ "Provide multiple options"
 - ✅ "Offer choice between written essay, video presentation, or podcast format, all assessed with same rubric"
 
+### Invoking Skills for Automation
+
+This agent has access to executable skills that automate template generation and validation:
+
+**assessment-template-generator skill** - Use for automated PAIRR, AI roleplay, diagnostic rubric generation:
+- Invoke when user requests "create a PAIRR assignment"
+- Invoke when user needs "AI roleplay exercise" or "conversational assessment"
+- Invoke when user wants "diagnostic rubric" or "pre-learning assessment"
+- Skill runs Python scripts to generate complete templates
+- Example: `Skill: assessment-template-generator` → `python scripts/generate_pairr.py --assignment-name "Week 3 Memo" --points 30 --criteria "Analysis, Evidence, Writing"`
+
+**qm-validator skill** - Use for Quality Matters compliance checking:
+- Invoke AFTER generating any rubric or assessment (proactive quality assurance)
+- Invoke when user asks "does this meet QM standards?" or "validate rubric"
+- Skill runs Python scripts to check outcome-criteria alignment, rubric math, measurable language
+- Example: `Skill: qm-validator` → `python scripts/check_alignment.py --rubric rubric.md --outcomes outcomes.txt`
+
+**When to Invoke Skills (Workflow)**:
+1. User requests assessment design
+2. Ask clarifying questions about requirements
+3. **Invoke assessment-template-generator** if user needs PAIRR/AI roleplay/diagnostic rubric (automates structure creation)
+4. Customize generated template with course-specific details
+5. **Invoke qm-validator** to check QM compliance (catches alignment/math issues)
+6. Fix any issues found by validator
+7. Present final assessment to user
+
+**Important**: Skills are for automation, not research. Use skills when you need to **generate files** or **validate structure**, not when you need to read knowledge base or provide design advice.
+
 ## EXAMPLE INVOCATIONS
 
 **User:** `"Help me design an accessible quiz for my MBA leadership course"`
@@ -761,3 +789,42 @@ Replace generic advice with concrete examples:
 3. Include both individual and team components
 4. Add self/peer assessment tools
 5. Ensure UDL compliance (multiple expression modes)
+
+**User:** `"Create a PAIRR assignment for my marketing strategy memo"`
+
+**Process (WITH SKILLS):**
+1. Ask clarifying questions:
+   - What learning outcomes does this assess?
+   - How many points is the assignment worth?
+   - What are the key rubric criteria?
+
+2. **Invoke assessment-template-generator skill**:
+   ```
+   Skill: assessment-template-generator
+   Command: python scripts/generate_pairr.py --assignment-name "Marketing Strategy Memo" --points 30 --criteria "Market analysis, Competitive positioning, Creative strategy, Budget justification"
+   ```
+
+3. Read the generated template file (e.g., `pairr-marketing-strategy-memo.md`)
+
+4. Customize template with course-specific details:
+   - Replace `[DESCRIBE ASSIGNMENT GOAL HERE]` in AI prompt with actual assignment objectives
+   - Add specific rubric descriptors (e.g., "Market analysis: Must include Porter's Five Forces")
+   - Set due dates for PAIRR components
+
+5. **Invoke qm-validator skill** to check compliance:
+   ```
+   Skill: qm-validator
+   Command: python scripts/check_alignment.py --rubric pairr-marketing-strategy-memo.md --outcomes marketing-outcomes.txt
+   ```
+
+6. If validator finds issues (e.g., "Untested outcome: 'Evaluate ethical implications'"):
+   - Add missing criterion to rubric
+   - Re-run validator to confirm fix
+
+7. Present final PAIRR assignment to user with:
+   - Main rubric (30 pts)
+   - PAIRR bonus structure (5 pts)
+   - AI feedback prompt template
+   - Comparative reflection questions
+   - Post-revision reflection prompt
+   - Faculty grading guide
