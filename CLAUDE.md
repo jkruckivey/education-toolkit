@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **Education Toolkit** - Claude Code plugin providing 10 specialized agents and 10 slash commands for educational developers, instructional designers, and course creators. Focus areas: accessibility (WCAG 2.2 AA), assessment design, UDL implementation, Quality Matters standards, AI-integrated pedagogy, and multi-perspective peer design review.
 
-**Version**: 2.4.0 (October 2025)
+**Version**: 2.4.1 (October 2025)
 **Tech stack**: Markdown-based agent definitions, bundled knowledge base (464 KB)
 **Distribution**: Claude Code plugin marketplace (`/plugin marketplace add jameskruck/education-toolkit`)
 
@@ -292,9 +292,41 @@ Before version releases:
 - **Agent autonomy** - Agents read their own knowledge base files, don't require user file paths
 - **Model selection** - Use `sonnet` for speed (2-5 min), `opus` for depth (5-12 min for peer-review-simulator)
 - **WebFetch capability** - Only accessibility-auditor and assessment-designer have WebFetch access
-- **Version history** - Track methodology additions in README.md (v2.4.0 added Executable Skills, v2.3.2 added Peer Design Review Simulator, v2.3.1 added storyboard validation enhancements, v2.0 added PAIRR, AI Roleplay, Diagnostic Rubrics)
+- **Version history** - Track methodology additions in README.md (v2.4.1 added Interactivity Analysis, v2.4.0 added Executable Skills, v2.3.2 added Peer Design Review Simulator, v2.3.1 added storyboard validation enhancements, v2.0 added PAIRR, AI Roleplay, Diagnostic Rubrics)
 
 ## Version History & Changelog
+
+### v2.4.1 (2025-10-20) - Interactivity Analysis
+
+**Agent Enhancements**:
+
+**uplimit-storyboard-builder.md**:
+- **Interactivity Analysis (New Audit Capability)** - Analyzes passive/active engagement ratios in course content
+  - **Text Density Analysis**: Counts static text vs interactive elements, targets 30/70 passive/active ratio
+  - **Knowledge Check Frequency**: Assesses formative assessment density (target: every 3-5 minutes)
+  - **Transformation Opportunities**: Identifies text that should become widgets, videos, or hands-on activities
+  - **AI Chat Placement**: Checks for contextual AI assistance throughout (not just at end)
+  - **Video/Multimedia Balance**: Flags modules with zero video content
+  - **Hands-On Practice**: Detects "tell-only" content that needs "do-it-yourself" activities
+  - **Engagement Metrics Table**: Provides scorecard with 7 metrics (text words, passive/active ratio, knowledge checks, widgets, videos, hands-on activities, AI touchpoints)
+
+**Use Cases**:
+- Converting Canvas LMS content to Uplimit (identify text-heavy sections)
+- Auditing existing storyboards for engagement quality (not just platform compliance)
+- Diagnosing low completion rates (likely too much passive reading)
+- Transforming traditional lecture content into interactive learning experiences
+
+**Impact**:
+- Identifies specific line ranges that should be transformed (e.g., "Lines 34-66: 3 pillars → animated timeline widget")
+- Provides before/after element flow comparisons (e.g., "Current: 18 min, 80% passive → Recommended: 25 min, 70% active")
+- Recommends specific widget types for each transformation (decision tree, scenario explorer, sandbox)
+- Targets research-backed 30/70 passive/active ratio for optimal engagement
+
+**Trigger Conditions**:
+- User explicitly requests "interactivity analysis" or "engagement audit"
+- User says content is "too text-heavy" or "needs more interaction"
+- Audit reveals very long text blocks (>500 words per element)
+- User is converting from traditional course format to Uplimit
 
 ### v2.4.0 (2025-10-17) - Executable Skills for Automation
 

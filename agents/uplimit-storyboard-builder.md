@@ -1130,7 +1130,116 @@ Verify complete Uplimit field specifications present with CORRECT FORMATS:
 - ✅ Full rubric with criteria, points, descriptions
 - ✅ Feedback templates for performance levels
 
-### Audit Step 3: Generate Compliance Report
+### Audit Step 3: Analyze Interactivity and Engagement
+
+Beyond platform compliance, assess **pedagogical effectiveness** - the balance between passive reading and active learning.
+
+#### Interactivity Audit Dimensions
+
+**1. Text Density Analysis**
+
+Count total words of static text vs interactive elements:
+- **Target ratio**: 30% passive reading / 70% active engagement
+- **Red flag**: Long text blocks (>150 words) without breaks
+- **Common issue**: Concept explanations as walls of text
+
+**Example audit finding:**
+```
+❌ ISSUE: Module 2 has 2,500 words of text (15 min reading) with only 1 widget (3 min interaction)
+   Ratio: 83% passive / 17% active (Target: 30/70)
+
+✅ RECOMMENDATION: Transform 5 text sections into interactive elements:
+   - Lines 34-66 (3 pillars) → Animated timeline widget
+   - Lines 17-24 (comparison table) → Interactive decision tree
+   - Lines 108-182 (industry examples) → Industry picker widget
+```
+
+**2. Knowledge Check Frequency**
+
+Assess formative assessment density:
+- **Target**: Every 3-5 minutes (every 2-3 elements)
+- **Red flag**: No checks until end of module
+- **Common issue**: Assuming reading = learning
+
+**Example audit finding:**
+```
+❌ ISSUE: Module has 0 knowledge checks between intro and final quiz
+   Students read for 20 minutes with no validation
+
+✅ RECOMMENDATION: Add 4 knowledge checks:
+   - After AI vs Automation section (2-3 questions)
+   - After Three Pillars explanation (scenario-based)
+   - After Industry Examples (matching exercise)
+   - Before final quiz (readiness check)
+```
+
+**3. Transformation Opportunities**
+
+Identify specific content that should be interactive:
+
+**Tables → Interactive widgets**
+```
+Current: Static comparison table
+Transform to: Card flip widget or decision tree
+Engagement: 10s scan → 3-4 min exploration
+```
+
+**Lists → Scenario explorers**
+```
+Current: 8 industry examples as text tiles
+Transform to: Industry picker with deep-dive cases
+Engagement: 30s skim → 5 min active exploration
+```
+
+**Explanations → Videos or animations**
+```
+Current: 3 paragraphs explaining evolution
+Transform to: 2-min animated video
+Engagement: 2 min passive reading → 2 min engaged watching
+```
+
+**Examples → Hands-on activities**
+```
+Current: "Customers were segmented into 3 groups" (tell)
+Transform to: "YOU segment these 20 customers" (do)
+Engagement: Read result → Experience discovery
+```
+
+**4. AI Chat Placement**
+
+Check if AI assistance is accessible throughout:
+- **Anti-pattern**: Single AI chat at module end
+- **Best practice**: Contextual AI chat after each major concept
+- **Target**: 3-4 AI chat touchpoints per module
+
+**5. Video/Multimedia Balance**
+
+Assess variety of media types:
+- **Target**: At least 1 video per module (2-5 min)
+- **Use for**: Concept explanations, expert perspectives, demonstrations
+- **Red flag**: Zero video content (all text)
+
+**6. Hands-On Practice**
+
+Check for application activities:
+- **Target**: At least 1 "do it yourself" per module
+- **Examples**: Sandbox widgets, decision simulations, data manipulation
+- **Red flag**: All consumption, no production
+
+#### When to Include Interactivity Analysis
+
+Include interactivity audit when:
+- ✅ User explicitly requests "interactivity analysis" or "engagement audit"
+- ✅ User says content is "too text-heavy" or "needs more interaction"
+- ✅ Audit reveals very long text blocks (>500 words per element)
+- ✅ User is converting from traditional course format (Canvas, LMS) to Uplimit
+
+Skip interactivity analysis when:
+- ❌ User only wants platform compliance check (infobox format, etc.)
+- ❌ Content is already highly interactive (meets 30/70 ratio)
+- ❌ User is building from scratch (they'll follow V3 principles naturally)
+
+### Audit Step 4: Generate Compliance Report
 
 Provide structured audit report with:
 
@@ -1142,6 +1251,17 @@ Provide structured audit report with:
 - **Elements audited**: [count] infoboxes, [count] text blocks, [count] AI roleplay, etc.
 - **Compliance rate**: [X/Y elements compliant]
 - **Priority violations**: [list critical issues]
+
+### Interactivity Metrics (if applicable)
+| Metric | Current | Target | Status |
+|--------|---------|--------|--------|
+| **Text words** | [count] | ~750 | [status] |
+| **Passive/Active ratio** | [X/Y] | 30/70 | [status] |
+| **Knowledge checks** | [count] | 4 | [status] |
+| **Interactive widgets** | [count] | 3-4 | [status] |
+| **Videos** | [count] | 1-2 | [status] |
+| **Hands-on activities** | [count] | 1 | [status] |
+| **AI chat touchpoints** | [count] | 3-4 | [status] |
 
 ### Detailed Findings
 
@@ -1175,7 +1295,7 @@ Provide structured audit report with:
 3. **Verification steps**: [what to test after corrections]
 ```
 
-### Audit Step 4: Provide Corrected Versions
+### Audit Step 5: Provide Corrected Versions
 
 For every violation found:
 - Provide exact corrected version ready to copy-paste

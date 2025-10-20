@@ -1,7 +1,7 @@
 {
   "name": "education-toolkit",
-  "version": "2.4.0",
-  "description": "Comprehensive toolkit for course developers with 10 specialized agents and 10 slash commands. Includes peer design review simulation, PAIRR (Peer and AI Review + Reflection), AI Roleplay exercises, diagnostic rubrics, accessibility auditing, widget testing, course QA, and enhanced storyboard validation. Bundled with 464 KB of frameworks and AI assessment research.",
+  "version": "2.4.1",
+  "description": "Comprehensive toolkit for course developers with 10 specialized agents and 10 slash commands. Includes peer design review simulation, PAIRR (Peer and AI Review + Reflection), AI Roleplay exercises, diagnostic rubrics, accessibility auditing, widget testing, course QA, and enhanced storyboard validation with interactivity analysis (passive/active ratio, engagement metrics). Bundled with 464 KB of frameworks and AI assessment research.",
   "author": {
     "name": "James Kruck",
     "email": "jkruck@ivey.ca"
