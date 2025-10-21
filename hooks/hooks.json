@@ -1,0 +1,48 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/validate-content.sh\" \"${TOOL_INPUT_file_path}\" \"${TOOL_NAME}\"",
+            "description": "Auto-validate educational content for WCAG/QM compliance",
+            "timeout": 5000
+          },
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/format-storyboard.py\" \"${TOOL_INPUT_file_path}\"",
+            "description": "Auto-format storyboards to match platform conventions",
+            "timeout": 3000
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/check-protected.sh\" \"${TOOL_INPUT_file_path}\"",
+            "description": "Protect published educational content from accidental edits",
+            "timeout": 2000
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/load-context.sh\"",
+            "description": "Load educational standards and course context",
+            "timeout": 3000
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jkruckivey/education-toolkit/main/.education-toolkit-config.schema.json",
+  "courseName": "Introduction to Educational Technology",
+  "institution": "Your University",
+  "platform": "Uplimit",
+  "instructor": {
+    "name": "Jane Doe",
+    "email": "jdoe@university.edu"
+  },
+  "conventions": {
+    "learningOutcomePrefix": "MLO",
+    "priorityBadges": "blackSymbols",
+    "wcagVersion": "2.2",
+    "qmVersion": "6"
+  },
+  "protectedPaths": [
+    "published/*",
+    "production/*",
+    "final/*",
+    "student-facing/*",
+    "graded/*"
+  ],
+  "customValidation": {
+    "requireAltText": true,
+    "enforceBloomsVerbs": true,
+    "validateRubricMath": true,
+    "checkColorContrast": true
+  },
+  "branding": {
+    "primaryColor": "#000000",
+    "secondaryColor": "#666666",
+    "useColoredEmoji": false,
+    "fontFamily": "Geist"
+  }
+}

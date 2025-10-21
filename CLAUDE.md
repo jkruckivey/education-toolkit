@@ -16,9 +16,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ```
 education-toolkit/
-├── plugin.json              # Main plugin manifest
 ├── .claude-plugin/
+│   ├── plugin.json          # Main plugin manifest
 │   └── marketplace.json     # Marketplace configuration
+├── hooks/                   # Automatic quality enforcement (NEW v2.4.1)
+│   ├── hooks.json           # Hook configurations
+│   └── scripts/
+│       ├── validate-content.sh      # PostToolUse: Smart validator
+│       ├── load-context.sh          # SessionStart: Context loader
+│       ├── check-protected.sh       # PreToolUse: Content guardian
+│       └── format-storyboard.py     # PostToolUse: Auto-formatter
 ├── agents/                  # 10 specialized agents
 │   ├── assessment-designer.md (27 KB, sonnet, 464 KB bundled knowledge)
 │   ├── rubric-generator.md (11 KB, sonnet)
@@ -46,19 +53,19 @@ education-toolkit/
 │   └── test-widget.md
 └── skills/                    # NEW: 3 executable skills (Python automation)
     ├── assessment-template-generator/
-    │   ├── Skill.md           # Skill manifest and documentation
+    │   ├── SKILL.md           # Skill manifest and documentation
     │   ├── REFERENCE.md       # Research foundations and customization
     │   └── scripts/
     │       ├── generate_pairr.py            # PAIRR template generator
     │       ├── generate_ai_roleplay.py      # AI roleplay config generator
     │       └── generate_diagnostic_rubric.py # Diagnostic rubric generator
     ├── accessibility-audit-tools/
-    │   ├── Skill.md
+    │   ├── SKILL.md
     │   └── scripts/
     │       ├── check_contrast.py   # WCAG 2.2 AA color contrast validator
     │       └── check_alt_text.py   # Alt text presence/quality checker
     └── qm-validator/
-        ├── Skill.md
+        ├── SKILL.md
         └── scripts/
             ├── check_alignment.py       # Outcome-criteria alignment checker
             └── check_rubric_math.py     # Rubric point total validator
@@ -78,7 +85,7 @@ education-toolkit/
 - Typically invoke agents with pre-configured parameters
 - User-facing convenience layer over agent system
 
-**Skills** (`.md` files in `skills/*/Skill.md`) - **NEW**:
+**Skills** (`.md` files in `skills/*/SKILL.md`) - **NEW**:
 - Executable Python automation invoked by agents
 - YAML frontmatter: `name`, `description`, `version`, `dependencies`
 - Agents use Skill tool to run Python scripts
@@ -115,6 +122,64 @@ assessment-designer agent:
 - Ensure structural consistency (templates follow research-backed patterns)
 - Proactive quality assurance (QM validation catches errors before user sees them)
 - Let agents focus on design advice (automation handles repetitive structure)
+
+**Hooks** (`hooks/hooks.json` + bash/Python scripts) - **NEW v2.4.1**:
+- Automatic quality enforcement at lifecycle events (PostToolUse, PreToolUse, SessionStart)
+- Zero API tokens consumed (runs locally on user's machine)
+- Deterministic validation (not LLM-dependent, 100% consistent)
+- Types: Smart validator, context loader, content guardian, auto-formatter
+
+### Hooks System (NEW v2.4.1)
+
+Hooks provide **deterministic automation** that runs at specific lifecycle events, transforming the plugin from reactive (user asks for validation) to proactive (automatic enforcement).
+
+**Key Advantage**: Hooks use **zero API tokens** - they're pure bash/Python automation running on the user's local machine.
+
+**4 Built-in Hooks**:
+
+1. **Smart Content Validator** (PostToolUse on Edit/Write)
+   - HTML files: WCAG 2.2 AA checks (contrast, alt text, headings, tables)
+   - Markdown files: Bloom's verbs, rubric math, PAIRR components, colored emoji
+   - Execution time: 1-3 seconds
+   - Token savings: ~10,000 tokens per manual validation avoided
+
+2. **Educational Context Loader** (SessionStart)
+   - Loads WCAG 2.2 AA, QM 6th Edition, Bloom's Taxonomy, UDL standards
+   - Displays available commands and active methodologies
+   - Reads course-specific config from `.education-toolkit-config.json`
+   - One-time execution per session
+
+3. **Protected Content Guardian** (PreToolUse on Edit/Write)
+   - Blocks edits to `published/`, `production/`, `final/`, `student-facing/` paths
+   - Shows warning with risks (fairness, academic integrity, student trust)
+   - Requires explicit approval to proceed
+   - Prevents accidental rubric changes after student submissions
+
+4. **Storyboard Auto-Formatter** (PostToolUse on Edit/Write)
+   - Converts colored emoji → black symbols (🔴→⬤ 🟡→◐ 🟢→○)
+   - Standardizes element headings, priority badges, MLO references
+   - Fixes table/heading spacing, removes trailing spaces
+   - Ensures platform branding compliance automatically
+
+**Configuration**:
+```json
+// .education-toolkit-config.json (optional)
+{
+  "courseName": "Business of Marketing in Sport",
+  "institution": "Ivey Business School",
+  "platform": "Uplimit",
+  "conventions": {
+    "learningOutcomePrefix": "MLO",
+    "wcagVersion": "2.2"
+  },
+  "protectedPaths": [
+    "published/*",
+    "custom/path/*"
+  ]
+}
+```
+
+**Performance**: 1-3 seconds execution, 0 API tokens, 100% consistency
 
 ### Knowledge Base Bundling
 

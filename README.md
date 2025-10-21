@@ -2,7 +2,7 @@
 
 **Comprehensive toolkit for educational developers** with 10 specialized agents and 10 slash commands. Includes cutting-edge assessment methodologies: PAIRR (Peer and AI Review + Reflection), AI Roleplay exercises, diagnostic rubrics, and multi-perspective peer design review simulation.
 
-> **✨ NEW in v2.4**: Executable Python skills for automated assessment generation and validation
+> **✨ NEW in v2.4.1**: Automatic quality hooks (zero-token validation after every edit) + Executable Python skills
 
 ## Installation
 
@@ -134,6 +134,102 @@ The **assessment-designer** agent includes:
 - **Standalone**: Download ZIPs from [releases](https://github.com/jkruckivey/education-toolkit/releases) for use with other plugins
 
 📖 **[Skills Installation Guide](SKILLS-INSTALLATION.md)** - Detailed setup instructions, requirements, and troubleshooting
+
+### 🔄 NEW: Automatic Quality Enforcement (Hooks)
+
+**Built-in automation that runs quality checks automatically - zero API tokens, zero manual effort.**
+
+This plugin includes 4 automatic hooks that enforce quality standards in real-time:
+
+#### Hook 1: Smart Content Validator (PostToolUse)
+**Runs after every file edit** - Instant feedback on quality issues
+
+✓ **HTML files**: WCAG 2.2 AA checks (contrast, alt text, headings, buttons, tables)
+✓ **Markdown files**: Learning outcomes (Bloom's verbs), rubric math, PAIRR components, WCAG version
+✓ **Storyboards**: Colored emoji detection, terminology consistency
+
+**Example output:**
+```
+📋 Auto-validation found 2 issue(s):
+  ⚠️  Found 3 instance(s) of vague learning outcome language
+     Avoid: understand, know, learn about
+     Use: explain, identify, analyze, evaluate
+
+  ⚠️  Missing alt text on 1 image(s)
+     All images need alt="description" or alt="" (if decorative)
+```
+
+**Token savings**: ~10,000 tokens per validation × 20 edits/day = 200,000 tokens/day saved
+
+#### Hook 2: Educational Context Loader (SessionStart)
+**Runs once at session start** - Sets educational standards context automatically
+
+✓ Loads WCAG 2.2 AA, QM 6th Edition, Bloom's Taxonomy, UDL standards
+✓ Displays available quick commands (/design-assessment, /peer-review, etc.)
+✓ Shows course-specific config (if `.education-toolkit-config.json` exists)
+✓ Reminds you of automatic quality checks active
+
+**No more forgetting** which WCAG version to use or which commands are available.
+
+#### Hook 3: Protected Content Guardian (PreToolUse)
+**Runs before editing published content** - Prevents accidental changes to student-facing materials
+
+✓ Blocks edits to `published/`, `production/`, `final/`, `student-facing/`, `graded/` paths
+✓ Shows warning with risks (fairness, academic integrity, student trust)
+✓ Recommends creating draft version first
+✓ Requires explicit approval to proceed
+
+**Protects against**: Changing rubrics after students submit, modifying published assessments mid-term
+
+#### Hook 4: Storyboard Auto-Formatter (PostToolUse)
+**Runs after editing storyboards** - Ensures consistent platform conventions
+
+✓ Converts colored emoji → black symbols (🔴→⬤ 🟡→◐ 🟢→○)
+✓ Standardizes priority badges, element headings, MLO references
+✓ Fixes table spacing, heading spacing, time estimates
+✓ Removes trailing spaces, normalizes blank lines
+
+**Example output:**
+```
+✨ Auto-formatted storyboard:
+  • Converted 8× 🔴 → ⬤
+  • Converted 5× 📺 → ▶
+  • Standardized element heading format (dash → colon)
+  • Fixed table spacing
+```
+
+#### Performance & Cost
+
+| Metric | Value |
+|--------|-------|
+| **Execution time** | 1-3 seconds (runs locally) |
+| **API tokens used** | 0 tokens (pure bash/Python automation) |
+| **Token savings** | ~200,000+ tokens/day for active users |
+| **Accuracy** | 100% consistent (deterministic, not LLM-based) |
+
+#### Configuration (Optional)
+
+Create `.education-toolkit-config.json` in your project root for custom settings:
+
+```json
+{
+  "courseName": "Business of Sports Marketing",
+  "institution": "Ivey Business School",
+  "platform": "Uplimit",
+  "conventions": {
+    "learningOutcomePrefix": "MLO",
+    "wcagVersion": "2.2"
+  },
+  "protectedPaths": [
+    "published/*",
+    "custom/protected/path/*"
+  ]
+}
+```
+
+See `.education-toolkit-config.example.json` for full configuration options.
+
+**Hooks are always active when plugin is enabled** - no setup required. Disable individual hooks by editing `hooks/hooks.json` if needed.
 
 ## Usage Examples
 
