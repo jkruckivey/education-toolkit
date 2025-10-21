@@ -2,7 +2,7 @@
 
 **Comprehensive toolkit for educational developers** with 10 specialized agents and 10 slash commands. Includes cutting-edge assessment methodologies: PAIRR (Peer and AI Review + Reflection), AI Roleplay exercises, diagnostic rubrics, and multi-perspective peer design review simulation.
 
-> **✨ NEW in v2.4.1**: Automatic quality hooks (zero-token validation after every edit) + Executable Python skills
+> **✨ NEW in v2.4.2**: Peer review agent now properly reviews storyboards vs live content
 
 ## Installation
 
@@ -380,6 +380,23 @@ GitHub: [@jameskruck](https://github.com/jameskruck)
 
 ## Version History
 
+- **2.4.2** (2025-10-21): Fixed peer-review-simulator to distinguish storyboards vs live content
+  - Added critical content type detection (storyboard design specs vs implemented courses)
+  - Updated all 6 reviewers with dual modes: STORYBOARD REVIEW vs LIVE CONTENT REVIEW
+  - Storyboard mode: Reviews design quality, specifications clarity, feasibility, accessibility planning
+  - Live content mode: Tests actual functionality, measures compliance, validates implementation
+  - Fixed edge cases: Unbuilt widgets in storyboards = EXPECTED, in live content = CRITICAL
+  - Updated report format to clearly indicate review mode and content type
+  - Added example invocations showing when to use each mode
+  - Prevents confusion: No longer tests browser compatibility on markdown design documents
+- **2.4.1** (2025-10-20): Added automatic quality enforcement hooks
+  - 4 new hooks: Smart content validator, educational context loader, protected content guardian, storyboard auto-formatter
+  - Zero API tokens consumed (pure bash/Python automation)
+  - Automatic WCAG/QM/Bloom's validation after every edit (1-3 seconds)
+  - Session startup loads educational standards context automatically
+  - Protects published content from accidental edits
+  - Auto-formats storyboards for platform branding compliance
+  - Added .education-toolkit-config.json support for course-specific settings
 - **2.4.0** (2025-10-17): Added executable skills for automation
   - 3 new skills: assessment-template-generator, accessibility-audit-tools, qm-validator
   - Python automation for PAIRR templates, AI roleplay configs, diagnostic rubrics

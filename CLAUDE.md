@@ -357,9 +357,51 @@ Before version releases:
 - **Agent autonomy** - Agents read their own knowledge base files, don't require user file paths
 - **Model selection** - Use `sonnet` for speed (2-5 min), `opus` for depth (5-12 min for peer-review-simulator)
 - **WebFetch capability** - Only accessibility-auditor and assessment-designer have WebFetch access
-- **Version history** - Track methodology additions in README.md (v2.4.1 added Interactivity Analysis, v2.4.0 added Executable Skills, v2.3.2 added Peer Design Review Simulator, v2.3.1 added storyboard validation enhancements, v2.0 added PAIRR, AI Roleplay, Diagnostic Rubrics)
+- **Version history** - Track methodology additions in README.md (v2.4.2 fixed peer review storyboard vs live content, v2.4.1 added Interactivity Analysis + Automatic Hooks, v2.4.0 added Executable Skills, v2.3.2 added Peer Design Review Simulator, v2.3.1 added storyboard validation enhancements, v2.0 added PAIRR, AI Roleplay, Diagnostic Rubrics)
 
 ## Version History & Changelog
+
+### v2.4.2 (2025-10-21) - Peer Review Agent Storyboard vs Live Content Fix
+
+**Agent Fixes**:
+
+**peer-review-simulator.md**:
+- **Critical Content Type Detection** - Agent now determines if reviewing storyboards (design specs) vs live content (implementations) FIRST
+- **Dual-Mode Reviewer Profiles** - All 6 reviewers (Emma, Marcus, Priya, James, Sarah, Alex) now have two distinct modes:
+  - **STORYBOARD REVIEW**: Reviews design quality, specifications clarity, feasibility, accessibility planning
+    - Emma: Reviews learning objectives quality, element descriptions, tone specs
+    - Marcus: Checks if accessibility is PLANNED (captions mentioned? keyboard nav specified?)
+    - Priya: Reviews design system specs, visual descriptions clarity
+    - James: Reviews widget specs for feasibility ("can this be built? is behavior clear?")
+    - Sarah: Reviews learning design plans (alignment, sequencing, cognitive load planning)
+    - Alex: Reviews navigation plans, information architecture design
+  - **LIVE CONTENT REVIEW**: Tests actual implementation, measures compliance, validates functionality
+    - Emma: Tests actual grammar, conciseness, readability
+    - Marcus: Measures actual WCAG 2.2 AA compliance (contrast ratios, screen reader testing)
+    - Priya: Tests actual typography, spacing, layout implementation
+    - James: Tests actual functionality (browsers, links, performance, security)
+    - Sarah: Reviews actual implementation (tests alignment, measures cognitive load)
+    - Alex: Tests actual navigation, findability, usability
+- **Fixed Edge Cases**:
+  - Storyboards with unbuilt widgets = EXPECTED (specs describe future builds)
+  - Live content with unbuilt widgets = CRITICAL PROBLEM (students see broken experience)
+- **Updated Report Format**:
+  - Clearly indicates review mode (STORYBOARD REVIEW vs LIVE CONTENT REVIEW)
+  - Specifies content type (Storyboards .md vs Live Course Content .html)
+  - Readiness criteria adapted: "Ready to build" vs "Launch-ready"
+- **Updated Process**:
+  - Step 0: DETERMINE CONTENT TYPE (check .md with element tables = storyboard, .html = live)
+  - Step 2: Comprehensive analysis adapted based on content type
+  - Updated checklists: Separate STORYBOARD vs LIVE CONTENT checklists
+- **Example Invocations Updated**: Shows clear examples of both modes and when to use each
+
+**Impact**:
+- Prevents confusion: No longer tests browser compatibility on markdown design documents
+- Enables preventative review: Catch spec issues before building (saves development time)
+- Proper QA mode: Live content gets actual testing (links, contrast, functionality)
+- Clear user guidance: Agent asks for clarification when content type unclear
+
+**Bug Fixed**: Agent was reviewing storyboards (markdown design documents) as if they were live courses, trying to test links, measure contrast, and check browser compatibility on text files describing what WILL be built.
 
 ### v2.4.1 (2025-10-20) - Interactivity Analysis
 
