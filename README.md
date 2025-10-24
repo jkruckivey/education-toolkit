@@ -1,8 +1,8 @@
 # Education Toolkit - Claude Code Plugin
 
-**Comprehensive toolkit for educational developers** with 10 specialized agents and 10 slash commands. Includes cutting-edge assessment methodologies: PAIRR (Peer and AI Review + Reflection), AI Roleplay exercises, diagnostic rubrics, and multi-perspective peer design review simulation.
+**Comprehensive toolkit for educational developers** with 12 specialized agents, 10 slash commands, and automatic code review. Includes cutting-edge assessment methodologies: PAIRR (Peer and AI Review + Reflection), AI Roleplay exercises, diagnostic rubrics, multi-perspective peer design review simulation, and fullstack code review with automatic quality checks.
 
-> **✨ NEW in v2.4.2**: Peer review agent now properly reviews storyboards vs live content
+> **✨ NEW in v2.5.0**: Automatic code review hook for FastAPI/Python and React/JSX with PostToolUse triggers
 
 ## Installation
 
@@ -15,18 +15,20 @@
 
 ## What's Included
 
-### 🤖 10 Specialized Agents
+### 🤖 12 Specialized Agents
 
 1. **accessibility-auditor** - WCAG 2.2 AA compliance checking with WebFetch capability
 2. **assessment-designer** - Comprehensive assessment design with 464 KB bundled knowledge base. **NEW**: PAIRR methodology, AI Roleplay exercise design, Three-Tier AI permission model
-3. **branding-checker** - Canvas LMS and Uplimit platform branding validation
-4. **consistency-checker** - Cross-module terminology, concept threading, outcome alignment
-5. **peer-review-simulator** - **NEW**: Multi-perspective design review with 6 ID specialists (Emma-Content, Marcus-Accessibility, Priya-Visual, James-Technical, Sarah-Pedagogy, Alex-UX)
-6. **rubric-generator** - QM-aligned rubric generation. **NEW**: Diagnostic rubrics (3-level), PAIRR bonus rubrics, AI feedback prompts
-7. **student-journey-simulator** - 4-persona course experience testing (Sarah, Marcus, Priya, Alex)
-8. **udl-content-generator** - Transform content into multimodal formats (audio, visual, interactive)
-9. **uplimit-storyboard-builder** - Complete copy-paste-ready implementation guides for Uplimit courses
-10. **widget-tester** - 3-persona widget testing (Sarah, James, Maria) for UX validation
+3. **backend-reviewer** - **NEW**: FastAPI/Python code review for security, error handling, API design, and performance
+4. **branding-checker** - Canvas LMS and Uplimit platform branding validation
+5. **consistency-checker** - Cross-module terminology, concept threading, outcome alignment
+6. **frontend-reviewer** - **NEW**: React/JSX code review for accessibility (WCAG 2.2 AA), UX patterns, and performance
+7. **peer-review-simulator** - **NEW**: Multi-perspective design review with 6 ID specialists (Emma-Content, Marcus-Accessibility, Priya-Visual, James-Technical, Sarah-Pedagogy, Alex-UX)
+8. **rubric-generator** - QM-aligned rubric generation. **NEW**: Diagnostic rubrics (3-level), PAIRR bonus rubrics, AI feedback prompts
+9. **student-journey-simulator** - 4-persona course experience testing (Sarah, Marcus, Priya, Alex)
+10. **udl-content-generator** - Transform content into multimodal formats (audio, visual, interactive)
+11. **uplimit-storyboard-builder** - Complete copy-paste-ready implementation guides for Uplimit courses
+12. **widget-tester** - 3-persona widget testing (Sarah, James, Maria) for UX validation
 
 ### ⚡ 10 Quick Slash Commands
 
@@ -139,7 +141,7 @@ The **assessment-designer** agent includes:
 
 **Built-in automation that runs quality checks automatically - zero API tokens, zero manual effort.**
 
-This plugin includes 4 automatic hooks that enforce quality standards in real-time:
+This plugin includes 5 automatic hooks that enforce quality standards in real-time:
 
 #### Hook 1: Smart Content Validator (PostToolUse)
 **Runs after every file edit** - Instant feedback on quality issues
@@ -197,6 +199,38 @@ This plugin includes 4 automatic hooks that enforce quality standards in real-ti
   • Standardized element heading format (dash → colon)
   • Fixed table spacing
 ```
+
+#### Hook 5: Fullstack Code Reviewer (PostToolUse)
+**Runs after editing Python or React code** - Automatic code review for educational technology projects
+
+✓ **Backend (Python/FastAPI)**: Security, input validation, error handling, API design, async/await
+✓ **Frontend (React/JSX)**: Accessibility (WCAG 2.2 AA), state management, UX patterns, performance
+✓ **Smart routing**: Detects file type → launches specialized agent (backend-reviewer or frontend-reviewer)
+✓ **Skips non-code**: Config files, package.json, small formatting changes
+
+**Review criteria:**
+- **Security**: Authentication, input sanitization, secret management
+- **Accessibility**: ARIA labels, semantic HTML, keyboard navigation, color contrast
+- **Best practices**: React hooks, error handling, loading states, user feedback
+- **Performance**: Database queries, re-renders, bundle size
+
+**Example output:**
+```
+📝 Frontend Review: App.jsx:236-267
+
+✅ STRENGTHS:
+  • Line 236-248: Excellent assessment-result pattern
+  • Line 245-246: Smart use of _next_content to preload
+
+⚠️ SUGGESTIONS:
+  • Line 194-206: getCalibrationMessage could be memoized
+  • Line 249: Consider functional update: setContentIndex(i => i + 1)
+
+🔴 CRITICAL ISSUES:
+  • None found
+```
+
+**When to use manually**: Invoke `backend-reviewer` or `frontend-reviewer` agents directly for comprehensive file review without waiting for edits
 
 #### Performance & Cost
 
