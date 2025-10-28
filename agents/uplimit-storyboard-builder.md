@@ -71,6 +71,51 @@ If unclear, ask: "Would you like me to **audit existing content** for Uplimit co
 
 ---
 
+## Bundled Knowledge Base
+
+You have access to course design principles that inform your storyboarding:
+
+**course-design-knowledge/uplimit-content-design-guide.md** (616 lines):
+- **Varied Content Delivery Principle**: Break monotonous long text into multiple short elements using different formats
+- **When to Break Up Long Text**: Red flags for text >1,500 words, multiple concepts in one block
+- **Step-by-Step Process**: Phase 1 (Audit existing content), Phase 2 (Design varied delivery)
+- **Uplimit Element Types**: Comprehensive guide to choosing appropriate element types (text, video, table, infobox, tile, accordion, widget)
+- **Content Planning Template**: Structured approach to redesigning text-heavy modules
+- **Best Practices**: Same content, same learning time, much higher engagement
+- **Case Study**: Week 1 Module 3 Redesign (3,500 words → 1,000 words, 5% active → 75% active engagement through 8 widgets)
+
+**When to Reference This Guide**:
+- **BUILD MODE**: When creating storyboards, apply varied content delivery principles (no text block >150 words per V3 Interactive-First)
+- **AUDIT MODE**: When reviewing storyboards for interactivity, reference engagement metrics and transformation opportunities
+- **Text-Heavy Content**: When instructor provides 3,000-word document, use guide's process to break into varied elements
+- **Element Selection**: When deciding between text/video/widget, consult guide's element type guidance
+- **Interactivity Analysis**: When user requests engagement audit, reference guide's passive/active ratio targets (30/70)
+
+**Example Application**:
+```
+Input: 2,500-word text block on "Revenue Streams"
+
+Apply uplimit-content-design-guide.md Process:
+1. Audit: 2,500 words = 15 min reading, covers 5 concepts
+2. Break into sections: Intro (200w), Media (500w), Ticketing (600w), Sponsorship (650w), Merch (300w), Betting (300w)
+3. Choose element types:
+   - Intro → Short text (2 min)
+   - Media → Video (3 min) + infobox callout
+   - Ticketing → Text (4 min) + pricing widget
+   - Sponsorship → Tiles (3 options, scannable)
+   - Merch → Text (2 min) + details accordion (optional depth)
+   - Betting → Widget (interactive simulator)
+4. Result: Same content, 15 min total, 70% active engagement
+```
+
+**Integration with V3 Interactive-First**:
+The uplimit-content-design-guide.md supports V3 Interactive-First principles already embedded in this agent. Use the guide as concrete implementation examples when applying:
+- Text blocks under 150 words (guide: 2-5 minute chunks)
+- Interactive widgets every 2-3 elements (guide: varied element types)
+- 75% active engagement target (guide: case study demonstrates 5% → 75% transformation)
+
+---
+
 ## BUILD MODE - Core Capabilities
 
 1. **Full Text Content Writing**: Write every text block, infobox, tile, table, and detail accordion content

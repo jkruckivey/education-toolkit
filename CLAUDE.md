@@ -4,10 +4,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Overview
 
-**Education Toolkit** - Claude Code plugin providing 12 specialized agents, 10 slash commands, and automatic code review for educational developers, instructional designers, and course creators. Focus areas: accessibility (WCAG 2.2 AA), assessment design, UDL implementation, Quality Matters standards, AI-integrated pedagogy, multi-perspective peer design review, and fullstack code quality (FastAPI/Python + React/JSX).
+**Education Toolkit** - Claude Code plugin providing 13 specialized agents, 10 slash commands, and automatic code review for educational developers, instructional designers, and course creators. Focus areas: strategic course planning (CLOs, weekly structure, assessment strategy), accessibility (WCAG 2.2 AA), assessment design, UDL implementation, Quality Matters standards, AI-integrated pedagogy, multi-perspective peer design review, and fullstack code quality (FastAPI/Python + React/JSX).
 
-**Version**: 2.5.0 (January 2025)
-**Tech stack**: Markdown-based agent definitions, bundled knowledge base (464 KB), PostToolUse hooks for automatic code review
+**Version**: 2.6.1 (January 2025)
+**Tech stack**: Markdown-based agent definitions, bundled knowledge base (course design knowledge + 464 KB assessment research), PostToolUse hooks for automatic code review
 **Distribution**: Claude Code plugin marketplace (`/plugin marketplace add jameskruck/education-toolkit`)
 
 ## Architecture
@@ -27,7 +27,8 @@ education-toolkit/
 │       ├── load-context.sh          # SessionStart: Context loader
 │       ├── check-protected.sh       # PreToolUse: Content guardian
 │       └── format-storyboard.py     # PostToolUse: Auto-formatter
-├── agents/                  # 12 specialized agents
+├── agents/                  # 13 specialized agents
+│   ├── course-outline-creator.md (14 KB, sonnet, WebFetch) # NEW v2.6.0 - Strategic course planning
 │   ├── assessment-designer.md (27 KB, sonnet, 464 KB bundled knowledge)
 │   ├── rubric-generator.md (11 KB, sonnet)
 │   ├── accessibility-auditor.md (6 KB, sonnet, WebFetch)
@@ -40,7 +41,12 @@ education-toolkit/
 │   ├── uplimit-storyboard-builder.md (26 KB, sonnet)
 │   ├── backend-reviewer.md (12 KB, sonnet, FastAPI/Python expertise) # NEW v2.5.0
 │   ├── frontend-reviewer.md (13 KB, sonnet, React/WCAG 2.2 AA) # NEW v2.5.0
-│   └── assessment-knowledge/  # Bundled knowledge base
+│   ├── course-design-knowledge/  # Bundled course design knowledge (NEW v2.6.1)
+│   │   ├── ivey-course-development-process.md  # 6-phase process, cohort/self-paced models
+│   │   ├── course-outline-examples.md          # Anonymized course structure templates
+│   │   ├── concept-threading-guide.md          # Threading patterns and best practices
+│   │   └── uplimit-content-design-guide.md     # Varied content delivery principles
+│   └── assessment-knowledge/  # Bundled assessment research knowledge
 │       ├── frameworks/        # UDL, QM, Inclusive Teaching, Templates
 │       └── research/          # AI assessment research (5 papers)
 ├── commands/                  # 10 slash commands
@@ -359,8 +365,8 @@ Before version releases:
 - **No build process** - Pure markdown configuration, no compilation
 - **Agent autonomy** - Agents read their own knowledge base files, don't require user file paths
 - **Model selection** - Use `sonnet` for speed (2-5 min), `opus` for depth (5-12 min for peer-review-simulator)
-- **WebFetch capability** - Only accessibility-auditor and assessment-designer have WebFetch access
-- **Version history** - Track methodology additions in README.md (v2.5.0 added Fullstack Code Review, v2.4.2 fixed peer review storyboard vs live content, v2.4.1 added Interactivity Analysis + Automatic Hooks, v2.4.0 added Executable Skills, v2.3.2 added Peer Design Review Simulator, v2.3.1 added storyboard validation enhancements, v2.0 added PAIRR, AI Roleplay, Diagnostic Rubrics)
+- **WebFetch capability** - Only course-outline-creator, accessibility-auditor, and assessment-designer have WebFetch access
+- **Version history** - Track methodology additions in README.md (v2.6.1 added Course Design Knowledge Base, v2.6.0 added Course Outline Creator, v2.5.0 added Fullstack Code Review, v2.4.2 fixed peer review storyboard vs live content, v2.4.1 added Interactivity Analysis + Automatic Hooks, v2.4.0 added Executable Skills, v2.3.2 added Peer Design Review Simulator, v2.3.1 added storyboard validation enhancements, v2.0 added PAIRR, AI Roleplay, Diagnostic Rubrics)
 
 ## Version History & Changelog
 
@@ -414,6 +420,131 @@ Before version releases:
 🔴 CRITICAL ISSUES:
   • None found
 ```
+
+### v2.6.0 (2025-01-28) - Strategic Course Outline Creation
+
+**New Agent**:
+
+**course-outline-creator.md** (14 KB, sonnet, WebFetch):
+- Strategic curriculum design expert for creating comprehensive course outlines
+- Guides instructors through: CLO definition (QM-compliant), weekly structure planning, MLO creation, assessment strategy design, concept threading, case/practitioner identification
+- **Workflow Position**: Comes BEFORE uplimit-storyboard-builder (strategic planning → detailed module design)
+- **Discovery Interview**: Asks clarifying questions about subject area, level, duration, target audience, course goals
+- **CLO Standards**: Single action verbs (Analyze, Evaluate, Design), observable performance, context provided, NO compound verbs
+- **Assessment Alignment Matrix**: Plans what gets assessed when, ensures all CLOs covered proportionally
+- **Concept Threading**: Ensures Week 1 concepts are built upon in Weeks 2-5 (no orphaned topics)
+- **Output Format**: Complete course outline with CLOs, weekly themes, MLOs, assessment summary, threading map, case/practitioner plan, UDL considerations
+
+**Use Cases**:
+- Create new course from scratch (5-week MBA, 3-week executive ed, 10-week undergrad)
+- Restructure existing course to meet QM standards
+- Convert subject matter expertise into strategic course blueprint
+- Plan assessment strategy before diving into detailed module design
+
+**Example Output Structure**:
+```
+# Course Outline: [Title]
+
+## Course Learning Outcomes (CLOs)
+- CLO 1: [Action Verb] [Domain] (Bloom's Level)
+- CLO 2-5: [etc.]
+
+## Course Structure
+- Week 1: [Theme] (CLOs, MLOs, case, practitioner, assessment)
+- Week 2-5: [etc.]
+
+## Assessment Summary (table)
+## Concept Threading Map
+## Case Study & Practitioner Plan
+```
+
+**Integration**:
+- Use **course-outline-creator** first → Create strategic blueprint
+- Pass outline to **uplimit-storyboard-builder** → Design detailed modules
+- Use **peer-review-simulator** → Quality check before build
+
+**Updated Files**:
+- `plugin.json`: Version 2.6.0, description updated (13 agents)
+- `marketplace.json`: Version 2.6.0, description updated
+- `CLAUDE.md`: Added course-outline-creator to architecture, updated version
+
+**Impact**:
+- Fills critical workflow gap (SME expertise → strategic outline → detailed storyboard)
+- Ensures QM compliance from start (single action verbs, measurable outcomes, aligned assessments)
+- Prevents "orphaned concepts" through explicit threading map
+- Saves 3-5 hours of outline creation with guided interview process
+- Produces consistent, high-quality course structures ready for storyboarding
+
+### v2.6.1 (2025-01-28) - Course Design Knowledge Base
+
+**New Knowledge Base**:
+
+**agents/course-design-knowledge/** (4 files, ~150 KB total):
+- Bundled Ivey-specific course design principles and templates for internal team use
+- Provides concrete examples and institutional context for agents to reference
+
+**ivey-course-development-process.md** (~9,500 words):
+- **Source**: Converted from 9-page PDF "IveyOnline Process and Learning Models"
+- **Content**: 6-phase development process (Planning → Design → Production → Build → Quality → Launch)
+- **Cohort Course Model**: 5-week structure with anchor projects, Learning Manager touchpoints, Ivey cases, AI integration (chatbot activities, interactive avatars, ABIEL)
+- **Self-Paced Course Model**: 2-5 modules with checkpoint tasks, auto-graded activities, flexible pacing
+- **Team Roles**: SME (Subject Matter Expert), LED (Learning Experience Designer), LES (Learning Experience Specialist), LEC (Learning Experience Coordinator), AD (Assistant Director), CTS (Campus Technology Services)
+- **Use When**: course-outline-creator and uplimit-storyboard-builder reference when explaining Ivey's development timeline, team responsibilities, or learning model expectations
+
+**course-outline-examples.md** (~20,000 words):
+- **Source**: Anonymized from business-of-marketing-in-sport course (5-week MBA cohort)
+- **Example 1**: Complete 5-week course with CLOs (5 outcomes), MLOs (4-5 per week), assessment scaffolding (formative → summative), concept threading (Revenue Ecosystem Framework introduced Week 1, applied Weeks 2-5), real cases (NHL/NBA/EPL/UFC), practitioner perspectives
+- **Example 2**: 3-week executive education self-paced course with condensed structure
+- **Key Patterns**: CLO design (single action verbs, Bloom's levels), MLO laddering (1.1-1.4 for Week 1), assessment alignment matrix, concept threading demonstrations
+- **Use When**: course-outline-creator provides concrete templates when instructor says "show me an example" or needs inspiration for structure
+
+**concept-threading-guide.md** (~12,500 words):
+- **Purpose**: Prevent "orphaned concepts" (taught once, never revisited)
+- **4 Threading Patterns**: Foundation→Application→Synthesis, Progressive Layering, Spiral Curriculum, Tool Accumulation
+- **How-To Guide**: Step 1 (Identify core concepts), Step 2 (Introduce in Week 1), Step 3 (Apply in Weeks 2-4), Step 4 (Synthesize in Week 5), Step 5 (Make threads explicit with callbacks)
+- **Common Mistakes**: Orphaned concepts, too many new concepts each week, implicit threading, linear topics instead of threaded concepts, assessment misalignment
+- **Threading Checklist**: Planning phase (3-5 core concepts, Week 1 introduces all, minimum 3 appearances per concept), week-by-week design, language scaffolding, assessment alignment
+- **Use When**: course-outline-creator guides instructor on course cohesion, uplimit-storyboard-builder validates threading across modules
+
+**uplimit-content-design-guide.md** (~16,000 words):
+- **Source**: Copied from business-of-marketing-in-sport Project Knowledge
+- **Varied Content Delivery Principle**: Break text >1,500 words into multiple short elements using varied formats (text, video, infobox, widget, accordion)
+- **Step-by-Step Process**: Phase 1 (Audit existing content for red flags), Phase 2 (Design varied delivery with format selection guide)
+- **Case Study**: Week 1 Module 3 redesign (3,500 words → 1,000 words, 5% active → 75% active engagement through 8 widgets)
+- **Uplimit Element Types**: Comprehensive guide to choosing appropriate formats (when to use video vs widget vs accordion)
+- **Use When**: uplimit-storyboard-builder applies varied content delivery principles, transforms text-heavy content, selects appropriate element types
+
+**Agent Updates**:
+
+**course-outline-creator.md** (lines 50-79):
+- Added "Bundled Knowledge Base" section referencing all 4 course-design-knowledge files
+- References Ivey 6-phase process when instructor asks about timeline or team roles
+- References course outline examples when instructor needs templates or inspiration
+- References concept threading guide when instructor asks about course cohesion or week connections
+
+**uplimit-storyboard-builder.md** (lines 72-116):
+- Added "Bundled Knowledge Base" section referencing uplimit-content-design-guide.md
+- References guide when creating storyboards (apply varied content delivery principles)
+- References guide when auditing for interactivity (engagement metrics, passive/active ratios)
+- References guide when transforming text-heavy content into interactive elements
+
+**Updated Files**:
+- `plugin.json`: Version 2.6.1, description mentions "bundled course design knowledge base"
+- `marketplace.json`: Version 2.6.1, description updated similarly
+- `CLAUDE.md`: Architecture diagram includes course-design-knowledge/ directory, version history updated
+
+**Use Cases**:
+- Internal Ivey team developing new courses: Agents reference institutional process and proven patterns
+- Course outline creation: Concrete examples show what "good" looks like (CLO/MLO structure, threading, assessment alignment)
+- Storyboard design: Varied content delivery guide prevents text-heavy modules
+- Concept threading: Explicit patterns and checklists ensure cohesive course narratives
+
+**Impact**:
+- Agents provide Ivey-specific guidance (not generic instructional design advice)
+- Concrete examples reduce "blank page" paralysis when starting new course
+- Proven patterns from real courses (business-of-marketing-in-sport) ensure quality
+- 4 knowledge files (~150 KB) complement existing assessment-knowledge/ (464 KB)
+- Total bundled knowledge: ~614 KB (course design + assessment research)
 
 ### v2.4.2 (2025-10-21) - Peer Review Agent Storyboard vs Live Content Fix
 
