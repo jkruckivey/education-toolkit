@@ -2,6 +2,8 @@
 
 **Comprehensive toolkit for educational developers** with 13 specialized agents, 10 slash commands, and automatic code review. Includes cutting-edge assessment methodologies: PAIRR (Peer and AI Review + Reflection), AI Roleplay exercises, diagnostic rubrics, multi-perspective peer design review simulation, strategic course outline creation, and fullstack code review with automatic quality checks.
 
+> **✨ NEW in v2.6.2**: Course outline and storyboard builders now ask about course format (cohort vs. self-paced) to inform design decisions
+>
 > **✨ NEW in v2.6.1**: Course design knowledge base with Ivey 6-phase development process, course outline examples, concept threading patterns, and varied content delivery principles
 >
 > **✨ NEW in v2.6.0**: Strategic course outline creator with CLOs, weekly structure, MLOs, assessment strategy, and concept threading
@@ -26,13 +28,13 @@
 3. **backend-reviewer** - FastAPI/Python code review for security, error handling, API design, and performance
 4. **branding-checker** - Canvas LMS and Uplimit platform branding validation
 5. **consistency-checker** - Cross-module terminology, concept threading, outcome alignment
-6. **course-outline-creator** - **NEW**: Strategic course planning with CLOs, weekly structure, MLOs, assessment strategy, and concept threading. References bundled course design knowledge base.
+6. **course-outline-creator** - **NEW**: Strategic course planning with CLOs, weekly structure, MLOs, assessment strategy, and concept threading. Asks about course format (cohort vs. self-paced) to inform structure. References bundled course design knowledge base.
 7. **frontend-reviewer** - React/JSX code review for accessibility (WCAG 2.2 AA), UX patterns, and performance
 8. **peer-review-simulator** - Multi-perspective design review with 6 ID specialists (Emma-Content, Marcus-Accessibility, Priya-Visual, James-Technical, Sarah-Pedagogy, Alex-UX)
 9. **rubric-generator** - QM-aligned rubric generation. **NEW**: Diagnostic rubrics (3-level), PAIRR bonus rubrics, AI feedback prompts
 10. **student-journey-simulator** - 4-persona course experience testing (Sarah, Marcus, Priya, Alex)
 11. **udl-content-generator** - Transform content into multimodal formats (audio, visual, interactive)
-12. **uplimit-storyboard-builder** - Complete copy-paste-ready implementation guides for Uplimit courses. References bundled course design knowledge base.
+12. **uplimit-storyboard-builder** - Complete copy-paste-ready implementation guides for Uplimit courses. Asks about course format (cohort vs. self-paced) to inform pacing and deadlines. References bundled course design knowledge base.
 13. **widget-tester** - 3-persona widget testing (Sarah, James, Maria) for UX validation
 
 ### ⚡ 10 Quick Slash Commands
@@ -425,6 +427,11 @@ GitHub: [@jameskruck](https://github.com/jameskruck)
 
 ## Version History
 
+- **2.6.2** (2025-01-28): Course format discovery
+  - Updated course-outline-creator agent to ask about course format (cohort vs. self-paced) as first discovery question
+  - Updated uplimit-storyboard-builder agent to request course format in initial context gathering
+  - Added course format to Required Input section with detailed explanations (cohort: fixed dates, synchronous elements; self-paced: own speed, asynchronous only)
+  - Course format informs critical design decisions: weekly structure vs modules, deadlines, peer review feasibility, synchronous elements
 - **2.6.1** (2025-01-28): Added course design knowledge base
   - Added ~150 KB bundled course design knowledge base (4 files)
   - **ivey-course-development-process.md**: 6-phase process, cohort/self-paced models, team roles

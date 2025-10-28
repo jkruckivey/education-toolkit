@@ -15,6 +15,12 @@
             "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/format-storyboard.py\" \"${TOOL_INPUT_file_path}\"",
             "description": "Auto-format storyboards to match platform conventions",
             "timeout": 3000
+          },
+          {
+            "type": "command",
+            "command": "echo \"[$(date '+%Y-%m-%d %H:%M:%S')] ${TOOL_NAME}: ${TOOL_INPUT_file_path}\" >> ~/.claude/changes.log",
+            "description": "Track file changes with timestamps",
+            "timeout": 1000
           }
         ]
       }

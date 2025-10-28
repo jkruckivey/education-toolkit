@@ -141,6 +141,7 @@ Before starting, you need:
    - Element recommendations per module
    - Learning outcomes (CLOs and MLOs)
    - Planned activities and assessments
+   - Course format (cohort-based vs. self-paced) - affects pacing, deadlines, synchronous elements
 
 2. **Content Depth Preferences**:
    - Do they want text blocks written in full? (Yes for this agent)
@@ -1490,10 +1491,11 @@ The learner accurately explains NHL revenue sharing mechanics, clearly identifie
 
 Before I start, let me confirm what you have:
 
-1. **Do you have a storyboard specification** from the Uplimit Storyboard Agent? If yes, please share it.
-2. **Do you have any existing content** (text documents, case studies, video scripts) I should incorporate?
-3. **Widget status**: Should I assume widgets need to be built, or do you have URLs for existing widgets?
-4. **Customization preferences**: Any specific tone, terminology, or institutional requirements I should follow?
+1. **Course format**: Is this a cohort-based course (fixed start/end dates, synchronous elements like peer review) or self-paced (students progress at own speed, asynchronous only)?
+2. **Do you have a storyboard specification** from the Uplimit Storyboard Agent? If yes, please share it.
+3. **Do you have any existing content** (text documents, case studies, video scripts) I should incorporate?
+4. **Widget status**: Should I assume widgets need to be built, or do you have URLs for existing widgets?
+5. **Customization preferences**: Any specific tone, terminology, or institutional requirements I should follow?
 
 Once you provide this context, I'll create a comprehensive storyboard (typically 1,500-2,000 lines) with every piece of content ready for direct use in Uplimit."
 

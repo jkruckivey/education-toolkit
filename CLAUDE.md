@@ -366,9 +366,42 @@ Before version releases:
 - **Agent autonomy** - Agents read their own knowledge base files, don't require user file paths
 - **Model selection** - Use `sonnet` for speed (2-5 min), `opus` for depth (5-12 min for peer-review-simulator)
 - **WebFetch capability** - Only course-outline-creator, accessibility-auditor, and assessment-designer have WebFetch access
-- **Version history** - Track methodology additions in README.md (v2.6.1 added Course Design Knowledge Base, v2.6.0 added Course Outline Creator, v2.5.0 added Fullstack Code Review, v2.4.2 fixed peer review storyboard vs live content, v2.4.1 added Interactivity Analysis + Automatic Hooks, v2.4.0 added Executable Skills, v2.3.2 added Peer Design Review Simulator, v2.3.1 added storyboard validation enhancements, v2.0 added PAIRR, AI Roleplay, Diagnostic Rubrics)
+- **Version history** - Track methodology additions in README.md (v2.6.2 added Course Format Discovery, v2.6.1 added Course Design Knowledge Base, v2.6.0 added Course Outline Creator, v2.5.0 added Fullstack Code Review, v2.4.2 fixed peer review storyboard vs live content, v2.4.1 added Interactivity Analysis + Automatic Hooks, v2.4.0 added Executable Skills, v2.3.2 added Peer Design Review Simulator, v2.3.1 added storyboard validation enhancements, v2.0 added PAIRR, AI Roleplay, Diagnostic Rubrics)
 
 ## Version History & Changelog
+
+### v2.6.2 (2025-01-28) - Course Format Discovery
+
+**Agent Updates**:
+
+**course-outline-creator.md**:
+- Added course format (cohort vs. self-paced) to Required Input section (item #4)
+- Added detailed explanations: Cohort (fixed start/end dates, synchronous elements, weekly deadlines) vs. Self-paced (own speed, asynchronous only, checkpoint-based)
+- Made course format the first question in Discovery Interview process
+- Course format informs critical design decisions: weekly structure vs modules, firm deadlines vs flexible pacing, peer review feasibility, synchronous session planning
+
+**uplimit-storyboard-builder.md**:
+- Added course format to Required Context section (line 144)
+- Added course format as first confirmation question in BUILD MODE initial response
+- Course format affects: pacing recommendations, deadline language, synchronous element inclusion, module vs weekly structure
+
+**Rationale**:
+- Course format is a fundamental structural decision that affects every design choice downstream
+- Cohort courses can include synchronous peer review, live sessions, anchor projects with milestones
+- Self-paced courses require fully asynchronous design, checkpoint tasks instead of deadlines, individual work only
+- Asking upfront prevents costly redesign when format assumptions are incorrect
+
+**Updated Files**:
+- `course-outline-creator.md`: Lines 88-90 (Required Input), line 102 (Discovery Interview)
+- `uplimit-storyboard-builder.md`: Line 144 (Required Context), line 1494 (BUILD MODE)
+- `plugin.json`: Version 2.6.2
+- `marketplace.json`: Version 2.6.2 (both locations)
+- `README.md`: Added v2.6.2 callout, updated agent descriptions for course-outline-creator and uplimit-storyboard-builder
+
+**Impact**:
+- Agents now gather course format at start of every outline/storyboard creation
+- Design recommendations appropriately match course delivery model
+- Prevents assumptions that lead to incompatible design choices (e.g., peer review in self-paced course)
 
 ### v2.5.0 (2025-01-23) - Automatic Fullstack Code Review
 

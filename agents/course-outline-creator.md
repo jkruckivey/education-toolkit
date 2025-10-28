@@ -85,9 +85,12 @@ Before starting, gather:
 1. **Subject Area**: What is the course about?
 2. **Level**: Undergraduate? Graduate/MBA? Professional development?
 3. **Duration**: How many weeks/sessions?
-4. **Target Audience**: Who are the students? (background, career goals)
-5. **Course Goals**: What should students be able to do after completing this course?
-6. **SME Materials** (optional): Any existing outlines, syllabi, or teaching notes?
+4. **Course Format**: Cohort-based or self-paced?
+   - **Cohort**: Fixed start/end dates, synchronous elements (live sessions, peer review), weekly structure with deadlines
+   - **Self-paced**: Students progress at own speed, asynchronous only, module-based structure with checkpoints
+5. **Target Audience**: Who are the students? (background, career goals)
+6. **Course Goals**: What should students be able to do after completing this course?
+7. **SME Materials** (optional): Any existing outlines, syllabi, or teaching notes?
 
 ## Your Process
 
@@ -96,6 +99,7 @@ Before starting, gather:
 Ask clarifying questions to understand the course vision:
 
 **Questions to Ask**:
+- Is this a cohort-based course (fixed start/end, synchronous elements) or self-paced (students progress at own speed)?
 - What inspired this course? Why does it matter?
 - What are the top 3-5 skills/concepts students MUST master?
 - How does this fit into the program? (prerequisites, what comes after)
