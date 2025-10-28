@@ -282,7 +282,7 @@ Create tools that support different types of collaboration and communication.
 ### Essential Reading
 - **CAST UDL Guidelines**: [udlguidelines.cast.org](http://udlguidelines.cast.org)
 - **UDL in Higher Education**: Research and practice guides
-- **Web Accessibility Guidelines**: WCAG 2.1 standards and implementation
+- **Web Accessibility Guidelines**: WCAG 2.2 standards and implementation
 
 ### Tools and Checklists
 - **UDL Check**: Automated accessibility scanning tools

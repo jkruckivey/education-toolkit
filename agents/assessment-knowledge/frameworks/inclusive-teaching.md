@@ -354,7 +354,7 @@ Add a preferences dashboard where users can:
 ### Essential Reading
 - **Culturally Responsive Teaching** - Geneva Gay
 - **Universal Design for Learning Guidelines** - CAST
-- **Web Accessibility Guidelines** - WCAG 2.1 Standards
+- **Web Accessibility Guidelines** - WCAG 2.2 Standards
 - **Inclusive Design Research** - Microsoft Inclusive Design Toolkit
 
 ### Professional Development

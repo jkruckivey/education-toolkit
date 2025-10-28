@@ -1,7 +1,11 @@
 # Education Toolkit - Claude Code Plugin
 
-**Comprehensive toolkit for educational developers** with 12 specialized agents, 10 slash commands, and automatic code review. Includes cutting-edge assessment methodologies: PAIRR (Peer and AI Review + Reflection), AI Roleplay exercises, diagnostic rubrics, multi-perspective peer design review simulation, and fullstack code review with automatic quality checks.
+**Comprehensive toolkit for educational developers** with 13 specialized agents, 10 slash commands, and automatic code review. Includes cutting-edge assessment methodologies: PAIRR (Peer and AI Review + Reflection), AI Roleplay exercises, diagnostic rubrics, multi-perspective peer design review simulation, strategic course outline creation, and fullstack code review with automatic quality checks.
 
+> **✨ NEW in v2.6.1**: Course design knowledge base with Ivey 6-phase development process, course outline examples, concept threading patterns, and varied content delivery principles
+>
+> **✨ NEW in v2.6.0**: Strategic course outline creator with CLOs, weekly structure, MLOs, assessment strategy, and concept threading
+>
 > **✨ NEW in v2.5.0**: Automatic code review hook for FastAPI/Python and React/JSX with PostToolUse triggers
 
 ## Installation
@@ -15,20 +19,21 @@
 
 ## What's Included
 
-### 🤖 12 Specialized Agents
+### 🤖 13 Specialized Agents
 
 1. **accessibility-auditor** - WCAG 2.2 AA compliance checking with WebFetch capability
 2. **assessment-designer** - Comprehensive assessment design with 464 KB bundled knowledge base. **NEW**: PAIRR methodology, AI Roleplay exercise design, Three-Tier AI permission model
-3. **backend-reviewer** - **NEW**: FastAPI/Python code review for security, error handling, API design, and performance
+3. **backend-reviewer** - FastAPI/Python code review for security, error handling, API design, and performance
 4. **branding-checker** - Canvas LMS and Uplimit platform branding validation
 5. **consistency-checker** - Cross-module terminology, concept threading, outcome alignment
-6. **frontend-reviewer** - **NEW**: React/JSX code review for accessibility (WCAG 2.2 AA), UX patterns, and performance
-7. **peer-review-simulator** - **NEW**: Multi-perspective design review with 6 ID specialists (Emma-Content, Marcus-Accessibility, Priya-Visual, James-Technical, Sarah-Pedagogy, Alex-UX)
-8. **rubric-generator** - QM-aligned rubric generation. **NEW**: Diagnostic rubrics (3-level), PAIRR bonus rubrics, AI feedback prompts
-9. **student-journey-simulator** - 4-persona course experience testing (Sarah, Marcus, Priya, Alex)
-10. **udl-content-generator** - Transform content into multimodal formats (audio, visual, interactive)
-11. **uplimit-storyboard-builder** - Complete copy-paste-ready implementation guides for Uplimit courses
-12. **widget-tester** - 3-persona widget testing (Sarah, James, Maria) for UX validation
+6. **course-outline-creator** - **NEW**: Strategic course planning with CLOs, weekly structure, MLOs, assessment strategy, and concept threading. References bundled course design knowledge base.
+7. **frontend-reviewer** - React/JSX code review for accessibility (WCAG 2.2 AA), UX patterns, and performance
+8. **peer-review-simulator** - Multi-perspective design review with 6 ID specialists (Emma-Content, Marcus-Accessibility, Priya-Visual, James-Technical, Sarah-Pedagogy, Alex-UX)
+9. **rubric-generator** - QM-aligned rubric generation. **NEW**: Diagnostic rubrics (3-level), PAIRR bonus rubrics, AI feedback prompts
+10. **student-journey-simulator** - 4-persona course experience testing (Sarah, Marcus, Priya, Alex)
+11. **udl-content-generator** - Transform content into multimodal formats (audio, visual, interactive)
+12. **uplimit-storyboard-builder** - Complete copy-paste-ready implementation guides for Uplimit courses. References bundled course design knowledge base.
+13. **widget-tester** - 3-persona widget testing (Sarah, James, Maria) for UX validation
 
 ### ⚡ 10 Quick Slash Commands
 
@@ -43,12 +48,18 @@
 9. **/simulate-journey** - Simulate student journey through modules with 4 personas
 10. **/test-widget** - Test interactive widget with 3 student personas
 
-### 📚 Bundled Knowledge Base (464 KB)
+### 📚 Bundled Knowledge Base (~614 KB)
 
-The **assessment-designer** agent includes:
+**Assessment Research Knowledge (464 KB)** - Used by assessment-designer agent:
 - **4 Framework Guides**: UDL, Quality Matters, Inclusive Teaching, Assessment Templates
 - **5 Research Papers**: AI Assessment Framework, Acceptable AI Use, Alternative Assessments, Academic Integrity, GenAI in Higher Ed
 - **AI Assessment Principles**: Three-Tier Permission Model, Social Boundary Theory, AI-Resistant Design
+
+**Course Design Knowledge (~150 KB)** - **NEW in v2.6.1** - Used by course-outline-creator and uplimit-storyboard-builder agents:
+- **Ivey 6-Phase Development Process**: Planning → Design → Production → Build → Quality → Launch, cohort/self-paced models, team roles
+- **Course Outline Examples**: Anonymized 5-week MBA course templates with CLOs, MLOs, assessment scaffolding, concept threading
+- **Concept Threading Guide**: 4 threading patterns (Foundation→Application→Synthesis, Progressive Layering, Spiral Curriculum, Tool Accumulation), best practices, checklists
+- **Varied Content Delivery Guide**: Break text-heavy content into interactive elements, engagement metrics, transformation opportunities
 
 ### ✨ NEW: Evidence-Based Assessment Methodologies
 
@@ -414,6 +425,34 @@ GitHub: [@jameskruck](https://github.com/jameskruck)
 
 ## Version History
 
+- **2.6.1** (2025-01-28): Added course design knowledge base
+  - Added ~150 KB bundled course design knowledge base (4 files)
+  - **ivey-course-development-process.md**: 6-phase process, cohort/self-paced models, team roles
+  - **course-outline-examples.md**: Anonymized 5-week MBA course templates with full CLO/MLO structure
+  - **concept-threading-guide.md**: 4 threading patterns, best practices, checklists to prevent orphaned concepts
+  - **uplimit-content-design-guide.md**: Varied content delivery principles, engagement metrics, transformation opportunities
+  - Updated course-outline-creator agent to reference all 4 knowledge files
+  - Updated uplimit-storyboard-builder agent to reference content design guide
+  - Total bundled knowledge: ~614 KB (course design 150 KB + assessment research 464 KB)
+  - Fixed WCAG 2.1 → 2.2 in 3 knowledge base files (inclusive-teaching.md, qm-standards.md, udl-guide.md)
+  - Added YAML frontmatter to backend-reviewer, frontend-reviewer, uplimit-storyboard-builder agents
+- **2.6.0** (2025-01-28): Added strategic course outline creator
+  - Added course-outline-creator agent (14 KB, sonnet, WebFetch)
+  - Strategic curriculum design expert for comprehensive course outlines
+  - Guides instructors through: CLO definition (QM-compliant), weekly structure planning, MLO creation, assessment strategy design, concept threading, case/practitioner identification
+  - Discovery interview process for gathering requirements
+  - Assessment alignment matrix ensures all CLOs covered proportionally
+  - Concept threading prevents orphaned topics (introduced Week 1, applied Weeks 2-5)
+  - Workflow position: SME expertise → course-outline-creator → uplimit-storyboard-builder → build in platform
+  - 13 agents total (up from 12)
+- **2.5.0** (2025-01-23): Added automatic fullstack code review
+  - Added backend-reviewer agent (FastAPI/Python expertise)
+  - Added frontend-reviewer agent (React/JSX + WCAG 2.2 AA)
+  - Added Hook 5: review-on-change.md (PostToolUse automatic code review)
+  - Smart routing: Detects file type → launches specialized agent
+  - Intelligent skipping: Config files, small formatting changes, comment-only edits
+  - Review criteria: Security, accessibility, best practices, performance
+  - 12 agents total, 5 hooks
 - **2.4.2** (2025-10-21): Fixed peer-review-simulator to distinguish storyboards vs live content
   - Added critical content type detection (storyboard design specs vs implemented courses)
   - Updated all 6 reviewers with dual modes: STORYBOARD REVIEW vs LIVE CONTENT REVIEW

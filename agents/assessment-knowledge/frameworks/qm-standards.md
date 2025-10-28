@@ -139,7 +139,7 @@ Add a progress tracking system that:
 #### Implementation Checklist:
 - [ ] Tool works on desktop, tablet, and mobile devices
 - [ ] Compatible with major browsers (Chrome, Firefox, Safari, Edge)
-- [ ] Meets WCAG 2.1 AA accessibility standards
+- [ ] Meets WCAG 2.2 AA accessibility standards
 - [ ] Fast loading times and smooth performance
 - [ ] Error handling guides users through problems
 - [ ] Regular testing and maintenance
@@ -256,7 +256,7 @@ Use this checklist to evaluate any educational tool against QM principles:
 - [ ] All interactive elements function as expected
 
 ### Accessibility and Support ✓
-- [ ] Meets WCAG 2.1 AA accessibility standards
+- [ ] Meets WCAG 2.2 AA accessibility standards
 - [ ] Help documentation is comprehensive and searchable
 - [ ] Multiple support formats are available (text, video, etc.)
 - [ ] Users can get human help when needed
