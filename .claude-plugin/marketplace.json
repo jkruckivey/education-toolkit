@@ -1,8 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/anthropics/claude-code/main/.claude-plugin/marketplace.schema.json",
   "name": "education-toolkit",
-  "version": "2.6.2",
-  "description": "Comprehensive toolkit for course developers with 13 specialized agents and 10 slash commands. Includes strategic course outline creation (CLOs, weekly structure, MLOs, assessment strategy), peer design review simulation, PAIRR (Peer and AI Review + Reflection), AI Roleplay exercises, diagnostic rubrics, accessibility auditing, widget testing, course QA, and enhanced storyboard validation. Bundled with course design knowledge base: Ivey 6-phase development process, cohort/self-paced learning models, course outline examples, concept threading guide, and 464 KB of frameworks and AI assessment research.",
+  "version": "2.6.3",
+  "description": "Comprehensive toolkit for course developers with 14 specialized agents and 10 slash commands. Includes strategic course outline creation (CLOs, weekly structure, MLOs, assessment strategy), cohort course structure validation (module sequences, learning outcomes widgets, PAIRR methodology, Final Project Connections), peer design review simulation, PAIRR (Peer and AI Review + Reflection), AI Roleplay exercises, diagnostic rubrics, accessibility auditing, widget testing, course QA, and enhanced storyboard validation. Bundled with course design knowledge base: Ivey 6-phase development process, cohort/self-paced learning models, course outline examples, concept threading guide, and 464 KB of frameworks and AI assessment research.",
   "owner": {
     "name": "James Kruck",
     "email": "jkruck@ivey.ca",
@@ -11,10 +11,10 @@
   "plugins": [
     {
       "name": "education-toolkit",
-      "description": "13 agents + 10 commands: Course outline creation, peer design review simulation, PAIRR methodology, AI Roleplay design, diagnostic rubrics, accessibility auditing, assessment design with bundled course design knowledge (Ivey development process, examples, threading)",
+      "description": "14 agents + 10 commands: Course outline creation, cohort structure validation, peer design review simulation, PAIRR methodology, AI Roleplay design, diagnostic rubrics, accessibility auditing, assessment design with bundled course design knowledge (Ivey development process, examples, threading)",
       "source": "./",
       "category": "education",
-      "version": "2.6.2",
+      "version": "2.6.3",
       "author": {
         "name": "James Kruck",
         "email": "jkruck@ivey.ca"

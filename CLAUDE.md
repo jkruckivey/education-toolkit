@@ -4,9 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Overview
 
-**Education Toolkit** - Claude Code plugin providing 13 specialized agents, 10 slash commands, and automatic code review for educational developers, instructional designers, and course creators. Focus areas: strategic course planning (CLOs, weekly structure, assessment strategy), accessibility (WCAG 2.2 AA), assessment design, UDL implementation, Quality Matters standards, AI-integrated pedagogy, multi-perspective peer design review, and fullstack code quality (FastAPI/Python + React/JSX).
+**Education Toolkit** - Claude Code plugin providing 14 specialized agents, 10 slash commands, and automatic code review for educational developers, instructional designers, and course creators. Focus areas: strategic course planning (CLOs, weekly structure, assessment strategy), cohort course structure validation, accessibility (WCAG 2.2 AA), assessment design, UDL implementation, Quality Matters standards, AI-integrated pedagogy, multi-perspective peer design review, and fullstack code quality (FastAPI/Python + React/JSX).
 
-**Version**: 2.6.1 (January 2025)
+**Version**: 2.6.3 (January 2025)
 **Tech stack**: Markdown-based agent definitions, bundled knowledge base (course design knowledge + 464 KB assessment research), PostToolUse hooks for automatic code review
 **Distribution**: Claude Code plugin marketplace (`/plugin marketplace add jameskruck/education-toolkit`)
 
@@ -27,8 +27,9 @@ education-toolkit/
 │       ├── load-context.sh          # SessionStart: Context loader
 │       ├── check-protected.sh       # PreToolUse: Content guardian
 │       └── format-storyboard.py     # PostToolUse: Auto-formatter
-├── agents/                  # 13 specialized agents
+├── agents/                  # 14 specialized agents
 │   ├── course-outline-creator.md (14 KB, sonnet, WebFetch) # NEW v2.6.0 - Strategic course planning
+│   ├── cohort-structure-checker.md (25 KB, sonnet) # NEW v2.6.3 - Validates cohort course module structures
 │   ├── assessment-designer.md (27 KB, sonnet, 464 KB bundled knowledge)
 │   ├── rubric-generator.md (11 KB, sonnet)
 │   ├── accessibility-auditor.md (6 KB, sonnet, WebFetch)
@@ -366,9 +367,49 @@ Before version releases:
 - **Agent autonomy** - Agents read their own knowledge base files, don't require user file paths
 - **Model selection** - Use `sonnet` for speed (2-5 min), `opus` for depth (5-12 min for peer-review-simulator)
 - **WebFetch capability** - Only course-outline-creator, accessibility-auditor, and assessment-designer have WebFetch access
-- **Version history** - Track methodology additions in README.md (v2.6.2 added Course Format Discovery, v2.6.1 added Course Design Knowledge Base, v2.6.0 added Course Outline Creator, v2.5.0 added Fullstack Code Review, v2.4.2 fixed peer review storyboard vs live content, v2.4.1 added Interactivity Analysis + Automatic Hooks, v2.4.0 added Executable Skills, v2.3.2 added Peer Design Review Simulator, v2.3.1 added storyboard validation enhancements, v2.0 added PAIRR, AI Roleplay, Diagnostic Rubrics)
+- **Version history** - Track methodology additions in README.md (v2.6.3 added Cohort Structure Checker, v2.6.2 added Course Format Discovery, v2.6.1 added Course Design Knowledge Base, v2.6.0 added Course Outline Creator, v2.5.0 added Fullstack Code Review, v2.4.2 fixed peer review storyboard vs live content, v2.4.1 added Interactivity Analysis + Automatic Hooks, v2.4.0 added Executable Skills, v2.3.2 added Peer Design Review Simulator, v2.3.1 added storyboard validation enhancements, v2.0 added PAIRR, AI Roleplay, Diagnostic Rubrics)
 
 ## Version History & Changelog
+
+### v2.6.3 (2025-01-31) - Cohort Course Structure Validation
+
+**New Agent**:
+
+**cohort-structure-checker.md** (25 KB, sonnet):
+- Validates cohort course module structures against standardized templates
+- Checks module sequences (0→1→2→...→7), element patterns (connecting text, learning outcomes widgets, Final Project Connections)
+- Validates PAIRR methodology in Module 6 (peer feedback, AI feedback, comparative reflection, post-revision reflection, bonus structure)
+- Checks learning outcomes widgets are embedded in all modules (Element 2 for Modules 2-7)
+- Validates Final Project Connection quality (specificity, content match, application examples)
+- Cross-module consistency: Element numbering integrity, case attachment flags, AI roleplay timing references
+- Module-specific requirements: Module 1 (week-level outcomes), Module 7 (wrap-up components)
+
+**Use Cases**:
+- Validate storyboards follow cohort course template before development
+- Identify missing PAIRR components in assessment modules
+- Check Final Project Connection sections for quality and specificity
+- Ensure learning outcomes widgets are properly embedded
+- Catch element numbering mismatches between tables and content
+
+**Impact**:
+- Prevents structural inconsistencies across course weeks
+- Ensures PAIRR methodology is consistently applied (critical for AI literacy development)
+- Validates Final Project Connections are specific and actionable (not generic)
+- Catches missing learning outcomes widgets (students need visual CLO/MLO mapping)
+- Provides comprehensive validation report with line numbers and fix recommendations
+
+**Updated Files**:
+- `plugin.json`: Version 2.6.3, description updated (14 agents)
+- `marketplace.json`: Version 2.6.3, description updated (14 agents)
+- `CLAUDE.md`: Added cohort-structure-checker to architecture, updated agent count
+
+**Example Issues Detected**:
+- ❌ Module 6: PAIRR methodology completely missing (no comparative reflection)
+- ❌ Module 2: Element 2 should be learning outcomes widget, found Infobox instead
+- ❌ Module 1: Learning outcomes widget described but iframe code not embedded
+- ⚠️ Module 3: Final Project Connection too generic (needs specific content references)
+
+---
 
 ### v2.6.2 (2025-01-28) - Course Format Discovery
 

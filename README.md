@@ -1,7 +1,9 @@
 # Education Toolkit - Claude Code Plugin
 
-**Comprehensive toolkit for educational developers** with 13 specialized agents, 10 slash commands, and automatic code review. Includes cutting-edge assessment methodologies: PAIRR (Peer and AI Review + Reflection), AI Roleplay exercises, diagnostic rubrics, multi-perspective peer design review simulation, strategic course outline creation, and fullstack code review with automatic quality checks.
+**Comprehensive toolkit for educational developers** with 14 specialized agents, 10 slash commands, and automatic code review. Includes cutting-edge assessment methodologies: PAIRR (Peer and AI Review + Reflection), AI Roleplay exercises, diagnostic rubrics, multi-perspective peer design review simulation, strategic course outline creation, cohort course structure validation, and fullstack code review with automatic quality checks.
 
+> **✨ NEW in v2.6.3**: Cohort course structure checker validates module sequences, learning outcomes widgets, PAIRR methodology, and Final Project Connections
+>
 > **✨ NEW in v2.6.2**: Course outline and storyboard builders now ask about course format (cohort vs. self-paced) to inform design decisions
 >
 > **✨ NEW in v2.6.1**: Course design knowledge base with Ivey 6-phase development process, course outline examples, concept threading patterns, and varied content delivery principles
@@ -21,21 +23,22 @@
 
 ## What's Included
 
-### 🤖 13 Specialized Agents
+### 🤖 14 Specialized Agents
 
 1. **accessibility-auditor** - WCAG 2.2 AA compliance checking with WebFetch capability
 2. **assessment-designer** - Comprehensive assessment design with 464 KB bundled knowledge base. **NEW**: PAIRR methodology, AI Roleplay exercise design, Three-Tier AI permission model
 3. **backend-reviewer** - FastAPI/Python code review for security, error handling, API design, and performance
 4. **branding-checker** - Canvas LMS and Uplimit platform branding validation
-5. **consistency-checker** - Cross-module terminology, concept threading, outcome alignment
-6. **course-outline-creator** - **NEW**: Strategic course planning with CLOs, weekly structure, MLOs, assessment strategy, and concept threading. Asks about course format (cohort vs. self-paced) to inform structure. References bundled course design knowledge base.
-7. **frontend-reviewer** - React/JSX code review for accessibility (WCAG 2.2 AA), UX patterns, and performance
-8. **peer-review-simulator** - Multi-perspective design review with 6 ID specialists (Emma-Content, Marcus-Accessibility, Priya-Visual, James-Technical, Sarah-Pedagogy, Alex-UX)
-9. **rubric-generator** - QM-aligned rubric generation. **NEW**: Diagnostic rubrics (3-level), PAIRR bonus rubrics, AI feedback prompts
-10. **student-journey-simulator** - 4-persona course experience testing (Sarah, Marcus, Priya, Alex)
-11. **udl-content-generator** - Transform content into multimodal formats (audio, visual, interactive)
-12. **uplimit-storyboard-builder** - Complete copy-paste-ready implementation guides for Uplimit courses. Asks about course format (cohort vs. self-paced) to inform pacing and deadlines. References bundled course design knowledge base.
-13. **widget-tester** - 3-persona widget testing (Sarah, James, Maria) for UX validation
+5. **cohort-structure-checker** - **NEW in v2.6.3**: Validates cohort course module structures (sequences, learning outcomes widgets, PAIRR methodology, Final Project Connections)
+6. **consistency-checker** - Cross-module terminology, concept threading, outcome alignment
+7. **course-outline-creator** - **NEW**: Strategic course planning with CLOs, weekly structure, MLOs, assessment strategy, and concept threading. Asks about course format (cohort vs. self-paced) to inform structure. References bundled course design knowledge base.
+8. **frontend-reviewer** - React/JSX code review for accessibility (WCAG 2.2 AA), UX patterns, and performance
+9. **peer-review-simulator** - Multi-perspective design review with 6 ID specialists (Emma-Content, Marcus-Accessibility, Priya-Visual, James-Technical, Sarah-Pedagogy, Alex-UX)
+10. **rubric-generator** - QM-aligned rubric generation. **NEW**: Diagnostic rubrics (3-level), PAIRR bonus rubrics, AI feedback prompts
+11. **student-journey-simulator** - 4-persona course experience testing (Sarah, Marcus, Priya, Alex)
+12. **udl-content-generator** - Transform content into multimodal formats (audio, visual, interactive)
+13. **uplimit-storyboard-builder** - Complete copy-paste-ready implementation guides for Uplimit courses. Asks about course format (cohort vs. self-paced) to inform pacing and deadlines. References bundled course design knowledge base.
+14. **widget-tester** - 3-persona widget testing (Sarah, James, Maria) for UX validation
 
 ### ⚡ 10 Quick Slash Commands
 
