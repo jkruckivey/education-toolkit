@@ -4,9 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Overview
 
-**Education Toolkit** - Claude Code plugin providing 16 specialized agents, 10 slash commands, and automatic code review for educational developers, instructional designers, and course creators. Focus areas: strategic course planning (CLOs, weekly structure, assessment strategy), specialized consistency validation (terminology, concept threading, assessment methodology), cohort course structure validation, accessibility (WCAG 2.2 AA), assessment design, UDL implementation, Quality Matters standards, AI-integrated pedagogy, multi-perspective peer design review, and fullstack code quality (FastAPI/Python + React/JSX).
+**Education Toolkit** - Claude Code plugin providing 17 specialized agents, 10 slash commands, and automatic code review for educational developers, instructional designers, and course creators. Focus areas: widget design system enforcement, strategic course planning (CLOs, weekly structure, assessment strategy), specialized consistency validation (terminology, concept threading, assessment methodology), cohort course structure validation, accessibility (WCAG 2.2 AA), assessment design, UDL implementation, Quality Matters standards, AI-integrated pedagogy, multi-perspective peer design review, and fullstack code quality (FastAPI/Python + React/JSX).
 
-**Version**: 2.7.0 (January 2025)
+**Version**: 2.8.0 (January 2025)
 **Tech stack**: Markdown-based agent definitions, bundled knowledge base (course design knowledge + 464 KB assessment research), PostToolUse hooks for automatic code review
 **Distribution**: Claude Code plugin marketplace (`/plugin marketplace add jameskruck/education-toolkit`)
 
@@ -27,7 +27,7 @@ education-toolkit/
 │       ├── load-context.sh          # SessionStart: Context loader
 │       ├── check-protected.sh       # PreToolUse: Content guardian
 │       └── format-storyboard.py     # PostToolUse: Auto-formatter
-├── agents/                  # 16 specialized agents
+├── agents/                  # 17 specialized agents
 │   ├── course-outline-creator.md (14 KB, sonnet, WebFetch) # Strategic course planning
 │   ├── cohort-structure-checker.md (25 KB, sonnet) # Validates cohort course module structures
 │   ├── terminology-consistency-checker.md (18 KB, sonnet) # NEW v2.7.0 - Term consistency & glossary building
@@ -37,6 +37,7 @@ education-toolkit/
 │   ├── rubric-generator.md (11 KB, sonnet)
 │   ├── accessibility-auditor.md (6 KB, sonnet, WebFetch)
 │   ├── widget-tester.md (8 KB, sonnet, 3 personas)
+│   ├── widget-designer.md (16 KB, sonnet) # NEW v2.8.0 - Generate/audit HTML widgets with design system
 │   ├── student-journey-simulator.md (6 KB, opus, 4 personas)
 │   ├── peer-review-simulator.md (15 KB, opus, 6 reviewer personas)
 │   ├── branding-checker.md (10 KB, sonnet, Canvas/Uplimit)
@@ -370,9 +371,64 @@ Before version releases:
 - **Agent autonomy** - Agents read their own knowledge base files, don't require user file paths
 - **Model selection** - Use `sonnet` for speed (2-5 min), `opus` for depth (5-12 min for peer-review-simulator)
 - **WebFetch capability** - Only course-outline-creator, accessibility-auditor, and assessment-designer have WebFetch access
-- **Version history** - Track methodology additions in README.md (v2.7.0 added Specialized Consistency Checkers, v2.6.3 added Cohort Structure Checker, v2.6.2 added Course Format Discovery, v2.6.1 added Course Design Knowledge Base, v2.6.0 added Course Outline Creator, v2.5.0 added Fullstack Code Review, v2.4.2 fixed peer review storyboard vs live content, v2.4.1 added Interactivity Analysis + Automatic Hooks, v2.4.0 added Executable Skills, v2.3.2 added Peer Design Review Simulator, v2.3.1 added storyboard validation enhancements, v2.0 added PAIRR, AI Roleplay, Diagnostic Rubrics)
+- **Version history** - Track methodology additions in README.md (v2.8.0 added Widget Design System Enforcement, v2.7.0 added Specialized Consistency Checkers, v2.6.3 added Cohort Structure Checker, v2.6.2 added Course Format Discovery, v2.6.1 added Course Design Knowledge Base, v2.6.0 added Course Outline Creator, v2.5.0 added Fullstack Code Review, v2.4.2 fixed peer review storyboard vs live content, v2.4.1 added Interactivity Analysis + Automatic Hooks, v2.4.0 added Executable Skills, v2.3.2 added Peer Design Review Simulator, v2.3.1 added storyboard validation enhancements, v2.0 added PAIRR, AI Roleplay, Diagnostic Rubrics)
 
 ## Version History & Changelog
+
+### v2.8.0 (2025-01-31) - Widget Design System Enforcement
+
+**New Agent**:
+
+**widget-designer.md** (16 KB, sonnet):
+- Dual-mode agent: GENERATE new widgets OR AUDIT existing widgets for design system compliance
+- Enforces standardized design system extracted from Business of Marketing in Sport widgets
+- **Typography**: Geist font family (400, 500, 600, 700 weights), standardized size scale (1.8rem h1, 1.5rem h2, 0.95rem subtitle, 0.875rem labels)
+- **Color System**: Neutral gray palette (neutral-50 through neutral-900), CSS variables required (no hardcoded hex)
+- **Content Guidelines**: NO EMOJIS policy (use text labels or symbols like → • ▼ instead)
+- **Button Standards**: Neutral gray states (neutral-900 active, neutral-700 completed, neutral-100 default), font-weight 500, border-radius 8px
+- **Accessibility Requirements**: ARIA labels, keyboard nav (Enter/Space), focus states (2px solid #3182ce), screen reader support
+- **Export Formats**: PDF generation (not JSON) using jsPDF library for student submissions
+
+**GENERATE Mode**:
+- Scaffolds new interactive widgets with standardized design system
+- Asks clarifying questions (widget type, interactivity, primary color, data structure, features)
+- Generates base template with Geist font, CSS variables, accessibility built-in
+- Adds widget-specific components (quiz, simulator, decision tree, concept map patterns)
+- Pre-flight checklist: All colors use variables, no emojis, focus states, keyboard nav, responsive
+
+**AUDIT Mode**:
+- Validates existing widgets against design system standards
+- Systematic checks: Color system (flags hardcoded hex), typography (Geist loaded?), buttons (pattern compliance), spacing (8px scale), border-radius (8px containers, 4px small), accessibility (ARIA, keyboard, lang attribute), emojis (flags all instances)
+- Generates comprehensive audit report with line numbers, critical issues, warnings, passing standards, quick fix recommendations
+- Offers to automatically fix issues (replace hardcoded colors, add Geist font, remove emojis, standardize border-radius)
+
+**Design System Standards** (extracted from 4 sample widgets):
+- **Neutral Color Scale**: `--color-neutral-50` (#fafafa) through `--color-neutral-900` (#171717)
+- **Semantic Colors**: `--color-success` (#22c55e), `--color-error` (#ef4444), `--color-warning` (#f59e0b), `--color-info` (#3b82f6)
+- **Primary Color**: `--color-primary` (#171717 dark gray default, configurable per widget)
+- **Typography Scale**: h1 (1.8rem) → h2 (1.5rem) → h3 (1.2rem) → body (1rem) → labels (0.875rem)
+- **Spacing Scale**: 8px base (`--spacing-1: 8px`, `--spacing-2: 16px`, etc.)
+- **Border**: `--border-radius: 8px`, `--border-radius-sm: 4px`
+
+**Use Cases**:
+- "Create a quiz widget with progress tracker" → Generates standardized HTML
+- "Audit this widget for design system compliance" → Reports hardcoded colors, missing Geist, emoji usage
+- "Generate a decision simulator" → Scaffolds with sliders, buttons, charts, all using CSS variables
+- "Check color variable usage in my widget" → Lists every hardcoded hex with line numbers
+
+**Impact**:
+- Ensures visual consistency across all course widgets (same font, colors, spacing)
+- Saves 15-20 minutes per widget audit (automated find-replace for hardcoded colors)
+- Prevents accessibility regressions (automatic checks for ARIA, keyboard nav, emojis)
+- Professional educational tone (no emojis policy enforced)
+- Submission-ready exports (PDF format, not JSON)
+
+**Updated Files**:
+- `plugin.json`: Version 2.8.0, description updated (17 agents), added keywords "widget-design", "design-system"
+- `marketplace.json`: Version 2.8.0, description highlights widget design system enforcement
+- `CLAUDE.md`: Added widget-designer to architecture, updated version history
+
+---
 
 ### v2.7.0 (2025-01-31) - Specialized Consistency Checkers
 

@@ -1,7 +1,7 @@
 ---
 name: widget-tester
 description: Test interactive educational widgets with simulated student personas. Use when testing widgets, checking UX, or validating interactive learning tools.
-tools: Read, Glob
+tools: Read, Glob, Skill, Bash
 model: sonnet
 ---
 
@@ -100,14 +100,47 @@ You will test widgets from the perspective of 3 distinct MBA student personas:
 - Is feedback constructive?
 - Can they try multiple scenarios?
 
+## INVOKING WEBAPP-TESTING SKILL FOR AUTOMATED TESTING
+
+This agent has access to the webapp-testing skill for automated widget interaction testing:
+
+**widget_persona_test.py script** - Automated persona-based testing with Playwright:
+- Simulates all 3 personas (Sarah, James, Maria) interacting with widgets
+- Captures screenshots at key interaction points
+- Measures completion times and identifies frustrations automatically
+- Tests edge cases (empty inputs, max values, validation)
+- Generates JSON report with detailed persona journeys
+
+**When to Invoke**:
+- User provides URL or HTML file of interactive widget
+- User asks to "test widget", "simulate student experience", or "check UX"
+- You need to verify actual interaction behavior (not just code review)
+
+**Workflow**:
+1. **Invoke webapp-testing skill** for automated first-pass testing:
+   - If widget is a local file: `python .claude/skills/webapp-testing/scripts/widget_persona_test.py --file /path/to/widget.html --output results.json`
+   - If widget needs server: `python .claude/skills/webapp-testing/scripts/with_server.py --server "python -m http.server 8000" --port 8000 -- python .claude/skills/webapp-testing/scripts/widget_persona_test.py --url http://localhost:8000/widget.html`
+
+2. **Read automated test results** (JSON file + screenshots)
+
+3. **Read widget HTML/CSS** for code-level analysis using Read tool
+
+4. **Synthesize findings** - Combine automated testing data with manual code review
+
+5. **Generate comprehensive report** - Include automated metrics + code fixes
+
+**Important**: Automated testing provides behavioral data (what students experience). Manual code review provides fixes (why issues happen, how to fix). Combine both for complete reports.
+
 ## Testing Process
 
-1. **Read the widget file** using the Read tool
-2. **Simulate each persona** experiencing the widget from scratch
-3. **Document the journey** - what they see, click, think, feel
-4. **Identify pain points** specific to each persona
-5. **Find critical bugs** that affect learning or accessibility
-6. **Highlight strengths** - what works well
+1. **Invoke webapp-testing skill** (if widget is interactive and user provides URL/file)
+2. **Read the widget file** using the Read tool (for code analysis)
+3. **Read automated test results** (if skill was invoked)
+4. **Synthesize findings** from automated testing + manual code review
+5. **Document the journey** - what each persona experienced (from automated results + code analysis)
+6. **Identify pain points** specific to each persona with line numbers and fixes
+7. **Find critical bugs** that affect learning or accessibility
+8. **Highlight strengths** - what works well
 
 ## Output Format
 
