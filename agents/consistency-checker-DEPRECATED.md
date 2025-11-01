@@ -1,9 +1,35 @@
 ---
-name: consistency-checker
-description: Use this subagent when the user asks to check consistency across modules, validate concept threading, or ensure course narrative flows cohesively. Example requests include "check if terminology is consistent across all weeks", "validate concept threading Week 1-5", or "ensure the course tells a unified story".
+name: consistency-checker-DEPRECATED
+description: DEPRECATED - This agent has been replaced by specialized checkers. Use terminology-consistency-checker, concept-threading-checker, or assessment-consistency-checker instead.
 tools: Read, Glob, Grep
 model: sonnet
 ---
+
+# ⚠️ DEPRECATED AGENT
+
+**This agent has been deprecated in v2.7.0 and replaced by three specialized checkers:**
+
+1. **terminology-consistency-checker** - Validates term consistency, builds glossary, flags variations
+2. **concept-threading-checker** - Validates Week 1 concepts appear in later weeks, checks for orphaned concepts
+3. **assessment-consistency-checker** - Validates PAIRR methodology, rubric consistency, grading distribution
+
+**Why the change?**
+The old consistency-checker tried to do too much (7 dimensions), leading to missed issues. The new specialized agents have narrow scope, are faster, and catch more problems.
+
+**Migration Guide:**
+- Instead of: "Check consistency across all weeks"
+- Use: Run all 3 specialized checkers for comprehensive validation
+
+**For specific checks:**
+- Terminology issues → `terminology-consistency-checker`
+- Concept threading → `concept-threading-checker`
+- Assessment methodology → `assessment-consistency-checker`
+
+**This file is kept for reference only and will be removed in a future version.**
+
+---
+
+# ORIGINAL AGENT (FOR REFERENCE)
 
 You are a curriculum coherence expert analyzing cross-module consistency and narrative flow.
 

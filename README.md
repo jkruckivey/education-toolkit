@@ -1,7 +1,9 @@
 # Education Toolkit - Claude Code Plugin
 
-**Comprehensive toolkit for educational developers** with 14 specialized agents, 10 slash commands, and automatic code review. Includes cutting-edge assessment methodologies: PAIRR (Peer and AI Review + Reflection), AI Roleplay exercises, diagnostic rubrics, multi-perspective peer design review simulation, strategic course outline creation, cohort course structure validation, and fullstack code review with automatic quality checks.
+**Comprehensive toolkit for educational developers** with 16 specialized agents, 10 slash commands, and automatic code review. Includes cutting-edge assessment methodologies: PAIRR (Peer and AI Review + Reflection), AI Roleplay exercises, diagnostic rubrics, multi-perspective peer design review simulation, strategic course outline creation, specialized consistency checkers (terminology, concept threading, assessment), cohort course structure validation, and fullstack code review with automatic quality checks.
 
+> **✨ NEW in v2.7.0**: Three specialized consistency checkers replace old monolithic checker - terminology validation, concept threading tracking, and assessment methodology consistency
+>
 > **✨ NEW in v2.6.3**: Cohort course structure checker validates module sequences, learning outcomes widgets, PAIRR methodology, and Final Project Connections
 >
 > **✨ NEW in v2.6.2**: Course outline and storyboard builders now ask about course format (cohort vs. self-paced) to inform design decisions
@@ -23,22 +25,25 @@
 
 ## What's Included
 
-### 🤖 14 Specialized Agents
+### 🤖 16 Specialized Agents
 
 1. **accessibility-auditor** - WCAG 2.2 AA compliance checking with WebFetch capability
-2. **assessment-designer** - Comprehensive assessment design with 464 KB bundled knowledge base. **NEW**: PAIRR methodology, AI Roleplay exercise design, Three-Tier AI permission model
-3. **backend-reviewer** - FastAPI/Python code review for security, error handling, API design, and performance
-4. **branding-checker** - Canvas LMS and Uplimit platform branding validation
-5. **cohort-structure-checker** - **NEW in v2.6.3**: Validates cohort course module structures (sequences, learning outcomes widgets, PAIRR methodology, Final Project Connections)
-6. **consistency-checker** - Cross-module terminology, concept threading, outcome alignment
-7. **course-outline-creator** - **NEW**: Strategic course planning with CLOs, weekly structure, MLOs, assessment strategy, and concept threading. Asks about course format (cohort vs. self-paced) to inform structure. References bundled course design knowledge base.
-8. **frontend-reviewer** - React/JSX code review for accessibility (WCAG 2.2 AA), UX patterns, and performance
-9. **peer-review-simulator** - Multi-perspective design review with 6 ID specialists (Emma-Content, Marcus-Accessibility, Priya-Visual, James-Technical, Sarah-Pedagogy, Alex-UX)
-10. **rubric-generator** - QM-aligned rubric generation. **NEW**: Diagnostic rubrics (3-level), PAIRR bonus rubrics, AI feedback prompts
-11. **student-journey-simulator** - 4-persona course experience testing (Sarah, Marcus, Priya, Alex)
-12. **udl-content-generator** - Transform content into multimodal formats (audio, visual, interactive)
-13. **uplimit-storyboard-builder** - Complete copy-paste-ready implementation guides for Uplimit courses. Asks about course format (cohort vs. self-paced) to inform pacing and deadlines. References bundled course design knowledge base.
-14. **widget-tester** - 3-persona widget testing (Sarah, James, Maria) for UX validation
+2. **assessment-consistency-checker** - **NEW in v2.7.0**: Validates PAIRR methodology consistency across weeks, rubric structures, grading distribution. Course-type aware (flags peer review in self-paced courses).
+3. **assessment-designer** - Comprehensive assessment design with 464 KB bundled knowledge base. **NEW**: PAIRR methodology, AI Roleplay exercise design, Three-Tier AI permission model
+4. **backend-reviewer** - FastAPI/Python code review for security, error handling, API design, and performance
+5. **branding-checker** - Canvas LMS and Uplimit platform branding validation
+6. **cohort-structure-checker** - **NEW in v2.6.3**: Validates cohort course module structures (sequences, learning outcomes widgets, PAIRR methodology, Final Project Connections)
+7. **concept-threading-checker** - **NEW in v2.7.0**: Validates Week 1 concepts appear in later weeks with progressive complexity. Maps concept introduction→usage, flags orphaned concepts, checks callback references.
+8. **consistency-checker-DEPRECATED** - ⚠️ DEPRECATED in v2.7.0. Use specialized checkers instead: terminology-consistency-checker, concept-threading-checker, assessment-consistency-checker
+9. **course-outline-creator** - **NEW**: Strategic course planning with CLOs, weekly structure, MLOs, assessment strategy, and concept threading. Asks about course format (cohort vs. self-paced) to inform structure. References bundled course design knowledge base.
+10. **frontend-reviewer** - React/JSX code review for accessibility (WCAG 2.2 AA), UX patterns, and performance
+11. **peer-review-simulator** - Multi-perspective design review with 6 ID specialists (Emma-Content, Marcus-Accessibility, Priya-Visual, James-Technical, Sarah-Pedagogy, Alex-UX)
+12. **rubric-generator** - QM-aligned rubric generation. **NEW**: Diagnostic rubrics (3-level), PAIRR bonus rubrics, AI feedback prompts
+13. **student-journey-simulator** - 4-persona course experience testing (Sarah, Marcus, Priya, Alex)
+14. **terminology-consistency-checker** - **NEW in v2.7.0**: Builds course glossary, validates term consistency across all weeks. Tracks variations, identifies undefined acronyms, checks capitalization, generates consistency scores.
+15. **udl-content-generator** - Transform content into multimodal formats (audio, visual, interactive)
+16. **uplimit-storyboard-builder** - Complete copy-paste-ready implementation guides for Uplimit courses. Asks about course format (cohort vs. self-paced) to inform pacing and deadlines. References bundled course design knowledge base.
+17. **widget-tester** - 3-persona widget testing (Sarah, James, Maria) for UX validation
 
 ### ⚡ 10 Quick Slash Commands
 
@@ -430,6 +435,22 @@ GitHub: [@jameskruck](https://github.com/jameskruck)
 
 ## Version History
 
+- **2.7.0** (2025-01-29): Specialized consistency checkers
+  - Replaced monolithic consistency-checker with 3 specialized agents for better precision
+  - Added **terminology-consistency-checker** (18 KB): Builds course glossary, validates term consistency, tracks variations, identifies undefined acronyms
+  - Added **concept-threading-checker** (22 KB): Maps concept introduction→usage across weeks, flags orphaned concepts, validates progressive complexity, checks callback references
+  - Added **assessment-consistency-checker** (20 KB): Validates PAIRR methodology consistency, rubric structures, grading distribution, course-type aware (flags peer review in self-paced courses)
+  - Deprecated old consistency-checker (renamed to consistency-checker-DEPRECATED.md with migration guide)
+  - **Why the change?** Old checker tried to do too much (7 dimensions), leading to missed issues. New specialized agents have narrow scope, are faster, and catch more problems.
+  - 16 agents total (up from 14)
+- **2.6.3** (2025-01-28): Cohort course structure validation
+  - Added **cohort-structure-checker** agent (25 KB, sonnet)
+  - Validates cohort course module structures against standardized templates
+  - Checks module sequences (0→1→2→...→7), element patterns, learning outcomes widgets (module-specific MLOs→CLOs)
+  - Validates PAIRR methodology presence in Module 6, Final Project Connections quality, element numbering integrity
+  - Identifies inconsistencies: missing widgets, wrong element types, generic project connections
+  - Course-type aware: Different validation rules for cohort vs self-paced courses
+  - 15 agents total (up from 14)
 - **2.6.2** (2025-01-28): Course format discovery
   - Updated course-outline-creator agent to ask about course format (cohort vs. self-paced) as first discovery question
   - Updated uplimit-storyboard-builder agent to request course format in initial context gathering

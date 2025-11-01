@@ -4,9 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Overview
 
-**Education Toolkit** - Claude Code plugin providing 14 specialized agents, 10 slash commands, and automatic code review for educational developers, instructional designers, and course creators. Focus areas: strategic course planning (CLOs, weekly structure, assessment strategy), cohort course structure validation, accessibility (WCAG 2.2 AA), assessment design, UDL implementation, Quality Matters standards, AI-integrated pedagogy, multi-perspective peer design review, and fullstack code quality (FastAPI/Python + React/JSX).
+**Education Toolkit** - Claude Code plugin providing 16 specialized agents, 10 slash commands, and automatic code review for educational developers, instructional designers, and course creators. Focus areas: strategic course planning (CLOs, weekly structure, assessment strategy), specialized consistency validation (terminology, concept threading, assessment methodology), cohort course structure validation, accessibility (WCAG 2.2 AA), assessment design, UDL implementation, Quality Matters standards, AI-integrated pedagogy, multi-perspective peer design review, and fullstack code quality (FastAPI/Python + React/JSX).
 
-**Version**: 2.6.3 (January 2025)
+**Version**: 2.7.0 (January 2025)
 **Tech stack**: Markdown-based agent definitions, bundled knowledge base (course design knowledge + 464 KB assessment research), PostToolUse hooks for automatic code review
 **Distribution**: Claude Code plugin marketplace (`/plugin marketplace add jameskruck/education-toolkit`)
 
@@ -27,21 +27,24 @@ education-toolkit/
 │       ├── load-context.sh          # SessionStart: Context loader
 │       ├── check-protected.sh       # PreToolUse: Content guardian
 │       └── format-storyboard.py     # PostToolUse: Auto-formatter
-├── agents/                  # 14 specialized agents
-│   ├── course-outline-creator.md (14 KB, sonnet, WebFetch) # NEW v2.6.0 - Strategic course planning
-│   ├── cohort-structure-checker.md (25 KB, sonnet) # NEW v2.6.3 - Validates cohort course module structures
+├── agents/                  # 16 specialized agents
+│   ├── course-outline-creator.md (14 KB, sonnet, WebFetch) # Strategic course planning
+│   ├── cohort-structure-checker.md (25 KB, sonnet) # Validates cohort course module structures
+│   ├── terminology-consistency-checker.md (18 KB, sonnet) # NEW v2.7.0 - Term consistency & glossary building
+│   ├── concept-threading-checker.md (22 KB, sonnet) # NEW v2.7.0 - Week 1 concepts in later weeks
+│   ├── assessment-consistency-checker.md (20 KB, sonnet) # NEW v2.7.0 - PAIRR, rubrics, grading
 │   ├── assessment-designer.md (27 KB, sonnet, 464 KB bundled knowledge)
 │   ├── rubric-generator.md (11 KB, sonnet)
 │   ├── accessibility-auditor.md (6 KB, sonnet, WebFetch)
 │   ├── widget-tester.md (8 KB, sonnet, 3 personas)
 │   ├── student-journey-simulator.md (6 KB, opus, 4 personas)
-│   ├── consistency-checker.md (8 KB, opus)
 │   ├── peer-review-simulator.md (15 KB, opus, 6 reviewer personas)
 │   ├── branding-checker.md (10 KB, sonnet, Canvas/Uplimit)
 │   ├── udl-content-generator.md (10 KB, sonnet)
 │   ├── uplimit-storyboard-builder.md (26 KB, sonnet)
-│   ├── backend-reviewer.md (12 KB, sonnet, FastAPI/Python expertise) # NEW v2.5.0
-│   ├── frontend-reviewer.md (13 KB, sonnet, React/WCAG 2.2 AA) # NEW v2.5.0
+│   ├── backend-reviewer.md (12 KB, sonnet, FastAPI/Python expertise)
+│   ├── frontend-reviewer.md (13 KB, sonnet, React/WCAG 2.2 AA)
+│   ├── consistency-checker-DEPRECATED.md (8 KB, opus) # DEPRECATED v2.7.0 - replaced by specialized checkers
 │   ├── course-design-knowledge/  # Bundled course design knowledge (NEW v2.6.1)
 │   │   ├── ivey-course-development-process.md  # 6-phase process, cohort/self-paced models
 │   │   ├── course-outline-examples.md          # Anonymized course structure templates
@@ -367,9 +370,75 @@ Before version releases:
 - **Agent autonomy** - Agents read their own knowledge base files, don't require user file paths
 - **Model selection** - Use `sonnet` for speed (2-5 min), `opus` for depth (5-12 min for peer-review-simulator)
 - **WebFetch capability** - Only course-outline-creator, accessibility-auditor, and assessment-designer have WebFetch access
-- **Version history** - Track methodology additions in README.md (v2.6.3 added Cohort Structure Checker, v2.6.2 added Course Format Discovery, v2.6.1 added Course Design Knowledge Base, v2.6.0 added Course Outline Creator, v2.5.0 added Fullstack Code Review, v2.4.2 fixed peer review storyboard vs live content, v2.4.1 added Interactivity Analysis + Automatic Hooks, v2.4.0 added Executable Skills, v2.3.2 added Peer Design Review Simulator, v2.3.1 added storyboard validation enhancements, v2.0 added PAIRR, AI Roleplay, Diagnostic Rubrics)
+- **Version history** - Track methodology additions in README.md (v2.7.0 added Specialized Consistency Checkers, v2.6.3 added Cohort Structure Checker, v2.6.2 added Course Format Discovery, v2.6.1 added Course Design Knowledge Base, v2.6.0 added Course Outline Creator, v2.5.0 added Fullstack Code Review, v2.4.2 fixed peer review storyboard vs live content, v2.4.1 added Interactivity Analysis + Automatic Hooks, v2.4.0 added Executable Skills, v2.3.2 added Peer Design Review Simulator, v2.3.1 added storyboard validation enhancements, v2.0 added PAIRR, AI Roleplay, Diagnostic Rubrics)
 
 ## Version History & Changelog
+
+### v2.7.0 (2025-01-31) - Specialized Consistency Checkers
+
+**New Agents (3 specialized checkers):**
+
+**terminology-consistency-checker.md** (18 KB, sonnet):
+- Builds comprehensive course glossary across all weeks/modules
+- Flags term variations (e.g., "revenue streams" vs "revenue sources" vs "monetization channels")
+- Identifies undefined terms and acronyms (e.g., "IRR" used without expansion)
+- Validates capitalization consistency (e.g., "Anchor Project" vs "anchor project")
+- Checks technical jargon appropriateness
+- Validates learning outcome terminology alignment (CLO/MLO format consistency)
+- Generates consistency scores per term (100 = perfect, deductions for variations)
+
+**concept-threading-checker.md** (22 KB, sonnet):
+- Validates Week 1 concepts appear in later weeks (prevents orphaned concepts)
+- Tracks concept usage across all weeks with line numbers
+- Checks for callback references ("Recall from Week 1...")
+- Validates progressive complexity (simple → moderate → complex → synthesis)
+- Flags re-explanations (same concept defined multiple times)
+- Validates assessments require cumulative knowledge (not siloed)
+- References bundled concept-threading-guide.md for patterns
+
+**assessment-consistency-checker.md** (20 KB, sonnet):
+- Validates PAIRR methodology consistency across weeks (cohort courses only)
+- Checks rubric point totals and category consistency
+- Validates learning outcome alignment with assessments
+- Analyzes formative vs. summative balance
+- Checks grading distribution consistency
+- Validates assessment timing and pacing (no deadline clustering)
+- **Course-type aware**: Flags peer review in self-paced courses (not allowed)
+
+**Deprecated Agent:**
+- `consistency-checker.md` → `consistency-checker-DEPRECATED.md`
+- Renamed with deprecation notice pointing to 3 specialized replacements
+- Kept for reference only, will be removed in future version
+
+**Why the Change:**
+The old consistency-checker tried to validate 7 dimensions at once (terminology, threading, outcomes, assessment, narrative, structure, PAIRR), leading to:
+- Missed issues due to large scope
+- Slower performance (large context per check)
+- Users couldn't target specific concerns
+
+The new specialized agents:
+- Have narrow scope (catch more issues)
+- Run faster (smaller context per agent)
+- Can run independently or together
+- Target specific validation needs
+
+**Updated Files:**
+- `plugin.json`: Version 2.7.0, description updated (16 agents)
+- `marketplace.json`: Version 2.7.0, description updated
+- `CLAUDE.md`: Added 3 new agents, marked old consistency-checker as deprecated
+
+**Use Cases:**
+- **terminology-consistency-checker**: "Check terminology consistency across Weeks 1-5", "Build course glossary", "Flag undefined acronyms"
+- **concept-threading-checker**: "Validate concept threading Week 1-5", "Check for orphaned concepts", "Ensure Week 1 concepts appear later"
+- **assessment-consistency-checker**: "Check PAIRR consistency", "Validate rubric points", "Check if assessments are cumulative"
+
+**Impact:**
+- Targeted validation (run specific checker for specific concern)
+- Faster execution (smaller scope per agent)
+- Better issue detection (proven by cohort-structure-checker catching issues old checker missed)
+- Course-type awareness (assessment-consistency-checker flags peer review in self-paced courses)
+
+---
 
 ### v2.6.3 (2025-01-31) - Cohort Course Structure Validation
 
