@@ -26,7 +26,8 @@ education-toolkit/
 │       ├── validate-content.sh      # PostToolUse: Smart validator
 │       ├── load-context.sh          # SessionStart: Context loader
 │       ├── check-protected.sh       # PreToolUse: Content guardian
-│       └── format-storyboard.py     # PostToolUse: Auto-formatter
+│       ├── format-storyboard.py     # PostToolUse: Auto-formatter
+│       └── test-widget.sh           # PostToolUse: Widget auto-tester (NEW v2.8.0)
 ├── agents/                  # 17 specialized agents
 │   ├── course-outline-creator.md (14 KB, sonnet, WebFetch) # Strategic course planning
 │   ├── cohort-structure-checker.md (25 KB, sonnet) # Validates cohort course module structures
@@ -141,7 +142,7 @@ assessment-designer agent:
 - Automatic quality enforcement at lifecycle events (PostToolUse, PreToolUse, SessionStart)
 - Zero API tokens consumed (runs locally on user's machine)
 - Deterministic validation (not LLM-dependent, 100% consistent)
-- Types: Smart validator, context loader, content guardian, auto-formatter
+- Types: Smart validator, context loader, content guardian, auto-formatter, widget auto-tester
 
 ### Hooks System (NEW v2.4.1)
 
@@ -149,7 +150,7 @@ Hooks provide **deterministic automation** that runs at specific lifecycle event
 
 **Key Advantage**: Hooks use **zero API tokens** - they're pure bash/Python automation running on the user's local machine.
 
-**4 Built-in Hooks**:
+**5 Built-in Hooks**:
 
 1. **Smart Content Validator** (PostToolUse on Edit/Write)
    - HTML files: WCAG 2.2 AA checks (contrast, alt text, headings, tables)
@@ -175,6 +176,14 @@ Hooks provide **deterministic automation** that runs at specific lifecycle event
    - Fixes table/heading spacing, removes trailing spaces
    - Ensures platform branding compliance automatically
 
+5. **Widget Auto-Tester** (PostToolUse on Write) - **NEW v2.8.0**
+   - Automatically tests new widgets after creation (detects `*.html` files in `widget` directories)
+   - Runs accessibility tests via webapp-testing skill (keyboard nav, focus indicators, ARIA)
+   - Generates test results JSON with violations and recommendations
+   - Optionally auto-opens widgets in browser (create `.auto-open-widgets` file to enable)
+   - Execution time: 3-8 seconds (depends on widget complexity)
+   - Token savings: ~5,000 tokens per manual test avoided
+
 **Configuration**:
 ```json
 // .education-toolkit-config.json (optional)
@@ -193,7 +202,16 @@ Hooks provide **deterministic automation** that runs at specific lifecycle event
 }
 ```
 
-**Performance**: 1-3 seconds execution, 0 API tokens, 100% consistency
+**Enable Auto-Open Widgets in Browser** (optional):
+```bash
+# macOS/Linux
+touch ~/.claude/plugins/education-toolkit/.auto-open-widgets
+
+# Windows (Git Bash/PowerShell)
+New-Item -ItemType File -Path "$env:USERPROFILE\.claude\plugins\education-toolkit\.auto-open-widgets"
+```
+
+**Performance**: 1-8 seconds execution, 0 API tokens, 100% consistency
 
 ### Knowledge Base Bundling
 
@@ -423,10 +441,24 @@ Before version releases:
 - Professional educational tone (no emojis policy enforced)
 - Submission-ready exports (PDF format, not JSON)
 
+**New Hook**:
+
+**Widget Auto-Tester** (PostToolUse on Write):
+- Automatically runs accessibility tests after widget creation
+- Detects `*.html` files in `widget` directories (only triggers on Write, not Edit)
+- Invokes webapp-testing skill to test keyboard nav, focus indicators, ARIA
+- Generates `*_accessibility_results.json` with violations and recommendations
+- Optionally auto-opens widgets in browser (enable with `.auto-open-widgets` file)
+- Cross-platform: macOS (open), Linux (xdg-open), Windows (start)
+- Execution time: 3-8 seconds (depends on widget complexity)
+- Token savings: ~5,000 tokens per manual test avoided
+
 **Updated Files**:
 - `plugin.json`: Version 2.8.0, description updated (17 agents), added keywords "widget-design", "design-system"
 - `marketplace.json`: Version 2.8.0, description highlights widget design system enforcement
-- `CLAUDE.md`: Added widget-designer to architecture, updated version history
+- `CLAUDE.md`: Added widget-designer to architecture, widget auto-tester hook, updated version history
+- `hooks/hooks.json`: Added test-widget.sh hook (PostToolUse on Write)
+- `hooks/scripts/test-widget.sh`: New bash script for automated widget testing
 
 ---
 

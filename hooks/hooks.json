@@ -18,6 +18,12 @@
           },
           {
             "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/test-widget.sh\" \"${TOOL_INPUT_file_path}\" \"${TOOL_NAME}\"",
+            "description": "Auto-test widgets after creation (accessibility checks, optional browser open)",
+            "timeout": 10000
+          },
+          {
+            "type": "command",
             "command": "echo \"[$(date '+%Y-%m-%d %H:%M:%S')] ${TOOL_NAME}: ${TOOL_INPUT_file_path}\" >> ~/.claude/changes.log",
             "description": "Track file changes with timestamps",
             "timeout": 1000

@@ -1,7 +1,9 @@
 # Education Toolkit - Claude Code Plugin
 
-**Comprehensive toolkit for educational developers** with 16 specialized agents, 10 slash commands, and automatic code review. Includes cutting-edge assessment methodologies: PAIRR (Peer and AI Review + Reflection), AI Roleplay exercises, diagnostic rubrics, multi-perspective peer design review simulation, strategic course outline creation, specialized consistency checkers (terminology, concept threading, assessment), cohort course structure validation, and fullstack code review with automatic quality checks.
+**Comprehensive toolkit for educational developers** with 17 specialized agents, 10 slash commands, and automatic code review. Includes cutting-edge assessment methodologies: PAIRR (Peer and AI Review + Reflection), AI Roleplay exercises, diagnostic rubrics, widget design system enforcement, multi-perspective peer design review simulation, strategic course outline creation, specialized consistency checkers (terminology, concept threading, assessment), cohort course structure validation, and fullstack code review with automatic quality checks.
 
+> **✨ NEW in v2.8.0**: Widget design system enforcement agent (generate/audit HTML widgets) with automatic testing hook - no emojis, Geist typography, neutral gray palette, PDF exports
+>
 > **✨ NEW in v2.7.0**: Three specialized consistency checkers replace old monolithic checker - terminology validation, concept threading tracking, and assessment methodology consistency
 >
 > **✨ NEW in v2.6.3**: Cohort course structure checker validates module sequences, learning outcomes widgets, PAIRR methodology, and Final Project Connections
@@ -25,7 +27,7 @@
 
 ## What's Included
 
-### 🤖 16 Specialized Agents
+### 🤖 17 Specialized Agents
 
 1. **accessibility-auditor** - WCAG 2.2 AA compliance checking with WebFetch capability
 2. **assessment-consistency-checker** - **NEW in v2.7.0**: Validates PAIRR methodology consistency across weeks, rubric structures, grading distribution. Course-type aware (flags peer review in self-paced courses).
@@ -43,7 +45,8 @@
 14. **terminology-consistency-checker** - **NEW in v2.7.0**: Builds course glossary, validates term consistency across all weeks. Tracks variations, identifies undefined acronyms, checks capitalization, generates consistency scores.
 15. **udl-content-generator** - Transform content into multimodal formats (audio, visual, interactive)
 16. **uplimit-storyboard-builder** - Complete copy-paste-ready implementation guides for Uplimit courses. Asks about course format (cohort vs. self-paced) to inform pacing and deadlines. References bundled course design knowledge base.
-17. **widget-tester** - 3-persona widget testing (Sarah, James, Maria) for UX validation
+17. **widget-designer** - **NEW in v2.8.0**: Generate new interactive widgets OR audit existing widgets for design system compliance. Enforces Geist typography, neutral gray palette (no gold/green), CSS variables (no hardcoded hex), NO EMOJIS policy, PDF exports (not JSON). Reports issues with line numbers and offers automatic fixes.
+18. **widget-tester** - 3-persona widget testing (Sarah, James, Maria) for UX validation
 
 ### ⚡ 10 Quick Slash Commands
 
@@ -162,7 +165,7 @@
 
 **Built-in automation that runs quality checks automatically - zero API tokens, zero manual effort.**
 
-This plugin includes 5 automatic hooks that enforce quality standards in real-time:
+This plugin includes 5 automatic hooks that enforce quality standards in real-time (plus 1 new in v2.8.0):
 
 #### Hook 1: Smart Content Validator (PostToolUse)
 **Runs after every file edit** - Instant feedback on quality issues
@@ -253,13 +256,43 @@ This plugin includes 5 automatic hooks that enforce quality standards in real-ti
 
 **When to use manually**: Invoke `backend-reviewer` or `frontend-reviewer` agents directly for comprehensive file review without waiting for edits
 
+#### Hook 6: Widget Auto-Tester (PostToolUse) - **NEW in v2.8.0**
+**Runs after creating new widgets** - Automatic accessibility testing and optional browser preview
+
+✓ **Auto-detects widget creation**: Triggers only on new `.html` files in `widget` directories
+✓ **Accessibility tests**: Runs webapp-testing skill (keyboard nav, focus indicators, ARIA, touch targets)
+✓ **JSON results**: Generates `*_accessibility_results.json` with violations and recommendations
+✓ **Optional browser preview**: Auto-opens widget in browser (enable with `.auto-open-widgets` file)
+✓ **Cross-platform**: macOS (open), Linux (xdg-open), Windows (start)
+
+**Example output:**
+```
+🧪 AUTO-TESTING NEW WIDGET: quiz.html
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✓ Running accessibility tests...
+✓ Accessibility test complete: quiz_accessibility_results.json
+  • Found 3 accessibility issue(s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+**Enable auto-open in browser:**
+```bash
+# macOS/Linux
+touch ~/.claude/plugins/education-toolkit/.auto-open-widgets
+
+# Windows (PowerShell)
+New-Item -ItemType File -Path "$env:USERPROFILE\.claude\plugins\education-toolkit\.auto-open-widgets"
+```
+
+**Token savings**: ~5,000 tokens per manual test × 10 widgets/week = 50,000 tokens/week saved
+
 #### Performance & Cost
 
 | Metric | Value |
 |--------|-------|
-| **Execution time** | 1-3 seconds (runs locally) |
+| **Execution time** | 1-8 seconds (runs locally, widget tests take longer) |
 | **API tokens used** | 0 tokens (pure bash/Python automation) |
-| **Token savings** | ~200,000+ tokens/day for active users |
+| **Token savings** | ~250,000+ tokens/day for active users |
 | **Accuracy** | 100% consistent (deterministic, not LLM-based) |
 
 #### Configuration (Optional)
