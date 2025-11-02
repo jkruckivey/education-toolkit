@@ -339,7 +339,7 @@ Use the Read tool to load the HTML file.
 
 ## Step 2: Check Design System Compliance
 
-Run these checks systematically:
+Run these checks systematically (ALL 9 checks required, equal priority):
 
 ### ✅ Color System Audit
 - **Check**: Are CSS variables used for colors, or hardcoded hex/rgb?
@@ -353,9 +353,19 @@ Run these checks systematically:
 - `rgba(0,0,0,0.1)` → Background should use `var(--color-neutral-100)`
 
 ### ✅ Typography Audit
-- **Check**: Is Geist font loaded from Google Fonts?
-- **Check**: Is `font-family` set correctly?
-- **Report**: Any deviations from standard heading sizes (h1: 1.8rem, h2: 1.5rem, h3: 1.2rem)
+- **Check**: Is Geist font loaded from Google Fonts CDN?
+  - Look for: `<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">`
+- **Check**: Is `font-family: var(--font-family-primary)` set on body?
+- **Check**: Are heading sizes correct?
+  - h1: 1.8rem (font-weight: 700)
+  - h2: 1.5rem (font-weight: 600)
+  - h3: 1.2rem (font-weight: 600)
+- **Report**: Missing Geist font link (line number), incorrect font-family values, non-standard heading sizes
+
+**Common violations:**
+- Missing Google Fonts link in `<head>`
+- Hardcoded font-family (e.g., `font-family: Arial, sans-serif` instead of `var(--font-family-primary)`)
+- Incorrect heading sizes (e.g., h1: 2rem instead of 1.8rem)
 
 ### ✅ Button Audit
 - **Check**: Do buttons follow `.btn` pattern?
@@ -387,6 +397,21 @@ Run these checks systematically:
 - **Check**: `aria-expanded` attribute present?
 - **Report**: Any deviations from standard toggle behavior
 
+### ✅ Export Functionality Audit
+- **Check**: Does widget include PDF export functionality?
+  - Look for: jsPDF library (`<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>`)
+  - Look for: Export button with PDF generation function
+- **Check**: Is export function using jsPDF (NOT JSON export)?
+  - Standard pattern: `generatePDF()` function that captures widget state
+- **Check**: Does export preserve visual formatting and student inputs?
+- **Report**: Missing jsPDF library, export button absent, wrong export format (JSON instead of PDF)
+
+**Common violations:**
+- No export functionality when widget captures student work
+- Using `JSON.stringify()` for export (should be PDF)
+- Missing jsPDF library in `<head>`
+- Export button doesn't capture full widget state
+
 ## Step 3: Generate Audit Report
 
 **Format:**
@@ -405,9 +430,15 @@ Run these checks systematically:
 2. ...
 
 ## ✅ Passing Standards
-- Font: Geist loaded correctly
-- Buttons: Follow standard pattern
-- ...
+- **Colors**: All use CSS variables (no hardcoded hex)
+- **Typography**: Geist font loaded, standard heading sizes
+- **Buttons**: Follow .btn pattern with focus states
+- **Spacing**: 8px scale used consistently
+- **Border Radius**: Standardized (8px containers, 4px small)
+- **Content**: No emojis detected
+- **Accessibility**: ARIA labels, keyboard nav, lang attribute present
+- **Collapsible Sections**: Standard pattern followed
+- **Export**: PDF functionality present with jsPDF
 
 ## 📋 Recommendations
 1. Consolidate hardcoded colors into CSS variables (saves ~50 lines)
@@ -417,8 +448,11 @@ Run these checks systematically:
 ## 🔧 Quick Fixes
 Would you like me to automatically fix these issues? I can:
 - Replace all hardcoded colors with CSS variables
-- Add missing ARIA labels
+- Add Geist font link to <head> if missing
+- Add missing ARIA labels and keyboard navigation
 - Standardize border-radius values
+- Remove emojis and replace with text labels
+- Add PDF export functionality with jsPDF
 ```
 
 ---
@@ -650,12 +684,22 @@ Before delivering widget, verify:
 
 # IMPORTANT NOTES
 
+## For AUDIT MODE:
+1. **Run ALL 9 checks systematically** - Colors, Typography, Buttons, Spacing, Border Radius, Content (emojis), Accessibility, Collapsible Sections, Export Functionality
+2. **Equal priority** - Don't focus disproportionately on emojis; color variables and font checking are equally critical
+3. **Be specific** - Provide line numbers and exact fixes for every violation
+4. **Check Typography thoroughly** - Verify Geist font CDN link, font-family variables, heading sizes (h1: 1.8rem, h2: 1.5rem, h3: 1.2rem)
+5. **Check Export functionality** - If widget captures student work, ensure jsPDF export is present (NOT JSON export)
+6. **Report what's passing** - Acknowledge standards that are correctly implemented
+
+## For GENERATE MODE:
 1. **Always use CSS variables** - Never hardcode colors
-2. **NO EMOJIS** - Use text labels or semantic symbols (→ • ▼) instead
-3. **Accessibility is non-negotiable** - All widgets must be WCAG 2.2 AA compliant
-4. **Follow exact patterns** - Use established button, section, and input patterns
-5. **Be specific in audits** - Provide line numbers and exact fixes
-6. **Ask questions in generate mode** - Don't assume requirements
-7. **Test keyboard navigation** - Verify Enter/Space work on all interactive elements
+2. **Load Geist font** - Include Google Fonts CDN link in <head>
+3. **NO EMOJIS** - Use text labels or semantic symbols (→ • ▼) instead
+4. **Accessibility is non-negotiable** - All widgets must be WCAG 2.2 AA compliant
+5. **Add PDF export** - If widget captures student work/decisions, include jsPDF functionality
+6. **Follow exact patterns** - Use established button, section, and input patterns
+7. **Ask clarifying questions** - Don't assume requirements (widget type, features, export needs)
+8. **Test keyboard navigation** - Verify Enter/Space work on all interactive elements
 
 When auditing, be thorough but constructive. When generating, prioritize clean, maintainable code that follows the design system exactly.

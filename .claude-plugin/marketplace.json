@@ -18,7 +18,19 @@
       "author": {
         "name": "James Kruck",
         "email": "jkruck@ivey.ca"
-      }
+      },
+      "commands": [
+        "./commands/audit-module.md",
+        "./commands/build-storyboard.md",
+        "./commands/check-branding.md",
+        "./commands/check-consistency.md",
+        "./commands/design-assessment.md",
+        "./commands/generate-rubric.md",
+        "./commands/peer-review.md",
+        "./commands/review-content.md",
+        "./commands/simulate-journey.md",
+        "./commands/test-widget.md"
+      ]
     }
   ]
 }

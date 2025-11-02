@@ -2,7 +2,9 @@
 
 **Comprehensive toolkit for educational developers** with 17 specialized agents, 10 slash commands, and automatic code review. Includes cutting-edge assessment methodologies: PAIRR (Peer and AI Review + Reflection), AI Roleplay exercises, diagnostic rubrics, widget design system enforcement, multi-perspective peer design review simulation, strategic course outline creation, specialized consistency checkers (terminology, concept threading, assessment), cohort course structure validation, and fullstack code review with automatic quality checks.
 
-> **✨ NEW in v2.8.0**: Widget design system enforcement agent (generate/audit HTML widgets) with automatic testing hook - no emojis, Geist typography, neutral gray palette, PDF exports
+> **✨ NEW in v2.8.0**: Widget design system enforcement agent (generate/audit HTML widgets) with automatic testing hook. Individual component installation now available! Install only what you need: `/agent add widget-designer@education-toolkit`
+>
+> **🔧 FIXED in v2.8.0**: Slash commands now work properly (marketplace.json commands array added)
 >
 > **✨ NEW in v2.7.0**: Three specialized consistency checkers replace old monolithic checker - terminology validation, concept threading tracking, and assessment methodology consistency
 >
@@ -18,10 +20,31 @@
 
 ## Installation
 
+### Option 1: Install Full Plugin (Recommended)
+
 ```bash
 /plugin marketplace add jameskruck/education-toolkit
 /plugin install education-toolkit
 ```
+
+**Gets you:** All 17 agents + 10 commands + 3 skills + automatic hooks
+
+### Option 2: Install Individual Components
+
+```bash
+# Install specific agent
+/agent add widget-designer@education-toolkit
+
+# Install specific command
+/command add design-assessment@education-toolkit
+
+# Install specific skill
+/skill add assessment-template-generator@education-toolkit
+```
+
+**Browse components:** [Component Catalog](https://jkruckivey.github.io/education-toolkit/)
+
+---
 
 **Migrating from claude-subagents NPM package?** This plugin replaces `@jameskruck/claude-subagents` with enhanced functionality (slash commands + same agents).
 
