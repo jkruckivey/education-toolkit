@@ -1,36 +1,19 @@
 {
   "$schema": "https://raw.githubusercontent.com/anthropics/claude-code/main/.claude-plugin/marketplace.schema.json",
-  "name": "education-toolkit",
-  "version": "2.8.1",
-  "description": "Comprehensive toolkit for course developers with 17 specialized agents and 10 slash commands. Includes widget design system enforcement (generate/audit interactive HTML widgets with standardized Geist typography, neutral color palette, no emojis), strategic course outline creation with required widget introduction format (activity headers, MLO connections, contextual setup), specialized consistency checkers (terminology, concept threading, assessment methodology), cohort course structure validation, peer design review simulation, PAIRR (Peer and AI Review + Reflection), AI Roleplay exercises, diagnostic rubrics, accessibility auditing, widget testing, course QA, and enhanced storyboard validation. Bundled with course design knowledge base: Ivey 6-phase development process, cohort/self-paced learning models, course outline examples, concept threading guide, and 464 KB of frameworks and AI assessment research.",
+  "name": "education-toolkit-marketplace",
   "owner": {
     "name": "James Kruck",
     "email": "jkruck@ivey.ca",
     "github": "jkruckivey"
   },
+  "metadata": {
+    "description": "Educational development toolkit with specialized agents, commands, and automation for course creators",
+    "version": "2.8.1"
+  },
   "plugins": [
     {
       "name": "education-toolkit",
-      "description": "17 agents + 10 commands: Widget design system enforcement (generate/audit HTML widgets with required introduction format), course outline creation, specialized consistency checkers (terminology, threading, assessment), cohort structure validation, peer design review simulation, PAIRR methodology, AI Roleplay design, diagnostic rubrics, accessibility auditing, assessment design with bundled course design knowledge (Ivey development process, examples, threading)",
-      "source": "./",
-      "category": "education",
-      "version": "2.8.1",
-      "author": {
-        "name": "James Kruck",
-        "email": "jkruck@ivey.ca"
-      },
-      "commands": [
-        "./commands/audit-module.md",
-        "./commands/build-storyboard.md",
-        "./commands/check-branding.md",
-        "./commands/check-consistency.md",
-        "./commands/design-assessment.md",
-        "./commands/generate-rubric.md",
-        "./commands/peer-review.md",
-        "./commands/review-content.md",
-        "./commands/simulate-journey.md",
-        "./commands/test-widget.md"
-      ]
+      "source": "./"
     }
   ]
 }
