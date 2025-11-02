@@ -389,9 +389,55 @@ Before version releases:
 - **Agent autonomy** - Agents read their own knowledge base files, don't require user file paths
 - **Model selection** - Use `sonnet` for speed (2-5 min), `opus` for depth (5-12 min for peer-review-simulator)
 - **WebFetch capability** - Only course-outline-creator, accessibility-auditor, and assessment-designer have WebFetch access
-- **Version history** - Track methodology additions in README.md (v2.8.0 added Widget Design System Enforcement, v2.7.0 added Specialized Consistency Checkers, v2.6.3 added Cohort Structure Checker, v2.6.2 added Course Format Discovery, v2.6.1 added Course Design Knowledge Base, v2.6.0 added Course Outline Creator, v2.5.0 added Fullstack Code Review, v2.4.2 fixed peer review storyboard vs live content, v2.4.1 added Interactivity Analysis + Automatic Hooks, v2.4.0 added Executable Skills, v2.3.2 added Peer Design Review Simulator, v2.3.1 added storyboard validation enhancements, v2.0 added PAIRR, AI Roleplay, Diagnostic Rubrics)
+- **Version history** - Track methodology additions in README.md (v2.8.1 added Widget Introduction Format Enforcement, v2.8.0 added Widget Design System Enforcement, v2.7.0 added Specialized Consistency Checkers, v2.6.3 added Cohort Structure Checker, v2.6.2 added Course Format Discovery, v2.6.1 added Course Design Knowledge Base, v2.6.0 added Course Outline Creator, v2.5.0 added Fullstack Code Review, v2.4.2 fixed peer review storyboard vs live content, v2.4.1 added Interactivity Analysis + Automatic Hooks, v2.4.0 added Executable Skills, v2.3.2 added Peer Design Review Simulator, v2.3.1 added storyboard validation enhancements, v2.0 added PAIRR, AI Roleplay, Diagnostic Rubrics)
 
 ## Version History & Changelog
+
+### v2.8.1 (2025-02-01) - Widget Introduction Format Enforcement
+
+**Agent Updates**:
+
+**uplimit-storyboard-builder.md**:
+- **Required Widget Introduction Format**: All interactive widgets (except learning outcomes displays) must now include standardized introductory text before iframe embed
+- **Three Required Components**:
+  1. **Activity Header**: `### ⚙ Interactive Activity: [Widget Name]`
+  2. **MLO Practice Connection**: `**Practice: MLO X.X ([brief description])**`
+  3. **Contextual Introduction Paragraph** (100-150 words) with four elements:
+     - Readiness statement ("You're now ready to...")
+     - What they'll do (specific interaction description)
+     - Why it matters (real-world relevance/industry connection)
+     - What they'll gain (learning outcome and application)
+- **BUILD MODE Enhancement**: Generates properly formatted widget introductions automatically when creating storyboards
+- **AUDIT MODE Enhancement**: Validates widget introduction format and flags violations:
+  - ❌ Missing activity header or MLO connection
+  - ❌ Generic introductions without context
+  - ❌ Jumping straight to iframe without setup
+  - ❌ Introductions too brief (<50 words) or too long (>200 words)
+- **Complete Example Added**: Sponsorship Valuation Calculator with 147-word contextual introduction showing all four required elements
+- **Anti-Patterns Documentation**: Clear examples of what NOT to do (generic introductions, missing MLO connections, no context)
+- **Audit Scenario Added**: Scenario 5 demonstrates correcting a widget lacking proper introduction (Revenue Mix Slider example with before/after)
+
+**Why This Format**:
+- **Engagement**: Readiness statements connect to prior learning and signal progression
+- **Motivation**: Role immersion ("Step into the role of...") and industry relevance establish real-world value
+- **Clarity**: Students understand exactly what they'll do and what they'll gain before interacting
+- **Learning Alignment**: Explicit MLO practice connections ensure widgets target specific learning outcomes
+
+**Exception**: Learning outcomes widgets (Module 1 Element 2 in cohort courses) display CLOs/MLOs visually and do NOT require introductory narrative.
+
+**Updated Files**:
+- `uplimit-storyboard-builder.md`: Lines 312-421 (BUILD MODE widget section), Lines 1243-1264 (AUDIT MODE widget section), Lines 1523-1567 (Audit Scenario 5)
+- `plugin.json`: Version 2.8.1, description updated to mention "required widget introduction format"
+- `marketplace.json`: Version 2.8.1 (both top-level and plugin-level), description updated
+- `CLAUDE.md`: Added v2.8.1 to version history
+
+**Impact**:
+- Ensures consistent, engaging widget introductions across all courses (no more "Use this calculator" generic text)
+- Improves student motivation through clear real-world connections and role immersion
+- Saves 5-10 minutes per widget by providing clear format template
+- Audit mode catches missing introductions before storyboards go to production
+
+---
 
 ### v2.8.0 (2025-01-31) - Widget Design System Enforcement
 

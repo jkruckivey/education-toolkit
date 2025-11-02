@@ -310,14 +310,83 @@ locked in. Make sure you're negotiating from strength (winning teams get better 
 ```
 
 #### iFrame Widgets
+
+**CRITICAL REQUIREMENT:** All interactive widgets (except learning outcomes displays) MUST include introductory text following this format:
+
+##### Widget Introduction Format (REQUIRED)
+
+Every interactive widget element needs three components before the iframe code:
+
+**1. Activity Header with Icon:**
+```markdown
+### ⚙ Interactive Activity: [Widget Name]
+```
+
+**2. MLO Practice Connection:**
+```markdown
+**Practice: MLO X.X ([Brief description of what MLO measures])**
+```
+
+**3. Contextual Introduction Paragraph (100-150 words):**
+
+This paragraph must accomplish four goals:
+- **Readiness statement**: "You're now ready to..." or "Now that you understand..., it's time to..."
+- **What they'll do**: Specific interaction description ("In this hands-on calculator, you'll...")
+- **Why it matters**: Real-world relevance or industry connection
+- **What they'll gain**: Learning outcome and application ("By the end, you'll understand why...")
+
+**Complete Example:**
+
+```markdown
+## Element 3: Interactive Widget - Sponsorship Valuation Calculator
+
+### ⚙ Interactive Activity: Sponsorship Valuation Calculator
+
+**Practice: MLO 3.3 (Calculate how brands measure ROI)**
+
+You're now ready to use the industry-standard method that brands use to evaluate sponsorship deals. In this hands-on calculator, you'll step into the role of a brand's CMO evaluating a potential sports sponsorship. Your challenge: determine whether you're paying a fair price per impression compared to traditional advertising channels.
+
+This calculator empowers you to input real deal parameters—rights fees, broadcast reach, stadium attendance, digital impressions—and instantly see how they translate into total impressions and cost-per-thousand (CPM). You'll benchmark your deal against TV advertising and social media to determine if it represents excellent, good, fair, or poor value. By the end, you'll understand why small logos on NFL jerseys command $25M+ annual fees while understanding exactly how brands calculate whether those investments deliver value.
+
+<iframe src="https://example.com/widgets/sponsorship-valuation.html"
+        width="800"
+        height="600"
+        title="Sponsorship Valuation Calculator - Calculate brand ROI"
+        frameborder="0"
+        allowfullscreen>
+</iframe>
+```
+
+**Why This Format:**
+- **Readiness statement** - Connects to prior learning, signals progression
+- **Role immersion** - "Step into the role of..." creates engagement
+- **Industry relevance** - "Industry-standard method" establishes real-world value
+- **Clear mechanics** - Students know exactly what they'll do
+- **Outcome clarity** - Students understand what they'll gain
+
+**Anti-Patterns to Avoid:**
+- ❌ Generic introductions: "This widget helps you learn about sponsorship"
+- ❌ Missing MLO connection: No explicit practice alignment
+- ❌ No context: Jumping straight to iframe without setup
+- ❌ Too brief: "Use this calculator to practice" (lacks why/how/what you'll gain)
+- ❌ Too long: >200 words (violates V3 Interactive-First text limits)
+
+**Exception:** Learning outcomes widgets (Module 1, Element 2 in cohort courses) do NOT require this format—they display CLOs/MLOs visually without introductory narrative.
+
+---
+
+##### Widget Technical Specifications
+
+After the introduction, provide complete technical specifications:
+
 - **Complete embed code** with all attributes
-- Widget purpose and learning objectives
-- How it works (inputs, outputs, interaction)
+- Widget purpose and learning objectives (technical details)
+- How it works (inputs, outputs, interaction mechanics)
 - Accessibility features list
 - Hosted URL (or note if widget needs to be built)
 - Size specifications (standard and modal)
 
-**Example:**
+**Technical Example:**
 ```html
 <iframe src="https://example.com/widgets/revenue-mix-slider.html"
         width="800"
@@ -1172,10 +1241,27 @@ Verify complete Uplimit field specifications present with CORRECT FORMATS:
 - Incomplete conversion from student-facing to third-person format
 
 #### Widget Specifications
+
+**Widget Introduction Format (REQUIRED for all interactive widgets except learning outcomes):**
+- ✅ **Activity header** with ⚙ emoji: `### ⚙ Interactive Activity: [Widget Name]`
+- ✅ **MLO practice connection**: `**Practice: MLO X.X ([brief description])**`
+- ✅ **Contextual introduction paragraph** (100-150 words) that includes:
+  - Readiness statement ("You're now ready to...")
+  - What they'll do (specific interaction description)
+  - Why it matters (real-world relevance/industry connection)
+  - What they'll gain (learning outcome and application)
+- ❌ **VIOLATION CHECK**: Generic introductions without context ("This widget helps you...")
+- ❌ **VIOLATION CHECK**: Missing MLO connection
+- ❌ **VIOLATION CHECK**: Jumping straight to iframe without introduction
+- ❌ **VIOLATION CHECK**: Too brief (<50 words) or too long (>200 words)
+
+**Technical Specifications:**
 - ✅ Complete iFrame embed code with all attributes
 - ✅ Clear description of interaction and learning objectives
 - ✅ Accessibility features documented (keyboard nav, ARIA labels, screen reader support)
 - ✅ Hosted URL provided or build status noted
+
+**Exception:** Learning outcomes widgets (Module 1 Element 2 in cohort courses) display CLOs/MLOs visually and do NOT require introductory narrative.
 
 #### Assessment Design
 - ✅ Complete question text
@@ -1434,7 +1520,53 @@ The learner plays the role of a sports business consultant advising Brookfield C
 - Context is now objective third-person description, not student-facing instructions
 ```
 
-**Scenario 5: AI Roleplay Tab 4 using 4-level rubric with point ranges**
+**Scenario 5: Widget missing required introductory text**
+```
+❌ VIOLATION (Widget without proper introduction):
+
+## Element 5: Revenue Mix Slider
+
+<iframe src="https://example.com/widgets/revenue-mix-slider.html"
+        width="800"
+        height="500"
+        title="Revenue Mix Slider"
+        frameborder="0"
+        allowfullscreen>
+</iframe>
+
+✅ CORRECTED (With proper introduction format):
+
+## Element 5: Interactive Widget - Revenue Mix Slider
+
+### ⚙ Interactive Activity: Revenue Mix Slider
+
+**Practice: MLO 1.3 (Explore trade-offs between revenue streams)**
+
+You're now ready to build your own sports organization revenue portfolio. In this interactive slider, you'll act as a league CFO making strategic decisions about where to invest your organization's resources. Your challenge: create a balanced revenue mix that considers both growth potential and risk exposure.
+
+This slider empowers you to allocate 100% across five major revenue streams—media rights, ticketing, sponsorship, merchandising, and betting. As you adjust each slider, you'll see real-time feedback on your portfolio's overall risk score and growth projection. You'll discover why diversification matters and understand the trade-offs leagues face when prioritizing high-growth streams like betting versus stable traditional revenue like ticketing. By the end, you'll be able to explain why different leagues make different strategic choices based on their market position and risk tolerance.
+
+<iframe src="https://example.com/widgets/revenue-mix-slider.html"
+        width="800"
+        height="500"
+        title="Revenue Mix Slider - Build your revenue portfolio"
+        frameborder="0"
+        allowfullscreen>
+</iframe>
+
+**Changes made:**
+- Added ⚙ emoji activity header with descriptive widget name
+- Added explicit MLO practice connection (MLO 1.3)
+- Added 147-word contextual introduction with:
+  * Readiness statement ("You're now ready to...")
+  * Role immersion ("You'll act as a league CFO...")
+  * Clear mechanics (slider functionality explained)
+  * Real-world relevance (diversification and risk trade-offs)
+  * Learning outcome ("By the end, you'll be able to explain...")
+- Enhanced iframe title attribute for better accessibility
+```
+
+**Scenario 6: AI Roleplay Tab 4 using 4-level rubric with point ranges**
 ```
 ❌ VIOLATION (4-level with point ranges):
 **Criterion 1: Revenue Sharing Mechanics (10 points)**
