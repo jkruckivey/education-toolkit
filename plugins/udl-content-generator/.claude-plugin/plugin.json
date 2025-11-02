@@ -1,0 +1,16 @@
+{
+  "name": "udl-content-generator",
+  "version": "2.8.2",
+  "description": "Use this subagent when the user asks to create alternative content formats, support diverse learners, or implement Universal Design for Learning (UDL) principles. Example requests include "create an a",
+  "author": {
+    "name": "James Kruck",
+    "email": "jkruck@ivey.ca"
+  },
+  "homepage": "https://github.com/jkruckivey/education-toolkit",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jkruckivey/education-toolkit"
+  },
+  "category": "education",
+  "license": "MIT"
+}

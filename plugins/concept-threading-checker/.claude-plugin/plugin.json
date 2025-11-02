@@ -1,0 +1,16 @@
+{
+  "name": "concept-threading-checker",
+  "version": "2.8.2",
+  "description": "validate concept threading across course weeks - ensuring Week 1 concepts are built upon in later weeks, checking for orphaned concepts, validating progressive complexity, and verifying "recall from W",
+  "author": {
+    "name": "James Kruck",
+    "email": "jkruck@ivey.ca"
+  },
+  "homepage": "https://github.com/jkruckivey/education-toolkit",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jkruckivey/education-toolkit"
+  },
+  "category": "education",
+  "license": "MIT"
+}

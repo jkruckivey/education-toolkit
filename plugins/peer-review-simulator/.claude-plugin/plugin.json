@@ -1,0 +1,16 @@
+{
+  "name": "peer-review-simulator",
+  "version": "2.8.2",
+  "description": "Simulate a design review panel with 6 instructional design specialists reviewing course content from multiple expert perspectives. Use when you need comprehensive peer feedback on a week/unit before l",
+  "author": {
+    "name": "James Kruck",
+    "email": "jkruck@ivey.ca"
+  },
+  "homepage": "https://github.com/jkruckivey/education-toolkit",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jkruckivey/education-toolkit"
+  },
+  "category": "education",
+  "license": "MIT"
+}

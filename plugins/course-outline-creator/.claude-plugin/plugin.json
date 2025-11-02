@@ -1,0 +1,16 @@
+{
+  "name": "course-outline-creator",
+  "version": "2.8.2",
+  "description": "Create strategic course outlines with CLOs, weekly structure, MLOs, and assessment strategy. Use when planning a new course from scratch or restructuring an existing course. Example requests include "",
+  "author": {
+    "name": "James Kruck",
+    "email": "jkruck@ivey.ca"
+  },
+  "homepage": "https://github.com/jkruckivey/education-toolkit",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jkruckivey/education-toolkit"
+  },
+  "category": "education",
+  "license": "MIT"
+}

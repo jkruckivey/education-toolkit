@@ -1,0 +1,16 @@
+{
+  "name": "rubric-generator",
+  "version": "2.8.2",
+  "description": "Use this subagent for QUICK rubric generation from learning outcomes. Creates QM-aligned rubrics with student-facing and faculty versions. For comprehensive assessment design with AI integration, UDL ",
+  "author": {
+    "name": "James Kruck",
+    "email": "jkruck@ivey.ca"
+  },
+  "homepage": "https://github.com/jkruckivey/education-toolkit",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jkruckivey/education-toolkit"
+  },
+  "category": "education",
+  "license": "MIT"
+}

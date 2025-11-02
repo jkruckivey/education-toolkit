@@ -1,0 +1,16 @@
+{
+  "name": "frontend-reviewer",
+  "version": "2.8.2",
+  "description": "Expert React/JSX code reviewer with WCAG 2.2 AA accessibility specialization. Reviews frontend code for accessibility compliance, React best practices, UX patterns, and performance. Use for automatic ",
+  "author": {
+    "name": "James Kruck",
+    "email": "jkruck@ivey.ca"
+  },
+  "homepage": "https://github.com/jkruckivey/education-toolkit",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jkruckivey/education-toolkit"
+  },
+  "category": "education",
+  "license": "MIT"
+}
