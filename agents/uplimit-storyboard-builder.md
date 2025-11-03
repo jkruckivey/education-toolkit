@@ -1035,6 +1035,362 @@ Before submitting, check that you have:
 - ✅ Apply points
 ```
 
+### Step 3.5: Recommended Module Structure Format
+
+When creating comprehensive module storyboards, use this table-based structure for clarity and ease of implementation:
+
+#### Module Header Format
+
+**Recommended structure for each module:**
+
+```markdown
+# MODULE [NUMBER]: [Title] ([BOPPPS Stage if applicable])
+
+**Purpose:** [What this module accomplishes pedagogically]
+
+**Uplimit Structure:** [Which module in which unit - e.g., "Third module in Unit 4 (Week 4)"]
+
+| Order | Element | Content/Purpose | Source | Implementation Notes |
+|-------|---------|-----------------|--------|---------------------|
+| 1 | **▬ Text** ⬤ Required | [Brief description] | Type directly | [Context/purpose] |
+| 2 | **⚙ iFrame Widget** ⬤ Required | Learning Outcomes Widget | Embed widget | Shows MLOs for this module |
+| 3 | **ⓘ Infobox (Callout)** ⬤ Required | [Brief description] | Type directly | [Purpose] |
+| 4 | **▶ Video 1** ⬤ Required | [Title] ([duration]) | Upload MP4 + VTT | [Topic] |
+| 5 | **▶ Video 2** ◐ Recommended | [Title] ([duration]) | Upload MP4 + VTT | [Topic] |
+| 6 | **▤ Details** ○ Optional | [Description] | Type directly | [Purpose] |
+| 7 | **◈ AI Chat Widget** ○ Optional | [Title] | Configure in Uplimit | [Purpose] |
+```
+
+**Element Type Symbols:**
+- **▬** = Text block
+- **⚙** = iFrame Widget (interactive)
+- **ⓘ** = Infobox (callout, note, insight, warning)
+- **▶** = Video
+- **▤** = Details accordion (collapsible)
+- **◈** = AI Chat Widget
+- **☰** = List (vertical or horizontal)
+- **▦** = Tiles (cards in grid)
+- **▭** = Table
+
+**Priority Badges:**
+- **⬤ Required** - Essential, must be included
+- **◐ Recommended** - Strongly suggested, high value
+- **○ Optional** - Nice to have, depends on time/resources
+
+#### Element-by-Element Content Format
+
+After the table, provide detailed specifications for each element:
+
+```markdown
+---
+
+## Element 1: [Element Name]
+
+**Uplimit Implementation:**
+
+1. Select **[Element Type]** element
+2. Copy markdown/embed code below:
+
+```[language]
+[Complete content ready to copy-paste]
+```
+
+[Additional specifications if needed - duration, accessibility, etc.]
+
+---
+
+## Element 2: [Element Name]
+
+[Same pattern...]
+
+---
+
+## Element 3: [Element Name]
+
+[Same pattern...]
+```
+
+#### Final Project Connection Section
+
+**Always include** specific connection to final/anchor project:
+
+```markdown
+---
+
+## 🎯 FINAL PROJECT CONNECTION
+
+**How Module [N] Supports Your [Project Name]:**
+
+[Brief context about what this module covered and why it matters]
+
+**What You Learned:**
+- [Key takeaway 1]
+- [Key takeaway 2]
+- [Key takeaway 3]
+
+**How to Apply This to Your Final Project:**
+
+When you [describe final project task], reference Module [N]'s [frameworks/tools/concepts]:
+
+- **[Application Area 1]:** [Specific guidance with example]
+- **[Application Area 2]:** [Specific guidance with example]
+- **[Application Area 3]:** [Specific guidance with example]
+
+**Real-World Application:** [How practitioners use these concepts]
+
+---
+```
+
+#### Module Transition Section
+
+**End each module** with transition to next:
+
+```markdown
+---
+
+## Module [N] Complete - Transition to Module [N+1]
+
+**What You've Learned:**
+You now [summarize key capabilities gained]. You understand:
+
+- [Key concept 1]
+- [Key concept 2]
+- [Key concept 3]
+
+**Key Takeaways:**
+- [Insight 1 with data/example]
+- [Insight 2 with data/example]
+- [Insight 3 with data/example]
+
+**Up Next: Module [N+1] - [Title]**
+[Preview of next module - what they'll do, why it builds on this]
+
+[Engagement hook - "Ready to [action]? Let's go!"]
+
+---
+
+## MODULE [N] Complete - Summary
+
+### Elements Created:
+1. ✅ [Element 1 description]
+2. ✅ [Element 2 description]
+3. ✅ [Element 3 description]
+[... all elements]
+
+### [Module Theme] Highlights:
+- **[Key Area 1]:** [What was covered]
+- **[Key Area 2]:** [What was covered]
+- **[Key Area 3]:** [What was covered]
+
+### Pedagogical Design:
+- [UDL principle applied]
+- [Engagement strategy]
+- [How it prepares for next module]
+
+### Total Time Estimate:
+- [Element type]: [time]
+- [Element type]: [time]
+- **Total Module [N] time: [X-Y] minutes**
+```
+
+#### Complete Example: Module Structure
+
+**Example showing recommended format:**
+
+```markdown
+# MODULE 2: Executive Perspectives (BOPPPS: Participatory - Expert Input)
+
+**Purpose:** Deliver expert practitioner perspectives on athlete branding, women's sports, and emerging markets
+
+**Uplimit Structure:** Third module in Unit 4 (Week 4)
+
+| Order | Element | Content/Purpose | Source | Implementation Notes |
+|-------|---------|-----------------|--------|---------------------|
+| 1 | **▬ Text** ⬤ Required | Connecting intro from Module 1 | Type directly | Sets context, connects narrative |
+| 2 | **⚙ iFrame Widget** ⬤ Required | Learning Outcomes Widget | Embed widget | Shows which MLOs practiced in this module |
+| 3 | **ⓘ Infobox (Callout)** ⬤ Required | Context about videos + viewing instructions | Type directly | Sets viewing expectations |
+| 4 | **▶ Video 1** ⬤ Required | Athlete Revenue Streams Overview (2 min) | Upload MP4 + VTT | Introduction to 5 revenue streams |
+| 5 | **▶ Video 2** ⬤ Required | Executive Interview: Sports Agent (10-12 min) | Upload MP4 + VTT | Athlete representation strategy |
+| 6 | **▶ Video 3** ⬤ Required | Executive Interview: PGA Tour (10-12 min) | Upload MP4 + VTT | Golf's global expansion & emerging markets |
+| 7 | **▶ Video 4** ◐ Recommended | Executive Interview: Women's Sports Expert (8-10 min) | Upload MP4 + VTT | Investment thesis for women's sports |
+| 8 | **▤ Details** ○ Optional | Video transcripts | Type directly | Accordion for text versions |
+| 9 | **◈ AI Chat Widget** ○ Optional | "Ask questions about athlete brands" | Configure in Uplimit | Named: "Athlete Brand Strategy Q&A" |
+
+---
+
+## Element 1: Connecting Introduction Text
+
+**Uplimit Implementation:**
+
+1. Select **Text** element
+2. Copy markdown below:
+
+```markdown
+You now understand the four learning outcomes that will transform how you analyze athlete brands and emerging sports opportunities. You know that elite athletes must balance five revenue streams, prioritize equity over fees, and build post-career assets during their playing years.
+
+Before exploring the frameworks in depth, you need context from practitioners who've actually built athlete brands, negotiated endorsement deals, and invested in women's sports and emerging markets. In this module, you'll hear from:
+
+- **A sports agent** who represents elite athletes and structures multi-million dollar endorsement deals
+- **Don Rea**, Chief Commercial Officer of the PGA Tour, discussing golf's global expansion into emerging markets
+- **Women's sports investment experts** who are capitalizing on the fastest-growing segment of sports business
+
+Their insights will ground the theory you're about to explore in Module 3 with real-world trade-offs, strategic decisions, and lessons learned from the field.
+```
+
+---
+
+## Element 2: Learning Outcomes Widget
+
+**Uplimit Implementation:**
+
+1. Select **iFrame Widget** element
+2. Copy embed code below:
+
+```html
+<iframe src="../../widgets/learning-outcomes-module-2.html"
+        width="100%"
+        height="600"
+        style="border: none; border-radius: 8px;"
+        title="Module 2 Learning Outcomes"
+        aria-label="Visual map showing which learning outcomes are practiced in Module 2"
+        allowfullscreen
+        loading="lazy">
+</iframe>
+```
+
+**Widget Features:**
+- Shows which Week 4 MLOs are practiced in this module (executive perspectives)
+- Visual badge indicating Module 2: Executive Perspectives
+- Interactive: Click to see how practitioner insights connect to frameworks
+
+---
+
+## Element 3: Infobox Content
+
+**Uplimit Implementation:**
+
+1. Select **Infobox** element
+2. Choose variant: **Callout**
+3. Copy markdown below:
+
+```markdown
+Title: ◉ Executive Insights: Athlete Brands & Emerging Sports
+
+This module features four videos: one short concept video (2 minutes) introducing athlete revenue streams, followed by three executive interviews (10-12 minutes each) with practitioners sharing insights from athlete representation, emerging sports markets, and women's sports investment. Watch for how athletes balance endorsement income versus equity building, real examples of post-career transition strategies, and why women's sports offer better ROI than established properties. Videos support MLO 4.1 (revenue streams), MLO 4.2 (owned vs endorsed assets), and MLO 4.3 (emerging opportunities). Total viewing time: 32-38 minutes.
+```
+
+---
+
+[Continue for all remaining elements...]
+
+---
+
+## 🎯 FINAL PROJECT CONNECTION
+
+**How Module 2 Supports Your Final Strategic Vision:**
+
+Module 2 delivered practitioner insights from sports agents, PGA executives, and women's sports experts. This real-world perspective grounds your Week 5 athlete partnership strategy in operational reality.
+
+**What You Learned:**
+- Sports agents structure deals to maximize athlete equity, not just endorsement fees
+- Global expansion (PGA's model) requires understanding local markets, cultural dynamics, and infrastructure gaps
+- Women's sports experts see 300% faster growth than men's sports despite 1/10th the valuation—massive arbitrage opportunity
+- Athlete brand building requires 10-year thinking, not quarterly thinking
+
+**How to Apply This to Your Final Project:**
+
+When you design your 5-year strategic vision in Week 5, reference Module 2's executive frameworks:
+
+- **Athlete Partnership Strategy:** If your property involves athlete deals, cite the sports agent framework. Example: "Following Week 4's agent model, we offer athletes equity stakes (5-10% of merchandise revenue) vs. flat endorsement fees, aligning long-term incentives."
+- **Global Expansion:** If your property has international ambitions, apply PGA's expansion framework from Module 2. Don Rea taught you to assess market readiness, not just market size.
+- **Women's Sports Positioning:** If your property targets women's sports, reference Module 2's expert insights to justify growth projections and valuation premiums.
+
+**Real-World Application:** The executives you heard from evaluate athlete partnerships and market opportunities daily. Your Week 5 capstone will undergo similar scrutiny—Module 2 taught you how practitioners defend athlete brand strategies.
+
+---
+
+## Module 2 Complete - Transition to Module 3
+
+**What You've Learned:**
+You now have expert perspective on athlete brand building from practitioners who've negotiated deals, structured investments, and expanded into emerging markets. You understand:
+
+- The five athlete revenue streams and which create wealth vs. income
+- When athletes should prioritize endorsements vs. owned businesses
+- Why women's sports and emerging markets offer higher ROI than established properties
+- How post-career transition planning must start during peak playing years
+
+**Key Takeaways:**
+- Endorsements provide income; ownership builds wealth
+- Athletes at peak career should prioritize equity investments over fee-based deals
+- Women's sports growing 300% faster than men's, creating first-mover opportunities
+- Post-retirement brand value declines 60-80% unless sustained by owned assets
+- International markets offer growth but require patient capital and local expertise
+
+**Up Next: Module 3 - Interactive Discovery**
+Now that you've heard from practitioners, it's time to explore these concepts hands-on. In Module 3, you'll interact with widgets that let you:
+
+- Build athlete brand portfolios using the **Athlete Brand Calculator**
+- Evaluate women's sports investments using the **Emerging Sports Investment Tool**
+- Simulate post-career wealth scenarios to see the power of compounding
+
+Ready to experiment with athlete brand strategies? Let's go!
+
+---
+
+## MODULE 2 Complete - Summary
+
+### Elements Created:
+1. ✅ Connecting Introduction Text
+2. ✅ Learning Outcomes Widget (shows MLOs for Module 2)
+3. ✅ Infobox - Video Overview (32-38 min total viewing)
+4. ✅ Video 1 - Athlete Revenue Streams Overview (2 min concept video with full script)
+5. ✅ Video 2 - Sports Agent Interview (10-12 min, interview structure provided)
+6. ✅ Video 3 - Don Rea PGA Tour Interview (10-12 min, interview structure provided)
+7. ✅ Video 4 - Women's Sports Investment Expert (8-10 min, interview structure provided)
+8. ✅ Details Accordion - Video Transcripts
+9. ✅ AI Chat Widget - Athlete Brand Strategy Q&A
+
+### Executive Perspectives:
+- **Sports Agent:** Endorsement vs. owned business strategy, post-career planning
+- **Don Rea (PGA):** Emerging markets, international expansion, women's golf growth
+- **Women's Sports Expert:** Investment thesis, valuation gaps, growth rates, risk factors
+
+### Pedagogical Design:
+- Multiple means of representation: video (visual+audio), transcripts (text), AI chat (interactive)
+- Authentic practitioner perspectives ground theoretical frameworks
+- Real-world examples (Serena, LeBron, Michael Jordan) make concepts concrete
+- Prepares for hands-on application in Module 3's interactive widgets
+
+### Total Time Estimate:
+- Video 1: 2 minutes
+- Videos 2-4: 28-34 minutes
+- Reading (intro + infobox): 2 minutes
+- **Total Module 2 time: 32-38 minutes**
+```
+
+**Why This Format Works:**
+
+1. **Table Overview** - Implementers see all elements at a glance with priorities
+2. **Element Symbols** - Visual distinction between content types
+3. **Priority Badges** - Clear MVP vs. nice-to-have distinction
+4. **Complete Content** - Every element has copy-paste-ready text/code
+5. **Final Project Connection** - Explicit application guidance (not generic)
+6. **Module Transition** - Narrative continuity between modules
+7. **Summary Section** - Comprehensive checklist and time estimate
+
+**When to Use This Format:**
+
+- ✅ Creating comprehensive BUILD MODE storyboards
+- ✅ Modules with 5+ elements requiring clear organization
+- ✅ Multi-week course builds where consistency matters
+- ✅ When handing off to non-technical implementers (table shows everything)
+
+**When to Use Simpler Format:**
+
+- Single-element modules (just write the content)
+- Quick audits (don't need full table structure)
+- Modules with <3 elements (table overhead not worth it)
+
 ### Step 4: Create Supporting Documentation
 
 Include comprehensive supporting sections:
