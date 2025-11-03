@@ -1,5 +1,4 @@
 {
-  "$schema": "https://raw.githubusercontent.com/anthropics/claude-code/main/.claude-plugin/marketplace.schema.json",
   "name": "education-toolkit",
   "version": "2.8.5",
   "description": "Comprehensive toolkit for course developers with 17 specialized agents, 14 slash commands, and automatic code review. Includes widget design system enforcement (generate/audit mode with standardized Geist typography and neutral color palette), strategic course outline creation with required widget introduction format, specialized consistency checkers (terminology, concept threading, assessment methodology), cohort course structure validation, peer design review simulation, PAIRR methodology, AI Roleplay exercises, diagnostic rubrics, accessibility auditing, widget testing, course QA, enhanced storyboard validation with interactivity analysis, and fullstack code review (FastAPI/Python + React/JSX).",
