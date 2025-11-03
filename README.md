@@ -67,18 +67,19 @@ Agents are invoked automatically when your request matches their description, or
 17. **widget-designer** - **NEW in v2.8.0**: Generate new interactive widgets OR audit existing widgets for design system compliance. Enforces Geist typography, neutral gray palette (no gold/green), CSS variables (no hardcoded hex), NO EMOJIS policy, PDF exports (not JSON). Reports issues with line numbers and offers automatic fixes.
 18. **widget-tester** - 3-persona widget testing (Sarah, James, Maria) for UX validation
 
-### ⚡ 10 Quick Slash Commands
+### ⚡ 9 Quick Slash Commands
 
 1. **/audit-module** - Audit module for WCAG 2.2 AA accessibility compliance
 2. **/build-storyboard** - Build comprehensive Uplimit storyboard with copy-paste-ready content
 3. **/check-branding** - Validate Canvas LMS or Uplimit platform branding consistency
-4. **/check-consistency** - Check consistency across modules (terminology, threading, narrative)
-5. **/design-assessment** - Design comprehensive assessment with AI integration and UDL/QM compliance
-6. **/generate-rubric** - Generate QM-aligned assessment rubric (quick rubric-only tasks)
-7. **/peer-review** - **NEW**: Simulate design review panel with 6 ID specialists
-8. **/review-content** - Quick content review for educational quality
-9. **/simulate-journey** - Simulate student journey through modules with 4 personas
-10. **/test-widget** - Test interactive widget with 3 student personas
+4. **/design-assessment** - Design comprehensive assessment with AI integration and UDL/QM compliance
+5. **/generate-rubric** - Generate QM-aligned assessment rubric (quick rubric-only tasks)
+6. **/peer-review** - Simulate design review panel with 6 ID specialists
+7. **/review-content** - Quick content review for educational quality
+8. **/simulate-journey** - Simulate student journey through modules with 4 personas
+9. **/test-widget** - Test interactive widget with 3 student personas
+
+**Note:** Not all agents have slash commands. Newer agents (consistency checkers, course-outline-creator, widget-designer) and automatic agents (code reviewers) are invoked by natural language or hooks. See [Slash Command Analysis](SLASH-COMMAND-ANALYSIS.md) for details.
 
 ### 📚 Bundled Knowledge Base (~614 KB)
 
