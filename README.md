@@ -23,10 +23,10 @@
 ## Installation
 
 ```bash
-/plugin marketplace add jameskruck/education-toolkit
+/plugin add jameskruck/education-toolkit
 ```
 
-**Gets you:** All 17 agents + 10 commands + 3 skills + automatic hooks
+**Gets you:** All 17 agents + 14 commands + 3 skills + automatic hooks
 
 Agents are invoked automatically when your request matches their description, or you can invoke them directly:
 - `uplimit-storyboard-builder` (no double-scoping needed!)
