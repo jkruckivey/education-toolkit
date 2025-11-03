@@ -153,18 +153,193 @@ Before starting, you need:
    - Video lengths (if recommending new videos)
    - Widget complexity preferences (simple HTML/CSS/JS or framework-based)
 
+## Module Structure Templates
+
+**CRITICAL:** Module structure varies significantly between COHORT and SELF-PACED courses. Always ask about course format before building storyboards.
+
+### Course Format Detection
+
+**Cohort-Based Courses:**
+- Fixed start/end dates with specific deadlines
+- Synchronous elements (peer review, live sessions, cohort discussions)
+- Weekly pacing with firm milestones
+- Anchor Projects with scheduled touchpoints
+- PAIRR methodology in Module 6 (Peer + AI Review + Reflection)
+
+**Self-Paced Courses:**
+- Students progress at own speed
+- Asynchronous only (NO peer review, NO live sessions)
+- Checkpoint-based pacing (no firm deadlines)
+- Final Project with flexible milestones
+- Individual assessments only (NO PAIRR)
+
+**Why This Matters:**
+- PAIRR methodology requires synchronous peer review (cohort-only)
+- Deadline language differs ("Submit by Friday 11:59 PM" vs "When ready, submit...")
+- Anchor Project milestones vs Final Project checkpoints
+- Module 6 structure completely different between course types
+
+### Module Structure Patterns by Course Type
+
+This agent references **MODULE-STRUCTURE-TEMPLATES.md** for complete module-by-module templates. Key patterns:
+
+#### COHORT Course Modules (0-7 Pattern)
+
+**Module 0: Welcome & Course Overview**
+- Course orientation and navigation
+- Learning Manager introduction (Ivey courses)
+- Platform walkthrough
+- Initial anchor project overview (milestone structure with dates)
+
+**Module 1: Week Introduction & Learning Outcomes**
+- Element 1: Connecting text (week context, what's ahead)
+- Element 2: Infobox with ALL Course Learning Outcomes (CLOs) display
+- Element 4: Learning outcomes widget showing ALL Module Learning Outcomes (MLOs) for the week
+- Content elements introducing core concepts
+- Element 10+: Final Project Connection (specific, not generic - references content from THIS module)
+- Element 11+: Module transition (recap + preview of next module)
+
+**Modules 2-5: Content Development**
+- Element 1: Connecting text (links to previous module)
+- Element 2: Learning outcomes widget (shows SUBSET of MLOs relevant to THIS module)
+- Content elements (text, video, widgets, cases, AI chats)
+- Final Project Connection (specific application to anchor project)
+- Module transition
+
+**Module 6: Assessment with PAIRR Methodology** (COHORT ONLY)
+- Element 1: Connecting text
+- Element 2: Learning outcomes widget
+- PAIRR assignment structure:
+  * Draft submission (80% of assignment points)
+  * Peer feedback instructions (detailed rubric + how to give feedback)
+  * AI feedback instructions (AI roleplay configuration)
+  * Dual feedback receipt
+  * **Comparative reflection** (compare peer vs AI feedback) - 2 points
+  * Revision submission
+  * **Post-revision reflection** (what changed and why) - 1 point
+  * Bonus points: 2 (comparative) + 1 (post-revision) + 1 (quality) = 5 total
+- Module transition
+
+**Module 7: Wrap-Up & Synthesis**
+- Week recap (consolidate learning)
+- Next steps / looking ahead
+- No new concepts introduced
+- Final anchor project submission details
+
+#### SELF-PACED Course Modules (0-7 Pattern)
+
+**Module 0: Welcome & Course Overview**
+- Course orientation and navigation
+- Platform walkthrough
+- Initial final project overview (checkpoint structure, no dates)
+
+**Module 1: Introduction & Learning Outcomes**
+- Element 1: Connecting text (course context)
+- Element 2: Infobox with ALL Course Learning Outcomes (CLOs) display
+- Element 4: Learning outcomes widget showing ALL Module Learning Outcomes (MLOs)
+- Content elements introducing core concepts
+- Element 10+: Final Project Connection (specific to THIS module)
+- Element 11+: Module transition
+
+**Modules 2-5: Content Development**
+- Element 1: Connecting text
+- Element 2: Learning outcomes widget (SUBSET of MLOs)
+- Content elements
+- Final Project Connection (specific checkpoint application)
+- Module transition
+
+**Module 6: Assessment (Individual Work Only)** (SELF-PACED)
+- Element 1: Connecting text
+- Element 2: Learning outcomes widget
+- **Individual assessment structure** (NO PAIRR, NO peer review):
+  * Assignment instructions
+  * AI feedback tool (optional - AI roleplay for practice)
+  * Submission element (text response or file upload)
+  * Rubric with AI-assisted grading
+- Module transition
+
+**Module 7: Wrap-Up & Synthesis**
+- Course recap
+- Next steps / recommended resources
+- No new concepts
+- Final project submission details (flexible timing)
+
+### Key Differences: Cohort vs Self-Paced
+
+| Element | COHORT | SELF-PACED |
+|---------|--------|------------|
+| **Module 6 Assessment** | PAIRR methodology (peer + AI feedback, comparative reflection) | Individual assessment (AI feedback optional, no peer review) |
+| **Deadlines** | Firm dates ("Submit by Friday 11:59 PM ET") | Flexible ("When ready, submit...") |
+| **Project Structure** | Anchor Project with milestone dates | Final Project with checkpoints (no dates) |
+| **Synchronous Elements** | Peer review, cohort discussions, live sessions | None - fully asynchronous |
+| **Bonus Points (Module 6)** | 5 points (2 comparative + 1 post-revision + 1 quality + 1 participation) | N/A (no peer bonus) |
+| **Module 0 Language** | "Week 1 begins Monday..." | "Begin when ready..." |
+| **Pacing Guidance** | "Complete by end of week" | "Recommended: 5-7 hours over 1-2 weeks" |
+
+### Final Project Connection Templates
+
+**COHORT (Anchor Project) - Specific Example:**
+```markdown
+## Element 10: Anchor Project Connection
+
+**Applying This Week's Concepts to Your Team Analysis**
+
+Element 4's revenue model framework (media rights, ticketing, merchandising) directly applies to **Section 3.2 of your anchor project memo**: Revenue Stream Analysis. You'll use the three-category model introduced today to structure your analysis of the Vancouver Canucks' revenue ecosystem.
+
+**Due Friday 11:59 PM ET** - Draft Section 3.2 (400-500 words analyzing media rights, ticketing, and merchandise revenue using Exhibits A and B from today's case). This section will receive peer feedback next week before your final submission.
+
+**Template provided:** Use the Section 3.2 template in your anchor project document (already distributed).
+```
+
+**SELF-PACED (Final Project) - Specific Example:**
+```markdown
+## Element 10: Final Project Connection
+
+**Applying This Week's Concepts to Your Analysis**
+
+Element 4's revenue model framework (media rights, ticketing, merchandising) directly applies to **Checkpoint 3 of your final project**: Revenue Stream Analysis. You'll use the three-category model introduced today to structure your analysis of a professional sports organization's revenue ecosystem.
+
+**Checkpoint 3 (when ready)** - Complete your revenue stream analysis (400-500 words) using the framework from today. Review the self-check rubric provided with Checkpoint 3 to ensure your analysis meets expectations before moving to Checkpoint 4.
+
+**Template provided:** Download the Checkpoint 3 template from the Final Project Resources page.
+```
+
+### Common Structural Elements (Both Course Types)
+
+**Element 1: Connecting Text (Modules 2-7)**
+- 100-150 words
+- Recap previous module's key concept
+- Preview this module's focus
+- Create narrative flow between modules
+
+**Element 2: Learning Outcomes Widget (Modules 2-7)**
+- Shows SUBSET of MLOs relevant to this specific module
+- NOT all MLOs (Module 1 Element 4 shows all MLOs)
+- Interactive accordion or expandable format
+- Students can check off completed outcomes
+
+**Final Element: Module Transition**
+- Recap this module (2-3 sentences)
+- Preview next module (1-2 sentences)
+- Create anticipation and continuity
+
 ## Your Process
 
-### Step 1: Analyze Input Specification
+### Step 1: Analyze Input Specification & Determine Course Format
 
 Read the storyboard specification or outline carefully:
+- **FIRST: Determine course format** (COHORT vs SELF-PACED) - This fundamentally changes module structure
 - Identify all modules and elements
 - Note learning outcomes for each module
 - Understand pedagogical rationale for element choices
 - Check for V3 Interactive-First principles application
 - Note any gaps or missing specifications
 
-**If critical information is missing**: Ask the user before proceeding.
+**Course Format Impact:**
+- **COHORT**: Use Module Structure Templates with PAIRR methodology (Module 6), Anchor Project language, firm deadlines
+- **SELF-PACED**: Use Module Structure Templates with individual assessments (Module 6), Final Project language, checkpoint pacing
+
+**If critical information is missing**: Ask the user before proceeding. Course format is CRITICAL - cannot proceed without it.
 
 ### Step 2: Apply V3 Interactive-First Principles
 
@@ -1140,10 +1315,14 @@ When user requests an audit of existing storyboard content, follow this systemat
 ### Audit Step 1: Read and Analyze Storyboard
 
 Read the complete storyboard file or specified module/section:
+- **FIRST: Determine course format** (COHORT vs SELF-PACED) - Look for indicators:
+  * COHORT: PAIRR methodology, firm deadlines, "Anchor Project", peer review references
+  * SELF-PACED: Individual assessments, "when ready" language, "Final Project", checkpoints
 - Identify all element types used (infoboxes, text blocks, AI roleplay, widgets, assessments)
 - Note line numbers for each element
 - Count word counts for infoboxes
 - Check formatting complexity
+- **Compare module structure against templates** (Module 0-7 patterns from Module Structure Templates section)
 
 ### Audit Step 2: Check Against Uplimit Platform Specifications
 
@@ -1269,9 +1448,107 @@ Verify complete Uplimit field specifications present with CORRECT FORMATS:
 - ✅ Full rubric with criteria, points, descriptions
 - ✅ Feedback templates for performance levels
 
-### Audit Step 3: Analyze Interactivity and Engagement
+### Audit Step 3: Validate Module Structure Against Templates
 
-Beyond platform compliance, assess **pedagogical effectiveness** - the balance between passive reading and active learning.
+After platform compliance checks, validate module-level structure against appropriate templates (COHORT or SELF-PACED):
+
+#### Module Structure Validation Checklist
+
+**For ALL Modules (Both Course Types):**
+- ✅ **Element 1 (Modules 2-7)**: Connecting text present? (100-150 words, recap + preview)
+- ✅ **Element 2 (Modules 2-7)**: Learning outcomes widget present with SUBSET of MLOs?
+- ✅ **Final Project Connection**: Specific content references? Not generic?
+- ✅ **Module Transition**: Recap + preview present?
+- ✅ **Element numbering**: Sequential, no gaps, table matches content?
+
+**For COHORT Courses:**
+- ✅ **Module 0**: Anchor Project overview with milestone structure and dates?
+- ✅ **Module 1 Element 2**: Infobox with ALL CLOs displayed?
+- ✅ **Module 1 Element 4**: Learning outcomes widget showing ALL MLOs?
+- ✅ **Module 6 PAIRR Structure**: All components present?
+  * Draft submission (80% points)
+  * Peer feedback instructions
+  * AI feedback instructions
+  * Comparative reflection (compare peer vs AI) - 2 points
+  * Revision submission
+  * Post-revision reflection (what changed) - 1 point
+  * Bonus points: 2+1+1+1 = 5 total
+- ✅ **Deadline language**: Firm dates present? ("Submit by Friday 11:59 PM ET")
+- ✅ **Project terminology**: "Anchor Project" used consistently?
+
+**For SELF-PACED Courses:**
+- ✅ **Module 0**: Final Project overview with checkpoint structure (no dates)?
+- ✅ **Module 1 Element 2**: Infobox with ALL CLOs displayed?
+- ✅ **Module 1 Element 4**: Learning outcomes widget showing ALL MLOs?
+- ✅ **Module 6 Individual Assessment**: NO PAIRR, NO peer review?
+  * Assignment instructions present
+  * AI feedback tool (optional)
+  * Submission element
+  * Rubric with AI-assisted grading
+- ❌ **VIOLATION CHECK**: No peer review in self-paced (critical error)
+- ❌ **VIOLATION CHECK**: No PAIRR methodology in self-paced (critical error)
+- ✅ **Pacing language**: Flexible timing? ("When ready, submit...")
+- ✅ **Project terminology**: "Final Project" used consistently (not "Anchor Project")?
+
+#### Common Module Structure Violations
+
+**Violation 1: PAIRR in Self-Paced Course**
+```
+❌ CRITICAL ERROR: Module 6 includes peer review and PAIRR methodology
+   Self-paced courses cannot include synchronous peer review elements
+
+✅ FIX: Replace PAIRR structure with individual assessment:
+   - Remove peer feedback instructions
+   - Remove comparative reflection (2 pts)
+   - Remove peer bonus points
+   - Keep AI feedback tool (optional for practice)
+   - Use standard rubric with AI-assisted grading
+```
+
+**Violation 2: Missing Module 1 Learning Outcomes Widget**
+```
+❌ ISSUE: Module 1 has Infobox with CLOs but no learning outcomes widget showing ALL MLOs
+
+✅ FIX: Add Element 4 - Learning Outcomes Widget
+   <iframe src="week1/widgets/learning-outcomes-week-1.html"
+           width="100%"
+           height="600px"
+           title="Week 1 Learning Outcomes - All Module Learning Outcomes">
+   </iframe>
+```
+
+**Violation 3: Generic Final Project Connection**
+```
+❌ ISSUE: "This content will help with your final project" (no specifics)
+
+✅ FIX: Provide specific connection with content and section references:
+   "Element 4's revenue model framework (media rights, ticketing, merchandising)
+   directly applies to **Checkpoint 3 of your final project**: Revenue Stream Analysis."
+```
+
+**Violation 4: Inconsistent Project Terminology**
+```
+❌ ISSUE (Self-Paced): Module 0 says "Final Project", Module 3 says "Anchor Project"
+
+✅ FIX: Use "Final Project" consistently in self-paced courses
+   Replace all "Anchor Project" references with "Final Project"
+   Use "checkpoint" instead of "milestone"
+```
+
+**Violation 5: Module 6 Missing PAIRR Components (Cohort)**
+```
+❌ ISSUE: Module 6 has peer review but missing comparative reflection questions
+
+✅ FIX: Add comparative reflection element:
+   **Comparative Reflection (2 points):**
+   - Compare the peer feedback vs AI feedback you received. Which was more useful? Why?
+   - Did the AI feedback identify anything your peer missed? Vice versa?
+   - How confident are you applying each type of feedback to your revision?
+```
+
+### Audit Step 4: Analyze Interactivity and Engagement
+
+Beyond platform and structure compliance, assess **pedagogical effectiveness** - the balance between passive reading and active learning.
 
 #### Interactivity Audit Dimensions
 
@@ -1378,7 +1655,7 @@ Skip interactivity analysis when:
 - ❌ Content is already highly interactive (meets 30/70 ratio)
 - ❌ User is building from scratch (they'll follow V3 principles naturally)
 
-### Audit Step 4: Generate Compliance Report
+### Audit Step 5: Generate Compliance Report
 
 Provide structured audit report with:
 
@@ -1434,7 +1711,7 @@ Provide structured audit report with:
 3. **Verification steps**: [what to test after corrections]
 ```
 
-### Audit Step 5: Provide Corrected Versions
+### Audit Step 6: Provide Corrected Versions
 
 For every violation found:
 - Provide exact corrected version ready to copy-paste
