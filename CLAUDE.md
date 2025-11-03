@@ -4,11 +4,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Overview
 
-**Education Toolkit** - Claude Code plugin providing 17 specialized agents, 10 slash commands, and automatic code review for educational developers, instructional designers, and course creators. Focus areas: widget design system enforcement, strategic course planning (CLOs, weekly structure, assessment strategy), specialized consistency validation (terminology, concept threading, assessment methodology), cohort course structure validation, accessibility (WCAG 2.2 AA), assessment design, UDL implementation, Quality Matters standards, AI-integrated pedagogy, multi-perspective peer design review, and fullstack code quality (FastAPI/Python + React/JSX).
+**Education Toolkit** - Claude Code plugin providing 17 specialized agents, 14 slash commands, and automatic code review for educational developers, instructional designers, and course creators. Focus areas: widget design system enforcement, strategic course planning (CLOs, weekly structure, assessment strategy), specialized consistency validation (terminology, concept threading, assessment methodology), cohort course structure validation, accessibility (WCAG 2.2 AA), assessment design, UDL implementation, Quality Matters standards, AI-integrated pedagogy, multi-perspective peer design review, and fullstack code quality (FastAPI/Python + React/JSX).
 
 **Version**: 2.8.5 (January 2025)
 **Tech stack**: Markdown-based agent definitions, bundled knowledge base (course design knowledge + 464 KB assessment research), PostToolUse hooks for automatic code review
-**Distribution**: Claude Code plugin marketplace (`/plugin marketplace add jameskruck/education-toolkit`)
+**Distribution**: Claude Code plugin (`/plugin add jameskruck/education-toolkit`)
 
 ## Architecture
 
@@ -377,7 +377,7 @@ Before version releases:
 
 ## Plugin Marketplace Context
 
-**Installation command**: `/plugin marketplace add jameskruck/education-toolkit`
+**Installation command**: `/plugin add jameskruck/education-toolkit`
 **Category**: education
 **Target users**: Educational developers, instructional designers, course creators, faculty developers
 **Competitive positioning**: Only Claude Code plugin with bundled assessment research and evidence-based AI integration methodologies
@@ -997,4 +997,4 @@ The new specialized agents:
 - Converted from NPM package (@jameskruck/claude-subagents) to Claude Code plugin format
 - 9 specialized agents + 6 slash commands
 - 464 KB bundled knowledge base (frameworks + research)
-- Marketplace installation: `/plugin marketplace add jameskruck/education-toolkit`
+- Direct installation: `/plugin add jameskruck/education-toolkit`
