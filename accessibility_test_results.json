@@ -1,0 +1,282 @@
+{
+  "url": "file://C:\\Users\\james\\OneDrive\\Documents2\\GitHub\\education-toolkit\\test_widget.html",
+  "test_timestamp": "2025-10-24 07:02:18",
+  "compliance_score": 42,
+  "total_issues": 8,
+  "total_successes": 6,
+  "critical_issues": 0,
+  "high_issues": 3,
+  "medium_issues": 5,
+  "test_results": [
+    {
+      "category": "Keyboard Navigation",
+      "wcag_criteria": [
+        "2.1.1 Keyboard",
+        "2.1.2 No Keyboard Trap",
+        "2.4.1 Bypass Blocks"
+      ],
+      "issues": [
+        {
+          "severity": "medium",
+          "wcag": "2.4.1 Bypass Blocks",
+          "issue": "No skip navigation link found",
+          "element": "N/A",
+          "fix": "Add skip link as first focusable element: <a href='#main-content' class='skip-nav'>Skip to main content</a>"
+        },
+        {
+          "severity": "high",
+          "wcag": "4.1.2 Name, Role, Value",
+          "issue": "Interactive element missing accessible name: INPUT",
+          "element": "INPUT#budget",
+          "fix": "Add aria-label or ensure element has text content"
+        },
+        {
+          "severity": "high",
+          "wcag": "4.1.2 Name, Role, Value",
+          "issue": "Interactive element missing accessible name: INPUT",
+          "element": "INPUT#revenue",
+          "fix": "Add aria-label or ensure element has text content"
+        },
+        {
+          "severity": "high",
+          "wcag": "4.1.2 Name, Role, Value",
+          "issue": "Interactive element missing accessible name: INPUT",
+          "element": "INPUT#customers",
+          "fix": "Add aria-label or ensure element has text content"
+        }
+      ],
+      "successes": [],
+      "tab_order": [
+        {
+          "tag": "INPUT",
+          "id": "budget",
+          "class": "",
+          "text": "",
+          "role": null,
+          "ariaLabel": null,
+          "tabindex": 0,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "revenue",
+          "class": "",
+          "text": "",
+          "role": null,
+          "ariaLabel": null,
+          "tabindex": 0,
+          "visible": true
+        },
+        {
+          "tag": "INPUT",
+          "id": "customers",
+          "class": "",
+          "text": "",
+          "role": null,
+          "ariaLabel": null,
+          "tabindex": 0,
+          "visible": true
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "class": "",
+          "text": "Calculate",
+          "role": null,
+          "ariaLabel": null,
+          "tabindex": 0,
+          "visible": true
+        },
+        {
+          "tag": "BODY",
+          "id": "",
+          "class": "",
+          "text": "\n    \n        Marketing Budget Calculator\n\n       ",
+          "role": null,
+          "ariaLabel": null,
+          "tabindex": -1,
+          "visible": true
+        }
+      ],
+      "screenshots": [
+        "keyboard_nav_final_focus.png"
+      ],
+      "total_focusable": 5
+    },
+    {
+      "category": "Focus Indicators",
+      "wcag_criteria": [
+        "2.4.7 Focus Visible",
+        "2.4.13 Focus Appearance"
+      ],
+      "issues": [
+        {
+          "severity": "medium",
+          "wcag": "2.4.13 Focus Appearance",
+          "issue": "Focus outline too thin: 1.0px (minimum 2px required)",
+          "element": "INPUT#budget",
+          "fix": "Increase outline width: outline-width: 2px;"
+        },
+        {
+          "severity": "medium",
+          "wcag": "2.4.13 Focus Appearance",
+          "issue": "Focus outline too thin: 1.0px (minimum 2px required)",
+          "element": "INPUT#revenue",
+          "fix": "Increase outline width: outline-width: 2px;"
+        },
+        {
+          "severity": "medium",
+          "wcag": "2.4.13 Focus Appearance",
+          "issue": "Focus outline too thin: 1.0px (minimum 2px required)",
+          "element": "INPUT#customers",
+          "fix": "Increase outline width: outline-width: 2px;"
+        },
+        {
+          "severity": "medium",
+          "wcag": "2.4.13 Focus Appearance",
+          "issue": "Focus outline too thin: 1.0px (minimum 2px required)",
+          "element": "BUTTON#",
+          "fix": "Increase outline width: outline-width: 2px;"
+        }
+      ],
+      "successes": [],
+      "focus_states_captured": [
+        {
+          "tag": "INPUT",
+          "id": "budget",
+          "class": "",
+          "outline": "rgb(16, 16, 16) auto 1px",
+          "outlineWidth": "1px",
+          "outlineColor": "rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "border": "1px solid rgb(189, 195, 199)",
+          "visible": true,
+          "top": 309.4375,
+          "left": 270
+        },
+        {
+          "tag": "INPUT",
+          "id": "revenue",
+          "class": "",
+          "outline": "rgb(16, 16, 16) auto 1px",
+          "outlineWidth": "1px",
+          "outlineColor": "rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "border": "1px solid rgb(189, 195, 199)",
+          "visible": true,
+          "top": 392.4375,
+          "left": 270
+        },
+        {
+          "tag": "INPUT",
+          "id": "customers",
+          "class": "",
+          "outline": "rgb(16, 16, 16) auto 1px",
+          "outlineWidth": "1px",
+          "outlineColor": "rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "border": "1px solid rgb(189, 195, 199)",
+          "visible": true,
+          "top": 475.4375,
+          "left": 270
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "class": "",
+          "outline": "rgb(16, 16, 16) auto 1px",
+          "outlineWidth": "1px",
+          "outlineColor": "rgb(16, 16, 16)",
+          "boxShadow": "none",
+          "border": "0px none rgb(255, 255, 255)",
+          "visible": true,
+          "top": 545.4375,
+          "left": 270
+        }
+      ],
+      "screenshots": [
+        "focus_state_0.png",
+        "focus_state_3.png"
+      ],
+      "total_tested": 4
+    },
+    {
+      "category": "Interactive Elements & ARIA",
+      "wcag_criteria": [
+        "4.1.2 Name, Role, Value",
+        "4.1.3 Status Messages"
+      ],
+      "issues": [],
+      "successes": [
+        "Button has accessible name: 'Calculate'",
+        "Button has accessible name: 'Export Results'"
+      ],
+      "elements_tested": [
+        {
+          "tag": "BUTTON",
+          "text": "Calculate",
+          "aria_label": null,
+          "aria_expanded": null,
+          "aria_pressed": null
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Export Results",
+          "aria_label": null,
+          "aria_expanded": null,
+          "aria_pressed": null
+        }
+      ],
+      "screenshots": [
+        "interactive_elements_test.png"
+      ]
+    },
+    {
+      "category": "Touch Target Sizes",
+      "wcag_criteria": [
+        "2.5.8 Target Size (Minimum)"
+      ],
+      "issues": [],
+      "successes": [
+        "INPUT meets 24x24px minimum (762x40px)",
+        "INPUT meets 24x24px minimum (762x40px)",
+        "INPUT meets 24x24px minimum (762x40px)",
+        "BUTTON meets 24x24px minimum (115x42px)"
+      ],
+      "targets_tested": [
+        {
+          "tag": "INPUT",
+          "id": "budget",
+          "class": "",
+          "width": 762,
+          "height": 40,
+          "text": ""
+        },
+        {
+          "tag": "INPUT",
+          "id": "revenue",
+          "class": "",
+          "width": 762,
+          "height": 40,
+          "text": ""
+        },
+        {
+          "tag": "INPUT",
+          "id": "customers",
+          "class": "",
+          "width": 762,
+          "height": 40,
+          "text": ""
+        },
+        {
+          "tag": "BUTTON",
+          "id": "",
+          "class": "",
+          "width": 114.703125,
+          "height": 42,
+          "text": "Calculate"
+        }
+      ]
+    }
+  ]
+}

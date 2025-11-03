@@ -1,7 +1,7 @@
 {
   "name": "terminology-consistency-checker",
   "version": "2.8.2",
-  "description": "validate terminology consistency across course weeks/modules. Builds course glossary, flags term variations, identifies undefined terms, and suggests standardization. Example requests include "check t",
+  "description": "Validates terminology consistency across course weeks by building course glossaries, flagging term variations, identifying undefined terms and acronyms, and checking capitalization patterns",
   "author": {
     "name": "James Kruck",
     "email": "jkruck@ivey.ca"

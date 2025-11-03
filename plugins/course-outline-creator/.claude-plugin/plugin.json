@@ -1,7 +1,7 @@
 {
   "name": "course-outline-creator",
   "version": "2.8.2",
-  "description": "Create strategic course outlines with CLOs, weekly structure, MLOs, and assessment strategy. Use when planning a new course from scratch or restructuring an existing course. Example requests include "",
+  "description": "Creates strategic course outlines with Course Learning Outcomes (CLOs), weekly structure, Module Learning Outcomes (MLOs), assessment strategy, and concept threading plans for new or restructured courses",
   "author": {
     "name": "James Kruck",
     "email": "jkruck@ivey.ca"

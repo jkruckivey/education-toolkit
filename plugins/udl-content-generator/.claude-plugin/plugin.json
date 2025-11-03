@@ -1,7 +1,7 @@
 {
   "name": "udl-content-generator",
   "version": "2.8.2",
-  "description": "Use this subagent when the user asks to create alternative content formats, support diverse learners, or implement Universal Design for Learning (UDL) principles. Example requests include "create an a",
+  "description": "Creates alternative content formats and implements Universal Design for Learning (UDL) principles by generating audio scripts, infographic suggestions, and transformations for diverse learners",
   "author": {
     "name": "James Kruck",
     "email": "jkruck@ivey.ca"
