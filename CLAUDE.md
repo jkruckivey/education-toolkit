@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **Education Toolkit** - Claude Code plugin providing 17 specialized agents, 10 slash commands, and automatic code review for educational developers, instructional designers, and course creators. Focus areas: widget design system enforcement, strategic course planning (CLOs, weekly structure, assessment strategy), specialized consistency validation (terminology, concept threading, assessment methodology), cohort course structure validation, accessibility (WCAG 2.2 AA), assessment design, UDL implementation, Quality Matters standards, AI-integrated pedagogy, multi-perspective peer design review, and fullstack code quality (FastAPI/Python + React/JSX).
 
-**Version**: 2.8.0 (January 2025)
+**Version**: 2.8.5 (January 2025)
 **Tech stack**: Markdown-based agent definitions, bundled knowledge base (course design knowledge + 464 KB assessment research), PostToolUse hooks for automatic code review
 **Distribution**: Claude Code plugin marketplace (`/plugin marketplace add jameskruck/education-toolkit`)
 
@@ -46,15 +46,14 @@ education-toolkit/
 │   ├── uplimit-storyboard-builder.md (26 KB, sonnet)
 │   ├── backend-reviewer.md (12 KB, sonnet, FastAPI/Python expertise)
 │   ├── frontend-reviewer.md (13 KB, sonnet, React/WCAG 2.2 AA)
-│   ├── consistency-checker-DEPRECATED.md (8 KB, opus) # DEPRECATED v2.7.0 - replaced by specialized checkers
-│   ├── course-design-knowledge/  # Bundled course design knowledge (NEW v2.6.1)
-│   │   ├── ivey-course-development-process.md  # 6-phase process, cohort/self-paced models
-│   │   ├── course-outline-examples.md          # Anonymized course structure templates
-│   │   ├── concept-threading-guide.md          # Threading patterns and best practices
-│   │   └── uplimit-content-design-guide.md     # Varied content delivery principles
-│   └── assessment-knowledge/  # Bundled assessment research knowledge
-│       ├── frameworks/        # UDL, QM, Inclusive Teaching, Templates
-│       └── research/          # AI assessment research (5 papers)
+├── course-design-knowledge/  # Bundled course design knowledge (NEW v2.6.1)
+│   ├── ivey-course-development-process.md  # 6-phase process, cohort/self-paced models
+│   ├── course-outline-examples.md          # Anonymized course structure templates
+│   ├── concept-threading-guide.md          # Threading patterns and best practices
+│   └── uplimit-content-design-guide.md     # Varied content delivery principles
+├── assessment-knowledge/  # Bundled assessment research knowledge
+│   ├── frameworks/        # UDL, QM, Inclusive Teaching, Templates
+│   └── research/          # AI assessment research (5 papers)
 ├── commands/                  # 10 slash commands
 │   ├── audit-module.md
 │   ├── build-storyboard.md
