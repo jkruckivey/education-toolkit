@@ -7,10 +7,6 @@
     "email": "jkruck@ivey.ca"
   },
   "homepage": "https://github.com/jkruckivey/education-toolkit",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jkruckivey/education-toolkit"
-  },
-  "category": "education",
+  "repository": "https://github.com/jkruckivey/education-toolkit",
   "license": "MIT"
 }
