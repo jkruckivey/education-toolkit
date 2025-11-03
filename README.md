@@ -34,6 +34,12 @@ Agents are invoked automatically when your request matches their description, or
 - `assessment-designer`
 - etc.
 
+**📖 Not sure which agent to use?** See the [Agent Selection Guide](AGENT-SELECTION-GUIDE.md) for:
+- Task-based agent recommendations
+- Overlap analysis (when agents do similar things)
+- Decision trees for common tasks
+- Recommended workflows (new course design, audits, widget creation)
+
 ---
 
 **Migrating from claude-subagents NPM package?** This plugin replaces `@jameskruck/claude-subagents` with enhanced functionality (slash commands + same agents).
@@ -61,18 +67,35 @@ Agents are invoked automatically when your request matches their description, or
 17. **widget-designer** - **NEW in v2.8.0**: Generate new interactive widgets OR audit existing widgets for design system compliance. Enforces Geist typography, neutral gray palette (no gold/green), CSS variables (no hardcoded hex), NO EMOJIS policy, PDF exports (not JSON). Reports issues with line numbers and offers automatic fixes.
 18. **widget-tester** - 3-persona widget testing (Sarah, James, Maria) for UX validation
 
-### ⚡ 10 Quick Slash Commands
+### ⚡ 14 Quick Slash Commands
 
-1. **/audit-module** - Audit module for WCAG 2.2 AA accessibility compliance
+#### Course Planning & Design
+1. **/create-outline** - **NEW**: Create strategic course outline with CLOs, weekly structure, MLOs, and assessment strategy
+
+#### Content Creation & Auditing
 2. **/build-storyboard** - Build comprehensive Uplimit storyboard with copy-paste-ready content
-3. **/check-branding** - Validate Canvas LMS or Uplimit platform branding consistency
-4. **/check-consistency** - Check consistency across modules (terminology, threading, narrative)
-5. **/design-assessment** - Design comprehensive assessment with AI integration and UDL/QM compliance
-6. **/generate-rubric** - Generate QM-aligned assessment rubric (quick rubric-only tasks)
-7. **/peer-review** - **NEW**: Simulate design review panel with 6 ID specialists
-8. **/review-content** - Quick content review for educational quality
-9. **/simulate-journey** - Simulate student journey through modules with 4 personas
-10. **/test-widget** - Test interactive widget with 3 student personas
+3. **/design-widget** - **NEW**: Generate new interactive widgets with standardized design system OR audit existing widgets
+
+#### Assessment Design
+4. **/design-assessment** - Design comprehensive assessment with AI integration and UDL/QM compliance
+5. **/generate-rubric** - Generate QM-aligned assessment rubric (quick rubric-only tasks)
+
+#### Validation & Consistency
+6. **/check-branding** - Validate Canvas LMS or Uplimit platform branding consistency
+7. **/check-cohort-structure** - **NEW**: Validate cohort course module structures (element sequences, PAIRR methodology)
+8. **/check-concept-threading** - **NEW**: Validate Week 1 concepts appear in later weeks (identify orphaned concepts)
+9. **/check-terminology** - **NEW**: Validate terminology consistency across weeks (build glossary, flag variations)
+
+#### Accessibility & Quality
+10. **/audit-module** - Audit module for WCAG 2.2 AA accessibility compliance
+11. **/review-content** - Quick content review for educational quality
+
+#### Testing & Simulation
+12. **/peer-review** - Simulate design review panel with 6 ID specialists
+13. **/simulate-journey** - Simulate student journey through modules with 4 personas
+14. **/test-widget** - Test interactive widget with 3 student personas
+
+**Note:** Automatic agents (backend-reviewer, frontend-reviewer) are triggered by PostToolUse hooks and don't need commands. See [Slash Command Analysis](SLASH-COMMAND-ANALYSIS.md) for command rationale.
 
 ### 📚 Bundled Knowledge Base (~614 KB)
 
