@@ -34,6 +34,12 @@ Agents are invoked automatically when your request matches their description, or
 - `assessment-designer`
 - etc.
 
+**📖 Not sure which agent to use?** See the [Agent Selection Guide](AGENT-SELECTION-GUIDE.md) for:
+- Task-based agent recommendations
+- Overlap analysis (when agents do similar things)
+- Decision trees for common tasks
+- Recommended workflows (new course design, audits, widget creation)
+
 ---
 
 **Migrating from claude-subagents NPM package?** This plugin replaces `@jameskruck/claude-subagents` with enhanced functionality (slash commands + same agents).
