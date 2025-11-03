@@ -1,8 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/anthropics/claude-code/main/.claude-plugin/marketplace.schema.json",
-  "name": "education-toolkit-marketplace",
+  "name": "education-toolkit",
   "version": "2.8.5",
-  "description": "Comprehensive marketplace of 17 specialized plugins for educational developers, instructional designers, and course creators. Includes course design, assessment tools, accessibility auditing, consistency checking, and quality assurance agents.",
+  "description": "Comprehensive toolkit for educational developers, instructional designers, and course creators. Includes 17 specialized agents (course design, assessment tools, accessibility auditing, consistency checking, widget design system enforcement), 10 slash commands, automatic code review hooks, and 3 executable skills. Bundled with course design knowledge base and 464 KB of assessment research.",
   "owner": {
     "name": "James Kruck",
     "email": "jkruck@ivey.ca",
@@ -10,190 +10,14 @@
   },
   "plugins": [
     {
-      "name": "accessibility-auditor",
-      "description": "Audit HTML/CSS files for WCAG 2.2 AA accessibility compliance",
+      "name": "education-toolkit",
+      "description": "Comprehensive toolkit with 17 specialized agents, 10 slash commands, and automatic code review. Includes widget design system enforcement (generate/audit mode), strategic course outline creation, specialized consistency checkers (terminology, concept threading, assessment methodology), cohort course structure validation, peer design review simulation, PAIRR methodology, AI Roleplay exercises, diagnostic rubrics, accessibility auditing, widget testing, course QA, enhanced storyboard validation with interactivity analysis, and fullstack code review (FastAPI/Python + React/JSX) with PostToolUse hook. Bundled with course design knowledge base: Ivey 6-phase development process, cohort/self-paced learning models, course outline examples, concept threading guide, and 464 KB of frameworks and AI assessment research.",
       "version": "2.8.5",
       "author": {
         "name": "James Kruck",
         "email": "jkruck@ivey.ca"
       },
-      "source": "./plugins/accessibility-auditor",
-      "category": "education"
-    },
-    {
-      "name": "assessment-consistency-checker",
-      "description": "Validate assessment consistency across course weeks (PAIRR methodology, rubrics, grading)",
-      "version": "2.8.5",
-      "author": {
-        "name": "James Kruck",
-        "email": "jkruck@ivey.ca"
-      },
-      "source": "./plugins/assessment-consistency-checker",
-      "category": "education"
-    },
-    {
-      "name": "assessment-designer",
-      "description": "Comprehensive assessment design with AI integration, UDL/QM compliance, and 464 KB knowledge base",
-      "version": "2.8.5",
-      "author": {
-        "name": "James Kruck",
-        "email": "jkruck@ivey.ca"
-      },
-      "source": "./plugins/assessment-designer",
-      "category": "education"
-    },
-    {
-      "name": "backend-reviewer",
-      "description": "Expert FastAPI/Python code reviewer for educational technology projects",
-      "version": "2.8.5",
-      "author": {
-        "name": "James Kruck",
-        "email": "jkruck@ivey.ca"
-      },
-      "source": "./plugins/backend-reviewer",
-      "category": "development"
-    },
-    {
-      "name": "branding-checker",
-      "description": "Validate course content against platform branding guidelines (Canvas LMS or Uplimit)",
-      "version": "2.8.5",
-      "author": {
-        "name": "James Kruck",
-        "email": "jkruck@ivey.ca"
-      },
-      "source": "./plugins/branding-checker",
-      "category": "education"
-    },
-    {
-      "name": "cohort-structure-checker",
-      "description": "Validate cohort course structural consistency (modules, elements, PAIRR, Final Project Connections)",
-      "version": "2.8.5",
-      "author": {
-        "name": "James Kruck",
-        "email": "jkruck@ivey.ca"
-      },
-      "source": "./plugins/cohort-structure-checker",
-      "category": "education"
-    },
-    {
-      "name": "concept-threading-checker",
-      "description": "Validate concept threading across course weeks (Week 1 concepts in later weeks)",
-      "version": "2.8.5",
-      "author": {
-        "name": "James Kruck",
-        "email": "jkruck@ivey.ca"
-      },
-      "source": "./plugins/concept-threading-checker",
-      "category": "education"
-    },
-    {
-      "name": "course-outline-creator",
-      "description": "Create strategic course outlines with CLOs, weekly structure, MLOs, and assessment strategy",
-      "version": "2.8.5",
-      "author": {
-        "name": "James Kruck",
-        "email": "jkruck@ivey.ca"
-      },
-      "source": "./plugins/course-outline-creator",
-      "category": "education"
-    },
-    {
-      "name": "frontend-reviewer",
-      "description": "Expert React/JSX code reviewer with WCAG 2.2 AA accessibility specialization",
-      "version": "2.8.5",
-      "author": {
-        "name": "James Kruck",
-        "email": "jkruck@ivey.ca"
-      },
-      "source": "./plugins/frontend-reviewer",
-      "category": "development"
-    },
-    {
-      "name": "peer-review-simulator",
-      "description": "Simulate design review panel with 6 instructional design specialists",
-      "version": "2.8.5",
-      "author": {
-        "name": "James Kruck",
-        "email": "jkruck@ivey.ca"
-      },
-      "source": "./plugins/peer-review-simulator",
-      "category": "education"
-    },
-    {
-      "name": "rubric-generator",
-      "description": "Quick rubric generation from learning outcomes (QM-aligned, student and faculty versions)",
-      "version": "2.8.5",
-      "author": {
-        "name": "James Kruck",
-        "email": "jkruck@ivey.ca"
-      },
-      "source": "./plugins/rubric-generator",
-      "category": "education"
-    },
-    {
-      "name": "student-journey-simulator",
-      "description": "Simulate student experiences and test course flow across multiple weeks",
-      "version": "2.8.5",
-      "author": {
-        "name": "James Kruck",
-        "email": "jkruck@ivey.ca"
-      },
-      "source": "./plugins/student-journey-simulator",
-      "category": "education"
-    },
-    {
-      "name": "terminology-consistency-checker",
-      "description": "Validate terminology consistency and build course glossary",
-      "version": "2.8.5",
-      "author": {
-        "name": "James Kruck",
-        "email": "jkruck@ivey.ca"
-      },
-      "source": "./plugins/terminology-consistency-checker",
-      "category": "education"
-    },
-    {
-      "name": "udl-content-generator",
-      "description": "Create alternative content formats and implement Universal Design for Learning (UDL) principles",
-      "version": "2.8.5",
-      "author": {
-        "name": "James Kruck",
-        "email": "jkruck@ivey.ca"
-      },
-      "source": "./plugins/udl-content-generator",
-      "category": "education"
-    },
-    {
-      "name": "uplimit-storyboard-builder",
-      "description": "Create and audit storyboards for Uplimit platform (BUILD and AUDIT modes)",
-      "version": "2.8.5",
-      "author": {
-        "name": "James Kruck",
-        "email": "jkruck@ivey.ca"
-      },
-      "source": "./plugins/uplimit-storyboard-builder",
-      "category": "education"
-    },
-    {
-      "name": "widget-designer",
-      "description": "Generate new interactive widgets with standardized design system or audit existing widgets",
-      "version": "2.8.5",
-      "author": {
-        "name": "James Kruck",
-        "email": "jkruck@ivey.ca"
-      },
-      "source": "./plugins/widget-designer",
-      "category": "education"
-    },
-    {
-      "name": "widget-tester",
-      "description": "Test interactive educational widgets with simulated student personas",
-      "version": "2.8.5",
-      "author": {
-        "name": "James Kruck",
-        "email": "jkruck@ivey.ca"
-      },
-      "source": "./plugins/widget-tester",
+      "source": "./",
       "category": "education"
     }
   ]
