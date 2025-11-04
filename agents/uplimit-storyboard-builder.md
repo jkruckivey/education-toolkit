@@ -153,128 +153,90 @@ Before starting, you need:
    - Video lengths (if recommending new videos)
    - Widget complexity preferences (simple HTML/CSS/JS or framework-based)
 
-## Module Structure Templates
+### Module Structure Templates
 
 **CRITICAL:** Module structure varies significantly between COHORT and SELF-PACED courses. Always ask about course format before building storyboards.
 
 ### Course Format Detection
 
 **Cohort-Based Courses:**
-- Fixed start/end dates with specific deadlines
-- Synchronous elements (peer review, live sessions, cohort discussions)
-- Weekly pacing with firm milestones
-- Anchor Projects with scheduled touchpoints
-- PAIRR methodology in Module 6 (Peer + AI Review + Reflection)
+- Fixed start/end dates with weekly progression
+- Weekly pacing with structured milestones
+- Anchor Project with weekly checkpoints
+- PAIRR once (Week 2, Module 6 only)
+- Weekly self-assessment + roadmap
 
 **Self-Paced Courses:**
-- Students progress at own speed
+- Students progress at their own pace
 - Asynchronous only (NO peer review, NO live sessions)
 - Checkpoint-based pacing (no firm deadlines)
-- Final Project with flexible milestones
+- **Final test** instead of anchor project milestone build
+- Optional practice activities (not multi-week build)
 - Individual assessments only (NO PAIRR)
 
-**Why This Matters:**
-- PAIRR methodology requires synchronous peer review (cohort-only)
-- Deadline language differs ("Submit by Friday 11:59 PM" vs "When ready, submit...")
-- Anchor Project milestones vs Final Project checkpoints
-- Module 6 structure completely different between course types
+### Why This Matters
 
-### Module Structure Patterns by Course Type
+- PAIRR appears only in cohort courses (Week 2, Module 6)
+- Cohorts use weekly deadlines & project checkpoints
+- Self-paced uses flexible timing and final test
+- Tone and instructional sequencing differ
 
-This agent references **MODULE-STRUCTURE-TEMPLATES.md** for complete module-by-module templates. Key patterns:
+---
 
-#### COHORT Course Modules (0-7 Pattern)
+### Cohort Course Structure (5-Week: Self-Assessment → Modules 1–6 → Wrap-Up)
 
-**Module 0: Welcome & Course Overview**
-- Course orientation and navigation
-- Learning Manager introduction (Ivey courses)
-- Platform walkthrough
-- Initial anchor project overview (milestone structure with dates)
+**Weekly Pattern**
+| Component | Type | Notes |
+|---|---|---|
+Getting Started *(Week 1 only)* | Unnumbered | Welcome, intro video, CLOs |
+Self-Assessment | Unnumbered | Weekly intro, WLO widget, pre-assessment, AI coach, roadmap |
+Modules 1–6 | Numbered | Content + checks + project alignment |
+Wrap-Up | Unnumbered | Reflection, synthesis, project checkpoint |
 
-**Module 1: Week Introduction & Learning Outcomes**
-- Element 1: Connecting text (week context, what's ahead)
-- Element 2: Infobox with ALL Course Learning Outcomes (CLOs) display
-- Element 4: Learning outcomes widget showing ALL Module Learning Outcomes (MLOs) for the week
-- Content elements introducing core concepts
-- Element 10+: Final Project Connection (specific, not generic - references content from THIS module)
-- Element 11+: Module transition (recap + preview of next module)
+**Special Rules**
+- **PAIRR = Week 2, Module 6 only**
+- CLOs shown **only in Week 1**
+- Weekly roadmap always in Self-Assessment module
+- Knowledge checks = MC/TF **feedback-only**
+- AI coach only in Self-Assessment
+- Tone fades from guided → autonomous across weeks
 
-**Modules 2-5: Content Development**
-- Element 1: Connecting text (links to previous module)
-- Element 2: Learning outcomes widget (shows SUBSET of MLOs relevant to THIS module)
-- Content elements (text, video, widgets, cases, AI chats)
-- Final Project Connection (specific application to anchor project)
-- Module transition
+**Anchor Project**
+- Weekly checkpoints
+- Final submission in **Week 5**
 
-**Module 6: Assessment with PAIRR Methodology** (COHORT ONLY)
-- Element 1: Connecting text
-- Element 2: Learning outcomes widget
-- PAIRR assignment structure:
-  * Draft submission (80% of assignment points)
-  * Peer feedback instructions (detailed rubric + how to give feedback)
-  * AI feedback instructions (AI roleplay configuration)
-  * Dual feedback receipt
-  * **Comparative reflection** (compare peer vs AI feedback) - 2 points
-  * Revision submission
-  * **Post-revision reflection** (what changed and why) - 1 point
-  * Bonus points: 2 (comparative) + 1 (post-revision) + 1 (quality) = 5 total
-- Module transition
+---
 
-**Module 7: Wrap-Up & Synthesis**
-- Week recap (consolidate learning)
-- Next steps / looking ahead
-- No new concepts introduced
-- Final anchor project submission details
+### Self-Paced Course Structure (Updated)
 
-#### SELF-PACED Course Modules (0-7 Pattern)
+**Unit Pattern**
+| Component | Notes |
+|---|---|
+Course Intro | Welcome, CLOs, orientation |
+Pre-Assessment | Quiz + AI coach + course roadmap |
+Content Units | No week numbering; flexible modules |
+Practice Activities | Optional, standalone |
+Final Test | **Final exam, no anchor project build** |
+Course Wrap-Up | Summary + reflection |
 
-**Module 0: Welcome & Course Overview**
-- Course orientation and navigation
-- Platform walkthrough
-- Initial final project overview (checkpoint structure, no dates)
+**Rules**
+- **No PAIRR**
+- **No weekly pacing language**
+- Learners receive optional guidance, not deadlines
+- “When you're ready…” tone
+- Can include small applied tasks, but not staged milestones
 
-**Module 1: Introduction & Learning Outcomes**
-- Element 1: Connecting text (course context)
-- Element 2: Infobox with ALL Course Learning Outcomes (CLOs) display
-- Element 4: Learning outcomes widget showing ALL Module Learning Outcomes (MLOs)
-- Content elements introducing core concepts
-- Element 10+: Final Project Connection (specific to THIS module)
-- Element 11+: Module transition
+---
 
-**Modules 2-5: Content Development**
-- Element 1: Connecting text
-- Element 2: Learning outcomes widget (SUBSET of MLOs)
-- Content elements
-- Final Project Connection (specific checkpoint application)
-- Module transition
+### Key Differences
 
-**Module 6: Assessment (Individual Work Only)** (SELF-PACED)
-- Element 1: Connecting text
-- Element 2: Learning outcomes widget
-- **Individual assessment structure** (NO PAIRR, NO peer review):
-  * Assignment instructions
-  * AI feedback tool (optional - AI roleplay for practice)
-  * Submission element (text response or file upload)
-  * Rubric with AI-assisted grading
-- Module transition
-
-**Module 7: Wrap-Up & Synthesis**
-- Course recap
-- Next steps / recommended resources
-- No new concepts
-- Final project submission details (flexible timing)
-
-### Key Differences: Cohort vs Self-Paced
-
-| Element | COHORT | SELF-PACED |
-|---------|--------|------------|
-| **Module 6 Assessment** | PAIRR methodology (peer + AI feedback, comparative reflection) | Individual assessment (AI feedback optional, no peer review) |
-| **Deadlines** | Firm dates ("Submit by Friday 11:59 PM ET") | Flexible ("When ready, submit...") |
-| **Project Structure** | Anchor Project with milestone dates | Final Project with checkpoints (no dates) |
-| **Synchronous Elements** | Peer review, cohort discussions, live sessions | None - fully asynchronous |
-| **Bonus Points (Module 6)** | 5 points (2 comparative + 1 post-revision + 1 quality + 1 participation) | N/A (no peer bonus) |
-| **Module 0 Language** | "Week 1 begins Monday..." | "Begin when ready..." |
-| **Pacing Guidance** | "Complete by end of week" | "Recommended: 5-7 hours over 1-2 weeks" |
+| Element | Cohort | Self-Paced |
+|---|---|---|
+Structure | Weekly 1–5 | Flexible units |
+Assessment | Anchor project w/ milestones | Final test |
+PAIRR | Yes (Week 2, M6) | ❌ Never |
+Deadline Language | Weekly cadence | Flexible pacing |
+Guidance Tone | Structured coaching | Self-directed with nudges |
 
 ### Final Project Connection Templates
 
