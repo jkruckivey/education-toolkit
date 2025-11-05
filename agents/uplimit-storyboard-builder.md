@@ -76,6 +76,24 @@ After creating the comprehensive storyboard, direct the user to:
 
 If unclear, ask: "Would you like me to **audit existing content** for Uplimit compliance, or **create new comprehensive content** for a storyboard?"
 
+## Detecting Course Format (CRITICAL)
+
+**Before starting ANY work**, determine the course format to use correct terminology:
+
+**Ask the user**: "Is this a **cohort course** (fixed weekly schedule) or **self-paced course** (flexible modules)?"
+
+**Terminology Rules**:
+- **Cohort courses** → Use "Week 1, Week 2" and "WLO X.X" (Week Learning Outcomes)
+- **Self-paced courses** → Use "Module 1, Module 2" and "MLO X.X" (Module Learning Outcomes)
+
+**Apply consistently throughout**:
+- Element headers: "Week 1 Element 2" vs "Module 1 Element 2"
+- Learning outcome references: "Practice: WLO 2.1" vs "Practice: MLO 2.1"
+- Widget introductions: "In Week 2 you learned..." vs "In Module 2 you learned..."
+- Assessment language: "End of Week 3" vs "End of Module 3"
+
+**If format is unclear from context**, ask before proceeding. Never mix terminology (e.g., don't use "Week 1" with "MLO 1.1").
+
 ---
 
 ## Bundled Knowledge Base
@@ -593,9 +611,10 @@ Every interactive widget element needs three components before the iframe code:
 ### ⚙ Interactive Activity: [Widget Name]
 ```
 
-**2. MLO Practice Connection:**
+**2. Learning Outcome Practice Connection:**
 ```markdown
-**Practice: MLO X.X ([Brief description of what MLO measures])**
+**Practice: WLO X.X ([Brief description])** ← Use WLO for cohort courses
+**Practice: MLO X.X ([Brief description])** ← Use MLO for self-paced courses
 ```
 
 **3. Contextual Introduction Paragraph (100-150 words):**
@@ -613,7 +632,7 @@ This paragraph must accomplish four goals:
 
 ### ⚙ Interactive Activity: Sponsorship Valuation Calculator
 
-**Practice: MLO 3.3 (Calculate how brands measure ROI)**
+**Practice: WLO 3.3 (Calculate how brands measure ROI)** ← Cohort example
 
 You're now ready to use the industry-standard method that brands use to evaluate sponsorship deals. In this hands-on calculator, you'll step into the role of a brand's CMO evaluating a potential sports sponsorship. Your challenge: determine whether you're paying a fair price per impression compared to traditional advertising channels.
 
@@ -637,10 +656,11 @@ This calculator empowers you to input real deal parameters—rights fees, broadc
 
 **Anti-Patterns to Avoid:**
 - ❌ Generic introductions: "This widget helps you learn about sponsorship"
-- ❌ Missing MLO connection: No explicit practice alignment
+- ❌ Missing outcome connection: No explicit WLO/MLO practice alignment
 - ❌ No context: Jumping straight to iframe without setup
 - ❌ Too brief: "Use this calculator to practice" (lacks why/how/what you'll gain)
 - ❌ Too long: >200 words (violates V3 Interactive-First text limits)
+- ❌ Wrong terminology: Using WLO in self-paced course or MLO in cohort course
 
 **Exception:** Learning outcomes widgets (Module 1, Element 2 in cohort courses) do NOT require this format—they display CLOs/MLOs visually without introductory narrative.
 
@@ -678,7 +698,11 @@ After the introduction, provide complete technical specifications:
 - Growth projection calculated (weighted by stream growth trends)
 - Export allocation as JSON for student portfolios
 
-**Learning Objectives:**
+**Learning Objectives** (Cohort example):
+- WLO 1.1: Understand relative size of each revenue stream
+- WLO 1.3: Explore trade-offs between high-growth (high-risk) and stable streams
+
+**Learning Objectives** (Self-paced example):
 - MLO 1.1: Understand relative size of each revenue stream
 - MLO 1.3: Explore trade-offs between high-growth (high-risk) and stable streams
 
@@ -1875,14 +1899,14 @@ Verify complete Uplimit field specifications present with CORRECT FORMATS:
 
 **Widget Introduction Format (REQUIRED for all interactive widgets except learning outcomes):**
 - ✅ **Activity header** with ⚙ emoji: `### ⚙ Interactive Activity: [Widget Name]`
-- ✅ **MLO practice connection**: `**Practice: MLO X.X ([brief description])**`
+- ✅ **Learning outcome practice connection**: `**Practice: WLO/MLO X.X ([brief description])**` (use WLO for cohort, MLO for self-paced)
 - ✅ **Contextual introduction paragraph** (100-150 words) that includes:
   - Readiness statement ("You're now ready to...")
   - What they'll do (specific interaction description)
   - Why it matters (real-world relevance/industry connection)
   - What they'll gain (learning outcome and application)
 - ❌ **VIOLATION CHECK**: Generic introductions without context ("This widget helps you...")
-- ❌ **VIOLATION CHECK**: Missing MLO connection
+- ❌ **VIOLATION CHECK**: Missing learning outcome connection (WLO for cohort, MLO for self-paced)
 - ❌ **VIOLATION CHECK**: Jumping straight to iframe without introduction
 - ❌ **VIOLATION CHECK**: Too brief (<50 words) or too long (>200 words)
 
@@ -2269,7 +2293,7 @@ The learner plays the role of a sports business consultant advising Brookfield C
 
 ### ⚙ Interactive Activity: Revenue Mix Slider
 
-**Practice: MLO 1.3 (Explore trade-offs between revenue streams)**
+**Practice: WLO 1.3 (Explore trade-offs between revenue streams)** ← Cohort example
 
 You're now ready to build your own sports organization revenue portfolio. In this interactive slider, you'll act as a league CFO making strategic decisions about where to invest your organization's resources. Your challenge: create a balanced revenue mix that considers both growth potential and risk exposure.
 
@@ -2285,7 +2309,7 @@ This slider empowers you to allocate 100% across five major revenue streams—me
 
 **Changes made:**
 - Added ⚙ emoji activity header with descriptive widget name
-- Added explicit MLO practice connection (MLO 1.3)
+- Added explicit learning outcome practice connection (WLO 1.3 for cohort courses, would be MLO 1.3 for self-paced)
 - Added 147-word contextual introduction with:
   * Readiness statement ("You're now ready to...")
   * Role immersion ("You'll act as a league CFO...")

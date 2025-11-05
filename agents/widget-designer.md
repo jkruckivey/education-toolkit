@@ -990,6 +990,397 @@ function showResults() {
 </div>
 ```
 
+### Learning Outcomes Widget Pattern
+
+**Use this pattern for displaying weekly/module learning outcomes and their connections to course learning outcomes (CLOs).**
+
+This widget provides visual mapping between week/module-level and course-level learning goals, helping students understand how weekly/module objectives contribute to broader course outcomes.
+
+**IMPORTANT - Terminology Based on Course Format**:
+- **Cohort courses** → Use "Week X" badge and "WLO X.X" codes (Week Learning Outcomes)
+- **Self-paced courses** → Use "Module X" badge and "MLO X.X" codes (Module Learning Outcomes)
+
+**Ask the user** which format before generating the widget.
+
+**CSS Styles:**
+
+```css
+.outcomes-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.header {
+    margin-bottom: 1.5rem;
+}
+
+.header h3 {
+    color: var(--color-neutral-900);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.header p {
+    color: var(--color-neutral-600);
+    font-size: 0.9rem;
+}
+
+/* Week/Module Outcomes Section */
+.week-outcomes {
+    background: var(--color-neutral-50);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: var(--border-radius);
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.week-outcomes h4 {
+    color: var(--color-neutral-900);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.week-badge {
+    background: var(--color-neutral-900);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* WLO/MLO Items (same styling for both) */
+.wlo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.wlo-item {
+    background: white;
+    border: 1px solid var(--color-neutral-200);
+    border-radius: 6px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.wlo-item:hover {
+    border-color: var(--color-neutral-900);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.wlo-item:focus {
+    outline: 2px solid #3182ce;
+    outline-offset: 2px;
+}
+
+.wlo-item.active {
+    border-color: var(--color-neutral-900);
+    border-width: 2px;
+    background: var(--color-neutral-50);
+}
+
+.wlo-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.wlo-code {
+    background: var(--color-neutral-900);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.wlo-text {
+    color: var(--color-neutral-700);
+    font-size: 0.95rem;
+    flex-grow: 1;
+}
+
+.connection-indicator {
+    color: var(--color-neutral-600);
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+    padding-left: calc(0.75rem + 0.5rem + 50px);
+    display: none;
+}
+
+.wlo-item.active .connection-indicator {
+    display: block;
+}
+
+/* Note: Class names use "wlo" prefix but work for both WLO and MLO formats */
+
+/* Course Outcomes Section */
+.course-outcomes {
+    background: white;
+    border: 1px solid var(--color-neutral-200);
+    border-radius: var(--border-radius);
+    padding: 1.25rem;
+}
+
+.course-outcomes h4 {
+    color: var(--color-neutral-900);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.clo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.clo-item {
+    background: var(--color-neutral-50);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: 6px;
+    padding: 1rem;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.clo-item.highlighted {
+    opacity: 1;
+    border-color: var(--color-neutral-900);
+    border-width: 2px;
+    background: var(--color-neutral-100);
+}
+
+.clo-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.clo-code {
+    background: var(--color-neutral-600);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.clo-item.highlighted .clo-code {
+    background: var(--color-neutral-900);
+}
+
+.clo-text {
+    color: var(--color-neutral-700);
+    font-size: 0.95rem;
+}
+
+.help-text {
+    background: var(--color-neutral-50);
+    border-left: 3px solid var(--color-neutral-900);
+    padding: 0.75rem 1rem;
+    margin-top: 1rem;
+    border-radius: var(--border-radius-sm);
+}
+
+.help-text p {
+    color: var(--color-neutral-900);
+    font-size: 0.85rem;
+}
+
+@media (max-width: 640px) {
+    .wlo-header, .clo-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .week-outcomes, .course-outcomes {
+        padding: 1rem;
+    }
+    .connection-indicator {
+        padding-left: 0;
+    }
+}
+```
+
+**HTML Structure (Cohort Course Example):**
+
+```html
+<div class="outcomes-container">
+    <div class="header">
+        <h3>Learning Outcomes</h3>
+        <p>Click any week outcome below to see how it connects to course-level goals</p>
+    </div>
+
+    <div class="week-outcomes">
+        <h4>
+            <span class="week-badge">WEEK X</span>
+            <span>Week Title</span>
+        </h4>
+        <div class="wlo-list" role="list"></div>
+    </div>
+
+    <div class="course-outcomes">
+        <h4>Course-Level Outcomes</h4>
+        <div class="clo-list" role="list"></div>
+    </div>
+
+    <div class="help-text">
+        <p><strong>How to use:</strong> Each week outcome contributes to broader course-level goals. Click outcomes above to explore the connections.</p>
+    </div>
+</div>
+```
+
+**HTML Structure (Self-Paced Course Example):**
+
+```html
+<div class="outcomes-container">
+    <div class="header">
+        <h3>Learning Outcomes</h3>
+        <p>Click any module outcome below to see how it connects to course-level goals</p>
+    </div>
+
+    <div class="week-outcomes">
+        <h4>
+            <span class="week-badge">MODULE X</span>
+            <span>Module Title</span>
+        </h4>
+        <div class="wlo-list" role="list"></div>
+    </div>
+
+    <div class="course-outcomes">
+        <h4>Course-Level Outcomes</h4>
+        <div class="clo-list" role="list"></div>
+    </div>
+
+    <div class="help-text">
+        <p><strong>How to use:</strong> Each module outcome contributes to broader course-level goals. Click outcomes above to explore the connections.</p>
+    </div>
+</div>
+```
+
+**Note**: CSS classes remain the same (.week-outcomes, .wlo-list, etc.) for both formats; only badge text and terminology change.
+
+**JavaScript: Interactive Highlighting (Works for Both Formats)**
+
+```javascript
+// Data structure - COHORT EXAMPLE
+const courseOutcomes = [
+    { code: 'CLO 1', text: 'Course learning outcome description' },
+    { code: 'CLO 2', text: 'Course learning outcome description' },
+    // ... more CLOs
+];
+
+const wlos = [
+    {
+        code: 'WLO X.1',  // Use WLO for cohort courses
+        text: 'Week learning outcome description',
+        clos: ['CLO 1', 'CLO 2']  // Which CLOs this WLO contributes to
+    },
+    {
+        code: 'WLO X.2',
+        text: 'Week learning outcome description',
+        clos: ['CLO 1']
+    },
+    // ... more WLOs
+];
+
+// Data structure - SELF-PACED EXAMPLE
+// For self-paced courses, change 'WLO' to 'MLO':
+// const wlos = [
+//     {
+//         code: 'MLO X.1',  // Use MLO for self-paced courses
+//         text: 'Module learning outcome description',
+//         clos: ['CLO 1', 'CLO 2']
+//     },
+//     // ... more MLOs
+// ];
+
+const wloList = document.querySelector('.wlo-list');
+const cloList = document.querySelector('.clo-list');
+
+// Render WLOs/MLOs (same code for both formats)
+wlos.forEach(wlo => {
+    const div = document.createElement('div');
+    div.className = 'wlo-item';
+    div.setAttribute('tabindex', '0');
+    div.setAttribute('role', 'button');
+    div.innerHTML = `
+        <div class="wlo-header">
+            <span class="wlo-code">${wlo.code}</span>
+            <span class="wlo-text">${wlo.text}</span>
+        </div>
+        <div class="connection-indicator">→ Contributes to: ${wlo.clos.join(', ')}</div>
+    `;
+    div.onclick = () => highlight(wlo.clos, div);
+    div.onkeydown = (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            highlight(wlo.clos, div);
+        }
+    };
+    wloList.appendChild(div);
+});
+
+// Render CLOs
+courseOutcomes.forEach(clo => {
+    const div = document.createElement('div');
+    div.className = 'clo-item';
+    div.dataset.code = clo.code;
+    div.innerHTML = `
+        <div class="clo-header">
+            <span class="clo-code">${clo.code}</span>
+            <span class="clo-text">${clo.text}</span>
+        </div>
+    `;
+    cloList.appendChild(div);
+});
+
+// Highlight function (works for both WLO and MLO)
+function highlight(cloCodes, wloEl) {
+    const wasActive = wloEl.classList.contains('active');
+    // Clear all highlights
+    document.querySelectorAll('.wlo-item').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.clo-item').forEach(el => el.classList.remove('highlighted'));
+    // If wasn't active, activate and highlight connected CLOs
+    if (!wasActive) {
+        wloEl.classList.add('active');
+        cloCodes.forEach(code => {
+            const cloEl = document.querySelector(`[data-code="${code}"]`);
+            if (cloEl) cloEl.classList.add('highlighted');
+        });
+    }
+}
+```
+
+**Key Features:**
+- **Visual Hierarchy**: Week/module outcomes in light gray box, course outcomes below
+- **Interactive Connections**: Click WLO/MLO to see which CLOs it contributes to
+- **Toggle Behavior**: Click again to deselect
+- **Accessibility**: Full keyboard navigation (Enter/Space), ARIA roles, focus states
+- **Responsive**: Mobile-friendly layout with stacked badges on small screens
+- **Professional Design**: Uses neutral color palette, no emojis, consistent spacing
+- **Format-Agnostic**: Same CSS classes work for both cohort (WLO) and self-paced (MLO) courses
+
+**Customization Points:**
+1. **Choose format**: Cohort → "WEEK X" badge + WLO codes | Self-paced → "MODULE X" badge + MLO codes
+2. Update week/module number and title in `.week-badge` and heading
+3. Replace `courseOutcomes` array with actual CLOs
+4. Replace `wlos` array with actual WLOs or MLOs and their CLO mappings
+5. Update help text to say "week" or "module" appropriately
+6. Adjust colors via CSS variables if needed (default: neutral grays)
+
 ### Standard Quiz Widget Pattern
 
 - Progress indicator (dots or bar)
