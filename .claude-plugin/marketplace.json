@@ -1,8 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/anthropics/claude-code/main/.claude-plugin/marketplace.schema.json",
   "name": "education-toolkit",
-  "version": "2.7.0",
-  "description": "Comprehensive toolkit for course developers with 16 specialized agents and 10 slash commands. Includes strategic course outline creation, specialized consistency checkers (terminology, concept threading, assessment methodology), cohort course structure validation, peer design review simulation, PAIRR (Peer and AI Review + Reflection), AI Roleplay exercises, diagnostic rubrics, accessibility auditing, widget testing, course QA, and enhanced storyboard validation. Bundled with course design knowledge base: Ivey 6-phase development process, cohort/self-paced learning models, course outline examples, concept threading guide, and 464 KB of frameworks and AI assessment research.",
+  "version": "2.8.5",
+  "description": "Comprehensive toolkit for course developers with 17 specialized agents, 14 slash commands, and automatic code review. Includes widget design system enforcement (generate/audit mode with standardized Geist typography and neutral color palette), strategic course outline creation with required widget introduction format (activity headers, MLO connections, contextual setup paragraphs), specialized consistency checkers (terminology, concept threading, assessment methodology), cohort course structure validation, peer design review simulation, PAIRR (Peer and AI Review + Reflection), AI Roleplay exercises, diagnostic rubrics, accessibility auditing, widget testing, course QA, enhanced storyboard validation with interactivity analysis and table-based module structure format, and fullstack code review (FastAPI/Python + React/JSX) with PostToolUse hook. Bundled with course design knowledge base: Ivey 6-phase development process, cohort/self-paced learning models, course outline examples, concept threading guide, and 464 KB of frameworks and AI assessment research.",
   "owner": {
     "name": "James Kruck",
     "email": "jkruck@ivey.ca",
@@ -11,14 +11,52 @@
   "plugins": [
     {
       "name": "education-toolkit",
-      "description": "16 agents + 10 commands: Course outline creation, specialized consistency checkers (terminology, threading, assessment), cohort structure validation, peer design review simulation, PAIRR methodology, AI Roleplay design, diagnostic rubrics, accessibility auditing, assessment design with bundled course design knowledge (Ivey development process, examples, threading)",
+      "description": "Comprehensive toolkit for course developers with 17 specialized agents, 14 slash commands, and automatic code review",
       "source": "./",
       "category": "education",
-      "version": "2.7.0",
+      "version": "2.8.5",
       "author": {
         "name": "James Kruck",
         "email": "jkruck@ivey.ca"
-      }
+      },
+      "keywords": [
+        "education",
+        "accessibility",
+        "wcag",
+        "udl",
+        "quality-matters",
+        "assessment-design",
+        "course-development",
+        "pedagogical-qa",
+        "ai-assessment",
+        "code-review",
+        "fullstack",
+        "fastapi",
+        "react",
+        "cohort-course",
+        "structure-validation",
+        "widget-design",
+        "design-system"
+      ],
+      "agents": [
+        "./agents/accessibility-auditor.md",
+        "./agents/assessment-consistency-checker.md",
+        "./agents/assessment-designer.md",
+        "./agents/backend-reviewer.md",
+        "./agents/branding-checker.md",
+        "./agents/cohort-structure-checker.md",
+        "./agents/concept-threading-checker.md",
+        "./agents/course-outline-creator.md",
+        "./agents/frontend-reviewer.md",
+        "./agents/peer-review-simulator.md",
+        "./agents/rubric-generator.md",
+        "./agents/student-journey-simulator.md",
+        "./agents/terminology-consistency-checker.md",
+        "./agents/udl-content-generator.md",
+        "./agents/uplimit-storyboard-builder.md",
+        "./agents/widget-designer.md",
+        "./agents/widget-tester.md"
+      ]
     }
   ]
 }
