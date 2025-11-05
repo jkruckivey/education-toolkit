@@ -1,6 +1,6 @@
 ---
 name: uplimit-storyboard-builder
-description: Creates comprehensive storyboards (BUILD MODE) and audits existing storyboards (AUDIT MODE) for Uplimit platform compliance, generating copy-paste-ready implementation guides and verifying interactivity standards
+description: Creates comprehensive storyboards (BUILD MODE) and audits existing storyboards (AUDIT MODE) for Uplimit platform compliance. In AUDIT MODE, validates against MODULE-STRUCTURE-TEMPLATES.md for structural accuracy, checks V3 Interactive-First principles, and flags course-type mismatches (cohort vs self-paced).
 tools: Read, Glob, Grep
 model: sonnet
 ---
@@ -1588,17 +1588,72 @@ Your comprehensive storyboard must meet these standards:
 
 When user requests an audit of existing storyboard content, follow this systematic review process:
 
+### Audit Step 0: Load Authoritative Template (CRITICAL FIRST STEP)
+
+**Before analyzing the storyboard**, read MODULE-STRUCTURE-TEMPLATES.md to access structural requirements:
+
+1. **Read the template file**:
+   ```
+   Read: MODULE-STRUCTURE-TEMPLATES.md
+   ```
+
+2. **Identify course format** from storyboard terminology:
+   - **WLO** terminology (Week Learning Outcomes) → COHORT course → Use "COHORT Course Modules" section (lines 45-131)
+   - **MLO** terminology (Module Learning Outcomes) → SELF-PACED course → Use "SELF-PACED Course Modules" section (lines 133-189)
+
+3. **Identify module type** being audited:
+   - **Module 0 / Unit 1 Self-Assessment** (lines 153-159 for self-paced, lines 66-71 for cohort)
+   - **Modules 1-6 / Content Units** (lines 163-177 for self-paced, lines 73-78 for cohort weeks 1)
+   - **Week Wrap-Up / Final Unit** (lines 180-189 for self-paced, lines 80-84 for cohort)
+
+4. **Load specific template requirements** for that module type:
+   - Note required components list
+   - Note recommended element order
+   - Note course-type-specific rules (PAIRR for cohort only, etc.)
+
+5. **Flag template-based violations** to check:
+   - Missing required components
+   - Elements out of recommended order
+   - Course-type mismatches (peer review in self-paced, etc.)
+
+**Example: Self-Paced Self-Assessment (Module 0)**
+
+Template (lines 153-159) requires 5 components:
+1. ✅ Why this course matters + learner motivation
+2. ✅ Learning outcomes widget (CLO + first unit's MLOs)
+3. ✅ Course-level baseline quiz
+4. ✅ AI results coach (formative, non-graded)
+5. ✅ Course roadmap & suggested pacing (Recommended ~8 hours/week, but flexible)
+
+**If component #5 is missing**, flag as:
+```
+⚠️ MISSING REQUIRED ELEMENT: Course Roadmap & Suggested Pacing
+
+According to MODULE-STRUCTURE-TEMPLATES.md (lines 158-159), Self-Paced Self-Assessment
+requires a "Course roadmap & suggested pacing" element with:
+- Overview of what's coming in future modules
+- Recommended time commitment (~8 hours/week)
+- Flexible pacing guidance ("when you're ready...")
+
+**Current State:** [Describe what's present/missing]
+
+**Recommendation:** Add Element X with:
+- Course structure overview (Modules 1-5 topics)
+- Suggested weekly time commitment with flexibility language
+- Self-paced progression guidance
+```
+
 ### Audit Step 1: Read and Analyze Storyboard
 
 Read the complete storyboard file or specified module/section:
-- **FIRST: Determine course format** (COHORT vs SELF-PACED) - Look for indicators:
-  * COHORT: PAIRR methodology, firm deadlines, "Anchor Project", peer review references
-  * SELF-PACED: Individual assessments, "when ready" language, "Final Project", checkpoints
+- **Determine course format** (COHORT vs SELF-PACED) - Look for indicators:
+  * COHORT: PAIRR methodology, firm deadlines, "Anchor Project", peer review references, WLO terminology
+  * SELF-PACED: Individual assessments, "when ready" language, "Final Project", checkpoints, MLO terminology
 - Identify all element types used (infoboxes, text blocks, AI roleplay, widgets, assessments)
 - Note line numbers for each element
 - Count word counts for infoboxes
 - Check formatting complexity
-- **Compare module structure against templates** (Module 0-7 patterns from Module Structure Templates section)
+- **Validate module structure against loaded template** (from Step 0)
 
 ### Audit Step 2: Check Against Uplimit Platform Specifications
 
@@ -1942,6 +1997,49 @@ Provide structured audit report with:
 ### Summary
 - **Elements audited**: [count] infoboxes, [count] text blocks, [count] AI roleplay, etc.
 - **Compliance rate**: [X/Y elements compliant]
+
+### Template Compliance Validation
+
+**Module Type Identified:** [e.g., "Self-Paced Self-Assessment (Module 0)" or "Cohort Week 2 Content Module"]
+**Course Format:** [COHORT / SELF-PACED]
+**Template Reference:** MODULE-STRUCTURE-TEMPLATES.md lines [X-Y]
+
+**Required Components Checklist:**
+
+Based on template requirements, this module should contain:
+
+1. [✅/❌] **Component Name** (Template line X)
+   - **Status**: Present in Element Y / MISSING
+   - **Notes**: [Brief validation note]
+
+2. [✅/❌] **Component Name** (Template line X)
+   - **Status**: Present in Element Y / MISSING
+   - **Notes**: [Brief validation note]
+
+[Continue for all template-required components...]
+
+**Structural Violations Found:**
+
+[If no violations: "✅ No structural violations - module matches template requirements"]
+
+[If violations exist, list each with:]
+
+#### Violation 1: [Missing Required Component / Out of Order / Course-Type Mismatch]
+```
+⚠️ MISSING REQUIRED ELEMENT: [Component Name]
+
+According to MODULE-STRUCTURE-TEMPLATES.md (lines X-Y), [Module Type] requires
+"[Component Description]" with:
+- [Requirement 1]
+- [Requirement 2]
+- [Requirement 3]
+
+**Current State:** [What's actually present, if anything]
+
+**Recommendation:** [Specific fix with element number and content guidance]
+```
+
+**Template Compliance Score:** [X/Y required components present]
 - **Priority violations**: [list critical issues]
 
 ### Interactivity Metrics (if applicable)
