@@ -1,3 +1,57 @@
+# Education Toolkit Marketplace
+
+**Comprehensive toolkit for educational developers** with 17 specialized agents, 14 slash commands, and automatic code review. This marketplace includes the "Education Toolkit" plugin, which provides cutting-edge assessment methodologies, widget design system enforcement, multi-perspective peer design review simulation, strategic course outline creation, specialized consistency checkers, and fullstack code review with automatic quality checks.
+
+## Installation
+
+To install the Education Toolkit plugin, first add this marketplace to your Claude Code environment:
+
+```bash
+/plugin marketplace add <URL of this repository>
+```
+
+Then, install the plugin from the marketplace:
+
+```bash
+/plugin install education-toolkit@education-toolkit-marketplace
+```
+
+Once installed, all agents, commands, and hooks will be available for use.
+
+## What's Included
+
+This marketplace contains one plugin: **Education Toolkit**.
+
+### 🤖 17 Specialized Agents
+
+The Education Toolkit plugin includes 17 specialized agents, such as `accessibility-auditor`, `assessment-designer`, `course-outline-creator`, and `widget-designer`. For a complete list and detailed descriptions, please refer to the [Agent Selection Guide](AGENT-SELECTION-GUIDE.md).
+
+### ⚡ 14 Quick Slash Commands
+
+The plugin also provides 14 slash commands for quick access to common tasks, such as `/create-outline`, `/build-storyboard`, and `/design-widget`.
+
+### 📚 Bundled Knowledge Base (~614 KB)
+
+The agents in the Education Toolkit plugin are equipped with a comprehensive knowledge base, including research on assessment design and course development.
+
+### ✨ Evidence-Based Assessment Methodologies
+
+The plugin incorporates evidence-based assessment methodologies, such as PAIRR (Peer and AI Review + Reflection), AI Roleplay exercises, and diagnostic rubrics.
+
+### 🚀 Executable Skills (Python Automation)
+
+Agents can invoke executable Python skills for automated template generation and validation.
+
+### 🔄 Automatic Quality Enforcement (Hooks)
+
+The plugin includes built-in hooks that automatically enforce quality standards in real-time.
+
+For more detailed information on all the features and components of the Education Toolkit plugin, please see the original `README.md` content below.
+
+---
+
+*The original README.md content has been preserved below for detailed reference.*
+
 # Education Toolkit - Claude Code Plugin
 
 **Comprehensive toolkit for educational developers** with 17 specialized agents, 10 slash commands, and automatic code review. Includes cutting-edge assessment methodologies: PAIRR (Peer and AI Review + Reflection), AI Roleplay exercises, diagnostic rubrics, widget design system enforcement, multi-perspective peer design review simulation, strategic course outline creation, specialized consistency checkers (terminology, concept threading, assessment), cohort course structure validation, and fullstack code review with automatic quality checks.
@@ -19,30 +73,6 @@
 > **✨ NEW in v2.6.0**: Strategic course outline creator with CLOs, weekly structure, MLOs, assessment strategy, and concept threading
 >
 > **✨ NEW in v2.5.0**: Automatic code review hook for FastAPI/Python and React/JSX with PostToolUse triggers
-
-## Installation
-
-```bash
-/plugin add jameskruck/education-toolkit
-```
-
-**Gets you:** All 17 agents + 14 commands + 3 skills + automatic hooks
-
-Agents are invoked automatically when your request matches their description, or you can invoke them directly:
-- `uplimit-storyboard-builder` (no double-scoping needed!)
-- `widget-designer`
-- `assessment-designer`
-- etc.
-
-**📖 Not sure which agent to use?** See the [Agent Selection Guide](AGENT-SELECTION-GUIDE.md) for:
-- Task-based agent recommendations
-- Overlap analysis (when agents do similar things)
-- Decision trees for common tasks
-- Recommended workflows (new course design, audits, widget creation)
-
----
-
-**Migrating from claude-subagents NPM package?** This plugin replaces `@jameskruck/claude-subagents` with enhanced functionality (slash commands + same agents).
 
 ## What's Included
 

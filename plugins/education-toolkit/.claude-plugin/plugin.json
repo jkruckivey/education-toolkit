@@ -1,0 +1,149 @@
+{
+  "name": "education-toolkit",
+  "description": "Comprehensive toolkit for course developers with 17 specialized agents, 14 slash commands, and automatic code review",
+  "version": "2.8.5",
+  "author": {
+    "name": "James Kruck",
+    "email": "jkruck@ivey.ca"
+  },
+  "keywords": [
+    "education",
+    "accessibility",
+    "wcag",
+    "udl",
+    "quality-matters",
+    "assessment-design",
+    "course-development",
+    "pedagogical-qa",
+    "ai-assessment",
+    "code-review",
+    "fullstack",
+    "fastapi",
+    "react",
+    "cohort-course",
+    "structure-validation",
+    "widget-design",
+    "design-system"
+  ],
+  "commands": [
+    {
+      "name": "audit-module",
+      "path": "./commands/audit-module.md"
+    },
+    {
+      "name": "build-storyboard",
+      "path": "./commands/build-storyboard.md"
+    },
+    {
+      "name": "check-branding",
+      "path": "./commands/check-branding.md"
+    },
+    {
+      "name": "check-cohort-structure",
+      "path": "./commands/check-cohort-structure.md"
+    },
+    {
+      "name": "check-concept-threading",
+      "path": "./commands/check-concept-threading.md"
+    },
+    {
+      "name": "check-terminology",
+      "path": "./commands/check-terminology.md"
+    },
+    {
+      "name": "create-outline",
+      "path": "./commands/create-outline.md"
+    },
+    {
+      "name": "design-assessment",
+      "path": "./commands/design-assessment.md"
+    },
+    {
+      "name": "design-widget",
+      "path": "./commands/design-widget.md"
+    },
+    {
+      "name": "generate-rubric",
+      "path": "./commands/generate-rubric.md"
+    },
+    {
+      "name": "peer-review",
+      "path": "./commands/peer-review.md"
+    },
+    {
+      "name": "review-content",
+      "path": "./commands/review-content.md"
+    },
+    {
+      "name": "simulate-journey",
+      "path": "./commands/simulate-journey.md"
+    },
+    {
+      "name": "test-widget",
+      "path": "./commands/test-widget.md"
+    }
+  ],
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/validate-content.sh\" \"${TOOL_INPUT_file_path}\" \"${TOOL_NAME}\"",
+            "description": "Auto-validate educational content for WCAG/QM compliance",
+            "timeout": 5000
+          },
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/format-storyboard.py\" \"${TOOL_INPUT_file_path}\"",
+            "description": "Auto-format storyboards to match platform conventions",
+            "timeout": 3000
+          },
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/test-widget.sh\" \"${TOOL_INPUT_file_path}\" \"${TOOL_NAME}\"",
+            "description": "Auto-test widgets after creation (accessibility checks, optional browser open)",
+            "timeout": 10000
+          },
+          {
+            "type": "command",
+            "command": "echo \"[$(date '+%Y-%m-%d %H:%M:%S')] ${TOOL_NAME}: ${TOOL_INPUT_file_path}\" >> ~/.claude/changes.log",
+            "description": "Track file changes with timestamps",
+            "timeout": 1000
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/check-protected.sh\" \"${TOOL_INPUT_file_path}\"",
+            "description": "Protect published educational content from accidental edits",
+            "timeout": 2000
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/load-context.sh\"",
+            "description": "Load educational standards and course context",
+            "timeout": 3000
+          }
+        ]
+      }
+    ]
+  },
+  "skills": [
+    "./skills/accessibility-audit-tools",
+    "./skills/assessment-template-generator",
+    "./skills/qm-validator"
+  ]
+}
