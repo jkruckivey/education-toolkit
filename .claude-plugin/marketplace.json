@@ -1,0 +1,50 @@
+{
+  "$schema": "https://raw.githubusercontent.com/anthropics/claude-code/main/.claude-plugin/marketplace.schema.json",
+  "name": "education-toolkit",
+  "version": "2.8.5",
+  "owner": {
+    "name": "James Kruck",
+    "email": "jkruck@ivey.ca",
+    "github": "jkruckivey"
+  },
+  "metadata": {
+    "description": "Comprehensive toolkit for educational developers with 17 specialized agents, 14 slash commands, and automatic code review",
+    "version": "2.8.5"
+  },
+  "plugins": [
+    {
+      "name": "education-toolkit",
+      "source": "./",
+      "description": "Comprehensive toolkit for course developers with 17 specialized agents, 14 slash commands, and automatic code review. Includes widget design system enforcement, strategic course outline creation, specialized consistency checkers, cohort course structure validation, PAIRR methodology, assessment design, accessibility auditing, and fullstack code review.",
+      "version": "2.8.5",
+      "category": "education",
+      "author": {
+        "name": "James Kruck",
+        "email": "jkruck@ivey.ca"
+      },
+      "homepage": "https://github.com/jkruckivey/education-toolkit",
+      "repository": "https://github.com/jkruckivey/education-toolkit",
+      "license": "MIT",
+      "keywords": [
+        "education",
+        "accessibility",
+        "wcag",
+        "udl",
+        "quality-matters",
+        "assessment-design",
+        "course-development",
+        "pedagogical-qa",
+        "ai-assessment",
+        "code-review",
+        "fullstack",
+        "fastapi",
+        "react",
+        "cohort-course",
+        "structure-validation",
+        "widget-design",
+        "design-system"
+      ],
+      "strict": true
+    }
+  ]
+}

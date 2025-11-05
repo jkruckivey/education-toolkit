@@ -9,7 +9,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 **Version**: 2.8.5 (January 2025)
 **Tech stack**: Markdown-based agent definitions, bundled knowledge base (course design knowledge + 464 KB assessment research), PostToolUse hooks for automatic code review
 **Distribution**: Claude Code plugin (`/plugin add jameskruck/education-toolkit`)
-**Structure**: Single plugin format (not a marketplace) - all agents, commands, hooks, and skills at repository root
+**Structure**: Single plugin with marketplace.json (source: "./") - all components at repository root
+**Note**: Requires both marketplace.json (distribution config) and plugin.json (plugin definition) per Claude Code requirements
 
 ## Architecture
 
@@ -18,6 +19,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ```
 education-toolkit/
 ├── .claude-plugin/
+│   ├── marketplace.json     # Distribution config (required for /plugin add)
 │   └── plugin.json          # Plugin manifest
 ├── hooks/                   # Automatic quality enforcement (5 hooks)
 │   ├── hooks.json           # Hook configurations
@@ -327,15 +329,18 @@ description: Brief description of command action
 ### Version Management
 
 **Plugin publishing**:
-1. Update `.claude-plugin/plugin.json` version
+1. Update version in BOTH files:
+   - `.claude-plugin/marketplace.json` (top-level version and plugins[0].version)
+   - `.claude-plugin/plugin.json` version
 2. Update `README.md` version history
 3. Commit and push to GitHub
 4. Users run `/plugin update education-toolkit` to fetch latest
 
 **Migration Note**:
-- v2.8.5: Restructured from marketplace format to single plugin format
+- v2.8.5: Restructured from nested plugin (plugins/education-toolkit/) to root-level (source: "./")
+- Both marketplace.json and plugin.json are required for distribution via `/plugin add`
 - This plugin replaces `@jameskruck/claude-subagents` NPM package (now deprecated)
-- If you have the old marketplace installation, reinstall with `/plugin add jameskruck/education-toolkit`
+- If you have the old installation, reinstall with `/plugin add jameskruck/education-toolkit`
 
 ## Common Workflows
 
