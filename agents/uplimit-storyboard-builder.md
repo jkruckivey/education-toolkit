@@ -183,60 +183,194 @@ Before starting, you need:
 
 ---
 
-### Cohort Course Structure (5-Week: Self-Assessment → Modules 1–6 → Wrap-Up)
+# COHORT Course Modules (5-Week Structure)
 
-**Weekly Pattern**
-| Component | Type | Notes |
-|---|---|---|
-Getting Started *(Week 1 only)* | Unnumbered | Welcome, intro video, CLOs |
-Self-Assessment | Unnumbered | Weekly intro, WLO widget, pre-assessment, AI coach, roadmap |
-Modules 1–6 | Numbered | Content + checks + project alignment |
-Wrap-Up | Unnumbered | Reflection, synthesis, project checkpoint |
-
-**Special Rules**
-- **PAIRR = Week 2, Module 6 only**
-- CLOs shown **only in Week 1**
-- Weekly roadmap always in Self-Assessment module
-- Knowledge checks = MC/TF **feedback-only**
-- AI coach only in Self-Assessment
-- Tone fades from guided → autonomous across weeks
-
-**Anchor Project**
-- Weekly checkpoints
-- Final submission in **Week 5**
+**Course Overview**
+- 5-week structured learning experience  
+- Weekly pacing and deadlines  
+- **Self-Assessment → Modules 1–6 → Wrap-Up** each week  
+- **Anchor Project** with weekly milestones  
+- **PAIRR once only — Week 2, Module 6**  
+- BOPPPS-aligned flow across each week  
 
 ---
 
-### Self-Paced Course Structure (Updated)
+## Week 1 Structure
 
-**Unit Pattern**
-| Component | Notes |
-|---|---|
-Course Intro | Welcome, CLOs, orientation |
-Pre-Assessment | Quiz + AI coach + course roadmap |
-Content Units | No week numbering; flexible modules |
-Practice Activities | Optional, standalone |
-Final Test | **Final exam, no anchor project build** |
-Course Wrap-Up | Summary + reflection |
+### Getting Started *(unnumbered module)*
+- Course orientation & navigation  
+- Instructor welcome & introduction video  
+- Platform walkthrough  
+- Course overview + **Course-Level Learning Outcomes (CLOs)**  
+- Optional foundational content  
 
-**Rules**
-- **No PAIRR**
-- **No weekly pacing language**
-- Learners receive optional guidance, not deadlines
-- “When you're ready…” tone
-- Can include small applied tasks, but not staged milestones
+### Self-Assessment *(unnumbered — BOPPPS: Bridge + Outcomes + Pre-assessment)*
+- Weekly welcome & context  
+- Weekly Learning Outcomes widget (WLOs)  
+- Pre-assessment quiz  
+- **AI results coach**  
+- Weekly roadmap *(time estimates + key checkpoints)*  
+
+### Modules 1–6 *(numbered content modules)*
+- Module intro + learning outcomes alignment  
+- Learning content (text, video, cases, activities, widgets)  
+- Knowledge checks *(MC/T-F, feedback-only)*  
+- Anchor Project checkpoint connection  
+- Module wrap (key ideas + next step cue)  
+
+### Week Wrap-Up *(unnumbered)*
+- Weekly reflection  
+- Key takeaways + innovation space  
+- Anchor Project checkpoint submission  
+- Preview of next week  
 
 ---
 
-### Key Differences
+## Weeks 2–5 Structure
 
-| Element | Cohort | Self-Paced |
-|---|---|---|
-Structure | Weekly 1–5 | Flexible units |
-Assessment | Anchor project w/ milestones | Final test |
-PAIRR | Yes (Week 2, M6) | ❌ Never |
-Deadline Language | Weekly cadence | Flexible pacing |
-Guidance Tone | Structured coaching | Self-directed with nudges |
+### Self-Assessment *(unnumbered)*
+- Weekly intro  
+- WLO widget  
+- Pre-assessment quiz  
+- **AI coach**  
+- Weekly roadmap  
+
+### Modules 1–6
+- Weekly learning content + activities  
+- Embedded knowledge checks *(feedback-only)*  
+- Anchor Project milestone focus  
+- **Week 2, Module 6 = PAIRR**  
+  - Peer + AI review + reflections (only appearance)
+
+### Week Wrap-Up *(unnumbered)*
+- Reflection + synthesis  
+- Anchor Project checkpoint submission  
+- Next week preview  
+
+---
+
+## Special Notes
+
+| Component          | Rule                                                      |
+|-------------------|-----------------------------------------------------------|
+CLOs                | **Shown only in Week 1**                                  |
+WLO widget          | Shown each week                                           |
+AI coach            | **Only in Self-Assessment**                               |
+Knowledge checks    | MC/T-F, **feedback-only**                                 |
+Tone progression    | Supportive → coaching → autonomous                        |
+Project style       | Weekly **milestones → final submission Week 5**           |
+PAIRR               | **Week 2, Module 6 only**                                 |
+
+---
+
+## Week 5 Specifics
+- Same flow as Weeks 2–4  
+- Heavier emphasis on project finalization  
+- Lighter new content + synthesis focus  
+- Final Anchor Project submission  
+
+
+
+---
+
+# SELF-PACED Course Modules (Flexible Structure)
+
+**Course Overview**
+- Self-paced with flexible progression  
+- No fixed calendar or deadlines  
+- Students complete modules at their own speed  
+- **Final test** instead of multi-week project build  
+- Optional applied activities (not staged checkpoints)  
+- No PAIRR, no peer review, no synchronous elements  
+
+---
+
+## Unit 1: Getting Started
+
+### Getting Started *(unnumbered section)*
+- Course orientation & navigation  
+- Faculty welcome and introduction video  
+- Platform walkthrough  
+- Course overview + **Course-Level Learning Outcomes (CLOs)**  
+
+### Self-Assessment *(unnumbered)*
+- Why this course matters + learner motivation  
+- Learning outcomes widget (CLO + first unit’s WLOs)  
+- Course-level baseline quiz  
+- **AI results coach** (formative, non-graded)  
+- Course roadmap & suggested pacing  
+  - *Recommended ~8 hours/week, but flexible*  
+
+---
+
+## Content Units (Units 2–X)
+
+### Unit Structure
+- Short introduction  
+- Unit Learning Outcomes widget  
+- Micro-learning content blocks *(≤150 words each)*  
+- Applied learning activities *(optional)*  
+- Knowledge checks *(feedback-only, not gated)*  
+- Reflection prompt or short application task  
+
+### Design Notes
+- Unit numbering optional (e.g., Unit 2, Unit 3)  
+- Number of units may vary by scope  
+- Maintain active learning every ~2–3 elements  
+
+---
+
+## Final Unit: Course Wrap-Up
+
+### Final Test
+- Summative knowledge check  
+- AI practice feedback **optional**  
+- “When ready, submit” language  
+
+### Wrap-Up Section
+- Course reflection  
+- Key takeaways  
+- Recommended next learning steps  
+- Certificate & completion messaging  
+
+---
+
+## Special Notes
+
+| Component          | Rule                                                     |
+|-------------------|----------------------------------------------------------|
+| Deadlines         | **None — fully flexible**                                |
+| PAIRR             | ❌ Never used                                            |
+| Final assessment  | **Final test** (not staged project)                      |
+| AI coach          | Only in **initial self-assessment** (default)            |
+| Knowledge checks  | **Feedback-only**, not blocking                          |
+| Tone              | Supportive + self-directed pacing                        |
+| Progress language | “When you are ready…”                                    |
+| CLOs              | Display in Unit 1 only                                   |
+| Unit LO widget    | Display at start of each unit                            |
+
+---
+
+## Optional Enhancements
+- AI practice mentor for problem-solving *(not required)*  
+- Self-tracking “Apply this to your context” notes  
+- “Suggested schedule” chart for learners wanting structure  
+- Badge for completing all activities *(optional, motivational)*  
+
+---
+
+## Cohort vs Self-Paced (At a Glance)
+
+| Element              | Cohort                                   | Self-Paced                                 |
+|---------------------|-------------------------------------------|--------------------------------------------|
+| Structure           | Week-based                                | Unit-based                                 |
+| Projects            | Anchor Project w/ milestones              | Optional practice + **final test**         |
+| Peer Review         | **PAIRR Week 2, Module 6**                | ❌ None                                     |
+| Deadlines           | Yes                                       | No                                         |
+| AI Coach            | Weekly self-assessment                    | Initial self-assessment only *(optional per unit)* |
+| Knowledge Checks    | Feedback-only                             | Feedback-only                              |
+| Tone Progression    | Guided → autonomous                       | Self-directed, supportive                  |
+| Wrap-Up             | Weekly + Final                            | Final only                                 |
 
 ### Final Project Connection Templates
 
