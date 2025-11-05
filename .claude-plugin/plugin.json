@@ -28,7 +28,25 @@
     "widget-design",
     "design-system"
   ],
-  "agents": "./agents",
+  "agents": [
+    "./agents/accessibility-auditor.md",
+    "./agents/assessment-consistency-checker.md",
+    "./agents/assessment-designer.md",
+    "./agents/backend-reviewer.md",
+    "./agents/branding-checker.md",
+    "./agents/cohort-structure-checker.md",
+    "./agents/concept-threading-checker.md",
+    "./agents/course-outline-creator.md",
+    "./agents/frontend-reviewer.md",
+    "./agents/peer-review-simulator.md",
+    "./agents/rubric-generator.md",
+    "./agents/student-journey-simulator.md",
+    "./agents/terminology-consistency-checker.md",
+    "./agents/udl-content-generator.md",
+    "./agents/uplimit-storyboard-builder.md",
+    "./agents/widget-designer.md",
+    "./agents/widget-tester.md"
+  ],
   "commands": "./commands",
   "hooks": "./hooks/hooks.json",
   "skills": "./skills"
