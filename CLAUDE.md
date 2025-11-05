@@ -9,6 +9,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 **Version**: 2.8.5 (January 2025)
 **Tech stack**: Markdown-based agent definitions, bundled knowledge base (course design knowledge + 464 KB assessment research), PostToolUse hooks for automatic code review
 **Distribution**: Claude Code plugin (`/plugin add jameskruck/education-toolkit`)
+**Structure**: Single plugin format (not a marketplace) - all agents, commands, hooks, and skills at repository root
 
 ## Architecture
 
@@ -17,8 +18,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ```
 education-toolkit/
 ├── .claude-plugin/
-│   ├── plugin.json          # Main plugin manifest
-│   └── marketplace.json     # Marketplace configuration
+│   └── plugin.json          # Plugin manifest
 ├── hooks/                   # Automatic quality enforcement (5 hooks)
 │   ├── hooks.json           # Hook configurations
 │   ├── review-on-change.md  # PostToolUse: Fullstack code review (NEW v2.5.0)
@@ -326,23 +326,30 @@ description: Brief description of command action
 
 ### Version Management
 
-**Marketplace publishing**:
-1. Update `plugin.json` version
-2. Update `.claude-plugin/marketplace.json` version
-3. Update `README.md` version history
-4. Commit and push to GitHub
-5. Users run `/plugin marketplace update` to fetch latest
+**Plugin publishing**:
+1. Update `.claude-plugin/plugin.json` version
+2. Update `README.md` version history
+3. Commit and push to GitHub
+4. Users run `/plugin update education-toolkit` to fetch latest
 
-**Deprecation**: This plugin replaces `@jameskruck/claude-subagents` NPM package (now deprecated)
+**Migration Note**:
+- v2.8.5: Restructured from marketplace format to single plugin format
+- This plugin replaces `@jameskruck/claude-subagents` NPM package (now deprecated)
+- If you have the old marketplace installation, reinstall with `/plugin add jameskruck/education-toolkit`
 
 ## Common Workflows
 
 ### Testing Plugin Changes Locally
 
 ```bash
-# After editing agent or command files
-cd ~/.claude/plugins/education-toolkit  # or wherever plugin installed
+# After editing agent or command files locally
+cd /path/to/education-toolkit  # your local repo
+# Make changes to agents/*.md, commands/*.md, etc.
 # Files are read at invocation time - no restart needed
+# Test by invoking agent or command in Claude Code
+
+# To test installed plugin changes:
+cd ~/.claude/plugins/education-toolkit  # installed plugin location
 # Test by invoking agent or command
 ```
 
@@ -375,10 +382,12 @@ Before version releases:
 
 **When editing agents**: Maintain research-backed methodologies and cite sources where applicable (e.g., PAIRR from Frontiers in Communication 2025).
 
-## Plugin Marketplace Context
+## Plugin Distribution
 
 **Installation command**: `/plugin add jameskruck/education-toolkit`
+**Update command**: `/plugin update education-toolkit`
 **Category**: education
+**Format**: Single plugin (not a marketplace)
 **Target users**: Educational developers, instructional designers, course creators, faculty developers
 **Competitive positioning**: Only Claude Code plugin with bundled assessment research and evidence-based AI integration methodologies
 
