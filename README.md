@@ -58,7 +58,7 @@ For more detailed information on all the features and components of the Educatio
 
 > **🔧 FIXED in v2.8.5**: Repository restructured to single plugin format - agents now invokable without double-scoping (use `uplimit-storyboard-builder` instead of `uplimit-storyboard-builder:uplimit-storyboard-builder`)
 >
-> **✨ NEW in v2.8.0**: Widget design system enforcement agent (generate/audit HTML widgets) with automatic testing hook
+> **✨ NEW in v2.8.0**: Enhanced pedagogical scaffolding enforcement in uplimit-storyboard-builder
 >
 > **🔧 FIXED in v2.8.0**: Slash commands now work properly (marketplace.json commands array added)
 >
@@ -534,6 +534,18 @@ GitHub: [@jameskruck](https://github.com/jameskruck)
 
 ## Version History
 
+- **2.8.0** (2025-11-03): Enhanced pedagogical scaffolding enforcement in uplimit-storyboard-builder
+  - Added **Pedagogical Scaffolding Evaluation** (new Audit Step 4): Assesses orientation → content → closure pattern with 0-100 completeness score
+  - Added **4 new critical violation patterns**:
+    - **Violation 6**: Missing Bridge-In Element (Modules 2-7) - Detects modules that start without connecting to previous module
+    - **Violation 7**: Missing Module Summary/Closing Element - Detects modules ending abruptly without synthesis
+    - **Violation 8**: No Module Complete Indicator - Detects missing completion signal/transition
+    - **Violation 9**: Element Content Incomplete (File Cuts Off) - Detects truncated element specifications
+  - **Enhanced Module Structure Validation Checklist**: Comprehensive checks for Module Opening (Learning Outcomes, Bridge-In, Motivation), Module Content (completeness, engagement), and Module Closing (Summary, Metacognition, Preview, Complete signal)
+  - **Enhanced Audit Report Template**: New "Pedagogical Scaffolding Assessment" section with phase-by-phase checklist, completeness score, and missing phases list
+  - **Impact**: Agent now prevents incomplete modules from reaching production, enforces pedagogical best practices, and provides copy-paste ready fixes for all structural gaps
+  - **Why this matters**: Previous version focused on platform compliance (emojis, WCAG, text length) but missed critical pedagogical architecture issues (missing introductions, no closure, truncated elements). New version ensures modules have complete learning arcs with proper orientation and synthesis.
+  - 17 agents total (no new agents, enhanced existing agent)
 - **2.7.0** (2025-01-29): Specialized consistency checkers
   - Replaced monolithic consistency-checker with 3 specialized agents for better precision
   - Added **terminology-consistency-checker** (18 KB): Builds course glossary, validates term consistency, tracks variations, identifies undefined acronyms
