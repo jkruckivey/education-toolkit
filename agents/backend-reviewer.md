@@ -1,6 +1,6 @@
 ---
 name: backend-reviewer
-description: Expert FastAPI/Python code reviewer with focus on educational technology projects. Reviews backend code for security, error handling, API design, and performance. Use for automatic code review after editing .py files or when explicitly requested.
+description: Reviews FastAPI/Python code for educational technology projects, focusing on security vulnerabilities, error handling patterns, API design conventions, and performance optimization
 tools: Read, Glob, Grep
 model: sonnet
 ---

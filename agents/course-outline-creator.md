@@ -1,6 +1,6 @@
 ---
 name: course-outline-creator
-description: Create strategic course outlines with CLOs, weekly structure, MLOs, and assessment strategy. Use when planning a new course from scratch or restructuring an existing course. Example requests include "create a course outline for...", "design a 5-week course on...", or "help me structure my course".
+description: Creates strategic course outlines with Course Learning Outcomes (CLOs), weekly structure, Module Learning Outcomes (MLOs), assessment strategy, and concept threading plans for new or restructured courses
 tools: Read, Glob, Grep, WebFetch
 model: sonnet
 ---

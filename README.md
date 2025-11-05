@@ -1,7 +1,13 @@
 # Education Toolkit - Claude Code Plugin
 
-**Comprehensive toolkit for educational developers** with 16 specialized agents, 10 slash commands, and automatic code review. Includes cutting-edge assessment methodologies: PAIRR (Peer and AI Review + Reflection), AI Roleplay exercises, diagnostic rubrics, multi-perspective peer design review simulation, strategic course outline creation, specialized consistency checkers (terminology, concept threading, assessment), cohort course structure validation, and fullstack code review with automatic quality checks.
+**Comprehensive toolkit for educational developers** with 17 specialized agents, 10 slash commands, and automatic code review. Includes cutting-edge assessment methodologies: PAIRR (Peer and AI Review + Reflection), AI Roleplay exercises, diagnostic rubrics, widget design system enforcement, multi-perspective peer design review simulation, strategic course outline creation, specialized consistency checkers (terminology, concept threading, assessment), cohort course structure validation, and fullstack code review with automatic quality checks.
 
+> **🔧 FIXED in v2.8.5**: Repository restructured to single plugin format - agents now invokable without double-scoping (use `uplimit-storyboard-builder` instead of `uplimit-storyboard-builder:uplimit-storyboard-builder`)
+>
+> **✨ NEW in v2.8.0**: Widget design system enforcement agent (generate/audit HTML widgets) with automatic testing hook
+>
+> **🔧 FIXED in v2.8.0**: Slash commands now work properly (marketplace.json commands array added)
+>
 > **✨ NEW in v2.7.0**: Three specialized consistency checkers replace old monolithic checker - terminology validation, concept threading tracking, and assessment methodology consistency
 >
 > **✨ NEW in v2.6.3**: Cohort course structure checker validates module sequences, learning outcomes widgets, PAIRR methodology, and Final Project Connections
@@ -17,15 +23,30 @@
 ## Installation
 
 ```bash
-/plugin marketplace add jameskruck/education-toolkit
-/plugin install education-toolkit
+/plugin add jameskruck/education-toolkit
 ```
+
+**Gets you:** All 17 agents + 14 commands + 3 skills + automatic hooks
+
+Agents are invoked automatically when your request matches their description, or you can invoke them directly:
+- `uplimit-storyboard-builder` (no double-scoping needed!)
+- `widget-designer`
+- `assessment-designer`
+- etc.
+
+**📖 Not sure which agent to use?** See the [Agent Selection Guide](AGENT-SELECTION-GUIDE.md) for:
+- Task-based agent recommendations
+- Overlap analysis (when agents do similar things)
+- Decision trees for common tasks
+- Recommended workflows (new course design, audits, widget creation)
+
+---
 
 **Migrating from claude-subagents NPM package?** This plugin replaces `@jameskruck/claude-subagents` with enhanced functionality (slash commands + same agents).
 
 ## What's Included
 
-### 🤖 16 Specialized Agents
+### 🤖 17 Specialized Agents
 
 1. **accessibility-auditor** - WCAG 2.2 AA compliance checking with WebFetch capability
 2. **assessment-consistency-checker** - **NEW in v2.7.0**: Validates PAIRR methodology consistency across weeks, rubric structures, grading distribution. Course-type aware (flags peer review in self-paced courses).
@@ -43,20 +64,38 @@
 14. **terminology-consistency-checker** - **NEW in v2.7.0**: Builds course glossary, validates term consistency across all weeks. Tracks variations, identifies undefined acronyms, checks capitalization, generates consistency scores.
 15. **udl-content-generator** - Transform content into multimodal formats (audio, visual, interactive)
 16. **uplimit-storyboard-builder** - Complete copy-paste-ready implementation guides for Uplimit courses. Asks about course format (cohort vs. self-paced) to inform pacing and deadlines. References bundled course design knowledge base.
-17. **widget-tester** - 3-persona widget testing (Sarah, James, Maria) for UX validation
+17. **widget-designer** - **NEW in v2.8.0**: Generate new interactive widgets OR audit existing widgets for design system compliance. Enforces Geist typography, neutral gray palette (no gold/green), CSS variables (no hardcoded hex), NO EMOJIS policy, PDF exports (not JSON). Reports issues with line numbers and offers automatic fixes.
+18. **widget-tester** - 3-persona widget testing (Sarah, James, Maria) for UX validation
 
-### ⚡ 10 Quick Slash Commands
+### ⚡ 14 Quick Slash Commands
 
-1. **/audit-module** - Audit module for WCAG 2.2 AA accessibility compliance
+#### Course Planning & Design
+1. **/create-outline** - **NEW**: Create strategic course outline with CLOs, weekly structure, MLOs, and assessment strategy
+
+#### Content Creation & Auditing
 2. **/build-storyboard** - Build comprehensive Uplimit storyboard with copy-paste-ready content
-3. **/check-branding** - Validate Canvas LMS or Uplimit platform branding consistency
-4. **/check-consistency** - Check consistency across modules (terminology, threading, narrative)
-5. **/design-assessment** - Design comprehensive assessment with AI integration and UDL/QM compliance
-6. **/generate-rubric** - Generate QM-aligned assessment rubric (quick rubric-only tasks)
-7. **/peer-review** - **NEW**: Simulate design review panel with 6 ID specialists
-8. **/review-content** - Quick content review for educational quality
-9. **/simulate-journey** - Simulate student journey through modules with 4 personas
-10. **/test-widget** - Test interactive widget with 3 student personas
+3. **/design-widget** - **NEW**: Generate new interactive widgets with standardized design system OR audit existing widgets
+
+#### Assessment Design
+4. **/design-assessment** - Design comprehensive assessment with AI integration and UDL/QM compliance
+5. **/generate-rubric** - Generate QM-aligned assessment rubric (quick rubric-only tasks)
+
+#### Validation & Consistency
+6. **/check-branding** - Validate Canvas LMS or Uplimit platform branding consistency
+7. **/check-cohort-structure** - **NEW**: Validate cohort course module structures (element sequences, PAIRR methodology)
+8. **/check-concept-threading** - **NEW**: Validate Week 1 concepts appear in later weeks (identify orphaned concepts)
+9. **/check-terminology** - **NEW**: Validate terminology consistency across weeks (build glossary, flag variations)
+
+#### Accessibility & Quality
+10. **/audit-module** - Audit module for WCAG 2.2 AA accessibility compliance
+11. **/review-content** - Quick content review for educational quality
+
+#### Testing & Simulation
+12. **/peer-review** - Simulate design review panel with 6 ID specialists
+13. **/simulate-journey** - Simulate student journey through modules with 4 personas
+14. **/test-widget** - Test interactive widget with 3 student personas
+
+**Note:** Automatic agents (backend-reviewer, frontend-reviewer) are triggered by PostToolUse hooks and don't need commands. See [Slash Command Analysis](SLASH-COMMAND-ANALYSIS.md) for command rationale.
 
 ### 📚 Bundled Knowledge Base (~614 KB)
 
@@ -162,7 +201,7 @@
 
 **Built-in automation that runs quality checks automatically - zero API tokens, zero manual effort.**
 
-This plugin includes 5 automatic hooks that enforce quality standards in real-time:
+This plugin includes 5 automatic hooks that enforce quality standards in real-time (plus 1 new in v2.8.0):
 
 #### Hook 1: Smart Content Validator (PostToolUse)
 **Runs after every file edit** - Instant feedback on quality issues
@@ -253,13 +292,43 @@ This plugin includes 5 automatic hooks that enforce quality standards in real-ti
 
 **When to use manually**: Invoke `backend-reviewer` or `frontend-reviewer` agents directly for comprehensive file review without waiting for edits
 
+#### Hook 6: Widget Auto-Tester (PostToolUse) - **NEW in v2.8.0**
+**Runs after creating new widgets** - Automatic accessibility testing and optional browser preview
+
+✓ **Auto-detects widget creation**: Triggers only on new `.html` files in `widget` directories
+✓ **Accessibility tests**: Runs webapp-testing skill (keyboard nav, focus indicators, ARIA, touch targets)
+✓ **JSON results**: Generates `*_accessibility_results.json` with violations and recommendations
+✓ **Optional browser preview**: Auto-opens widget in browser (enable with `.auto-open-widgets` file)
+✓ **Cross-platform**: macOS (open), Linux (xdg-open), Windows (start)
+
+**Example output:**
+```
+🧪 AUTO-TESTING NEW WIDGET: quiz.html
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✓ Running accessibility tests...
+✓ Accessibility test complete: quiz_accessibility_results.json
+  • Found 3 accessibility issue(s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+**Enable auto-open in browser:**
+```bash
+# macOS/Linux
+touch ~/.claude/plugins/education-toolkit/.auto-open-widgets
+
+# Windows (PowerShell)
+New-Item -ItemType File -Path "$env:USERPROFILE\.claude\plugins\education-toolkit\.auto-open-widgets"
+```
+
+**Token savings**: ~5,000 tokens per manual test × 10 widgets/week = 50,000 tokens/week saved
+
 #### Performance & Cost
 
 | Metric | Value |
 |--------|-------|
-| **Execution time** | 1-3 seconds (runs locally) |
+| **Execution time** | 1-8 seconds (runs locally, widget tests take longer) |
 | **API tokens used** | 0 tokens (pure bash/Python automation) |
-| **Token savings** | ~200,000+ tokens/day for active users |
+| **Token savings** | ~250,000+ tokens/day for active users |
 | **Accuracy** | 100% consistent (deterministic, not LLM-based) |
 
 #### Configuration (Optional)

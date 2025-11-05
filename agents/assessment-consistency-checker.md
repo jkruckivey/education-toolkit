@@ -1,6 +1,6 @@
 ---
 name: assessment-consistency-checker
-description: Use this subagent to validate assessment consistency across course weeks - checking PAIRR methodology consistency, rubric point totals, learning outcome alignment, grading distribution, and course-type compliance (cohort vs self-paced). Example requests include "check assessment consistency across Weeks 1-5", "validate PAIRR methodology is consistent", or "check rubric points".
+description: Validates assessment consistency across course weeks by checking PAIRR methodology alignment, rubric point totals, learning outcome connections, grading distribution, and course-type compliance (cohort vs self-paced)
 tools: Read, Glob, Grep
 model: sonnet
 ---

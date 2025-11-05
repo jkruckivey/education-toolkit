@@ -1,6 +1,6 @@
 ---
 name: branding-checker
-description: Validate course content against platform branding guidelines (Canvas LMS or Uplimit). Use when checking design consistency, platform compliance, or reviewing visual design.
+description: Validates course content against platform branding guidelines for Canvas LMS and Uplimit, ensuring design consistency, symbol usage, and visual standards compliance
 tools: Read, Glob
 model: sonnet
 ---

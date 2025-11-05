@@ -1,6 +1,6 @@
 ---
 name: student-journey-simulator
-description: Use this subagent when the user asks to simulate student experiences, test course flow across multiple weeks, or identify pedagogical issues. Example requests include "simulate a student going through Week 1-3", "test the course from a student perspective", or "check if the learning progression makes sense".
+description: Simulates student experiences through course content with 4 learning personas (Visual, Analytical, Collaborative, Time-Constrained), identifying pedagogical issues and testing course flow across multiple weeks
 tools: Read, Glob, Grep
 model: sonnet
 ---

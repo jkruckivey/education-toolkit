@@ -1,5 +1,4 @@
 {
-  "$schema": "https://raw.githubusercontent.com/anthropics/claude-code/main/.claude-plugin/marketplace.schema.json",
   "name": "education-toolkit",
   "version": "2.8.5",
   "description": "Comprehensive toolkit for course developers with 17 specialized agents, 14 slash commands, and automatic code review. Includes widget design system enforcement (generate/audit mode with standardized Geist typography and neutral color palette), strategic course outline creation with required widget introduction format (activity headers, MLO connections, contextual setup paragraphs), specialized consistency checkers (terminology, concept threading, assessment methodology), cohort course structure validation, peer design review simulation, PAIRR (Peer and AI Review + Reflection), AI Roleplay exercises, diagnostic rubrics, accessibility auditing, widget testing, course QA, enhanced storyboard validation with interactivity analysis and table-based module structure format, and fullstack code review (FastAPI/Python + React/JSX) with PostToolUse hook. Bundled with course design knowledge base: Ivey 6-phase development process, cohort/self-paced learning models, course outline examples, concept threading guide, and 464 KB of frameworks and AI assessment research.",
@@ -58,5 +57,21 @@
         "./agents/widget-tester.md"
       ]
     }
+  ],
+  "commands": [
+    {"name": "audit-module", "path": "./commands/audit-module.md"},
+    {"name": "build-storyboard", "path": "./commands/build-storyboard.md"},
+    {"name": "check-branding", "path": "./commands/check-branding.md"},
+    {"name": "check-cohort-structure", "path": "./commands/check-cohort-structure.md"},
+    {"name": "check-concept-threading", "path": "./commands/check-concept-threading.md"},
+    {"name": "check-terminology", "path": "./commands/check-terminology.md"},
+    {"name": "create-outline", "path": "./commands/create-outline.md"},
+    {"name": "design-assessment", "path": "./commands/design-assessment.md"},
+    {"name": "design-widget", "path": "./commands/design-widget.md"},
+    {"name": "generate-rubric", "path": "./commands/generate-rubric.md"},
+    {"name": "peer-review", "path": "./commands/peer-review.md"},
+    {"name": "review-content", "path": "./commands/review-content.md"},
+    {"name": "simulate-journey", "path": "./commands/simulate-journey.md"},
+    {"name": "test-widget", "path": "./commands/test-widget.md"}
   ]
 }

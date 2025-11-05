@@ -153,128 +153,224 @@ Before starting, you need:
    - Video lengths (if recommending new videos)
    - Widget complexity preferences (simple HTML/CSS/JS or framework-based)
 
-## Module Structure Templates
+### Module Structure Templates
 
 **CRITICAL:** Module structure varies significantly between COHORT and SELF-PACED courses. Always ask about course format before building storyboards.
 
 ### Course Format Detection
 
 **Cohort-Based Courses:**
-- Fixed start/end dates with specific deadlines
-- Synchronous elements (peer review, live sessions, cohort discussions)
-- Weekly pacing with firm milestones
-- Anchor Projects with scheduled touchpoints
-- PAIRR methodology in Module 6 (Peer + AI Review + Reflection)
+- Fixed start/end dates with weekly progression
+- Weekly pacing with structured milestones
+- Anchor Project with weekly checkpoints
+- PAIRR once (Week 2, Module 6 only)
+- Weekly self-assessment + roadmap
 
 **Self-Paced Courses:**
-- Students progress at own speed
+- Students progress at their own pace
 - Asynchronous only (NO peer review, NO live sessions)
 - Checkpoint-based pacing (no firm deadlines)
-- Final Project with flexible milestones
+- **Final test** instead of anchor project milestone build
+- Optional practice activities (not multi-week build)
 - Individual assessments only (NO PAIRR)
 
-**Why This Matters:**
-- PAIRR methodology requires synchronous peer review (cohort-only)
-- Deadline language differs ("Submit by Friday 11:59 PM" vs "When ready, submit...")
-- Anchor Project milestones vs Final Project checkpoints
-- Module 6 structure completely different between course types
+### Why This Matters
 
-### Module Structure Patterns by Course Type
+- PAIRR appears only in cohort courses (Week 2, Module 6)
+- Cohorts use weekly deadlines & project checkpoints
+- Self-paced uses flexible timing and final test
+- Tone and instructional sequencing differ
 
-This agent references **MODULE-STRUCTURE-TEMPLATES.md** for complete module-by-module templates. Key patterns:
+---
 
-#### COHORT Course Modules (0-7 Pattern)
+# COHORT Course Modules (5-Week Structure)
 
-**Module 0: Welcome & Course Overview**
-- Course orientation and navigation
-- Learning Manager introduction (Ivey courses)
-- Platform walkthrough
-- Initial anchor project overview (milestone structure with dates)
+**Course Overview**
+- 5-week structured learning experience  
+- Weekly pacing and deadlines  
+- **Self-Assessment → Modules 1–6 → Wrap-Up** each week  
+- **Anchor Project** with weekly milestones  
+- **PAIRR once only — Week 2, Module 6**  
+- BOPPPS-aligned flow across each week  
 
-**Module 1: Week Introduction & Learning Outcomes**
-- Element 1: Connecting text (week context, what's ahead)
-- Element 2: Infobox with ALL Course Learning Outcomes (CLOs) display
-- Element 4: Learning outcomes widget showing ALL Module Learning Outcomes (MLOs) for the week
-- Content elements introducing core concepts
-- Element 10+: Final Project Connection (specific, not generic - references content from THIS module)
-- Element 11+: Module transition (recap + preview of next module)
+---
 
-**Modules 2-5: Content Development**
-- Element 1: Connecting text (links to previous module)
-- Element 2: Learning outcomes widget (shows SUBSET of MLOs relevant to THIS module)
-- Content elements (text, video, widgets, cases, AI chats)
-- Final Project Connection (specific application to anchor project)
-- Module transition
+## Week 1 Structure
 
-**Module 6: Assessment with PAIRR Methodology** (COHORT ONLY)
-- Element 1: Connecting text
-- Element 2: Learning outcomes widget
-- PAIRR assignment structure:
-  * Draft submission (80% of assignment points)
-  * Peer feedback instructions (detailed rubric + how to give feedback)
-  * AI feedback instructions (AI roleplay configuration)
-  * Dual feedback receipt
-  * **Comparative reflection** (compare peer vs AI feedback) - 2 points
-  * Revision submission
-  * **Post-revision reflection** (what changed and why) - 1 point
-  * Bonus points: 2 (comparative) + 1 (post-revision) + 1 (quality) = 5 total
-- Module transition
+### Getting Started *(unnumbered module)*
+- Course orientation & navigation  
+- Instructor welcome & introduction video  
+- Platform walkthrough  
+- Course overview + **Course-Level Learning Outcomes (CLOs)**  
+- Optional foundational content  
 
-**Module 7: Wrap-Up & Synthesis**
-- Week recap (consolidate learning)
-- Next steps / looking ahead
-- No new concepts introduced
-- Final anchor project submission details
+### Self-Assessment *(unnumbered — BOPPPS: Bridge + Outcomes + Pre-assessment)*
+- Weekly welcome & context  
+- Weekly Learning Outcomes widget (WLOs)  
+- Pre-assessment quiz  
+- **AI results coach**  
+- Weekly roadmap *(time estimates + key checkpoints)*  
 
-#### SELF-PACED Course Modules (0-7 Pattern)
+### Modules 1–6 *(numbered content modules)*
+- Module intro + learning outcomes alignment  
+- Learning content (text, video, cases, activities, widgets)  
+- Knowledge checks *(MC/T-F, feedback-only)*  
+- Anchor Project checkpoint connection  
+- Module wrap (key ideas + next step cue)  
 
-**Module 0: Welcome & Course Overview**
-- Course orientation and navigation
-- Platform walkthrough
-- Initial final project overview (checkpoint structure, no dates)
+### Week Wrap-Up *(unnumbered)*
+- Weekly reflection  
+- Key takeaways + innovation space  
+- Anchor Project checkpoint submission  
+- Preview of next week  
 
-**Module 1: Introduction & Learning Outcomes**
-- Element 1: Connecting text (course context)
-- Element 2: Infobox with ALL Course Learning Outcomes (CLOs) display
-- Element 4: Learning outcomes widget showing ALL Module Learning Outcomes (MLOs)
-- Content elements introducing core concepts
-- Element 10+: Final Project Connection (specific to THIS module)
-- Element 11+: Module transition
+---
 
-**Modules 2-5: Content Development**
-- Element 1: Connecting text
-- Element 2: Learning outcomes widget (SUBSET of MLOs)
-- Content elements
-- Final Project Connection (specific checkpoint application)
-- Module transition
+## Weeks 2–5 Structure
 
-**Module 6: Assessment (Individual Work Only)** (SELF-PACED)
-- Element 1: Connecting text
-- Element 2: Learning outcomes widget
-- **Individual assessment structure** (NO PAIRR, NO peer review):
-  * Assignment instructions
-  * AI feedback tool (optional - AI roleplay for practice)
-  * Submission element (text response or file upload)
-  * Rubric with AI-assisted grading
-- Module transition
+### Self-Assessment *(unnumbered)*
+- Weekly intro  
+- WLO widget  
+- Pre-assessment quiz  
+- **AI coach**  
+- Weekly roadmap  
 
-**Module 7: Wrap-Up & Synthesis**
-- Course recap
-- Next steps / recommended resources
-- No new concepts
-- Final project submission details (flexible timing)
+### Modules 1–6
+- Weekly learning content + activities  
+- Embedded knowledge checks *(feedback-only)*  
+- Anchor Project milestone focus  
+- **Week 2, Module 6 = PAIRR**  
+  - Peer + AI review + reflections (only appearance)
 
-### Key Differences: Cohort vs Self-Paced
+### Week Wrap-Up *(unnumbered)*
+- Reflection + synthesis  
+- Anchor Project checkpoint submission  
+- Next week preview  
 
-| Element | COHORT | SELF-PACED |
-|---------|--------|------------|
-| **Module 6 Assessment** | PAIRR methodology (peer + AI feedback, comparative reflection) | Individual assessment (AI feedback optional, no peer review) |
-| **Deadlines** | Firm dates ("Submit by Friday 11:59 PM ET") | Flexible ("When ready, submit...") |
-| **Project Structure** | Anchor Project with milestone dates | Final Project with checkpoints (no dates) |
-| **Synchronous Elements** | Peer review, cohort discussions, live sessions | None - fully asynchronous |
-| **Bonus Points (Module 6)** | 5 points (2 comparative + 1 post-revision + 1 quality + 1 participation) | N/A (no peer bonus) |
-| **Module 0 Language** | "Week 1 begins Monday..." | "Begin when ready..." |
-| **Pacing Guidance** | "Complete by end of week" | "Recommended: 5-7 hours over 1-2 weeks" |
+---
+
+## Special Notes
+
+| Component          | Rule                                                      |
+|-------------------|-----------------------------------------------------------|
+CLOs                | **Shown only in Week 1**                                  |
+WLO widget          | Shown each week                                           |
+AI coach            | **Only in Self-Assessment**                               |
+Knowledge checks    | MC/T-F, **feedback-only**                                 |
+Tone progression    | Supportive → coaching → autonomous                        |
+Project style       | Weekly **milestones → final submission Week 5**           |
+PAIRR               | **Week 2, Module 6 only**                                 |
+
+---
+
+## Week 5 Specifics
+- Same flow as Weeks 2–4  
+- Heavier emphasis on project finalization  
+- Lighter new content + synthesis focus  
+- Final Anchor Project submission  
+
+
+
+---
+
+# SELF-PACED Course Modules (Flexible Structure)
+
+**Course Overview**
+- Self-paced with flexible progression  
+- No fixed calendar or deadlines  
+- Students complete modules at their own speed  
+- **Final test** instead of multi-week project build  
+- Optional applied activities (not staged checkpoints)  
+- No PAIRR, no peer review, no synchronous elements  
+
+---
+
+## Unit 1: Getting Started
+
+### Getting Started *(unnumbered section)*
+- Course orientation & navigation  
+- Faculty welcome and introduction video  
+- Platform walkthrough  
+- Course overview + **Course-Level Learning Outcomes (CLOs)**  
+
+### Self-Assessment *(unnumbered)*
+- Why this course matters + learner motivation  
+- Learning outcomes widget (CLO + first unit’s WLOs)  
+- Course-level baseline quiz  
+- **AI results coach** (formative, non-graded)  
+- Course roadmap & suggested pacing  
+  - *Recommended ~8 hours/week, but flexible*  
+
+---
+
+## Content Units (Units 2–X)
+
+### Unit Structure
+- Short introduction  
+- Unit Learning Outcomes widget  
+- Micro-learning content blocks *(≤150 words each)*  
+- Applied learning activities *(optional)*  
+- Knowledge checks *(feedback-only, not gated)*  
+- Reflection prompt or short application task  
+
+### Design Notes
+- Unit numbering optional (e.g., Unit 2, Unit 3)  
+- Number of units may vary by scope  
+- Maintain active learning every ~2–3 elements  
+
+---
+
+## Final Unit: Course Wrap-Up
+
+### Final Test
+- Summative knowledge check  
+- AI practice feedback **optional**  
+- “When ready, submit” language  
+
+### Wrap-Up Section
+- Course reflection  
+- Key takeaways  
+- Recommended next learning steps  
+- Certificate & completion messaging  
+
+---
+
+## Special Notes
+
+| Component          | Rule                                                     |
+|-------------------|----------------------------------------------------------|
+| Deadlines         | **None — fully flexible**                                |
+| PAIRR             | ❌ Never used                                            |
+| Final assessment  | **Final test** (not staged project)                      |
+| AI coach          | Only in **initial self-assessment** (default)            |
+| Knowledge checks  | **Feedback-only**, not blocking                          |
+| Tone              | Supportive + self-directed pacing                        |
+| Progress language | “When you are ready…”                                    |
+| CLOs              | Display in Unit 1 only                                   |
+| Unit LO widget    | Display at start of each unit                            |
+
+---
+
+## Optional Enhancements
+- AI practice mentor for problem-solving *(not required)*  
+- Self-tracking “Apply this to your context” notes  
+- “Suggested schedule” chart for learners wanting structure  
+- Badge for completing all activities *(optional, motivational)*  
+
+---
+
+## Cohort vs Self-Paced (At a Glance)
+
+| Element              | Cohort                                   | Self-Paced                                 |
+|---------------------|-------------------------------------------|--------------------------------------------|
+| Structure           | Week-based                                | Unit-based                                 |
+| Projects            | Anchor Project w/ milestones              | Optional practice + **final test**         |
+| Peer Review         | **PAIRR Week 2, Module 6**                | ❌ None                                     |
+| Deadlines           | Yes                                       | No                                         |
+| AI Coach            | Weekly self-assessment                    | Initial self-assessment only *(optional per unit)* |
+| Knowledge Checks    | Feedback-only                             | Feedback-only                              |
+| Tone Progression    | Guided → autonomous                       | Self-directed, supportive                  |
+| Wrap-Up             | Weekly + Final                            | Final only                                 |
 
 ### Final Project Connection Templates
 
@@ -1811,42 +1907,11 @@ After platform compliance checks, validate module-level structure against approp
 #### Module Structure Validation Checklist
 
 **For ALL Modules (Both Course Types):**
-
-**Module Opening (Pedagogical Orientation):**
-- ✅ **Element 1**: Learning Outcomes Widget present?
-- ✅ **Element 2 (Modules 2-7)**: Bridge-In / Connecting text present? (100-150 words, recap + preview)
-  * ❌ **VIOLATION**: Module starts with content without bridge-in/orientation
-  * ✅ **FIX**: Add Element 2 connecting previous module to current module
-- ✅ **Element 2 (Module 1)**: Course overview/welcome present?
-
-**Module Content (Core Elements):**
-- ✅ **Learning outcomes widget (Modules 2-7)**: Shows SUBSET of MLOs (not all)?
-- ✅ **Content elements**: Text blocks under 150 words?
-- ✅ **Widget integration**: Active engagement elements interspersed?
-- ✅ **Element completeness**: All elements have full specifications (not cut off mid-content)?
-  * ❌ **VIOLATION**: Element cuts off mid-specification (incomplete file)
-  * ✅ **FIX**: Complete all element specifications before proceeding
-
-**Module Closing (Pedagogical Closure):**
-- ✅ **Second-to-last element**: Final Project Connection present with specific content references (not generic)?
-  * ❌ **VIOLATION**: No Final Project Connection element
-  * ✅ **FIX**: Add element with specific application to project checkpoint
-- ✅ **Last or second-to-last element**: Module Summary/Synthesis present?
-  * ❌ **VIOLATION**: Module ends abruptly with widget/content (no synthesis)
-  * ✅ **FIX**: Add closing element that:
-    - Summarizes key concepts learned
-    - Reinforces MLO achievement
-    - Previews next module
-    - Provides metacognitive closure
-- ✅ **Final element**: Module Complete indicator or transition to next module?
-  * ❌ **VIOLATION**: No completion signal
-  * ✅ **FIX**: Add "Module X Complete" element or clear CTA to next module
-
-**Structural Integrity:**
-- ✅ **Element numbering**: Sequential, no duplicates, table matches content?
-  * ❌ **VIOLATION**: Element numbers duplicate or skip (e.g., Element 2 appears twice)
-  * ✅ **FIX**: Renumber all elements sequentially
-- ✅ **Module metadata**: Module purpose and estimated time documented?
+- ✅ **Element 1 (Modules 2-7)**: Connecting text present? (100-150 words, recap + preview)
+- ✅ **Element 2 (Modules 2-7)**: Learning outcomes widget present with SUBSET of MLOs?
+- ✅ **Final Project Connection**: Specific content references? Not generic?
+- ✅ **Module Transition**: Recap + preview present?
+- ✅ **Element numbering**: Sequential, no gaps, table matches content?
 
 **For COHORT Courses:**
 - ✅ **Module 0**: Anchor Project overview with milestone structure and dates?
@@ -1933,140 +1998,7 @@ After platform compliance checks, validate module-level structure against approp
    - How confident are you applying each type of feedback to your revision?
 ```
 
-**Violation 6: Missing Bridge-In Element (Modules 2-7)**
-```
-❌ CRITICAL ERROR: Module [N] starts directly with content without connecting to previous module
-
-Example of violation:
-  | # | Element Type |
-  |---|--------------|
-  | 1 | Learning Outcomes Widget |
-  | 2 | Text | Introduction to Correlation | ← NO BRIDGE-IN
-
-✅ FIX: Add Bridge-In element after Learning Outcomes, before content:
-  ELEMENT 2: Text - Bridge from Module [N-1]
-
-  Content pattern:
-  "In Module [N-1], you [recap previous learning]. Now you're ready to [preview current learning].
-
-  This module focuses on [topic], which builds on [previous concept] by [new capability].
-
-  By the end, you'll be able to [MLO summary]."
-
-  100-150 words | Priority: ⬤ Required | Reading time: 1 min
-```
-
-**Violation 7: Missing Module Summary/Closing Element**
-```
-❌ CRITICAL ERROR: Module ends abruptly after final content element (widget/video/text) without synthesis
-
-Example of violation:
-  | # | Element Type |
-  |---|--------------|
-  | 8 | iFrame Widget | Excel CORREL Practice | ← MODULE ENDS HERE (no closure)
-
-✅ FIX: Add Module Summary element before Module Complete:
-  ELEMENT [N-1]: Text - Module Summary
-
-  Content pattern:
-  "# Module [N] Complete: [Topic] Mastered
-
-  **What you've learned:** [2-3 sentence summary of key capabilities]
-
-  **Key takeaways:**
-  - [Concept 1 with brief explanation]
-  - [Concept 2 with brief explanation]
-  - [Concept 3 with brief explanation]
-
-  **What's next:** [Preview next module or assessment, explain connection]
-
-  **Before you proceed:** Review your Learning Outcomes checklist to ensure you've achieved MLOs [X.X] and [X.X]."
-
-  120-150 words | Priority: ⬤ Required | Reading time: 1-2 min
-```
-
-**Violation 8: No Module Complete Indicator**
-```
-❌ ISSUE: No explicit completion signal or transition after module summary
-
-✅ FIX: Add final element:
-  ELEMENT [N]: Module Complete Widget OR Text Transition
-
-  Option A (Widget):
-    Use Uplimit's native "Module Complete" badge widget
-    Displays: "✓ Module [N] Complete"
-    Shows: Unit progress (e.g., "2/6 modules complete")
-    CTA Button: "Continue to Module [N+1]"
-
-  Option B (Text Transition):
-    Brief 2-3 sentence element:
-    "You've completed Module [N]. Continue to Module [N+1]: [Next Topic Title] to [next learning goal]."
-```
-
-**Violation 9: Element Content Incomplete (File Cuts Off)**
-```
-❌ CRITICAL ERROR: Element specification cuts off mid-content (file truncated or incomplete)
-
-Example:
-  Line 400: "- A) Marketing spend causes revenue increases ❌"
-  [File ends abruptly - missing Challenge 2 completion, Challenge 3, embed code]
-
-✅ FIX: Complete all element specifications before audit approval:
-  1. Read file to end to detect truncation
-  2. Identify incomplete elements (missing embed codes, rubric criteria, widget features)
-  3. Flag as CRITICAL BLOCKER - cannot proceed to build
-  4. Recommend completing missing content before re-audit
-```
-
-### Audit Step 4: Evaluate Pedagogical Scaffolding
-
-After module structure validation, assess pedagogical design quality:
-
-#### Pedagogical Scaffolding Checklist
-
-**Orientation (Module Opening):**
-- ✅ **Learning Outcomes Widget first**: Orients learners to what they'll achieve
-- ✅ **Bridge-In element present**: Connects prior knowledge to new learning
-- ✅ **Motivation provided**: "Why this matters" context established
-- ❌ **VIOLATION**: Module lacks orientation phase (jumps straight to content)
-
-**Engagement (Module Content):**
-- ✅ **Progressive complexity**: Simple → complex concept sequencing
-- ✅ **Active learning interspersed**: Widgets every 2-3 elements
-- ✅ **Concept threading**: References to earlier modules/concepts
-- ✅ **60%+ active engagement time**: Widgets/quizzes comprise majority of time
-- ❌ **VIOLATION**: Passive content dominates (< 40% active engagement)
-
-**Closure (Module Ending):**
-- ✅ **Synthesis element present**: Module Summary recaps key learnings
-- ✅ **Metacognitive prompt**: Encourages self-assessment against MLOs
-- ✅ **Forward connection**: Previews next module or assessment
-- ✅ **Completion signal**: Clear indicator module is done
-- ❌ **VIOLATION**: Module lacks closure phase (ends abruptly after content)
-
-**Complete Pedagogical Arc:**
-```
-IDEAL PATTERN:
-┌─────────────────────────────────────────────────────────────┐
-│ ORIENTATION → CONTENT DELIVERY → CLOSURE                    │
-├─────────────────────────────────────────────────────────────┤
-│ • Learning Outcomes   • Core concepts     • Summary         │
-│ • Bridge-In           • Videos            • MLO review      │
-│ • Motivation          • Widgets           • Preview next    │
-│                       • Practice          • Complete signal │
-└─────────────────────────────────────────────────────────────┘
-```
-
-**Scoring Pedagogical Completeness:**
-- **100 points**: All three phases present (Orientation, Content, Closure)
-- **80 points**: Two phases present (missing one bookend)
-- **60 points**: Content only (missing both bookends)
-- **< 60 points**: Fragmented structure (missing multiple elements)
-
-**Report Format:**
-In audit reports, include pedagogical scaffolding score and identify missing phases.
-
-### Audit Step 5: Analyze Interactivity and Engagement
+### Audit Step 4: Analyze Interactivity and Engagement
 
 Beyond platform and structure compliance, assess **pedagogical effectiveness** - the balance between passive reading and active learning.
 
@@ -2187,29 +2119,6 @@ Provide structured audit report with:
 - **Elements audited**: [count] infoboxes, [count] text blocks, [count] AI roleplay, etc.
 - **Compliance rate**: [X/Y elements compliant]
 - **Priority violations**: [list critical issues]
-
-### Pedagogical Scaffolding Assessment
-
-**Orientation Phase (Module Opening):**
-- ✅/❌ Learning Outcomes Widget present
-- ✅/❌ Bridge-In / Connecting text present
-- ✅/❌ Motivation / "Why this matters" context provided
-
-**Content Delivery Phase:**
-- ✅/❌ Progressive complexity (simple → complex)
-- ✅/❌ Active engagement interspersed (60%+ target)
-- ✅/❌ Concept threading to earlier learning
-
-**Closure Phase (Module Ending):**
-- ✅/❌ Module Summary / Synthesis element present
-- ✅/❌ Metacognitive self-assessment prompt
-- ✅/❌ Forward connection to next module
-- ✅/❌ Module Complete indicator
-
-**Pedagogical Completeness Score:** [X]/100
-
-**Missing Phases:**
-- [List any missing orientation/closure elements with specific fixes needed]
 
 ### Interactivity Metrics (if applicable)
 | Metric | Current | Target | Status |

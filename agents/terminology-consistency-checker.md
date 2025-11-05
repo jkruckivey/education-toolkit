@@ -1,6 +1,6 @@
 ---
 name: terminology-consistency-checker
-description: Use this subagent to validate terminology consistency across course weeks/modules. Builds course glossary, flags term variations, identifies undefined terms, and suggests standardization. Example requests include "check terminology consistency across Weeks 1-5", "build course glossary", or "flag inconsistent terms".
+description: Validates terminology consistency across course weeks by building course glossaries, flagging term variations, identifying undefined terms and acronyms, and checking capitalization patterns
 tools: Read, Glob, Grep
 model: sonnet
 ---

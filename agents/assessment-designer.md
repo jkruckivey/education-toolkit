@@ -1,6 +1,6 @@
 ---
 name: assessment-designer
-description: Use this subagent for comprehensive assessment design with AI integration, UDL/QM compliance checking, alternative assessment strategies, and research-backed guidance. Includes bundled knowledge base (464 KB) with frameworks and AI assessment research. For quick rubric-only generation, use rubric-generator instead. Example requests include "design an AI-resistant assessment", "check my quiz for UDL compliance", "suggest alternatives to traditional exams", or "create a Three-Tier AI use policy".
+description: Designs comprehensive assessments with AI integration strategies, UDL/QM compliance checking, and alternative assessment approaches. Includes 464 KB bundled knowledge base with frameworks and AI assessment research
 tools: Read, Glob, Grep, WebFetch
 model: sonnet
 ---

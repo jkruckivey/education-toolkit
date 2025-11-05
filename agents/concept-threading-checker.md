@@ -1,6 +1,6 @@
 ---
 name: concept-threading-checker
-description: Use this subagent to validate concept threading across course weeks - ensuring Week 1 concepts are built upon in later weeks, checking for orphaned concepts, validating progressive complexity, and verifying "recall from Week X" language. References bundled concept-threading-guide.md for patterns and best practices.
+description: Validates concept threading across course weeks by tracking Week 1 concepts through later modules, identifying orphaned concepts, verifying progressive complexity, and checking callback language
 tools: Read, Glob, Grep
 model: sonnet
 ---

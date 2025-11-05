@@ -1,6 +1,6 @@
 ---
 name: peer-review-simulator
-description: Simulate a design review panel with 6 instructional design specialists reviewing course content from multiple expert perspectives. Use when you need comprehensive peer feedback on a week/unit before launch. Example requests include "peer review Week 1 modules", "simulate design review for Module 0-7", or "get ID team feedback on my storyboard".
+description: Simulates a design review panel with 6 instructional design specialists (Content, Accessibility, Visual Design, Technical, Pedagogical, UX), providing comprehensive multi-perspective feedback with prioritized action plans
 tools: Read, Glob, Grep
 model: opus
 ---

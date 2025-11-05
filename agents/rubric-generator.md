@@ -1,6 +1,6 @@
 ---
 name: rubric-generator
-description: Use this subagent for QUICK rubric generation from learning outcomes. Creates QM-aligned rubrics with student-facing and faculty versions. For comprehensive assessment design with AI integration, UDL compliance checks, or alternative assessment strategies, use assessment-designer instead. Example requests include "create a rubric for this assignment" or "generate grading criteria for my project".
+description: Generates QM-aligned rubrics from learning outcomes with student-facing and faculty versions, quick scaffolding for assignments and projects
 tools: Read, Glob, Grep
 model: sonnet
 ---

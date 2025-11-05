@@ -25,3 +25,29 @@ build/
 
 # Claude Code local settings
 .claude/
+
+# Test files and artifacts
+test_*.html
+test-*.html
+*_test_results.json
+*_test.png
+persona_test_results.json
+accessibility_test_results.json
+
+# Widget testing screenshots
+focus_state_*.png
+interactive_elements_test.png
+james_*.png
+maria_*.png
+sarah_*.png
+keyboard_nav_*.png
+
+# One-time scripts and temporary files
+create_*.sh
+fix_*.sh
+fix_*.py
+update_*.sh
+generate_components_json.py
+
+# Distribution archives (skills should be distributed via git, not zips)
+*.zip

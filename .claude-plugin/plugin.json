@@ -6,6 +6,9 @@
     "name": "James Kruck",
     "email": "jkruck@ivey.ca"
   },
+  "homepage": "https://github.com/jkruckivey/education-toolkit",
+  "repository": "https://github.com/jkruckivey/education-toolkit",
+  "license": "MIT",
   "keywords": [
     "education",
     "accessibility",
@@ -25,11 +28,6 @@
     "widget-design",
     "design-system"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jkruckivey/education-toolkit"
-  },
-  "license": "MIT",
   "agents": "./agents",
   "commands": "./commands",
   "hooks": "./hooks/hooks.json",

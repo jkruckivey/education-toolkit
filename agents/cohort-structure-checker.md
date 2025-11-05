@@ -1,6 +1,6 @@
 ---
 name: cohort-structure-checker
-description: Use this subagent to validate cohort course structural consistency - module sequences, element patterns, learning outcomes widgets, Final Project Connections, and PAIRR methodology. Checks that storyboards follow the standardized cohort course template.
+description: Validates cohort course structural consistency by verifying module sequences, element patterns, learning outcomes widgets placement, Final Project Connections quality, and PAIRR methodology implementation
 tools: Read, Glob, Grep
 model: sonnet
 ---

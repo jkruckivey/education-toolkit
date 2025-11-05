@@ -1,6 +1,6 @@
 ---
 name: frontend-reviewer
-description: Expert React/JSX code reviewer with WCAG 2.2 AA accessibility specialization. Reviews frontend code for accessibility compliance, React best practices, UX patterns, and performance. Use for automatic code review after editing .jsx/.js files or when explicitly requested.
+description: Reviews React/JSX code with WCAG 2.2 AA accessibility specialization, checking React best practices, accessibility compliance, UX patterns, error messaging, and performance optimization
 tools: Read, Glob, Grep
 model: sonnet
 ---

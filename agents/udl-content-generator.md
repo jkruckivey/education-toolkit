@@ -1,6 +1,6 @@
 ---
 name: udl-content-generator
-description: Use this subagent when the user asks to create alternative content formats, support diverse learners, or implement Universal Design for Learning (UDL) principles. Example requests include "create an audio script for this content", "generate infographic suggestions", or "transform this lesson for visual learners".
+description: Creates alternative content formats and implements Universal Design for Learning (UDL) principles by generating audio scripts, infographic suggestions, and transformations for diverse learners
 tools: Read, Glob, Grep
 model: sonnet
 ---
