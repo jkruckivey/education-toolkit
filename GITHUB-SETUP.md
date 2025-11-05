@@ -34,51 +34,12 @@ git push -u origin main
    - commands/ directory with 6 slash commands
    - LICENSE file
 
-## Step 4: Create Marketplace Configuration (Optional)
-
-If you want to add this plugin to the official Claude Code marketplace:
-
-1. Create `.claude-plugin/marketplace.json` at the root of the repository:
-
-```json
-{
-  "$schema": "https://raw.githubusercontent.com/anthropics/claude-code/main/.claude-plugin/marketplace.schema.json",
-  "name": "education-toolkit",
-  "version": "1.0.0",
-  "description": "Comprehensive toolkit for course developers with 7 specialized agents and 6 slash commands",
-  "owner": {
-    "name": "James Kruck",
-    "email": "jkruck@ivey.ca",
-    "github": "jameskruck"
-  },
-  "plugins": [
-    {
-      "name": "education-toolkit",
-      "description": "7 agents + 6 commands for accessibility, assessment design, widget testing, and course QA",
-      "source": "./",
-      "category": "education",
-      "version": "1.0.0",
-      "author": "James Kruck"
-    }
-  ]
-}
-```
-
-2. Commit and push:
-
-```bash
-git add .claude-plugin/marketplace.json
-git commit -m "Add marketplace configuration"
-git push
-```
-
-## Step 5: Test Installation
+## Step 4: Test Installation
 
 After pushing to GitHub, test the plugin installation:
 
 ```bash
-/plugin marketplace add jameskruck/education-toolkit
-/plugin install education-toolkit
+/plugin add jameskruck/education-toolkit
 ```
 
 Verify installation:

@@ -186,7 +186,7 @@ Claude: [Automatically invokes terminology-consistency-checker]
 1. Create 5 new command files in `/commands/`
 2. Update README.md to reflect actual count (9 → 14)
 3. Remove `/check-consistency` from README (doesn't exist)
-4. Update marketplace.json description if needed
+4. Update plugin.json description if needed
 
 ---
 

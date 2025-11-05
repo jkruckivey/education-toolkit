@@ -8,7 +8,7 @@
 
 ```bash
 # Install plugin (includes all skills)
-/plugin marketplace add jameskruck/education-toolkit
+/plugin add jameskruck/education-toolkit
 
 # Skills are ready to use immediately!
 # No additional installation needed.
