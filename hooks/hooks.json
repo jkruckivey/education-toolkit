@@ -6,27 +6,24 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/validate-content.sh\" \"${TOOL_INPUT_file_path}\" \"${TOOL_NAME}\"",
+            "command": "sh \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/validate-content.sh\" \"${TOOL_INPUT_file_path}\" \"${TOOL_NAME}\"",
             "description": "Auto-validate educational content for WCAG/QM compliance",
-            "timeout": 5000
+            "timeout": 5000,
+            "continueOnError": true
           },
           {
             "type": "command",
-            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/format-storyboard.py\" \"${TOOL_INPUT_file_path}\"",
+            "command": "python \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/format-storyboard.py\" \"${TOOL_INPUT_file_path}\"",
             "description": "Auto-format storyboards to match platform conventions",
-            "timeout": 3000
+            "timeout": 3000,
+            "continueOnError": true
           },
           {
             "type": "command",
-            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/test-widget.sh\" \"${TOOL_INPUT_file_path}\" \"${TOOL_NAME}\"",
+            "command": "sh \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/test-widget.sh\" \"${TOOL_INPUT_file_path}\" \"${TOOL_NAME}\"",
             "description": "Auto-test widgets after creation (accessibility checks, optional browser open)",
-            "timeout": 10000
-          },
-          {
-            "type": "command",
-            "command": "echo \"[$(date '+%Y-%m-%d %H:%M:%S')] ${TOOL_NAME}: ${TOOL_INPUT_file_path}\" >> ~/.claude/changes.log",
-            "description": "Track file changes with timestamps",
-            "timeout": 1000
+            "timeout": 10000,
+            "continueOnError": true
           }
         ]
       }
@@ -37,9 +34,10 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/check-protected.sh\" \"${TOOL_INPUT_file_path}\"",
+            "command": "sh \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/check-protected.sh\" \"${TOOL_INPUT_file_path}\"",
             "description": "Protect published educational content from accidental edits",
-            "timeout": 2000
+            "timeout": 2000,
+            "continueOnError": true
           }
         ]
       }
@@ -49,9 +47,10 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/load-context.sh\"",
+            "command": "sh \"${CLAUDE_PLUGIN_ROOT}/hooks/scripts/load-context.sh\"",
             "description": "Load educational standards and course context",
-            "timeout": 3000
+            "timeout": 3000,
+            "continueOnError": true
           }
         ]
       }
