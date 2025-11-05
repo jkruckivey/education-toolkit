@@ -195,12 +195,18 @@ roadmap element.
 
 ---
 
+## Version Bump
+
+**Updated to v2.8.6** (commit 011CUpz7MTkHrP8Jgwbm7zmC):
+- ✅ plugin.json version → 2.8.6
+- ✅ marketplace.json version → 2.8.6 (all 3 locations)
+- ✅ README.md callout → Added v2.8.6 bug fix notice
+- ✅ README.md Version History → Comprehensive v2.8.6 entry with all fixes documented
+
 ## Next Steps
 
 1. **Merge the branch** when ready
-2. **Update version** to v2.8.6 (patch for bug fixes)
-3. **Update changelog** in README.md
-4. **Test both fixes** after merging:
+2. **Test both fixes** after merging:
    - Reinstall plugin and verify agents deploy
    - Audit a storyboard and verify template validation
 5. **Close bug reports** with references to commits

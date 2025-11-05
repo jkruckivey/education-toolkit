@@ -2,6 +2,8 @@
 
 **Comprehensive toolkit for educational developers** with 17 specialized agents, 10 slash commands, and automatic code review. Includes cutting-edge assessment methodologies: PAIRR (Peer and AI Review + Reflection), AI Roleplay exercises, diagnostic rubrics, widget design system enforcement, multi-perspective peer design review simulation, strategic course outline creation, specialized consistency checkers (terminology, concept threading, assessment), cohort course structure validation, and fullstack code review with automatic quality checks.
 
+> **🔧 FIXED in v2.8.6**: Bug fixes for agent registration (explicit paths), template validation (uplimit-storyboard-builder now reads MODULE-STRUCTURE-TEMPLATES.md in audit mode), and Windows hook compatibility (graceful fallback)
+>
 > **🔧 FIXED in v2.8.5**: Repository restructured to single plugin format - agents now invokable without double-scoping (use `uplimit-storyboard-builder` instead of `uplimit-storyboard-builder:uplimit-storyboard-builder`)
 >
 > **✨ NEW in v2.8.0**: Widget design system enforcement agent (generate/audit HTML widgets) with automatic testing hook
@@ -504,6 +506,19 @@ GitHub: [@jameskruck](https://github.com/jameskruck)
 
 ## Version History
 
+- **2.8.6** (2025-11-05): Bug fixes for agent registration, template validation, and Windows compatibility
+  - **Agent Registration Fix**: Changed agent discovery from directory path (`"./agents"`) to explicit array of 17 file paths in both marketplace.json and plugin.json
+  - **Why this matters**: Directory-based discovery wasn't registering agents correctly - Claude Code could see the plugin but agents couldn't be "deployed" or invoked
+  - **Fix applied**: All 17 agents now explicitly listed as `["./agents/accessibility-auditor.md", "./agents/assessment-consistency-checker.md", ...]` in both configuration files
+  - **Template Validation Fix**: uplimit-storyboard-builder agent now **actually reads MODULE-STRUCTURE-TEMPLATES.md** during AUDIT MODE
+  - **Why this matters**: Agent claimed to validate against templates but wasn't reading the file, causing it to miss structural violations (e.g., Module 0 missing "Course roadmap & suggested pacing" element)
+  - **Fix applied**: Added "Audit Step 0: Load Authoritative Template" (lines 1591-1644) that explicitly reads MODULE-STRUCTURE-TEMPLATES.md, identifies course format (COHORT/SELF-PACED), loads specific template requirements, and generates Template Compliance Validation section in audit report
+  - **Windows Hook Compatibility Fix**: Hooks now use portable commands (`sh` instead of `bash`, `python` instead of `python3`) with graceful error handling
+  - **Why this matters**: Windows users got "bash is not recognized" error on Claude Code startup, preventing plugin from working
+  - **Fix applied**: Changed hook commands to Git for Windows compatible (`sh`), added `continueOnError: true` to all hooks for graceful fallback, removed Unix-specific timestamp hook
+  - **Documentation Added**: COMPLETE-FIX-SUMMARY.md, AGENT-REGISTRATION-TROUBLESHOOTING.md, HOOKS-WINDOWS-COMPATIBILITY.md
+  - **Branch**: All fixes applied on `claude/debug-repo-issues-011CUpz7MTkHrP8Jgwbm7zmC` (11 commits)
+  - **Testing**: After update, reinstall plugin (`/plugin add jameskruck/education-toolkit`) and verify agents can be invoked
 - **2.8.0** (2025-11-03): Enhanced pedagogical scaffolding enforcement in uplimit-storyboard-builder
   - Added **Pedagogical Scaffolding Evaluation** (new Audit Step 4): Assesses orientation → content → closure pattern with 0-100 completeness score
   - Added **4 new critical violation patterns**:
