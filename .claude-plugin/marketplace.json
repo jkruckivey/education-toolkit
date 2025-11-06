@@ -2,14 +2,11 @@
   "$schema": "https://raw.githubusercontent.com/anthropics/claude-code/main/.claude-plugin/marketplace.schema.json",
   "name": "education-toolkit",
   "version": "2.8.7",
+  "description": "Comprehensive toolkit for educational developers with 18 specialized agents, 14 slash commands, and automatic code review",
   "owner": {
     "name": "James Kruck",
     "email": "jkruck@ivey.ca",
     "github": "jkruckivey"
-  },
-  "metadata": {
-    "description": "Comprehensive toolkit for educational developers with 18 specialized agents, 14 slash commands, and automatic code review",
-    "version": "2.8.7"
   },
   "plugins": [
     {
