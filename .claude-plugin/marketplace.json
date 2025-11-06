@@ -9,7 +9,7 @@
   },
   "plugins": [
     {
-      "name": "education-toolkit",
+      "name": "education-toolkit-plugin",
       "source": "./",
       "description": "Comprehensive toolkit for course developers with 18 specialized agents, 14 slash commands, and automatic code review",
       "version": "2.8.7",
