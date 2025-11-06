@@ -11,7 +11,43 @@
     {
       "name": "education-toolkit",
       "source": "./",
-      "strict": true
+      "strict": true,
+      "commands": [
+        "./commands/audit-module.md",
+        "./commands/build-storyboard.md",
+        "./commands/check-branding.md",
+        "./commands/check-cohort-structure.md",
+        "./commands/check-concept-threading.md",
+        "./commands/check-terminology.md",
+        "./commands/create-outline.md",
+        "./commands/design-assessment.md",
+        "./commands/design-widget.md",
+        "./commands/generate-rubric.md",
+        "./commands/peer-review.md",
+        "./commands/review-content.md",
+        "./commands/simulate-journey.md",
+        "./commands/test-widget.md"
+      ],
+      "agents": [
+        "./agents/accessibility-auditor.md",
+        "./agents/assessment-consistency-checker.md",
+        "./agents/assessment-designer.md",
+        "./agents/backend-reviewer.md",
+        "./agents/branding-checker.md",
+        "./agents/cohort-structure-checker.md",
+        "./agents/concept-threading-checker.md",
+        "./agents/course-outline-creator.md",
+        "./agents/frontend-reviewer.md",
+        "./agents/peer-review-simulator.md",
+        "./agents/rubric-generator.md",
+        "./agents/self-paced-structure-checker.md",
+        "./agents/student-journey-simulator.md",
+        "./agents/terminology-consistency-checker.md",
+        "./agents/udl-content-generator.md",
+        "./agents/uplimit-storyboard-builder.md",
+        "./agents/widget-designer.md",
+        "./agents/widget-tester.md"
+      ]
     }
   ]
 }
