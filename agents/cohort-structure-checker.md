@@ -19,42 +19,43 @@ The following templates are embedded from MODULE-STRUCTURE-TEMPLATES.md for auto
 
 ---
 
+## COHORT COURSE STRUCTURE OVERVIEW
+
+Each week contains **eight modules total**:
+- **Self-Assessment** (unnumbered) - BOPPPS Bridge/Objectives/Pre-assessment
+- **Modules 1–6** (numbered) - Weekly content following pedagogical flow
+- **Wrap-Up** (unnumbered) - BOPPPS Post-assessment/Summary
+
+**IMPORTANT NUMBERING CONVENTION:**
+- Only Modules 1–6 are numbered
+- Self-Assessment and Wrap-Up are **unnumbered** to align with BOPPPS framework
+- **NEVER** label these as "Module 0" or "Module 7" (outdated convention)
+
+---
+
 ## COHORT COURSE MODULE TEMPLATES
 
 Use these templates when validating cohort-based courses with fixed weekly deadlines and peer interaction.
 
-### MODULE 0: Bridge/Hook (Optional)
-**Purpose:** Teaser content to hook student interest
+### SELF-ASSESSMENT (Unnumbered)
+**Purpose:** BOPPPS Bridge/Objectives/Pre-assessment - Hook interest, introduce learning outcomes, diagnostic assessment
 
 **Structure:**
+- Combines old "Module 0" (bridge/hook) + old "Module 1" (learning outcomes)
 - No prescribed element pattern (flexible content)
-- Typically 2-4 elements
-- No Final Project Connection required
-- Short duration (5-10 minutes)
+- Typically 5-8 elements
+- Includes learning outcomes widget showing ALL week's MLOs
+- May include diagnostic pre-assessment
+- Short duration (10-15 minutes)
 
-**Example Elements:**
-- Video teaser
-- Industry stat tiles
-- "What you'll build" preview
-- Course narrative setup
-
----
-
-### MODULE 1: Welcome & Learning Outcomes
-**Purpose:** Set weekly context and establish learning outcomes
-
-**Required Element Sequence:**
-
-| # | Element Type | Purpose | Content Specs |
-|---|--------------|---------|---------------|
-| 1 | **Text** | Welcome + connection from previous weeks | 100-150 words. Pattern: "Last week [recap], this week [preview]" |
-| 2 | **Infobox (Callout)** | Week overview + time commitment | 75-100 words. State total hours, breakdown by activity type |
-| 3 | **Text** | Full week learning outcomes (MLO X.1-X.4) | Each MLO needs: "What You'll Master", "Success Criteria", "Why This Matters" |
-| 4 | **iFrame Widget** | Learning outcomes visualizer | File: `learning-outcomes-module-1.html` - shows ALL week's MLOs |
-| 5 | **Text** | Anchor Project connection | How this week's outcomes support Anchor Project milestone |
-| 6+ | **Various** | Additional content (optional) | Videos, infoboxes, etc. |
-| N-1 | **Text** | 🎯 FINAL PROJECT CONNECTION | See template below |
-| N | **Text** | Module 1 Complete - Transition | Preview Module 2 topic |
+**Common Elements:**
+- Video teaser or scenario hook
+- Week overview infobox (time commitment, 75-100 words)
+- Full week learning outcomes (MLO X.1-X.4 with "What You'll Master", "Success Criteria", "Why This Matters")
+- Learning outcomes widget (shows ALL week's MLOs)
+- Anchor Project connection (how this week supports final capstone)
+- Diagnostic pre-assessment quiz or AI Roleplay
+- Industry stat tiles or preview content
 
 **MLO Format Requirements:**
 - Use single action verbs (Analyze, Evaluate, Design - NOT compound verbs)
@@ -64,17 +65,37 @@ Use these templates when validating cohort-based courses with fixed weekly deadl
   - "Success Criteria:" (how students know they've mastered it)
   - "Why This Matters:" (real-world application)
 
-**Element 5 Special Note (Anchor Project):**
-- Module 1's Anchor Project connection explains **Week 5 final capstone**, not just current week
-- Sets up the big picture (what students will build by end of course)
-- Explains how each week builds toward capstone
+**Migration Note:**
+- Old storyboards may have "Module 0: Bridge-In" + "Module 1: Welcome & Learning Outcomes"
+- These should be **flagged as outdated** and consolidated into single "Self-Assessment" module
 
 ---
 
-### MODULES 2-5: Standard Content Modules
-**Purpose:** Deliver weekly content with clear learning progression
+### DEFAULT WEEKLY MODULE PURPOSE PATTERN (Modules 1–6)
 
-**Required Element Sequence:**
+Each week includes **6 numbered modules** (Modules 1–6) that follow a consistent pedagogical flow aligned with the BOPPPS model. While content varies, the *function* of each module is consistent across weeks:
+
+| Module | Purpose | Typical Elements | Example Activities |
+|--------|----------|------------------|--------------------|
+| **1** | Concept Introduction | Text intro, Infobox (context), Video (overview) | Executive session or framing lecture |
+| **2** | Concept Exploration | Text, Table, Widget | Data exploration, framework visualization |
+| **3** | Application Practice | Widget, Case, Details accordion | Interactive calculation or scenario |
+| **4** | Deep Dive / Analysis | Video, Text, Infobox | Expert insights, case discussion |
+| **5** | Reflection / Synthesis | Text response, AI chat | Apply concept to personal or business context |
+| **6** | Assessment / Project Milestone | Text response or PAIRR | Anchor Project submission or peer review |
+
+**Validation Approach:**
+- Check if each module fulfills its pedagogical **purpose** (not exact element types)
+- Module 1 should introduce concepts (not necessarily with specific infobox format)
+- Module 3 should provide practice (not necessarily with specific widget)
+- Module 6 should include assessment (PAIRR for cohort courses)
+
+---
+
+### MODULES 1-5: Standard Content Modules
+**Purpose:** Deliver weekly content with clear learning progression (see Purpose Pattern table above)
+
+**Common Element Pattern:**
 
 | # | Element Type | Purpose | Content Specs |
 |---|--------------|---------|---------------|
@@ -84,14 +105,23 @@ Use these templates when validating cohort-based courses with fixed weekly deadl
 | N-1 | **Text** | 🎯 FINAL PROJECT CONNECTION | See template below |
 | N | **Text** | Module X Complete - Transition | Recap insights, preview next module |
 
+**Purpose-Driven Validation:**
+Instead of checking exact element positions, validate that each module fulfills its **purpose**:
+
+- **Module 1 (Concept Introduction):** Introduces week's main concept through framing lecture, executive session, or overview video
+- **Module 2 (Concept Exploration):** Explores concept through data, tables, framework visualization, or interactive widgets
+- **Module 3 (Application Practice):** Provides hands-on practice through widgets, simulations, calculators, or scenarios
+- **Module 4 (Deep Dive/Analysis):** Deepens understanding through expert insights, case discussion, detailed analysis
+- **Module 5 (Reflection/Synthesis):** Synthesizes learning through text response, AI chat, personal application
+
 **Element 1 Validation (Connecting Text):**
-- ✅ CORRECT: "You now understand the four learning outcomes (Module 1). Before exploring frameworks, hear from practitioners..."
-- ❌ WRONG: Repeating learning objectives verbatim (those belong in Module 1 only)
+- ✅ CORRECT: "You now understand the four learning outcomes (Self-Assessment). Before exploring frameworks, hear from practitioners..."
+- ❌ WRONG: Repeating learning objectives verbatim (those belong in Self-Assessment only)
 - ❌ WRONG: Generic intro without connection to previous module
 
 **Element 2 Widget Specs:**
 - Widget shows **subset** of week's MLOs practiced in THIS specific module
-- NOT all MLOs repeated (Module 1 showed all MLOs already)
+- NOT all MLOs repeated (Self-Assessment showed all MLOs already)
 - Example: Module 3 might practice MLO 2.2 and 2.4 (not all 2.1-2.4)
 
 **Content Elements (3+):**
@@ -166,8 +196,8 @@ After revising your work, answer:
 
 ---
 
-### MODULE 7: Wrap-Up & Reflection
-**Purpose:** Consolidate learning and prepare for next week
+### WRAP-UP (Unnumbered)
+**Purpose:** BOPPPS Post-assessment/Summary - Consolidate learning, reflect, prepare for next week
 
 **Required Components:**
 
@@ -177,14 +207,14 @@ After revising your work, answer:
 
 You've completed a comprehensive week exploring [topic]. Here's your path:
 
-- **Module 0:** [Hook content summary]
-- **Module 1:** [Learning outcomes established]
-- **Module 2:** [Practitioners' perspectives]
-- **Module 3:** [Frameworks & analysis]
-- **Module 4:** [Hands-on simulation]
-- **Module 5:** [Case study application]
-- **Module 6:** [Strategic assessment + PAIRR]
-- **Module 7:** [Synthesis & reflection]
+- **Self-Assessment:** [Hook content summary + learning outcomes introduced]
+- **Module 1:** [Concept introduction summary]
+- **Module 2:** [Concept exploration summary]
+- **Module 3:** [Application practice summary]
+- **Module 4:** [Deep dive/analysis summary]
+- **Module 5:** [Reflection/synthesis summary]
+- **Module 6:** [Assessment summary + PAIRR]
+- **Wrap-Up:** [Current - synthesis & reflection]
 ```
 
 **2. Reflection Prompts:**
@@ -214,6 +244,10 @@ This week's Milestone [X]: [Deliverable name]
 **5. Final Project Connection:**
 - How this week's frameworks apply to Week 5 capstone
 - What students can start incorporating now
+
+**Migration Note:**
+- Old storyboards may have "Module 7: Wrap-Up & Reflection"
+- This should be **flagged as outdated** and renamed to "Wrap-Up" (unnumbered)
 
 ---
 
@@ -264,9 +298,9 @@ These requirements apply to BOTH cohort and self-paced courses:
 - Element types in table must match content headings
 
 ### Learning Outcomes Widgets
-- Module 1 Element 4: Shows ALL week/course learning outcomes
-- Modules 2-7 Element 2: Shows SUBSET of outcomes practiced in THIS module
-- Exception: Self-paced might not have Modules 2-7 if shorter course
+- Self-Assessment: Shows ALL week learning outcomes (MLO X.1-X.4)
+- Modules 1-6 Element 2: Shows SUBSET of outcomes practiced in THIS module
+- Exception: Self-paced courses might have different structure
 
 ### Module Transitions
 - Every module ends with transition text
@@ -475,29 +509,17 @@ Provide a comprehensive structure validation report:
 
 ## MODULE-BY-MODULE VALIDATION
 
-### Module 0: Bridge/Hook
-**Status:** ✅ Compliant / ⚠️ Issues Found
+### Self-Assessment (Unnumbered)
+**Status:** ✅ Compliant / ⚠️ Issues Found / 🔴 OUTDATED NAMING
+
+**Outdated Naming Check:**
+- ❌ If labeled "Module 0" or "Module 7" → Flag as CRITICAL issue (see Step 2)
+- ✅ Labeled "Self-Assessment" (correct)
 
 **Structure Check:**
 - File exists: ✅ / ❌
-- Content appropriate: ✅ / ❌
-
----
-
-### Module 1: Welcome & Learning Outcomes
-**Status:** ✅ Compliant / ⚠️ Issues Found
-
-**Element Structure Validation:**
-
-| Expected Element | Status | Location | Issue |
-|-----------------|--------|----------|-------|
-| Element 1: Welcome Text | ✅ / ❌ | Line X | [Details if issue] |
-| Element 2: Infobox (Week Overview) | ✅ / ❌ | Line X | [Details] |
-| Element 3: Learning Outcomes Text | ✅ / ❌ | Line X | [Details] |
-| Element 4: Learning Outcomes Widget | ✅ / ❌ | Line X | Widget file missing / not embedded |
-| Element 5: Anchor Project Connection | ✅ / ❌ | Line X | [Details] |
-| Final Project Connection | ✅ / ❌ | Line X | See quality analysis below |
-| Module Transition | ✅ / ❌ | Line X | [Details] |
+- Content appropriate for BOPPPS Bridge/Objectives/Pre-assessment: ✅ / ❌
+- Combines hook + learning outcomes + optional diagnostic: ✅ / ❌
 
 **Learning Outcomes Quality Check:**
 - ✅ / ❌ MLO X.1: Has "What You'll Master:", "Success Criteria:", "Why This Matters:"
@@ -507,17 +529,8 @@ Provide a comprehensive structure validation report:
 - ✅ / ❌ Action verbs are single, not compound
 
 **Widget Validation:**
-- Widget file exists at path: ✅ / ❌ `week{X}/widgets/learning-outcomes-module-1.html`
+- Learning outcomes widget shows ALL week MLOs: ✅ / ❌
 - Widget referenced in storyboard: ✅ / ❌ (iframe embed code present)
-
-**Final Project Connection Quality:**
-- ✅ / ❌ Specific to Module 1 content (not generic)
-- ✅ / ❌ Has "What You Learned:" section with 4+ bullets
-- ✅ / ❌ Has "How to Apply This to Your Final Project:" section
-- ✅ / ❌ Has 3+ specific application bullets with examples
-- ✅ / ❌ Has "Real-World Application:" sentence
-- ✅ / ❌ Connects to Week 5 final capstone (not just current week)
-- ✅ / ❌ Appears before module transition
 
 **Issues Found:**
 1. [Issue description with line number and fix recommendation]
@@ -525,8 +538,44 @@ Provide a comprehensive structure validation report:
 
 ---
 
+### Module 1: [Module Name]
+**Status:** ✅ Compliant / ⚠️ Issues Found
+
+**Purpose Validation:**
+- Fulfills "Concept Introduction" purpose: ✅ / ❌ (framing lecture, executive session, overview video)
+
+**Element Structure Validation:**
+
+| Expected Element | Status | Location | Issue |
+|-----------------|--------|----------|-------|
+| Element 1: Connecting Text | ✅ / ❌ | Line X | [Issue: Repeats learning objectives instead of connecting narrative] |
+| Element 2: Learning Outcomes Widget | ✅ / ❌ | Line X | Widget file missing / not embedded |
+| Elements 3+: Content | ✅ / ❌ | Lines X-Y | [Details] |
+| Final Project Connection | ✅ / ❌ | Line X | See quality analysis below |
+| Module Transition | ✅ / ❌ | Line X | [Details] |
+
+**Widget Validation:**
+- Widget shows module-specific MLOs (SUBSET, not all): ✅ / ❌
+- Widget referenced in storyboard: ✅ / ❌
+
+**Final Project Connection Quality:**
+- ✅ / ❌ Specific to Module 1 content (not generic)
+- ✅ / ❌ Has "What You Learned:" section with 4+ bullets
+- ✅ / ❌ Has "How to Apply This to Your Final Project:" section
+- ✅ / ❌ Has 3+ specific application bullets with examples
+- ✅ / ❌ Has "Real-World Application:" sentence
+- ✅ / ❌ Appears before module transition
+
+**Issues Found:**
+1. [Issue with line number and fix]
+
+---
+
 ### Module 2: [Module Name]
 **Status:** ✅ Compliant / ⚠️ Issues Found
+
+**Purpose Validation:**
+- Fulfills "Concept Exploration" purpose: ✅ / ❌ (data, tables, framework visualization, widgets)
 
 **Element Structure Validation:**
 
@@ -540,32 +589,43 @@ Provide a comprehensive structure validation report:
 
 **Connecting Text Quality Check:**
 - ✅ / ❌ Uses pattern: "You've just [previous] → Now [current]"
-- ✅ / ❌ Does NOT repeat learning objectives (those are in Module 1 only)
+- ✅ / ❌ Does NOT repeat learning objectives (those are in Self-Assessment only)
 - ✅ / ❌ Sets context for current module's purpose
 
 **Widget Validation:**
-- Widget file exists: ✅ / ❌ `week{X}/widgets/learning-outcomes-module-2.html`
+- Widget shows module-specific MLOs (SUBSET, not all): ✅ / ❌
 - Widget referenced in storyboard: ✅ / ❌
-- Widget shows module-specific MLOs: ✅ / ❌ (not all week MLOs repeated)
-- Widget badge matches module number: ✅ / ❌
 
 **Final Project Connection Quality:**
-[Same checks as Module 1, but connection should be specific to Module 2's practitioner insights]
+[Same checks as Module 1, but connection should be specific to Module 2 content]
 
 **Issues Found:**
 1. [Issue with line number and fix]
 
 ---
 
-### Module 3-5: [Repeat same structure as Module 2]
+### Module 3: [Module Name]
+**Purpose Validation:** Fulfills "Application Practice" purpose: ✅ / ❌ (widgets, simulations, calculators, scenarios)
+[Same structure as Module 2]
+
+### Module 4: [Module Name]
+**Purpose Validation:** Fulfills "Deep Dive/Analysis" purpose: ✅ / ❌ (expert insights, case discussion, detailed analysis)
+[Same structure as Module 2]
+
+### Module 5: [Module Name]
+**Purpose Validation:** Fulfills "Reflection/Synthesis" purpose: ✅ / ❌ (text response, AI chat, personal application)
+[Same structure as Module 2]
 
 ---
 
 ### Module 6: Assessment
 **Status:** ✅ Compliant / ⚠️ Issues Found
 
+**Purpose Validation:**
+- Fulfills "Assessment/Project Milestone" purpose: ✅ / ❌ (text response, PAIRR, Anchor Project submission)
+
 **Standard Element Validation:**
-[Same as Module 2 checks]
+[Same as Module 2 checks - connecting text, learning outcomes widget, content, Final Project Connection, transition]
 
 **PAIRR Methodology Validation (Cohort Courses):**
 
@@ -590,18 +650,22 @@ Provide a comprehensive structure validation report:
 
 ---
 
-### Module 7: Wrap-Up & Reflection
-**Status:** ✅ Compliant / ⚠️ Issues Found
+### Wrap-Up (Unnumbered)
+**Status:** ✅ Compliant / ⚠️ Issues Found / 🔴 OUTDATED NAMING
 
-**Standard Element Validation:**
-[Same as Module 2]
+**Outdated Naming Check:**
+- ❌ If labeled "Module 7" → Flag as CRITICAL issue (see Step 2)
+- ✅ Labeled "Wrap-Up" (correct)
+
+**Purpose Validation:**
+- Fulfills BOPPPS Post-assessment/Summary purpose: ✅ / ❌ (consolidate learning, reflect, prepare for next week)
 
 **Wrap-Up Component Validation:**
 
 | Required Component | Status | Location | Details |
 |-------------------|--------|----------|---------|
-| Week Journey Recap | ✅ / ❌ | Line X | Summarizes Modules 0-6 learning |
-| Reflection Prompts | ✅ / ❌ | Line X | Questions for processing |
+| Week Journey Recap | ✅ / ❌ | Line X | Summarizes Self-Assessment + Modules 1-6 learning |
+| Reflection Prompts | ✅ / ❌ | Line X | 3-5 questions for processing |
 | Anchor Project Reminder | ✅ / ❌ | Line X | Milestone due end of week |
 | Next Week Preview | ✅ / ❌ | Line X | Builds anticipation |
 | Final Project Connection | ✅ / ❌ | Line X | Synthesizes week's contribution |
@@ -750,17 +814,18 @@ Provide a comprehensive structure validation report:
 
 Use this checklist for future storyboard creation:
 
-### Module 1 Checklist:
-- [ ] Element 1: Welcome text references prior weeks
-- [ ] Element 2: Infobox with time breakdown
-- [ ] Element 3: Full week MLOs (X.1-X.4) with success criteria
-- [ ] Element 4: Learning outcomes widget embedded
-- [ ] Final Project Connection connects to Week 5 capstone
-- [ ] Module transition previews Module 2
+### Self-Assessment Checklist:
+- [ ] NOT labeled "Module 0" (outdated convention - should be "Self-Assessment")
+- [ ] Combines hook/bridge + learning outcomes introduction
+- [ ] Full week MLOs (X.1-X.4) with "What You'll Master", "Success Criteria", "Why This Matters"
+- [ ] Learning outcomes widget shows ALL week MLOs
+- [ ] Anchor Project connection (explains Week 5 capstone)
+- [ ] Optional: Diagnostic pre-assessment
 
-### Modules 2-7 Checklist:
-- [ ] Element 1: Connecting text (not repeated learning objectives)
-- [ ] Element 2: Learning outcomes widget (module-specific MLOs)
+### Modules 1-6 Checklist:
+- [ ] Module fulfills its purpose per Purpose Pattern table (Module 1: Concept Introduction, etc.)
+- [ ] Element 1: Connecting text (NOT repeated learning objectives - those are in Self-Assessment)
+- [ ] Element 2: Learning outcomes widget (shows SUBSET of MLOs for THIS module)
 - [ ] Final Project Connection is specific to module content
 - [ ] Final Project Connection has "What You Learned" (4+ bullets)
 - [ ] Final Project Connection has "How to Apply" (3+ examples)
@@ -774,9 +839,10 @@ Use this checklist for future storyboard creation:
 - [ ] Post-revision reflection component
 - [ ] Bonus structure totals 5 points
 
-### Module 7 Additional Checklist:
-- [ ] Week journey recap (all modules summarized)
-- [ ] Reflection prompts for processing
+### Wrap-Up Additional Checklist:
+- [ ] NOT labeled "Module 7" (outdated convention - should be "Wrap-Up")
+- [ ] Week journey recap (Self-Assessment + Modules 1-6 summarized)
+- [ ] Reflection prompts for processing (3-5 questions)
 - [ ] Anchor Project milestone reminder (due date)
 - [ ] Next week preview
 ```
@@ -791,33 +857,64 @@ Use Glob to find all module storyboard files:
 week{X}/storyboards/modules/module-*.md
 ```
 
-### Step 2: Read Each Module
+### Step 2: Flag Outdated Naming Convention
+Check if storyboards use old "Module 0" or "Module 7" naming:
+
+**❌ OUTDATED (flag as critical issue):**
+- File named `module-0-*.md` or content shows "# Module 0"
+- File named `module-7-*.md` or content shows "# Module 7"
+
+**✅ CURRENT (correct naming):**
+- Self-Assessment module (unnumbered)
+- Modules 1-6 (numbered)
+- Wrap-Up module (unnumbered)
+
+**Flag Message:**
+```
+🔴 CRITICAL: Outdated Module Numbering Convention Detected
+
+**Issue:** This storyboard uses old "Module 0" and "Module 7" naming.
+
+**New Convention (required):**
+- Module 0 → **Self-Assessment** (unnumbered) - combines bridge-in + learning outcomes intro
+- Module 1-6 → **Modules 1-6** (numbered) - follow purpose pattern
+- Module 7 → **Wrap-Up** (unnumbered) - BOPPPS summary
+
+**Impact:**
+- Confuses students about module progression
+- Doesn't align with BOPPPS framework (Bridge/Objectives/Pre → Practice → Post/Summary)
+- Learning outcomes should be in Self-Assessment, not separate "Module 1"
+
+**Fix:** Consolidate Module 0 + Module 1 learning outcomes into single "Self-Assessment" module. Rename Module 7 to "Wrap-Up".
+```
+
+### Step 3: Read Each Module
 For each module file, use Read to load full content
 
-### Step 3: Validate Structure
+### Step 4: Validate Structure
 For each module, check:
 1. Element table exists and extract element count
 2. Content section headings match table (element numbering)
-3. Required elements present for module type (1 vs 2-7 vs 6 vs 7)
-4. Learning outcomes widget references
-5. Final Project Connection presence and quality
-6. Module-specific requirements (PAIRR for Module 6, wrap-up for Module 7)
+3. Purpose fulfillment: Does module achieve its pedagogical purpose per Purpose Pattern table?
+4. Learning outcomes widget references (Self-Assessment has ALL MLOs, Modules 1-6 have SUBSET)
+5. Final Project Connection presence and quality (Modules 1-6 only)
+6. Module-specific requirements (PAIRR for Module 6, wrap-up components for Wrap-Up module)
 
-### Step 4: Cross-Module Checks
+### Step 5: Cross-Module Checks
 After reading all modules:
 1. Check for element numbering consistency
 2. Search for case attachment flags (`🔗 ATTACH`)
 3. Search for AI roleplay timing references ("min", "minutes")
 4. Identify standalone sections not in element structure
 
-### Step 5: Widget Validation
+### Step 6: Widget Validation
 Use Glob to check widget files exist:
 ```
-week{X}/widgets/learning-outcomes-module-*.html
+week{X}/widgets/learning-outcomes-*.html
 ```
 Cross-reference with storyboard references
 
-### Step 6: Generate Report
+### Step 7: Generate Report
 Use output format above with:
 - Specific line numbers for all issues
 - Color coding: ✅ compliant, ⚠️ issues, ❌ critical
