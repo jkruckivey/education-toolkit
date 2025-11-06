@@ -1,7 +1,7 @@
 {
   "name": "education-toolkit",
-  "version": "2.8.6",
-  "description": "Comprehensive toolkit for course developers with 17 specialized agents, 14 slash commands, and automatic code review. Includes widget design system enforcement (generate/audit mode with standardized Geist typography and neutral color palette), strategic course outline creation with required widget introduction format (activity headers, MLO connections, contextual setup paragraphs), specialized consistency checkers (terminology, concept threading, assessment methodology), cohort course structure validation, peer design review simulation, PAIRR (Peer and AI Review + Reflection), AI Roleplay exercises, diagnostic rubrics, accessibility auditing, widget testing, course QA, enhanced storyboard validation with interactivity analysis and table-based module structure format, and fullstack code review (FastAPI/Python + React/JSX) with PostToolUse hook. Bundled with course design knowledge base: Ivey 6-phase development process, cohort/self-paced learning models, course outline examples, concept threading guide, and 464 KB of frameworks and AI assessment research.",
+  "version": "2.8.7",
+  "description": "Comprehensive toolkit for course developers with 18 specialized agents, 14 slash commands, and automatic code review. Includes widget design system enforcement (generate/audit mode with standardized Geist typography and neutral color palette), strategic course outline creation with required widget introduction format (activity headers, MLO connections, contextual setup paragraphs), specialized consistency checkers (terminology, concept threading, assessment methodology), cohort AND self-paced course structure validation (separate agents for WLO/PAIRR cohorts vs MLO/flexible self-paced), peer design review simulation, PAIRR (Peer and AI Review + Reflection), AI Roleplay exercises, diagnostic rubrics, accessibility auditing, widget testing, course QA, enhanced storyboard validation with interactivity analysis and table-based module structure format, and fullstack code review (FastAPI/Python + React/JSX) with PostToolUse hook. Bundled with course design knowledge base: Ivey 6-phase development process, cohort/self-paced learning models, course outline examples, concept threading guide, and 464 KB of frameworks and AI assessment research.",
   "author": {
     "name": "James Kruck",
     "email": "jkruck@ivey.ca"
@@ -24,29 +24,12 @@
     "fastapi",
     "react",
     "cohort-course",
+    "self-paced-course",
     "structure-validation",
     "widget-design",
     "design-system"
   ],
-  "agents": [
-    "./agents/accessibility-auditor.md",
-    "./agents/assessment-consistency-checker.md",
-    "./agents/assessment-designer.md",
-    "./agents/backend-reviewer.md",
-    "./agents/branding-checker.md",
-    "./agents/cohort-structure-checker.md",
-    "./agents/concept-threading-checker.md",
-    "./agents/course-outline-creator.md",
-    "./agents/frontend-reviewer.md",
-    "./agents/peer-review-simulator.md",
-    "./agents/rubric-generator.md",
-    "./agents/student-journey-simulator.md",
-    "./agents/terminology-consistency-checker.md",
-    "./agents/udl-content-generator.md",
-    "./agents/uplimit-storyboard-builder.md",
-    "./agents/widget-designer.md",
-    "./agents/widget-tester.md"
-  ],
+  "agents": "./agents",
   "commands": "./commands",
   "hooks": "./hooks/hooks.json",
   "skills": "./skills"
