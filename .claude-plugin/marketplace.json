@@ -11,7 +11,12 @@
     {
       "name": "education-toolkit",
       "source": "./",
-      "strict": true,
+      "description": "Comprehensive toolkit for course developers with 18 specialized agents, 14 slash commands, and automatic code review",
+      "version": "2.8.7",
+      "author": {"name": "James Kruck"},
+      "license": "MIT",
+      "keywords": ["education", "accessibility", "wcag", "udl", "quality-matters", "assessment-design", "course-development"],
+      "strict": false,
       "commands": [
         "./commands/audit-module.md",
         "./commands/build-storyboard.md",
