@@ -6,5 +6,12 @@
     "name": "James Kruck",
     "email": "jkruck@ivey.ca",
     "github": "jkruckivey"
-  }
+  },
+  "plugins": [
+    {
+      "name": "education-toolkit",
+      "source": "./",
+      "strict": true
+    }
+  ]
 }
